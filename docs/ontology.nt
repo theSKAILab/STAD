@@ -1,0 +1,597 @@
+<http://purl.org/spatialai/stad/v2/core/> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
+<http://purl.org/spatialai/stad/v2/core/> <http://www.w3.org/2002/07/owl#versionIRI> <http://purl.org/spatialai/stad/v2/core/> .
+<http://purl.org/spatialai/stad/v2/core/> <http://www.w3.org/2002/07/owl#imports> <http://www.w3.org/2006/time> .
+<http://purl.org/spatialai/stad/v2/core/> <http://www.w3.org/2002/07/owl#imports> <https://raw.githubusercontent.com/w3c/sdw/gh-pages/time-aggregates/rdf/time-agg.ttl> .
+<http://purl.org/spatialai/stad/v2/core/> <http://purl.org/dc/terms/created> "2022-06-12"^^<http://www.w3.org/2001/XMLSchema#date> .
+<http://purl.org/spatialai/stad/v2/core/> <http://purl.org/dc/terms/creator> "Kate Beard - https://orcid.org/0000-0002-7703-0270"@en .
+<http://purl.org/spatialai/stad/v2/core/> <http://purl.org/dc/terms/creator> "Kingsley Wiafe-Kwakye - https://orcid.org/0009-0007-3741-3721"@en .
+<http://purl.org/spatialai/stad/v2/core/> <http://purl.org/dc/terms/creator> "Torsten Hahmann - http://orcid.org/0000-0002-5331-5052"@en .
+<http://purl.org/spatialai/stad/v2/core/> <http://purl.org/dc/terms/description> "STAD provides syntax for describing the spatial and temporal characteristics of aggregate quantities."@en .
+<http://purl.org/spatialai/stad/v2/core/> <http://purl.org/dc/terms/identifier> "http://purl.org/spatialai/stad/v2/core>"@en .
+<http://purl.org/spatialai/stad/v2/core/> <http://purl.org/dc/terms/issued> "2022-06-12"^^<http://www.w3.org/2001/XMLSchema#date> .
+<http://purl.org/spatialai/stad/v2/core/> <http://purl.org/dc/terms/license> "This work is distributed under a Creative Commons Attribution License (https://creativecommons.org/licenses/by/4.0/)."@en .
+<http://purl.org/spatialai/stad/v2/core/> <http://purl.org/dc/terms/modified> "2024-05-30"^^<http://www.w3.org/2001/XMLSchema#date> .
+<http://purl.org/spatialai/stad/v2/core/> <http://purl.org/dc/terms/publisher> "Spatial Knowledge and Artificial Intelligence (SKAI) Lab, University of Maine"@en .
+<http://purl.org/spatialai/stad/v2/core/> <http://purl.org/dc/terms/subject> "Aggregate data" .
+<http://purl.org/spatialai/stad/v2/core/> <http://purl.org/dc/terms/subject> "Spatial aggregate data" .
+<http://purl.org/spatialai/stad/v2/core/> <http://purl.org/dc/terms/subject> "Temporal aggregate data" .
+<http://purl.org/spatialai/stad/v2/core/> <http://purl.org/dc/terms/title> "Spatial and Temporal Aggregate Data (STAD) Ontology Design Pattern"@en .
+<http://purl.org/spatialai/stad/v2/core/> <http://www.w3.org/2002/07/owl#versionInfo> "2.0"@en .
+# 
+# 
+# #################################################################
+# #
+# #    Annotation properties
+# #
+# #################################################################
+# 
+# 
+# http://purl.org/dc/terms/created
+<http://purl.org/dc/terms/created> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/creator
+<http://purl.org/dc/terms/creator> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/description
+<http://purl.org/dc/terms/description> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/identifier
+<http://purl.org/dc/terms/identifier> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/issued
+<http://purl.org/dc/terms/issued> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/license
+<http://purl.org/dc/terms/license> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/modified
+<http://purl.org/dc/terms/modified> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/publisher
+<http://purl.org/dc/terms/publisher> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/subject
+<http://purl.org/dc/terms/subject> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/title
+<http://purl.org/dc/terms/title> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://www.w3.org/2004/02/skos/core#definition
+<http://www.w3.org/2004/02/skos/core#definition> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Object Properties
+# #
+# #################################################################
+# 
+# 
+# http://purl.org/spatialai/stad/v2/core/containsDataPoint
+<http://purl.org/spatialai/stad/v2/core/containsDataPoint> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://purl.org/spatialai/stad/v2/core/containsDataPoint> <http://www.w3.org/2000/01/rdf-schema#domain> <http://purl.org/spatialai/stad/v2/core/DataSet> .
+<http://purl.org/spatialai/stad/v2/core/containsDataPoint> <http://www.w3.org/2000/01/rdf-schema#range> <http://purl.org/spatialai/stad/v2/core/DataPoint> .
+# 
+# http://purl.org/spatialai/stad/v2/core/executes
+<http://purl.org/spatialai/stad/v2/core/executes> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://purl.org/spatialai/stad/v2/core/executes> <http://www.w3.org/2000/01/rdf-schema#domain> <http://purl.org/spatialai/stad/v2/core/AlgorithmExecution> .
+<http://purl.org/spatialai/stad/v2/core/executes> <http://www.w3.org/2000/01/rdf-schema#range> <http://purl.org/spatialai/stad/v2/core/Implementation> .
+<http://purl.org/spatialai/stad/v2/core/executes> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> "http://ontologydesignpatterns.org/wiki/images/4/41/WOP2016_paper_07.pdf"^^<http://www.w3.org/2001/XMLSchema#anyURI> .
+# 
+# http://purl.org/spatialai/stad/v2/core/generatedBy
+<http://purl.org/spatialai/stad/v2/core/generatedBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://purl.org/spatialai/stad/v2/core/generatedBy> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.w3.org/2002/07/owl#Thing> .
+<http://purl.org/spatialai/stad/v2/core/generatedBy> <http://www.w3.org/2000/01/rdf-schema#range> <http://purl.org/spatialai/stad/v2/core/AlgorithmExecution> .
+<http://purl.org/spatialai/stad/v2/core/generatedBy> <http://www.w3.org/2000/01/rdf-schema#comment> "Links anything that is generated by an Algorithm to the specific AlgorithmExecution that was used"@en .
+# 
+# http://purl.org/spatialai/stad/v2/core/hasAggregationPeriod
+<http://purl.org/spatialai/stad/v2/core/hasAggregationPeriod> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://purl.org/spatialai/stad/v2/core/hasAggregationPeriod> <http://www.w3.org/2000/01/rdf-schema#domain> <http://purl.org/spatialai/stad/v2/core/StatisticalAggregateDataPoint> .
+<http://purl.org/spatialai/stad/v2/core/hasAggregationPeriod> <http://www.w3.org/2000/01/rdf-schema#range> <http://purl.org/spatialai/stad/v2/core/AggregationPeriod> .
+# 
+# http://purl.org/spatialai/stad/v2/core/hasBaseData
+<http://purl.org/spatialai/stad/v2/core/hasBaseData> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+# 
+# http://purl.org/spatialai/stad/v2/core/hasBaseDataPoint
+<http://purl.org/spatialai/stad/v2/core/hasBaseDataPoint> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://purl.org/spatialai/stad/v2/core/hasBaseDataPoint> <http://www.w3.org/2000/01/rdf-schema#domain> <http://purl.org/spatialai/stad/v2/core/ComputationalDataPoint> .
+<http://purl.org/spatialai/stad/v2/core/hasBaseDataPoint> <http://www.w3.org/2000/01/rdf-schema#range> <http://purl.org/spatialai/stad/v2/core/DataPoint> .
+<http://purl.org/spatialai/stad/v2/core/hasBaseDataPoint> <http://www.w3.org/2002/07/owl#propertyChainAxiom> _:genid2 .
+_:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid1 .
+_:genid1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://purl.org/spatialai/stad/v2/core/containsDataPoint> .
+_:genid1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://purl.org/spatialai/stad/v2/core/hasBaseDataSet> .
+_:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+# 
+# http://purl.org/spatialai/stad/v2/core/hasBaseDataSet
+<http://purl.org/spatialai/stad/v2/core/hasBaseDataSet> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://purl.org/spatialai/stad/v2/core/hasBaseDataSet> <http://www.w3.org/2000/01/rdf-schema#domain> <http://purl.org/spatialai/stad/v2/core/ComputationalDataPoint> .
+<http://purl.org/spatialai/stad/v2/core/hasBaseDataSet> <http://www.w3.org/2000/01/rdf-schema#range> <http://purl.org/spatialai/stad/v2/core/DataSet> .
+# 
+# http://purl.org/spatialai/stad/v2/core/hasDataSetDescription
+<http://purl.org/spatialai/stad/v2/core/hasDataSetDescription> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://purl.org/spatialai/stad/v2/core/hasDataSetDescription> <http://www.w3.org/2000/01/rdf-schema#domain> <http://purl.org/spatialai/stad/v2/core/DataSet> .
+<http://purl.org/spatialai/stad/v2/core/hasDataSetDescription> <http://www.w3.org/2000/01/rdf-schema#range> <http://purl.org/spatialai/stad/v2/core/DataSetDescription> .
+# 
+# http://purl.org/spatialai/stad/v2/core/hasDataValue
+<http://purl.org/spatialai/stad/v2/core/hasDataValue> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://purl.org/spatialai/stad/v2/core/hasDataValue> <http://www.w3.org/2000/01/rdf-schema#domain> <http://purl.org/spatialai/stad/v2/core/DataPoint> .
+<http://purl.org/spatialai/stad/v2/core/hasDataValue> <http://www.w3.org/2000/01/rdf-schema#range> <http://purl.org/spatialai/stad/v2/core/DataValue> .
+# 
+# http://purl.org/spatialai/stad/v2/core/hasExtent
+<http://purl.org/spatialai/stad/v2/core/hasExtent> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://purl.org/spatialai/stad/v2/core/hasExtent> <http://www.w3.org/2002/07/owl#inverseOf> <http://purl.org/spatialai/stad/v2/core/isExtentOf> .
+<http://purl.org/spatialai/stad/v2/core/hasExtent> <http://www.w3.org/2000/01/rdf-schema#domain> <http://purl.org/spatialai/stad/v2/core/AggregationPeriod> .
+<http://purl.org/spatialai/stad/v2/core/hasExtent> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2006/time#Interval> .
+# 
+# http://purl.org/spatialai/stad/v2/core/hasInput
+<http://purl.org/spatialai/stad/v2/core/hasInput> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://purl.org/spatialai/stad/v2/core/hasInput> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> "http://ontologydesignpatterns.org/wiki/images/4/41/WOP2016_paper_07.pdf"^^<http://www.w3.org/2001/XMLSchema#anyURI> .
+# 
+# http://purl.org/spatialai/stad/v2/core/hasInstant
+<http://purl.org/spatialai/stad/v2/core/hasInstant> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://purl.org/spatialai/stad/v2/core/hasInstant> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2006/time#hasPart> .
+<http://purl.org/spatialai/stad/v2/core/hasInstant> <http://www.w3.org/2002/07/owl#inverseOf> <http://purl.org/spatialai/stad/v2/core/instantPartOf> .
+<http://purl.org/spatialai/stad/v2/core/hasInstant> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2006/time#Instant> .
+# 
+# http://purl.org/spatialai/stad/v2/core/hasInterval
+<http://purl.org/spatialai/stad/v2/core/hasInterval> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://purl.org/spatialai/stad/v2/core/hasInterval> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2006/time#hasPart> .
+<http://purl.org/spatialai/stad/v2/core/hasInterval> <http://www.w3.org/2002/07/owl#inverseOf> <http://purl.org/spatialai/stad/v2/core/intervalPartOf> .
+<http://purl.org/spatialai/stad/v2/core/hasInterval> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2006/time#Interval> .
+# 
+# http://purl.org/spatialai/stad/v2/core/hasParameter
+<http://purl.org/spatialai/stad/v2/core/hasParameter> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://purl.org/spatialai/stad/v2/core/hasParameter> <http://www.w3.org/2000/01/rdf-schema#domain> <http://purl.org/spatialai/stad/v2/core/Implementation> .
+<http://purl.org/spatialai/stad/v2/core/hasParameter> <http://www.w3.org/2000/01/rdf-schema#range> <http://purl.org/spatialai/stad/v2/core/Parameter> .
+<http://purl.org/spatialai/stad/v2/core/hasParameter> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> "http://ontologydesignpatterns.org/wiki/images/4/41/WOP2016_paper_07.pdf"^^<http://www.w3.org/2001/XMLSchema#anyURI> .
+# 
+# http://purl.org/spatialai/stad/v2/core/hasQualitativeValue
+<http://purl.org/spatialai/stad/v2/core/hasQualitativeValue> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://purl.org/spatialai/stad/v2/core/hasQualitativeValue> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://purl.org/spatialai/stad/v2/core/hasDataValue> .
+<http://purl.org/spatialai/stad/v2/core/hasQualitativeValue> <http://www.w3.org/2000/01/rdf-schema#domain> <http://purl.org/spatialai/stad/v2/core/QualitativeDataPoint> .
+<http://purl.org/spatialai/stad/v2/core/hasQualitativeValue> <http://www.w3.org/2000/01/rdf-schema#range> <http://purl.org/spatialai/stad/v2/core/QualitativeValue> .
+# 
+# http://purl.org/spatialai/stad/v2/core/hasQualityKind
+<http://purl.org/spatialai/stad/v2/core/hasQualityKind> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://purl.org/spatialai/stad/v2/core/hasQualityKind> <http://www.w3.org/2000/01/rdf-schema#domain> <http://purl.org/spatialai/stad/v2/core/DataPoint> .
+<http://purl.org/spatialai/stad/v2/core/hasQualityKind> <http://www.w3.org/2000/01/rdf-schema#range> <http://purl.org/spatialai/stad/v2/core/QualityKind> .
+# 
+# http://purl.org/spatialai/stad/v2/core/hasQuantitativeValue
+<http://purl.org/spatialai/stad/v2/core/hasQuantitativeValue> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://purl.org/spatialai/stad/v2/core/hasQuantitativeValue> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://purl.org/spatialai/stad/v2/core/hasDataValue> .
+<http://purl.org/spatialai/stad/v2/core/hasQuantitativeValue> <http://www.w3.org/2000/01/rdf-schema#domain> <http://purl.org/spatialai/stad/v2/core/QuantitativeDataPoint> .
+<http://purl.org/spatialai/stad/v2/core/hasQuantitativeValue> <http://www.w3.org/2000/01/rdf-schema#range> <http://purl.org/spatialai/stad/v2/core/QuantitativeValue> .
+# 
+# http://purl.org/spatialai/stad/v2/core/hasSpatialCoverage
+<http://purl.org/spatialai/stad/v2/core/hasSpatialCoverage> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://purl.org/spatialai/stad/v2/core/hasSpatialCoverage> <http://www.w3.org/2002/07/owl#inverseOf> <http://purl.org/spatialai/stad/v2/core/spatialCoverageOf> .
+<http://purl.org/spatialai/stad/v2/core/hasSpatialCoverage> <http://www.w3.org/2000/01/rdf-schema#domain> <http://purl.org/spatialai/stad/v2/core/StatisticalAggregateDataPoint> .
+<http://purl.org/spatialai/stad/v2/core/hasSpatialCoverage> <http://www.w3.org/2000/01/rdf-schema#range> <http://purl.org/spatialai/stad/v2/core/SpatialCoverage> .
+# 
+# http://purl.org/spatialai/stad/v2/core/hasSpatialResolution
+<http://purl.org/spatialai/stad/v2/core/hasSpatialResolution> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://purl.org/spatialai/stad/v2/core/hasSpatialResolution> <http://www.w3.org/2000/01/rdf-schema#domain> <http://purl.org/spatialai/stad/v2/core/DataSetDescription> .
+<http://purl.org/spatialai/stad/v2/core/hasSpatialResolution> <http://www.w3.org/2000/01/rdf-schema#range> <http://purl.org/spatialai/stad/v2/core/SpatialResolution> .
+# 
+# http://purl.org/spatialai/stad/v2/core/hasTemporalCoverage
+<http://purl.org/spatialai/stad/v2/core/hasTemporalCoverage> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://purl.org/spatialai/stad/v2/core/hasTemporalCoverage> <http://www.w3.org/2002/07/owl#inverseOf> <http://purl.org/spatialai/stad/v2/core/temporalCoverageOf> .
+<http://purl.org/spatialai/stad/v2/core/hasTemporalCoverage> <http://www.w3.org/2000/01/rdf-schema#domain> <http://purl.org/spatialai/stad/v2/core/StatisticalAggregateDataPoint> .
+<http://purl.org/spatialai/stad/v2/core/hasTemporalCoverage> <http://www.w3.org/2000/01/rdf-schema#range> <http://purl.org/spatialai/stad/v2/core/TemporalCoverage> .
+# 
+# http://purl.org/spatialai/stad/v2/core/hasTemporalResolution
+<http://purl.org/spatialai/stad/v2/core/hasTemporalResolution> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://purl.org/spatialai/stad/v2/core/hasTemporalResolution> <http://www.w3.org/2000/01/rdf-schema#domain> <http://purl.org/spatialai/stad/v2/core/DataSetDescription> .
+<http://purl.org/spatialai/stad/v2/core/hasTemporalResolution> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2006/time#Duration> .
+# 
+# http://purl.org/spatialai/stad/v2/core/implements
+<http://purl.org/spatialai/stad/v2/core/implements> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://purl.org/spatialai/stad/v2/core/implements> <http://www.w3.org/2000/01/rdf-schema#domain> <http://purl.org/spatialai/stad/v2/core/Implementation> .
+<http://purl.org/spatialai/stad/v2/core/implements> <http://www.w3.org/2000/01/rdf-schema#range> <http://purl.org/spatialai/stad/v2/core/Algorithm> .
+<http://purl.org/spatialai/stad/v2/core/implements> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> "http://ontologydesignpatterns.org/wiki/images/4/41/WOP2016_paper_07.pdf"^^<http://www.w3.org/2001/XMLSchema#anyURI> .
+# 
+# http://purl.org/spatialai/stad/v2/core/instantPartOf
+<http://purl.org/spatialai/stad/v2/core/instantPartOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://purl.org/spatialai/stad/v2/core/instantPartOf> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2006/time#isPartOf> .
+# 
+# http://purl.org/spatialai/stad/v2/core/intervalPartOf
+<http://purl.org/spatialai/stad/v2/core/intervalPartOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://purl.org/spatialai/stad/v2/core/intervalPartOf> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2006/time#isPartOf> .
+# 
+# http://purl.org/spatialai/stad/v2/core/isExtentOf
+<http://purl.org/spatialai/stad/v2/core/isExtentOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+# 
+# http://purl.org/spatialai/stad/v2/core/realizes
+<http://purl.org/spatialai/stad/v2/core/realizes> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://purl.org/spatialai/stad/v2/core/realizes> <http://www.w3.org/2000/01/rdf-schema#domain> <http://purl.org/spatialai/stad/v2/core/AlgorithmExecution> .
+<http://purl.org/spatialai/stad/v2/core/realizes> <http://www.w3.org/2000/01/rdf-schema#range> <http://purl.org/spatialai/stad/v2/core/Algorithm> .
+<http://purl.org/spatialai/stad/v2/core/realizes> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> "http://ontologydesignpatterns.org/wiki/images/4/41/WOP2016_paper_07.pdf"^^<http://www.w3.org/2001/XMLSchema#anyURI> .
+# 
+# http://purl.org/spatialai/stad/v2/core/spatialCoverageOf
+<http://purl.org/spatialai/stad/v2/core/spatialCoverageOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+# 
+# http://purl.org/spatialai/stad/v2/core/spatialResolutionKind
+<http://purl.org/spatialai/stad/v2/core/spatialResolutionKind> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://purl.org/spatialai/stad/v2/core/spatialResolutionKind> <http://www.w3.org/2000/01/rdf-schema#domain> <http://purl.org/spatialai/stad/v2/core/SpatialResolution> .
+<http://purl.org/spatialai/stad/v2/core/spatialResolutionKind> <http://www.w3.org/2000/01/rdf-schema#range> <http://purl.org/spatialai/stad/v2/core/SpatialResolutionKind> .
+# 
+# http://purl.org/spatialai/stad/v2/core/spatialResolutionValue
+<http://purl.org/spatialai/stad/v2/core/spatialResolutionValue> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://purl.org/spatialai/stad/v2/core/spatialResolutionValue> <http://www.w3.org/2000/01/rdf-schema#domain> <http://purl.org/spatialai/stad/v2/core/SpatialResolution> .
+<http://purl.org/spatialai/stad/v2/core/spatialResolutionValue> <http://www.w3.org/2000/01/rdf-schema#range> <http://purl.org/spatialai/stad/v2/core/QuantitativeValue> .
+# 
+# http://purl.org/spatialai/stad/v2/core/specifiedBy
+<http://purl.org/spatialai/stad/v2/core/specifiedBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://purl.org/spatialai/stad/v2/core/specifiedBy> <http://www.w3.org/2000/01/rdf-schema#domain> <http://purl.org/spatialai/stad/v2/core/ParameterSetting> .
+<http://purl.org/spatialai/stad/v2/core/specifiedBy> <http://www.w3.org/2000/01/rdf-schema#range> <http://purl.org/spatialai/stad/v2/core/Parameter> .
+<http://purl.org/spatialai/stad/v2/core/specifiedBy> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> "http://ontologydesignpatterns.org/wiki/images/4/41/WOP2016_paper_07.pdf"^^<http://www.w3.org/2001/XMLSchema#anyURI> .
+# 
+# http://purl.org/spatialai/stad/v2/core/temporalCoverageOf
+<http://purl.org/spatialai/stad/v2/core/temporalCoverageOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+# 
+# http://www.w3.org/2006/time#hasPart
+<http://www.w3.org/2006/time#hasPart> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.w3.org/2006/time#hasPart> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://purl.org/dc/terms/hasPart> .
+<http://www.w3.org/2006/time#hasPart> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2000/01/rdf-schema#member> .
+<http://www.w3.org/2006/time#hasPart> <http://www.w3.org/2002/07/owl#inverseOf> <http://www.w3.org/2006/time#isPartOf> .
+<http://www.w3.org/2006/time#hasPart> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.w3.org/2006/time#TemporalAggregate> .
+<http://www.w3.org/2006/time#hasPart> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2006/time#TemporalEntity> .
+<http://www.w3.org/2006/time#hasPart> <http://www.w3.org/2000/01/rdf-schema#comment> "Link to a temporal entity that is a part of this temporal aggregate" .
+<http://www.w3.org/2006/time#hasPart> <http://www.w3.org/2000/01/rdf-schema#label> "has a part" .
+# 
+# http://www.w3.org/2006/time#isPartOf
+<http://www.w3.org/2006/time#isPartOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.w3.org/2006/time#isPartOf> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.w3.org/2006/time#TemporalEntity> .
+<http://www.w3.org/2006/time#isPartOf> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2006/time#TemporalAggregate> .
+<http://www.w3.org/2006/time#isPartOf> <http://www.w3.org/2000/01/rdf-schema#comment> "Link to a temporal aggregate of which this temporal entity is a part" .
+<http://www.w3.org/2006/time#isPartOf> <http://www.w3.org/2000/01/rdf-schema#label> "is a part of" .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Data properties
+# #
+# #################################################################
+# 
+# 
+# http://purl.org/spatialai/stad/v2/core/hasValue
+<http://purl.org/spatialai/stad/v2/core/hasValue> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Classes
+# #
+# #################################################################
+# 
+# 
+# http://purl.org/spatialai/stad/v2/core/AggregationPeriod
+<http://purl.org/spatialai/stad/v2/core/AggregationPeriod> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/spatialai/stad/v2/core/AggregationPeriod> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/2006/time#TemporalAggregate> .
+<http://purl.org/spatialai/stad/v2/core/AggregationPeriod> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid3 .
+_:genid3 <http://www.w3.org/2002/07/owl#onClass> <http://www.w3.org/2006/time#TemporalEntity> .
+_:genid3 <http://www.w3.org/2002/07/owl#minQualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid3 <http://www.w3.org/2002/07/owl#onProperty> <http://www.w3.org/2006/time#hasPart> .
+_:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://purl.org/spatialai/stad/v2/core/AggregationPeriod> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid4 .
+_:genid4 <http://www.w3.org/2002/07/owl#onClass> <http://www.w3.org/2006/time#ProperInterval> .
+_:genid4 <http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid4 <http://www.w3.org/2002/07/owl#onProperty> <http://purl.org/spatialai/stad/v2/core/hasExtent> .
+_:genid4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+# 
+# http://purl.org/spatialai/stad/v2/core/Algorithm
+<http://purl.org/spatialai/stad/v2/core/Algorithm> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/spatialai/stad/v2/core/Algorithm> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> "http://ontologydesignpatterns.org/wiki/images/4/41/WOP2016_paper_07.pdf"^^<http://www.w3.org/2001/XMLSchema#anyURI> .
+# 
+# http://purl.org/spatialai/stad/v2/core/AlgorithmExecution
+<http://purl.org/spatialai/stad/v2/core/AlgorithmExecution> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/spatialai/stad/v2/core/AlgorithmExecution> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid5 .
+_:genid5 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://purl.org/spatialai/stad/v2/core/DataSet> .
+_:genid5 <http://www.w3.org/2002/07/owl#onProperty> <http://purl.org/spatialai/stad/v2/core/hasInput> .
+_:genid5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://purl.org/spatialai/stad/v2/core/AlgorithmExecution> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid6 .
+_:genid6 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://purl.org/spatialai/stad/v2/core/ParameterSetting> .
+_:genid6 <http://www.w3.org/2002/07/owl#onProperty> <http://purl.org/spatialai/stad/v2/core/hasInput> .
+_:genid6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://purl.org/spatialai/stad/v2/core/AlgorithmExecution> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid7 .
+_:genid7 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://purl.org/spatialai/stad/v2/core/Algorithm> .
+_:genid7 <http://www.w3.org/2002/07/owl#onProperty> <http://purl.org/spatialai/stad/v2/core/realizes> .
+_:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://purl.org/spatialai/stad/v2/core/AlgorithmExecution> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> "http://ontologydesignpatterns.org/wiki/images/4/41/WOP2016_paper_07.pdf"^^<http://www.w3.org/2001/XMLSchema#anyURI> .
+# 
+# http://purl.org/spatialai/stad/v2/core/AverageCalculationDataTransformation
+<http://purl.org/spatialai/stad/v2/core/AverageCalculationDataTransformation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/spatialai/stad/v2/core/AverageCalculationDataTransformation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/spatialai/stad/v2/core/DataTransformation> .
+# 
+# http://purl.org/spatialai/stad/v2/core/ComputationalDataPoint
+<http://purl.org/spatialai/stad/v2/core/ComputationalDataPoint> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/spatialai/stad/v2/core/ComputationalDataPoint> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/spatialai/stad/v2/core/DataPoint> .
+<http://purl.org/spatialai/stad/v2/core/ComputationalDataPoint> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid8 .
+_:genid8 <http://www.w3.org/2002/07/owl#allValuesFrom> <http://purl.org/spatialai/stad/v2/core/AlgorithmExecution> .
+_:genid8 <http://www.w3.org/2002/07/owl#onProperty> <http://purl.org/spatialai/stad/v2/core/generatedBy> .
+_:genid8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://purl.org/spatialai/stad/v2/core/ComputationalDataPoint> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid9 .
+_:genid9 <http://www.w3.org/2002/07/owl#allValuesFrom> <http://purl.org/spatialai/stad/v2/core/DataPoint> .
+_:genid9 <http://www.w3.org/2002/07/owl#onProperty> <http://purl.org/spatialai/stad/v2/core/hasBaseData> .
+_:genid9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://purl.org/spatialai/stad/v2/core/ComputationalDataPoint> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid10 .
+_:genid10 <http://www.w3.org/2002/07/owl#allValuesFrom> <http://purl.org/spatialai/stad/v2/core/DataSet> .
+_:genid10 <http://www.w3.org/2002/07/owl#onProperty> <http://purl.org/spatialai/stad/v2/core/hasBaseDataSet> .
+_:genid10 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://purl.org/spatialai/stad/v2/core/ComputationalDataPoint> <http://www.w3.org/2002/07/owl#disjointWith> <http://purl.org/spatialai/stad/v2/core/ObservationalDataPoint> .
+# 
+# http://purl.org/spatialai/stad/v2/core/ComputationalPredictedDataPoint
+<http://purl.org/spatialai/stad/v2/core/ComputationalPredictedDataPoint> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/spatialai/stad/v2/core/ComputationalPredictedDataPoint> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/spatialai/stad/v2/core/ComputationalDataPoint> .
+<http://purl.org/spatialai/stad/v2/core/ComputationalPredictedDataPoint> <http://www.w3.org/2002/07/owl#disjointWith> <http://purl.org/spatialai/stad/v2/core/StatisticalAggregateDataPoint> .
+# 
+# http://purl.org/spatialai/stad/v2/core/ConvexAggregationPeriod
+<http://purl.org/spatialai/stad/v2/core/ConvexAggregationPeriod> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/spatialai/stad/v2/core/ConvexAggregationPeriod> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/spatialai/stad/v2/core/AggregationPeriod> .
+# 
+# http://purl.org/spatialai/stad/v2/core/Data
+<http://purl.org/spatialai/stad/v2/core/Data> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/spatialai/stad/v2/core/Data> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/spatialai/stad/v2/core/InformationEntity> .
+# 
+# http://purl.org/spatialai/stad/v2/core/DataPoint
+<http://purl.org/spatialai/stad/v2/core/DataPoint> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/spatialai/stad/v2/core/DataPoint> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/spatialai/stad/v2/core/Data> .
+<http://purl.org/spatialai/stad/v2/core/DataPoint> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid11 .
+_:genid11 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://purl.org/spatialai/stad/v2/core/DataValue> .
+_:genid11 <http://www.w3.org/2002/07/owl#onProperty> <http://purl.org/spatialai/stad/v2/core/hasDataValue> .
+_:genid11 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://purl.org/spatialai/stad/v2/core/DataPoint> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid12 .
+_:genid12 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://purl.org/spatialai/stad/v2/core/QualityKind> .
+_:genid12 <http://www.w3.org/2002/07/owl#onProperty> <http://purl.org/spatialai/stad/v2/core/hasQualityKind> .
+_:genid12 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://purl.org/spatialai/stad/v2/core/DataPoint> <http://www.w3.org/2002/07/owl#disjointWith> <http://purl.org/spatialai/stad/v2/core/DataSet> .
+<http://purl.org/spatialai/stad/v2/core/DataPoint> <http://www.w3.org/2000/01/rdf-schema#comment> "super class for all data point categories"@en .
+# 
+# http://purl.org/spatialai/stad/v2/core/DataSet
+<http://purl.org/spatialai/stad/v2/core/DataSet> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/spatialai/stad/v2/core/DataSet> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/spatialai/stad/v2/core/Data> .
+<http://purl.org/spatialai/stad/v2/core/DataSet> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid13 .
+_:genid13 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://purl.org/spatialai/stad/v2/core/DataPoint> .
+_:genid13 <http://www.w3.org/2002/07/owl#onProperty> <http://purl.org/spatialai/stad/v2/core/containsDataPoint> .
+_:genid13 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://purl.org/spatialai/stad/v2/core/DataSet> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid14 .
+_:genid14 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://purl.org/spatialai/stad/v2/core/DataSetDescription> .
+_:genid14 <http://www.w3.org/2002/07/owl#onProperty> <http://purl.org/spatialai/stad/v2/core/hasDataSetDescription> .
+_:genid14 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+# 
+# http://purl.org/spatialai/stad/v2/core/DataSetDescription
+<http://purl.org/spatialai/stad/v2/core/DataSetDescription> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/spatialai/stad/v2/core/DataSetDescription> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid15 .
+_:genid15 <http://www.w3.org/2002/07/owl#maxCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid15 <http://www.w3.org/2002/07/owl#onProperty> <http://purl.org/spatialai/stad/v2/core/hasSpatialResolution> .
+_:genid15 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://purl.org/spatialai/stad/v2/core/DataSetDescription> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid16 .
+_:genid16 <http://www.w3.org/2002/07/owl#maxCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid16 <http://www.w3.org/2002/07/owl#onProperty> <http://purl.org/spatialai/stad/v2/core/hasTemporalResolution> .
+_:genid16 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+# 
+# http://purl.org/spatialai/stad/v2/core/DataTransformation
+<http://purl.org/spatialai/stad/v2/core/DataTransformation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/spatialai/stad/v2/core/DataTransformation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/spatialai/stad/v2/core/Algorithm> .
+# 
+# http://purl.org/spatialai/stad/v2/core/DataValue
+<http://purl.org/spatialai/stad/v2/core/DataValue> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# http://purl.org/spatialai/stad/v2/core/ExtremumCalculationDataTransformation
+<http://purl.org/spatialai/stad/v2/core/ExtremumCalculationDataTransformation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/spatialai/stad/v2/core/ExtremumCalculationDataTransformation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/spatialai/stad/v2/core/DataTransformation> .
+# 
+# http://purl.org/spatialai/stad/v2/core/Implementation
+<http://purl.org/spatialai/stad/v2/core/Implementation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/spatialai/stad/v2/core/Implementation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid17 .
+_:genid17 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://purl.org/spatialai/stad/v2/core/Parameter> .
+_:genid17 <http://www.w3.org/2002/07/owl#onProperty> <http://purl.org/spatialai/stad/v2/core/hasParameter> .
+_:genid17 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://purl.org/spatialai/stad/v2/core/Implementation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid18 .
+_:genid18 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://purl.org/spatialai/stad/v2/core/Algorithm> .
+_:genid18 <http://www.w3.org/2002/07/owl#onProperty> <http://purl.org/spatialai/stad/v2/core/implements> .
+_:genid18 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://purl.org/spatialai/stad/v2/core/Implementation> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> "http://ontologydesignpatterns.org/wiki/images/4/41/WOP2016_paper_07.pdf"^^<http://www.w3.org/2001/XMLSchema#anyURI> .
+# 
+# http://purl.org/spatialai/stad/v2/core/InformationEntity
+<http://purl.org/spatialai/stad/v2/core/InformationEntity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# http://purl.org/spatialai/stad/v2/core/NonConvexAggregationPeriod
+<http://purl.org/spatialai/stad/v2/core/NonConvexAggregationPeriod> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/spatialai/stad/v2/core/NonConvexAggregationPeriod> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/spatialai/stad/v2/core/AggregationPeriod> .
+# 
+# http://purl.org/spatialai/stad/v2/core/ObservationalDataPoint
+<http://purl.org/spatialai/stad/v2/core/ObservationalDataPoint> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/spatialai/stad/v2/core/ObservationalDataPoint> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/spatialai/stad/v2/core/DataPoint> .
+# 
+# http://purl.org/spatialai/stad/v2/core/Parameter
+<http://purl.org/spatialai/stad/v2/core/Parameter> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/spatialai/stad/v2/core/Parameter> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> "http://ontologydesignpatterns.org/wiki/images/4/41/WOP2016_paper_07.pdf"^^<http://www.w3.org/2001/XMLSchema#anyURI> .
+# 
+# http://purl.org/spatialai/stad/v2/core/ParameterSetting
+<http://purl.org/spatialai/stad/v2/core/ParameterSetting> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/spatialai/stad/v2/core/ParameterSetting> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid19 .
+_:genid19 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://purl.org/spatialai/stad/v2/core/Parameter> .
+_:genid19 <http://www.w3.org/2002/07/owl#onProperty> <http://purl.org/spatialai/stad/v2/core/specifiedBy> .
+_:genid19 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://purl.org/spatialai/stad/v2/core/ParameterSetting> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid20 .
+_:genid20 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.w3.org/2000/01/rdf-schema#Literal> .
+_:genid20 <http://www.w3.org/2002/07/owl#onProperty> <http://purl.org/spatialai/stad/v2/core/hasValue> .
+_:genid20 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://purl.org/spatialai/stad/v2/core/ParameterSetting> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> "http://ontologydesignpatterns.org/wiki/images/4/41/WOP2016_paper_07.pdf"^^<http://www.w3.org/2001/XMLSchema#anyURI> .
+# 
+# http://purl.org/spatialai/stad/v2/core/QualitativeDataPoint
+<http://purl.org/spatialai/stad/v2/core/QualitativeDataPoint> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/spatialai/stad/v2/core/QualitativeDataPoint> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/spatialai/stad/v2/core/DataPoint> .
+<http://purl.org/spatialai/stad/v2/core/QualitativeDataPoint> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid21 .
+_:genid21 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://purl.org/spatialai/stad/v2/core/QualitativeValue> .
+_:genid21 <http://www.w3.org/2002/07/owl#onProperty> <http://purl.org/spatialai/stad/v2/core/hasQualitativeValue> .
+_:genid21 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://purl.org/spatialai/stad/v2/core/QualitativeDataPoint> <http://www.w3.org/2002/07/owl#disjointWith> <http://purl.org/spatialai/stad/v2/core/QuantitativeDataPoint> .
+# 
+# http://purl.org/spatialai/stad/v2/core/QualitativeValue
+<http://purl.org/spatialai/stad/v2/core/QualitativeValue> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/spatialai/stad/v2/core/QualitativeValue> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/spatialai/stad/v2/core/DataValue> .
+# 
+# http://purl.org/spatialai/stad/v2/core/QualityKind
+<http://purl.org/spatialai/stad/v2/core/QualityKind> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# http://purl.org/spatialai/stad/v2/core/QuantitativeDataPoint
+<http://purl.org/spatialai/stad/v2/core/QuantitativeDataPoint> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/spatialai/stad/v2/core/QuantitativeDataPoint> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/spatialai/stad/v2/core/DataPoint> .
+<http://purl.org/spatialai/stad/v2/core/QuantitativeDataPoint> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid22 .
+_:genid22 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://purl.org/spatialai/stad/v2/core/QuantitativeValue> .
+_:genid22 <http://www.w3.org/2002/07/owl#onProperty> <http://purl.org/spatialai/stad/v2/core/hasQuantitativeValue> .
+_:genid22 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+# 
+# http://purl.org/spatialai/stad/v2/core/QuantitativeValue
+<http://purl.org/spatialai/stad/v2/core/QuantitativeValue> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/spatialai/stad/v2/core/QuantitativeValue> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/spatialai/stad/v2/core/DataValue> .
+# 
+# http://purl.org/spatialai/stad/v2/core/SpatialAggregateDataPoint
+<http://purl.org/spatialai/stad/v2/core/SpatialAggregateDataPoint> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/spatialai/stad/v2/core/SpatialAggregateDataPoint> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/spatialai/stad/v2/core/StatisticalAggregateDataPoint> .
+<http://purl.org/spatialai/stad/v2/core/SpatialAggregateDataPoint> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid23 .
+_:genid23 <http://www.w3.org/2002/07/owl#cardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid23 <http://www.w3.org/2002/07/owl#onProperty> <http://purl.org/spatialai/stad/v2/core/hasSpatialCoverage> .
+_:genid23 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://purl.org/spatialai/stad/v2/core/SpatialAggregateDataPoint> <http://www.w3.org/2000/01/rdf-schema#comment> "All quantities that are aggregated over space"@en .
+# 
+# http://purl.org/spatialai/stad/v2/core/SpatialCoverage
+<http://purl.org/spatialai/stad/v2/core/SpatialCoverage> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# http://purl.org/spatialai/stad/v2/core/SpatialResolution
+<http://purl.org/spatialai/stad/v2/core/SpatialResolution> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/spatialai/stad/v2/core/SpatialResolution> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid24 .
+_:genid24 <http://www.w3.org/2002/07/owl#onClass> <http://purl.org/spatialai/stad/v2/core/SpatialResolutionKind> .
+_:genid24 <http://www.w3.org/2002/07/owl#maxQualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid24 <http://www.w3.org/2002/07/owl#onProperty> <http://purl.org/spatialai/stad/v2/core/spatialResolutionKind> .
+_:genid24 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://purl.org/spatialai/stad/v2/core/SpatialResolution> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid25 .
+_:genid25 <http://www.w3.org/2002/07/owl#maxCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid25 <http://www.w3.org/2002/07/owl#onProperty> <http://purl.org/spatialai/stad/v2/core/spatialResolutionValue> .
+_:genid25 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+# 
+# http://purl.org/spatialai/stad/v2/core/SpatialResolutionKind
+<http://purl.org/spatialai/stad/v2/core/SpatialResolutionKind> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/spatialai/stad/v2/core/SpatialResolutionKind> <http://www.w3.org/2002/07/owl#equivalentClass> _:genid26 .
+_:genid26 <http://www.w3.org/2002/07/owl#oneOf> _:genid32 .
+_:genid32 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid31 .
+_:genid31 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid30 .
+_:genid30 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid29 .
+_:genid29 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid28 .
+_:genid28 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid27 .
+_:genid27 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid27 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://purl.org/spatialai/stad/v2/core/totalSpacing> .
+_:genid27 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid28 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://purl.org/spatialai/stad/v2/core/pixelSize> .
+_:genid28 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid29 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://purl.org/spatialai/stad/v2/core/minimumSpacing> .
+_:genid29 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid30 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://purl.org/spatialai/stad/v2/core/meanSpacing> .
+_:genid30 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid31 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://purl.org/spatialai/stad/v2/core/maximumSpacing> .
+_:genid31 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid32 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://purl.org/spatialai/stad/v2/core/coverage> .
+_:genid32 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid26 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# http://purl.org/spatialai/stad/v2/core/SpatioTemporalAggregateDataPoint
+<http://purl.org/spatialai/stad/v2/core/SpatioTemporalAggregateDataPoint> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/spatialai/stad/v2/core/SpatioTemporalAggregateDataPoint> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid33 .
+_:genid33 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid33 <http://www.w3.org/2002/07/owl#intersectionOf> _:genid35 .
+_:genid35 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid34 .
+_:genid34 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid34 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://purl.org/spatialai/stad/v2/core/TemporalAggregateDataPoint> .
+_:genid34 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid35 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://purl.org/spatialai/stad/v2/core/SpatialAggregateDataPoint> .
+_:genid35 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+<http://purl.org/spatialai/stad/v2/core/SpatioTemporalAggregateDataPoint> <http://www.w3.org/2000/01/rdf-schema#comment> "All quantities that are aggregated over both space and time"@en .
+# 
+# http://purl.org/spatialai/stad/v2/core/StatisticalAggregateDataPoint
+<http://purl.org/spatialai/stad/v2/core/StatisticalAggregateDataPoint> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/spatialai/stad/v2/core/StatisticalAggregateDataPoint> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/spatialai/stad/v2/core/ComputationalDataPoint> .
+<http://purl.org/spatialai/stad/v2/core/StatisticalAggregateDataPoint> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid36 .
+_:genid36 <http://www.w3.org/2002/07/owl#maxCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid36 <http://www.w3.org/2002/07/owl#onProperty> <http://purl.org/spatialai/stad/v2/core/hasAggregationPeriod> .
+_:genid36 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://purl.org/spatialai/stad/v2/core/StatisticalAggregateDataPoint> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid37 .
+_:genid37 <http://www.w3.org/2002/07/owl#maxCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid37 <http://www.w3.org/2002/07/owl#onProperty> <http://purl.org/spatialai/stad/v2/core/hasSpatialCoverage> .
+_:genid37 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://purl.org/spatialai/stad/v2/core/StatisticalAggregateDataPoint> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid38 .
+_:genid38 <http://www.w3.org/2002/07/owl#maxCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid38 <http://www.w3.org/2002/07/owl#onProperty> <http://purl.org/spatialai/stad/v2/core/hasTemporalCoverage> .
+_:genid38 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://purl.org/spatialai/stad/v2/core/StatisticalAggregateDataPoint> <http://www.w3.org/2000/01/rdf-schema#comment> "All quantities that are the statistical summary of a base quantity"@en .
+# 
+# http://purl.org/spatialai/stad/v2/core/TemporalAggregateDataPoint
+<http://purl.org/spatialai/stad/v2/core/TemporalAggregateDataPoint> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/spatialai/stad/v2/core/TemporalAggregateDataPoint> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/spatialai/stad/v2/core/StatisticalAggregateDataPoint> .
+<http://purl.org/spatialai/stad/v2/core/TemporalAggregateDataPoint> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid39 .
+_:genid39 <http://www.w3.org/2002/07/owl#cardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid39 <http://www.w3.org/2002/07/owl#onProperty> <http://purl.org/spatialai/stad/v2/core/hasAggregationPeriod> .
+_:genid39 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://purl.org/spatialai/stad/v2/core/TemporalAggregateDataPoint> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid40 .
+_:genid40 <http://www.w3.org/2002/07/owl#cardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid40 <http://www.w3.org/2002/07/owl#onProperty> <http://purl.org/spatialai/stad/v2/core/hasTemporalCoverage> .
+_:genid40 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://purl.org/spatialai/stad/v2/core/TemporalAggregateDataPoint> <http://www.w3.org/2000/01/rdf-schema#comment> "All quantities that are aggregated over time"@en .
+# 
+# http://purl.org/spatialai/stad/v2/core/TemporalCoverage
+<http://purl.org/spatialai/stad/v2/core/TemporalCoverage> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Individuals
+# #
+# #################################################################
+# 
+# 
+# http://purl.org/spatialai/stad/v2/core/ArithmeticMeanCalculation
+<http://purl.org/spatialai/stad/v2/core/ArithmeticMeanCalculation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://purl.org/spatialai/stad/v2/core/ArithmeticMeanCalculation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spatialai/stad/v2/core/AverageCalculationDataTransformation> .
+# 
+# http://purl.org/spatialai/stad/v2/core/GeometricMeanCalculation
+<http://purl.org/spatialai/stad/v2/core/GeometricMeanCalculation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://purl.org/spatialai/stad/v2/core/GeometricMeanCalculation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spatialai/stad/v2/core/AverageCalculationDataTransformation> .
+# 
+# http://purl.org/spatialai/stad/v2/core/MaximumCalculation
+<http://purl.org/spatialai/stad/v2/core/MaximumCalculation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://purl.org/spatialai/stad/v2/core/MaximumCalculation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spatialai/stad/v2/core/ExtremumCalculationDataTransformation> .
+# 
+# http://purl.org/spatialai/stad/v2/core/MinimumCalculation
+<http://purl.org/spatialai/stad/v2/core/MinimumCalculation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://purl.org/spatialai/stad/v2/core/MinimumCalculation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spatialai/stad/v2/core/ExtremumCalculationDataTransformation> .
+# 
+# http://purl.org/spatialai/stad/v2/core/ModeCalculation
+<http://purl.org/spatialai/stad/v2/core/ModeCalculation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://purl.org/spatialai/stad/v2/core/ModeCalculation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spatialai/stad/v2/core/AverageCalculationDataTransformation> .
+# 
+# http://purl.org/spatialai/stad/v2/core/coverage
+<http://purl.org/spatialai/stad/v2/core/coverage> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+# 
+# http://purl.org/spatialai/stad/v2/core/maximumSpacing
+<http://purl.org/spatialai/stad/v2/core/maximumSpacing> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+# 
+# http://purl.org/spatialai/stad/v2/core/meanSpacing
+<http://purl.org/spatialai/stad/v2/core/meanSpacing> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+# 
+# http://purl.org/spatialai/stad/v2/core/minimumSpacing
+<http://purl.org/spatialai/stad/v2/core/minimumSpacing> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+# 
+# http://purl.org/spatialai/stad/v2/core/pixelSize
+<http://purl.org/spatialai/stad/v2/core/pixelSize> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+# 
+# http://purl.org/spatialai/stad/v2/core/totalSpacing
+<http://purl.org/spatialai/stad/v2/core/totalSpacing> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+# 
+# Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/

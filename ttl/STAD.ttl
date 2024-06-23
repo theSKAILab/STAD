@@ -1,0 +1,670 @@
+@prefix : <http://purl.org/spatialai/stad/v2/core/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix geo: <http://www.opengis.net/ont/geosparql#> .
+@prefix mls: <http://www.w3.org/ns/mls#> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sou: <http://qudt.org/vocab/sou/> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix greg: <http://www.w3.org/ns/time/gregorian#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qkdv: <http://qudt.org/vocab/dimensionvector/> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix stad: <http://purl.org/spatialai/stad/v2/core/> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix vaem: <http://www.linkedmodel.org/schema/vaem#> .
+@prefix voag: <http://voag.linkedmodel.org/schema/voag#> .
+@prefix dtype: <http://www.linkedmodel.org/schema/dtype#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix qudt.type: <http://qudt.org/vocab/type/> .
+@prefix quantitykind: <http://qudt.org/vocab/quantitykind/> .
+@base <http://purl.org/spatialai/stad/v2/core/> .
+
+<http://purl.org/spatialai/stad/v2/core/> rdf:type owl:Ontology ;
+                                           owl:versionIRI <http://purl.org/spatialai/stad/v2/core/> ;
+                                           owl:imports <http://www.w3.org/2006/time> ,
+                                                       <https://raw.githubusercontent.com/w3c/sdw/gh-pages/time-aggregates/rdf/time-agg.ttl> ;
+                                           dcterms:created "2022-06-12"^^xsd:date ;
+                                           dcterms:creator "Kate Beard - https://orcid.org/0000-0002-7703-0270"@en ,
+                                                           "Kingsley Wiafe-Kwakye - https://orcid.org/0009-0007-3741-3721"@en ,
+                                                           "Torsten Hahmann - http://orcid.org/0000-0002-5331-5052"@en ;
+                                           dcterms:description "STAD provides syntax for describing the spatial and temporal characteristics of aggregate quantities."@en ;
+                                           dcterms:identifier "http://purl.org/spatialai/stad/v2/core>"@en ;
+                                           dcterms:issued "2022-06-12"^^xsd:date ;
+                                           dcterms:license "This work is distributed under a Creative Commons Attribution License (https://creativecommons.org/licenses/by/4.0/)."@en ;
+                                           dcterms:modified "2024-05-30"^^xsd:date ;
+                                           dcterms:publisher "Spatial Knowledge and Artificial Intelligence (SKAI) Lab, University of Maine"@en ;
+                                           dcterms:subject "Aggregate data" ,
+                                                           "Spatial aggregate data" ,
+                                                           "Temporal aggregate data" ;
+                                           dcterms:title "Spatial and Temporal Aggregate Data (STAD) Ontology Design Pattern"@en ;
+                                           owl:versionInfo "2.0"@en .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/terms/created
+dcterms:created rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/creator
+dcterms:creator rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/description
+dcterms:description rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/identifier
+dcterms:identifier rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/issued
+dcterms:issued rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/license
+dcterms:license rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/modified
+dcterms:modified rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/publisher
+dcterms:publisher rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/subject
+dcterms:subject rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/title
+dcterms:title rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#definition
+skos:definition rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://purl.org/spatialai/stad/v2/core/containsDataPoint
+stad:containsDataPoint rdf:type owl:ObjectProperty ;
+                       rdfs:domain stad:DataSet ;
+                       rdfs:range stad:DataPoint .
+
+
+###  http://purl.org/spatialai/stad/v2/core/executes
+stad:executes rdf:type owl:ObjectProperty ;
+              rdfs:domain stad:AlgorithmExecution ;
+              rdfs:range stad:Implementation ;
+              rdfs:isDefinedBy "http://ontologydesignpatterns.org/wiki/images/4/41/WOP2016_paper_07.pdf"^^xsd:anyURI .
+
+
+###  http://purl.org/spatialai/stad/v2/core/generatedBy
+stad:generatedBy rdf:type owl:ObjectProperty ;
+                 rdfs:domain owl:Thing ;
+                 rdfs:range stad:AlgorithmExecution ;
+                 rdfs:comment "Links anything that is generated by an Algorithm to the specific AlgorithmExecution that was used"@en .
+
+
+###  http://purl.org/spatialai/stad/v2/core/hasAggregationPeriod
+stad:hasAggregationPeriod rdf:type owl:ObjectProperty ;
+                          rdfs:domain stad:StatisticalAggregateDataPoint ;
+                          rdfs:range stad:AggregationPeriod .
+
+
+###  http://purl.org/spatialai/stad/v2/core/hasBaseData
+stad:hasBaseData rdf:type owl:ObjectProperty .
+
+
+###  http://purl.org/spatialai/stad/v2/core/hasBaseDataPoint
+stad:hasBaseDataPoint rdf:type owl:ObjectProperty ;
+                      rdfs:domain stad:ComputationalDataPoint ;
+                      rdfs:range stad:DataPoint ;
+                      owl:propertyChainAxiom ( stad:hasBaseDataSet
+                                               stad:containsDataPoint
+                                             ) .
+
+
+###  http://purl.org/spatialai/stad/v2/core/hasBaseDataSet
+stad:hasBaseDataSet rdf:type owl:ObjectProperty ;
+                    rdfs:domain stad:ComputationalDataPoint ;
+                    rdfs:range stad:DataSet .
+
+
+###  http://purl.org/spatialai/stad/v2/core/hasDataSetDescription
+stad:hasDataSetDescription rdf:type owl:ObjectProperty ;
+                           rdfs:domain stad:DataSet ;
+                           rdfs:range stad:DataSetDescription .
+
+
+###  http://purl.org/spatialai/stad/v2/core/hasDataValue
+stad:hasDataValue rdf:type owl:ObjectProperty ;
+                  rdfs:domain stad:DataPoint ;
+                  rdfs:range stad:DataValue .
+
+
+###  http://purl.org/spatialai/stad/v2/core/hasExtent
+stad:hasExtent rdf:type owl:ObjectProperty ;
+               owl:inverseOf stad:isExtentOf ;
+               rdfs:domain stad:AggregationPeriod ;
+               rdfs:range time:Interval .
+
+
+###  http://purl.org/spatialai/stad/v2/core/hasInput
+stad:hasInput rdf:type owl:ObjectProperty ;
+              rdfs:isDefinedBy "http://ontologydesignpatterns.org/wiki/images/4/41/WOP2016_paper_07.pdf"^^xsd:anyURI .
+
+
+###  http://purl.org/spatialai/stad/v2/core/hasInstant
+stad:hasInstant rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf time:hasPart ;
+                owl:inverseOf stad:instantPartOf ;
+                rdfs:range time:Instant .
+
+
+###  http://purl.org/spatialai/stad/v2/core/hasInterval
+stad:hasInterval rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf time:hasPart ;
+                 owl:inverseOf stad:intervalPartOf ;
+                 rdfs:range time:Interval .
+
+
+###  http://purl.org/spatialai/stad/v2/core/hasParameter
+stad:hasParameter rdf:type owl:ObjectProperty ;
+                  rdfs:domain stad:Implementation ;
+                  rdfs:range stad:Parameter ;
+                  rdfs:isDefinedBy "http://ontologydesignpatterns.org/wiki/images/4/41/WOP2016_paper_07.pdf"^^xsd:anyURI .
+
+
+###  http://purl.org/spatialai/stad/v2/core/hasQualitativeValue
+stad:hasQualitativeValue rdf:type owl:ObjectProperty ;
+                         rdfs:subPropertyOf stad:hasDataValue ;
+                         rdfs:domain stad:QualitativeDataPoint ;
+                         rdfs:range stad:QualitativeValue .
+
+
+###  http://purl.org/spatialai/stad/v2/core/hasQualityKind
+stad:hasQualityKind rdf:type owl:ObjectProperty ;
+                    rdfs:domain stad:DataPoint ;
+                    rdfs:range stad:QualityKind .
+
+
+###  http://purl.org/spatialai/stad/v2/core/hasQuantitativeValue
+stad:hasQuantitativeValue rdf:type owl:ObjectProperty ;
+                          rdfs:subPropertyOf stad:hasDataValue ;
+                          rdfs:domain stad:QuantitativeDataPoint ;
+                          rdfs:range stad:QuantitativeValue .
+
+
+###  http://purl.org/spatialai/stad/v2/core/hasSpatialCoverage
+stad:hasSpatialCoverage rdf:type owl:ObjectProperty ;
+                        owl:inverseOf stad:spatialCoverageOf ;
+                        rdfs:domain stad:StatisticalAggregateDataPoint ;
+                        rdfs:range stad:SpatialCoverage .
+
+
+###  http://purl.org/spatialai/stad/v2/core/hasSpatialResolution
+stad:hasSpatialResolution rdf:type owl:ObjectProperty ;
+                          rdfs:domain stad:DataSetDescription ;
+                          rdfs:range stad:SpatialResolution .
+
+
+###  http://purl.org/spatialai/stad/v2/core/hasTemporalCoverage
+stad:hasTemporalCoverage rdf:type owl:ObjectProperty ;
+                         owl:inverseOf stad:temporalCoverageOf ;
+                         rdfs:domain stad:StatisticalAggregateDataPoint ;
+                         rdfs:range stad:TemporalCoverage .
+
+
+###  http://purl.org/spatialai/stad/v2/core/hasTemporalResolution
+stad:hasTemporalResolution rdf:type owl:ObjectProperty ;
+                           rdfs:domain stad:DataSetDescription ;
+                           rdfs:range time:Duration .
+
+
+###  http://purl.org/spatialai/stad/v2/core/implements
+stad:implements rdf:type owl:ObjectProperty ;
+                rdfs:domain stad:Implementation ;
+                rdfs:range stad:Algorithm ;
+                rdfs:isDefinedBy "http://ontologydesignpatterns.org/wiki/images/4/41/WOP2016_paper_07.pdf"^^xsd:anyURI .
+
+
+###  http://purl.org/spatialai/stad/v2/core/instantPartOf
+stad:instantPartOf rdf:type owl:ObjectProperty ;
+                   rdfs:subPropertyOf time:isPartOf .
+
+
+###  http://purl.org/spatialai/stad/v2/core/intervalPartOf
+stad:intervalPartOf rdf:type owl:ObjectProperty ;
+                    rdfs:subPropertyOf time:isPartOf .
+
+
+###  http://purl.org/spatialai/stad/v2/core/isExtentOf
+stad:isExtentOf rdf:type owl:ObjectProperty .
+
+
+###  http://purl.org/spatialai/stad/v2/core/realizes
+stad:realizes rdf:type owl:ObjectProperty ;
+              rdfs:domain stad:AlgorithmExecution ;
+              rdfs:range stad:Algorithm ;
+              rdfs:isDefinedBy "http://ontologydesignpatterns.org/wiki/images/4/41/WOP2016_paper_07.pdf"^^xsd:anyURI .
+
+
+###  http://purl.org/spatialai/stad/v2/core/spatialCoverageOf
+stad:spatialCoverageOf rdf:type owl:ObjectProperty .
+
+
+###  http://purl.org/spatialai/stad/v2/core/spatialResolutionKind
+stad:spatialResolutionKind rdf:type owl:ObjectProperty ;
+                           rdfs:domain stad:SpatialResolution ;
+                           rdfs:range stad:SpatialResolutionKind .
+
+
+###  http://purl.org/spatialai/stad/v2/core/spatialResolutionValue
+stad:spatialResolutionValue rdf:type owl:ObjectProperty ;
+                            rdfs:domain stad:SpatialResolution ;
+                            rdfs:range stad:QuantitativeValue .
+
+
+###  http://purl.org/spatialai/stad/v2/core/specifiedBy
+stad:specifiedBy rdf:type owl:ObjectProperty ;
+                 rdfs:domain stad:ParameterSetting ;
+                 rdfs:range stad:Parameter ;
+                 rdfs:isDefinedBy "http://ontologydesignpatterns.org/wiki/images/4/41/WOP2016_paper_07.pdf"^^xsd:anyURI .
+
+
+###  http://purl.org/spatialai/stad/v2/core/temporalCoverageOf
+stad:temporalCoverageOf rdf:type owl:ObjectProperty .
+
+
+###  http://www.w3.org/2006/time#hasPart
+time:hasPart rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf dcterms:hasPart ,
+                                rdfs:member ;
+             owl:inverseOf time:isPartOf ;
+             rdfs:domain time:TemporalAggregate ;
+             rdfs:range time:TemporalEntity ;
+             rdfs:comment "Link to a temporal entity that is a part of this temporal aggregate" ;
+             rdfs:label "has a part" .
+
+
+###  http://www.w3.org/2006/time#isPartOf
+time:isPartOf rdf:type owl:ObjectProperty ;
+              rdfs:domain time:TemporalEntity ;
+              rdfs:range time:TemporalAggregate ;
+              rdfs:comment "Link to a temporal aggregate of which this temporal entity is a part" ;
+              rdfs:label "is a part of" .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://purl.org/spatialai/stad/v2/core/hasValue
+stad:hasValue rdf:type owl:DatatypeProperty .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://purl.org/spatialai/stad/v2/core/AggregationPeriod
+stad:AggregationPeriod rdf:type owl:Class ;
+                       rdfs:subClassOf time:TemporalAggregate ,
+                                       [ rdf:type owl:Restriction ;
+                                         owl:onProperty time:hasPart ;
+                                         owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                         owl:onClass time:TemporalEntity
+                                       ] ,
+                                       [ rdf:type owl:Restriction ;
+                                         owl:onProperty stad:hasExtent ;
+                                         owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                         owl:onClass time:ProperInterval
+                                       ] .
+
+
+###  http://purl.org/spatialai/stad/v2/core/Algorithm
+stad:Algorithm rdf:type owl:Class ;
+               rdfs:isDefinedBy "http://ontologydesignpatterns.org/wiki/images/4/41/WOP2016_paper_07.pdf"^^xsd:anyURI .
+
+
+###  http://purl.org/spatialai/stad/v2/core/AlgorithmExecution
+stad:AlgorithmExecution rdf:type owl:Class ;
+                        rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                          owl:onProperty stad:hasInput ;
+                                          owl:someValuesFrom stad:DataSet
+                                        ] ,
+                                        [ rdf:type owl:Restriction ;
+                                          owl:onProperty stad:hasInput ;
+                                          owl:someValuesFrom stad:ParameterSetting
+                                        ] ,
+                                        [ rdf:type owl:Restriction ;
+                                          owl:onProperty stad:realizes ;
+                                          owl:someValuesFrom stad:Algorithm
+                                        ] ;
+                        rdfs:isDefinedBy "http://ontologydesignpatterns.org/wiki/images/4/41/WOP2016_paper_07.pdf"^^xsd:anyURI .
+
+
+###  http://purl.org/spatialai/stad/v2/core/AverageCalculationDataTransformation
+stad:AverageCalculationDataTransformation rdf:type owl:Class ;
+                                          rdfs:subClassOf stad:DataTransformation .
+
+
+###  http://purl.org/spatialai/stad/v2/core/ComputationalDataPoint
+stad:ComputationalDataPoint rdf:type owl:Class ;
+                            rdfs:subClassOf stad:DataPoint ,
+                                            [ rdf:type owl:Restriction ;
+                                              owl:onProperty stad:generatedBy ;
+                                              owl:allValuesFrom stad:AlgorithmExecution
+                                            ] ,
+                                            [ rdf:type owl:Restriction ;
+                                              owl:onProperty stad:hasBaseData ;
+                                              owl:allValuesFrom stad:DataPoint
+                                            ] ,
+                                            [ rdf:type owl:Restriction ;
+                                              owl:onProperty stad:hasBaseDataSet ;
+                                              owl:allValuesFrom stad:DataSet
+                                            ] ;
+                            owl:disjointWith stad:ObservationalDataPoint .
+
+
+###  http://purl.org/spatialai/stad/v2/core/ComputationalPredictedDataPoint
+stad:ComputationalPredictedDataPoint rdf:type owl:Class ;
+                                     rdfs:subClassOf stad:ComputationalDataPoint ;
+                                     owl:disjointWith stad:StatisticalAggregateDataPoint .
+
+
+###  http://purl.org/spatialai/stad/v2/core/ConvexAggregationPeriod
+stad:ConvexAggregationPeriod rdf:type owl:Class ;
+                             rdfs:subClassOf stad:AggregationPeriod .
+
+
+###  http://purl.org/spatialai/stad/v2/core/Data
+stad:Data rdf:type owl:Class ;
+          rdfs:subClassOf stad:InformationEntity .
+
+
+###  http://purl.org/spatialai/stad/v2/core/DataPoint
+stad:DataPoint rdf:type owl:Class ;
+               rdfs:subClassOf stad:Data ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty stad:hasDataValue ;
+                                 owl:someValuesFrom stad:DataValue
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty stad:hasQualityKind ;
+                                 owl:someValuesFrom stad:QualityKind
+                               ] ;
+               owl:disjointWith stad:DataSet ;
+               rdfs:comment "super class for all data point categories"@en .
+
+
+###  http://purl.org/spatialai/stad/v2/core/DataSet
+stad:DataSet rdf:type owl:Class ;
+             rdfs:subClassOf stad:Data ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty stad:containsDataPoint ;
+                               owl:someValuesFrom stad:DataPoint
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty stad:hasDataSetDescription ;
+                               owl:someValuesFrom stad:DataSetDescription
+                             ] .
+
+
+###  http://purl.org/spatialai/stad/v2/core/DataSetDescription
+stad:DataSetDescription rdf:type owl:Class ;
+                        rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                          owl:onProperty stad:hasSpatialResolution ;
+                                          owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                        ] ,
+                                        [ rdf:type owl:Restriction ;
+                                          owl:onProperty stad:hasTemporalResolution ;
+                                          owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                        ] .
+
+
+###  http://purl.org/spatialai/stad/v2/core/DataTransformation
+stad:DataTransformation rdf:type owl:Class ;
+                        rdfs:subClassOf stad:Algorithm .
+
+
+###  http://purl.org/spatialai/stad/v2/core/DataValue
+stad:DataValue rdf:type owl:Class .
+
+
+###  http://purl.org/spatialai/stad/v2/core/ExtremumCalculationDataTransformation
+stad:ExtremumCalculationDataTransformation rdf:type owl:Class ;
+                                           rdfs:subClassOf stad:DataTransformation .
+
+
+###  http://purl.org/spatialai/stad/v2/core/Implementation
+stad:Implementation rdf:type owl:Class ;
+                    rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                      owl:onProperty stad:hasParameter ;
+                                      owl:someValuesFrom stad:Parameter
+                                    ] ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty stad:implements ;
+                                      owl:someValuesFrom stad:Algorithm
+                                    ] ;
+                    rdfs:isDefinedBy "http://ontologydesignpatterns.org/wiki/images/4/41/WOP2016_paper_07.pdf"^^xsd:anyURI .
+
+
+###  http://purl.org/spatialai/stad/v2/core/InformationEntity
+stad:InformationEntity rdf:type owl:Class .
+
+
+###  http://purl.org/spatialai/stad/v2/core/NonConvexAggregationPeriod
+stad:NonConvexAggregationPeriod rdf:type owl:Class ;
+                                rdfs:subClassOf stad:AggregationPeriod .
+
+
+###  http://purl.org/spatialai/stad/v2/core/ObservationalDataPoint
+stad:ObservationalDataPoint rdf:type owl:Class ;
+                            rdfs:subClassOf stad:DataPoint .
+
+
+###  http://purl.org/spatialai/stad/v2/core/Parameter
+stad:Parameter rdf:type owl:Class ;
+               rdfs:isDefinedBy "http://ontologydesignpatterns.org/wiki/images/4/41/WOP2016_paper_07.pdf"^^xsd:anyURI .
+
+
+###  http://purl.org/spatialai/stad/v2/core/ParameterSetting
+stad:ParameterSetting rdf:type owl:Class ;
+                      rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                        owl:onProperty stad:specifiedBy ;
+                                        owl:someValuesFrom stad:Parameter
+                                      ] ,
+                                      [ rdf:type owl:Restriction ;
+                                        owl:onProperty stad:hasValue ;
+                                        owl:someValuesFrom rdfs:Literal
+                                      ] ;
+                      rdfs:isDefinedBy "http://ontologydesignpatterns.org/wiki/images/4/41/WOP2016_paper_07.pdf"^^xsd:anyURI .
+
+
+###  http://purl.org/spatialai/stad/v2/core/QualitativeDataPoint
+stad:QualitativeDataPoint rdf:type owl:Class ;
+                          rdfs:subClassOf stad:DataPoint ,
+                                          [ rdf:type owl:Restriction ;
+                                            owl:onProperty stad:hasQualitativeValue ;
+                                            owl:someValuesFrom stad:QualitativeValue
+                                          ] ;
+                          owl:disjointWith stad:QuantitativeDataPoint .
+
+
+###  http://purl.org/spatialai/stad/v2/core/QualitativeValue
+stad:QualitativeValue rdf:type owl:Class ;
+                      rdfs:subClassOf stad:DataValue .
+
+
+###  http://purl.org/spatialai/stad/v2/core/QualityKind
+stad:QualityKind rdf:type owl:Class .
+
+
+###  http://purl.org/spatialai/stad/v2/core/QuantitativeDataPoint
+stad:QuantitativeDataPoint rdf:type owl:Class ;
+                           rdfs:subClassOf stad:DataPoint ,
+                                           [ rdf:type owl:Restriction ;
+                                             owl:onProperty stad:hasQuantitativeValue ;
+                                             owl:someValuesFrom stad:QuantitativeValue
+                                           ] .
+
+
+###  http://purl.org/spatialai/stad/v2/core/QuantitativeValue
+stad:QuantitativeValue rdf:type owl:Class ;
+                       rdfs:subClassOf stad:DataValue .
+
+
+###  http://purl.org/spatialai/stad/v2/core/SpatialAggregateDataPoint
+stad:SpatialAggregateDataPoint rdf:type owl:Class ;
+                               rdfs:subClassOf stad:StatisticalAggregateDataPoint ,
+                                               [ rdf:type owl:Restriction ;
+                                                 owl:onProperty stad:hasSpatialCoverage ;
+                                                 owl:cardinality "1"^^xsd:nonNegativeInteger
+                                               ] ;
+                               rdfs:comment "All quantities that are aggregated over space"@en .
+
+
+###  http://purl.org/spatialai/stad/v2/core/SpatialCoverage
+stad:SpatialCoverage rdf:type owl:Class .
+
+
+###  http://purl.org/spatialai/stad/v2/core/SpatialResolution
+stad:SpatialResolution rdf:type owl:Class ;
+                       rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                         owl:onProperty stad:spatialResolutionKind ;
+                                         owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                         owl:onClass stad:SpatialResolutionKind
+                                       ] ,
+                                       [ rdf:type owl:Restriction ;
+                                         owl:onProperty stad:spatialResolutionValue ;
+                                         owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                       ] .
+
+
+###  http://purl.org/spatialai/stad/v2/core/SpatialResolutionKind
+stad:SpatialResolutionKind rdf:type owl:Class ;
+                           owl:equivalentClass [ rdf:type owl:Class ;
+                                                 owl:oneOf ( stad:coverage
+                                                             stad:maximumSpacing
+                                                             stad:meanSpacing
+                                                             stad:minimumSpacing
+                                                             stad:pixelSize
+                                                             stad:totalSpacing
+                                                           )
+                                               ] .
+
+
+###  http://purl.org/spatialai/stad/v2/core/SpatioTemporalAggregateDataPoint
+stad:SpatioTemporalAggregateDataPoint rdf:type owl:Class ;
+                                      rdfs:subClassOf [ owl:intersectionOf ( stad:SpatialAggregateDataPoint
+                                                                             stad:TemporalAggregateDataPoint
+                                                                           ) ;
+                                                        rdf:type owl:Class
+                                                      ] ;
+                                      rdfs:comment "All quantities that are aggregated over both space and time"@en .
+
+
+###  http://purl.org/spatialai/stad/v2/core/StatisticalAggregateDataPoint
+stad:StatisticalAggregateDataPoint rdf:type owl:Class ;
+                                   rdfs:subClassOf stad:ComputationalDataPoint ,
+                                                   [ rdf:type owl:Restriction ;
+                                                     owl:onProperty stad:hasAggregationPeriod ;
+                                                     owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                                   ] ,
+                                                   [ rdf:type owl:Restriction ;
+                                                     owl:onProperty stad:hasSpatialCoverage ;
+                                                     owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                                   ] ,
+                                                   [ rdf:type owl:Restriction ;
+                                                     owl:onProperty stad:hasTemporalCoverage ;
+                                                     owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                                   ] ;
+                                   rdfs:comment "All quantities that are the statistical summary of a base quantity"@en .
+
+
+###  http://purl.org/spatialai/stad/v2/core/TemporalAggregateDataPoint
+stad:TemporalAggregateDataPoint rdf:type owl:Class ;
+                                rdfs:subClassOf stad:StatisticalAggregateDataPoint ,
+                                                [ rdf:type owl:Restriction ;
+                                                  owl:onProperty stad:hasAggregationPeriod ;
+                                                  owl:cardinality "1"^^xsd:nonNegativeInteger
+                                                ] ,
+                                                [ rdf:type owl:Restriction ;
+                                                  owl:onProperty stad:hasTemporalCoverage ;
+                                                  owl:cardinality "1"^^xsd:nonNegativeInteger
+                                                ] ;
+                                rdfs:comment "All quantities that are aggregated over time"@en .
+
+
+###  http://purl.org/spatialai/stad/v2/core/TemporalCoverage
+stad:TemporalCoverage rdf:type owl:Class .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://purl.org/spatialai/stad/v2/core/ArithmeticMeanCalculation
+stad:ArithmeticMeanCalculation rdf:type owl:NamedIndividual ,
+                                        stad:AverageCalculationDataTransformation .
+
+
+###  http://purl.org/spatialai/stad/v2/core/GeometricMeanCalculation
+stad:GeometricMeanCalculation rdf:type owl:NamedIndividual ,
+                                       stad:AverageCalculationDataTransformation .
+
+
+###  http://purl.org/spatialai/stad/v2/core/MaximumCalculation
+stad:MaximumCalculation rdf:type owl:NamedIndividual ,
+                                 stad:ExtremumCalculationDataTransformation .
+
+
+###  http://purl.org/spatialai/stad/v2/core/MinimumCalculation
+stad:MinimumCalculation rdf:type owl:NamedIndividual ,
+                                 stad:ExtremumCalculationDataTransformation .
+
+
+###  http://purl.org/spatialai/stad/v2/core/ModeCalculation
+stad:ModeCalculation rdf:type owl:NamedIndividual ,
+                              stad:AverageCalculationDataTransformation .
+
+
+###  http://purl.org/spatialai/stad/v2/core/coverage
+stad:coverage rdf:type owl:NamedIndividual .
+
+
+###  http://purl.org/spatialai/stad/v2/core/maximumSpacing
+stad:maximumSpacing rdf:type owl:NamedIndividual .
+
+
+###  http://purl.org/spatialai/stad/v2/core/meanSpacing
+stad:meanSpacing rdf:type owl:NamedIndividual .
+
+
+###  http://purl.org/spatialai/stad/v2/core/minimumSpacing
+stad:minimumSpacing rdf:type owl:NamedIndividual .
+
+
+###  http://purl.org/spatialai/stad/v2/core/pixelSize
+stad:pixelSize rdf:type owl:NamedIndividual .
+
+
+###  http://purl.org/spatialai/stad/v2/core/totalSpacing
+stad:totalSpacing rdf:type owl:NamedIndividual .
+
+
+###  Generated by the OWL API (version 4.5.26.2023-07-17T20:34:13Z) https://github.com/owlcs/owlapi
