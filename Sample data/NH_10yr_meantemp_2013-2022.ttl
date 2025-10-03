@@ -1,0 +1,58 @@
+@prefix ex: <http://stad.spatialai.org/example/> .
+@prefix stad: <http://purl.org/spatialai/stad/v2/core/>.
+@prefix dfds: <http://spatialai.org/digitalforest/datasets/core/>.
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix geo: <http://www.opengis.net/ont/geosparql#>.
+
+
+ex:NH_MeanTemp2013-2022 a stad:SpatioTemporalAggregateDatapoint;
+stad:hasQualityKind ex:AnnualMeanTemperature;
+stad:generatedBy ex:ArithmeticMeanExecution_NH_2013-2022;
+stad:hasTemporalCoverage ex:TimeInterval_2013-2022;
+stad:hasAggregationPeriod ex:NH_MeanTemp2013-2022_AggregationPeriod;
+stad:hasSpatialCoverage ex:NewHampshire;
+stad:hasBaseDataset ex:Dataset_2013-2022;
+stad:hasQuantitativeValue [qudt:numericValue "4.06"^^xsd:floa;
+                           qudt:unit unit:DEG_C].
+
+ex:NH_MeanTemp2013-2022_AggregationPeriod a stad:ConvexAggregationPeriod;
+stad:hasExtent ex:NH_MeanTemp2013-2022_AggregationPeriodExtent.
+
+ex:NH_MeanTemp2013-2022_AggregationPeriodExtent a time:ProperInterval;
+time:hasBeginning [a time:Instant;
+            time:inXSDDateTimeStamp "2013-01-01T00:00:00-05:00"^^xsd:dateTimeStamp];
+time:hasEnd [a time:Instant;
+            time:inXSDDateTimeStamp "2022-12-31T23:00:00-05:00"^^xsd:dateTimeStamp].
+
+ex:ArithmeticMeanExecution_NH_2013-2022 a ex:PandasArithmeticMeanExecution;
+    stad:hasInput ex:Dataset_2013-2022.
+
+ex:Dataset_2013-2022 stad:hasDatasetDescription ex:DatasetDescription;
+stad:containsDatapoint
+                     ex:2043_2013,
+                     ex:2043_2014,
+                     ex:2043_2015,
+                     ex:2043_2016,
+                     ex:2043_2017,
+                     ex:2043_2018,
+                     ex:2043_2019,
+                     ex:2043_2020,
+                     ex:2043_2021,
+                     ex:2043_2022,
+                     ex:2069_2013,
+                     ex:2069_2014,
+                     ex:2069_2015,
+                     ex:2069_2016,
+                     ex:2069_2017,
+                     ex:2069_2018,
+                     ex:2069_2019,
+                     ex:2069_2020,
+                     ex:2069_2021,
+                     ex:2069_2022.
+

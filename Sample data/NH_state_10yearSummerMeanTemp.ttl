@@ -1,0 +1,39 @@
+@prefix ex: <http://stad.spatialai.org/example/> .
+@prefix stad: <http://purl.org/spatialai/stad/v2/core/>.
+@prefix dfds: <http://spatialai.org/digitalforest/datasets/core/>.
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix geo: <http://www.opengis.net/ont/geosparql#>.
+
+
+ex:NH_SummerMeanTemp2013-2022 a stad:SpatioTemporalAggregateDatapoint;
+stad:hasQualityKind ex:SummerMeanTemperature;
+stad:generatedBy ex:ArithmeticMeanExecutionSummer_2013-2022;
+stad:hasTemporalCoverage ex:TimeInterval_2013-2022;
+stad:hasAggregationPeriod ex:SummerAggregate2013-2022;
+stad:hasSpatialCoverage ex:NewHampshire;
+stad:hasBaseDataset ex:DatasetSummer_NH_2013-2022;
+stad:hasQuantitativeValue [qudt:numericValue "16.68"^^xsd:float;
+                           qudt:unit unit:DEG_C].
+
+ex:ArithmeticMeanExecutionSummer_2013-2022 a ex:PandasArithmeticMeanExecution;
+    stad:hasInput ex:DatasetSummer_NH_2013-2022.
+
+ex:DatasetSummer_NH_2013-2022 stad:hasDatasetDescription ex:DatasetDescription;
+stad:containsDatapoint
+                     ex:NH_SummerMeanTemp2013,
+                     ex:NH_SummerMeanTemp2014,
+                     ex:NH_SummerMeanTemp2015,
+                     ex:NH_SummerMeanTemp2016,
+                     ex:NH_SummerMeanTemp2017,
+                     ex:NH_SummerMeanTemp2018,
+                     ex:NH_SummerMeanTemp2019,
+                     ex:NH_SummerMeanTemp2020,
+                     ex:NH_SummerMeanTemp2021,
+                     ex:NH_SummerMeanTemp2022.
+

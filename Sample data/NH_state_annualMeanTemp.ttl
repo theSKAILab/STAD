@@ -1,0 +1,283 @@
+@prefix ex: <http://stad.spatialai.org/example/> .
+@prefix stad: <http://purl.org/spatialai/stad/v2/core/>.
+@prefix dfds: <http://spatialai.org/digitalforest/datasets/core/>.
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix geo: <http://www.opengis.net/ont/geosparql#>.
+
+
+ex:NH_MeanTemp2013 a stad:SpatioTemporalAggregateDatapoint;
+stad:hasQualityKind ex:AnnualMeanTemperature;
+stad:generatedBy ex:ArithmeticMeanExecutionAnnual_NH_2013;
+stad:hasTemporalCoverage ex:TimeInterval_2013;
+stad:hasAggregationPeriod ex:NH_MeanTemp2013_AggregationPeriod;
+stad:hasSpatialCoverage ex:NewHampshire;
+stad:hasBaseDataset ex:NH_Dataset_2013;
+stad:hasQuantitativeValue [qudt:numericValue "5.87"^^xsd:floa;
+                           qudt:unit unit:DEG_C].
+
+ex:NH_MeanTemp2013_AggregationPeriod a stad:ConvexAggregationPeriod;
+stad:hasExtent ex:NH_MeanTemp2013_AggregationPeriodExtent.
+
+ex:NH_MeanTemp2013_AggregationPeriodExtent a time:ProperInterval;
+time:hasBeginning [a time:Instant;
+            time:inXSDDateTimeStamp "2013-01-01T00:00:00-05:00"^^xsd:dateTimeStamp];
+time:hasEnd [a time:Instant;
+            time:inXSDDateTimeStamp "2013-12-31T23:00:00-05:00"^^xsd:dateTimeStamp].
+
+ex:ArithmeticMeanExecutionAnnual_NH_2013 a ex:PandasArithmeticMeanExecution;
+    stad:hasInput ex:NH_Dataset_2013.
+
+ex:NH_Dataset_2013 stad:hasDatasetDescription ex:DatasetDescription;
+stad:containsDatapoint
+                     ex:2043_2013,
+                     ex:2069_2013.
+
+ex:NH_MeanTemp2014 a stad:SpatioTemporalAggregateDatapoint;
+stad:hasQualityKind ex:AnnualMeanTemperature;
+stad:generatedBy ex:ArithmeticMeanExecutionAnnual_NH_2014;
+stad:hasTemporalCoverage ex:TimeInterval_2014;
+stad:hasAggregationPeriod ex:NH_MeanTemp2014_AggregationPeriod;
+stad:hasSpatialCoverage ex:NewHampshire;
+stad:hasBaseDataset ex:NH_Dataset_2014;
+stad:hasQuantitativeValue [qudt:numericValue "6.12"^^xsd:floa;
+                           qudt:unit unit:DEG_C].
+
+ex:NH_MeanTemp2014_AggregationPeriod a stad:ConvexAggregationPeriod;
+stad:hasExtent ex:NH_MeanTemp2014_AggregationPeriodExtent.
+
+ex:NH_MeanTemp2014_AggregationPeriodExtent a time:ProperInterval;
+time:hasBeginning [a time:Instant;
+            time:inXSDDateTimeStamp "2014-01-01T00:00:00-05:00"^^xsd:dateTimeStamp];
+time:hasEnd [a time:Instant;
+            time:inXSDDateTimeStamp "2014-12-31T23:00:00-05:00"^^xsd:dateTimeStamp].
+
+ex:ArithmeticMeanExecutionAnnual_NH_2014 a ex:PandasArithmeticMeanExecution;
+    stad:hasInput ex:NH_Dataset_2014.
+
+ex:NH_Dataset_2014 stad:hasDatasetDescription ex:DatasetDescription;
+stad:containsDatapoint
+                     ex:2043_2014,
+                     ex:2069_2014.
+
+ex:NH_MeanTemp2015 a stad:SpatioTemporalAggregateDatapoint;
+stad:hasQualityKind ex:AnnualMeanTemperature;
+stad:generatedBy ex:ArithmeticMeanExecutionAnnual_NH_2015;
+stad:hasTemporalCoverage ex:TimeInterval_2015;
+stad:hasAggregationPeriod ex:NH_MeanTemp2015_AggregationPeriod;
+stad:hasSpatialCoverage ex:NewHampshire;
+stad:hasBaseDataset ex:NH_Dataset_2015;
+stad:hasQuantitativeValue [qudt:numericValue "5.92"^^xsd:floa;
+                           qudt:unit unit:DEG_C].
+
+ex:NH_MeanTemp2015_AggregationPeriod a stad:ConvexAggregationPeriod;
+stad:hasExtent ex:NH_MeanTemp2015_AggregationPeriodExtent.
+
+ex:NH_MeanTemp2015_AggregationPeriodExtent a time:ProperInterval;
+time:hasBeginning [a time:Instant;
+            time:inXSDDateTimeStamp "2015-01-01T00:00:00-05:00"^^xsd:dateTimeStamp];
+time:hasEnd [a time:Instant;
+            time:inXSDDateTimeStamp "2015-12-31T23:00:00-05:00"^^xsd:dateTimeStamp].
+
+ex:ArithmeticMeanExecutionAnnual_NH_2015 a ex:PandasArithmeticMeanExecution;
+    stad:hasInput ex:NH_Dataset_2015.
+
+ex:NH_Dataset_2015 stad:hasDatasetDescription ex:DatasetDescription;
+stad:containsDatapoint
+                     ex:2043_2015,
+                     ex:2069_2015.
+
+ex:NH_MeanTemp2016 a stad:SpatioTemporalAggregateDatapoint;
+stad:hasQualityKind ex:AnnualMeanTemperature;
+stad:generatedBy ex:ArithmeticMeanExecutionAnnual_NH_2016;
+stad:hasTemporalCoverage ex:TimeInterval_2016;
+stad:hasAggregationPeriod ex:NH_MeanTemp2016_AggregationPeriod;
+stad:hasSpatialCoverage ex:NewHampshire;
+stad:hasBaseDataset ex:NH_Dataset_2016;
+stad:hasQuantitativeValue [qudt:numericValue "4.99"^^xsd:floa;
+                           qudt:unit unit:DEG_C].
+
+ex:NH_MeanTemp2016_AggregationPeriod a stad:ConvexAggregationPeriod;
+stad:hasExtent ex:NH_MeanTemp2016_AggregationPeriodExtent.
+
+ex:NH_MeanTemp2016_AggregationPeriodExtent a time:ProperInterval;
+time:hasBeginning [a time:Instant;
+            time:inXSDDateTimeStamp "2016-01-01T00:00:00-05:00"^^xsd:dateTimeStamp];
+time:hasEnd [a time:Instant;
+            time:inXSDDateTimeStamp "2016-12-31T23:00:00-05:00"^^xsd:dateTimeStamp].
+
+ex:ArithmeticMeanExecutionAnnual_NH_2016 a ex:PandasArithmeticMeanExecution;
+    stad:hasInput ex:NH_Dataset_2016.
+
+ex:NH_Dataset_2016 stad:hasDatasetDescription ex:DatasetDescription;
+stad:containsDatapoint
+                     ex:2043_2016,
+                     ex:2069_2016.
+
+ex:NH_MeanTemp2017 a stad:SpatioTemporalAggregateDatapoint;
+stad:hasQualityKind ex:AnnualMeanTemperature;
+stad:generatedBy ex:ArithmeticMeanExecutionAnnual_NH_2017;
+stad:hasTemporalCoverage ex:TimeInterval_2017;
+stad:hasAggregationPeriod ex:NH_MeanTemp2017_AggregationPeriod;
+stad:hasSpatialCoverage ex:NewHampshire;
+stad:hasBaseDataset ex:NH_Dataset_2017;
+stad:hasQuantitativeValue [qudt:numericValue "5.38"^^xsd:floa;
+                           qudt:unit unit:DEG_C].
+
+ex:NH_MeanTemp2017_AggregationPeriod a stad:ConvexAggregationPeriod;
+stad:hasExtent ex:NH_MeanTemp2017_AggregationPeriodExtent.
+
+ex:NH_MeanTemp2017_AggregationPeriodExtent a time:ProperInterval;
+time:hasBeginning [a time:Instant;
+            time:inXSDDateTimeStamp "2017-01-01T00:00:00-05:00"^^xsd:dateTimeStamp];
+time:hasEnd [a time:Instant;
+            time:inXSDDateTimeStamp "2017-12-31T23:00:00-05:00"^^xsd:dateTimeStamp].
+
+ex:ArithmeticMeanExecutionAnnual_NH_2017 a ex:PandasArithmeticMeanExecution;
+    stad:hasInput ex:NH_Dataset_2017.
+
+ex:NH_Dataset_2017 stad:hasDatasetDescription ex:DatasetDescription;
+stad:containsDatapoint
+                     ex:2043_2017,
+                     ex:2069_2017.
+
+ex:NH_MeanTemp2018 a stad:SpatioTemporalAggregateDatapoint;
+stad:hasQualityKind ex:AnnualMeanTemperature;
+stad:generatedBy ex:ArithmeticMeanExecutionAnnual_NH_2018;
+stad:hasTemporalCoverage ex:TimeInterval_2018;
+stad:hasAggregationPeriod ex:NH_MeanTemp2018_AggregationPeriod;
+stad:hasSpatialCoverage ex:NewHampshire;
+stad:hasBaseDataset ex:NH_Dataset_2018;
+stad:hasQuantitativeValue [qudt:numericValue "5.98"^^xsd:floa;
+                           qudt:unit unit:DEG_C].
+
+ex:NH_MeanTemp2018_AggregationPeriod a stad:ConvexAggregationPeriod;
+stad:hasExtent ex:NH_MeanTemp2018_AggregationPeriodExtent.
+
+ex:NH_MeanTemp2018_AggregationPeriodExtent a time:ProperInterval;
+time:hasBeginning [a time:Instant;
+            time:inXSDDateTimeStamp "2018-01-01T00:00:00-05:00"^^xsd:dateTimeStamp];
+time:hasEnd [a time:Instant;
+            time:inXSDDateTimeStamp "2018-12-31T23:00:00-05:00"^^xsd:dateTimeStamp].
+
+ex:ArithmeticMeanExecutionAnnual_NH_2018 a ex:PandasArithmeticMeanExecution;
+    stad:hasInput ex:NH_Dataset_2018.
+
+ex:NH_Dataset_2018 stad:hasDatasetDescription ex:DatasetDescription;
+stad:containsDatapoint
+                     ex:2043_2018,
+                     ex:2069_2018.
+
+ex:NH_MeanTemp2019 a stad:SpatioTemporalAggregateDatapoint;
+stad:hasQualityKind ex:AnnualMeanTemperature;
+stad:generatedBy ex:ArithmeticMeanExecutionAnnual_NH_2019;
+stad:hasTemporalCoverage ex:TimeInterval_2019;
+stad:hasAggregationPeriod ex:NH_MeanTemp2019_AggregationPeriod;
+stad:hasSpatialCoverage ex:NewHampshire;
+stad:hasBaseDataset ex:NH_Dataset_2019;
+stad:hasQuantitativeValue [qudt:numericValue "-0.98"^^xsd:floa;
+                           qudt:unit unit:DEG_C].
+
+ex:NH_MeanTemp2019_AggregationPeriod a stad:ConvexAggregationPeriod;
+stad:hasExtent ex:NH_MeanTemp2019_AggregationPeriodExtent.
+
+ex:NH_MeanTemp2019_AggregationPeriodExtent a time:ProperInterval;
+time:hasBeginning [a time:Instant;
+            time:inXSDDateTimeStamp "2019-01-01T00:00:00-05:00"^^xsd:dateTimeStamp];
+time:hasEnd [a time:Instant;
+            time:inXSDDateTimeStamp "2019-12-31T23:00:00-05:00"^^xsd:dateTimeStamp].
+
+ex:ArithmeticMeanExecutionAnnual_NH_2019 a ex:PandasArithmeticMeanExecution;
+    stad:hasInput ex:NH_Dataset_2019.
+
+ex:NH_Dataset_2019 stad:hasDatasetDescription ex:DatasetDescription;
+stad:containsDatapoint
+                     ex:2043_2019,
+                     ex:2069_2019.
+
+ex:NH_MeanTemp2020 a stad:SpatioTemporalAggregateDatapoint;
+stad:hasQualityKind ex:AnnualMeanTemperature;
+stad:generatedBy ex:ArithmeticMeanExecutionAnnual_NH_2020;
+stad:hasTemporalCoverage ex:TimeInterval_2020;
+stad:hasAggregationPeriod ex:NH_MeanTemp2020_AggregationPeriod;
+stad:hasSpatialCoverage ex:NewHampshire;
+stad:hasBaseDataset ex:NH_Dataset_2020;
+stad:hasQuantitativeValue [qudt:numericValue "-3.96"^^xsd:floa;
+                           qudt:unit unit:DEG_C].
+
+ex:NH_MeanTemp2020_AggregationPeriod a stad:ConvexAggregationPeriod;
+stad:hasExtent ex:NH_MeanTemp2020_AggregationPeriodExtent.
+
+ex:NH_MeanTemp2020_AggregationPeriodExtent a time:ProperInterval;
+time:hasBeginning [a time:Instant;
+            time:inXSDDateTimeStamp "2020-01-01T00:00:00-05:00"^^xsd:dateTimeStamp];
+time:hasEnd [a time:Instant;
+            time:inXSDDateTimeStamp "2020-12-31T23:00:00-05:00"^^xsd:dateTimeStamp].
+
+ex:ArithmeticMeanExecutionAnnual_NH_2020 a ex:PandasArithmeticMeanExecution;
+    stad:hasInput ex:NH_Dataset_2020.
+
+ex:NH_Dataset_2020 stad:hasDatasetDescription ex:DatasetDescription;
+stad:containsDatapoint
+                     ex:2043_2020,
+                     ex:2069_2020.
+
+ex:NH_MeanTemp2021 a stad:SpatioTemporalAggregateDatapoint;
+stad:hasQualityKind ex:AnnualMeanTemperature;
+stad:generatedBy ex:ArithmeticMeanExecutionAnnual_NH_2021;
+stad:hasTemporalCoverage ex:TimeInterval_2021;
+stad:hasAggregationPeriod ex:NH_MeanTemp2021_AggregationPeriod;
+stad:hasSpatialCoverage ex:NewHampshire;
+stad:hasBaseDataset ex:NH_Dataset_2021;
+stad:hasQuantitativeValue [qudt:numericValue "4.58"^^xsd:floa;
+                           qudt:unit unit:DEG_C].
+
+ex:NH_MeanTemp2021_AggregationPeriod a stad:ConvexAggregationPeriod;
+stad:hasExtent ex:NH_MeanTemp2021_AggregationPeriodExtent.
+
+ex:NH_MeanTemp2021_AggregationPeriodExtent a time:ProperInterval;
+time:hasBeginning [a time:Instant;
+            time:inXSDDateTimeStamp "2021-01-01T00:00:00-05:00"^^xsd:dateTimeStamp];
+time:hasEnd [a time:Instant;
+            time:inXSDDateTimeStamp "2021-12-31T23:00:00-05:00"^^xsd:dateTimeStamp].
+
+ex:ArithmeticMeanExecutionAnnual_NH_2021 a ex:PandasArithmeticMeanExecution;
+    stad:hasInput ex:NH_Dataset_2021.
+
+ex:NH_Dataset_2021 stad:hasDatasetDescription ex:DatasetDescription;
+stad:containsDatapoint
+                     ex:2043_2021,
+                     ex:2069_2021.
+
+ex:NH_MeanTemp2022 a stad:SpatioTemporalAggregateDatapoint;
+stad:hasQualityKind ex:AnnualMeanTemperature;
+stad:generatedBy ex:ArithmeticMeanExecutionAnnual_NH_2022;
+stad:hasTemporalCoverage ex:TimeInterval_2022;
+stad:hasAggregationPeriod ex:NH_MeanTemp2022_AggregationPeriod;
+stad:hasSpatialCoverage ex:NewHampshire;
+stad:hasBaseDataset ex:NH_Dataset_2022;
+stad:hasQuantitativeValue [qudt:numericValue "6.68"^^xsd:floa;
+                           qudt:unit unit:DEG_C].
+
+ex:NH_MeanTemp2022_AggregationPeriod a stad:ConvexAggregationPeriod;
+stad:hasExtent ex:NH_MeanTemp2022_AggregationPeriodExtent.
+
+ex:NH_MeanTemp2022_AggregationPeriodExtent a time:ProperInterval;
+time:hasBeginning [a time:Instant;
+            time:inXSDDateTimeStamp "2022-01-01T00:00:00-05:00"^^xsd:dateTimeStamp];
+time:hasEnd [a time:Instant;
+            time:inXSDDateTimeStamp "2022-12-31T23:00:00-05:00"^^xsd:dateTimeStamp].
+
+ex:ArithmeticMeanExecutionAnnual_NH_2022 a ex:PandasArithmeticMeanExecution;
+    stad:hasInput ex:NH_Dataset_2022.
+
+ex:NH_Dataset_2022 stad:hasDatasetDescription ex:DatasetDescription;
+stad:containsDatapoint
+                     ex:2043_2022,
+                     ex:2069_2022.
+

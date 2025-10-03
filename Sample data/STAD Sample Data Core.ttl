@@ -1,0 +1,543 @@
+@prefix ex: <http://stad.spatialai.org/example/> .
+@prefix stad: <http://purl.org/spatialai/stad/v2/core/> .
+@prefix geo: <http://www.opengis.net/ont/geosparql#>.
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+
+<http://stad.spatialai.org/core/v1/> rdf:type owl:Ontology ;
+	owl:imports <https://raw.githubusercontent.com/w3c/sdw/gh-pages/time-aggregates/rdf/time-agg.ttl>;
+	owl:imports <http://www.w3.org/2006/time>.
+
+ex:HubbardBrookWeatherStation rdf:type geo:Feature;
+	ex:hasStationID "2069"^^xsd:nonNegativeInteger;
+	geo:hasGeometry _:HubbardBrookGeo.
+	
+_:HubbardBrookGeo a geo:Geometry;
+	geo:asWKT "<http://www.opengis.net/def/crs/EPSG/8.5/4326>POINT ((-71.71666667 43.93333333))"^^<http://www.opengis.net/ont/geosparql#wktLiteral>.	
+	
+ex:MascomaRiverWeatherStation rdf:type geo:Feature;
+	ex:hasStationID "2043"^^xsd:nonNegativeInteger;
+	geo:hasGeometry _:MascomaRiverGeo.
+	
+_:MascomaRiverGeo a geo:Geometry;
+	geo:asWKT "<http://www.opengis.net/def/crs/EPSG/8.5/4326>POINT ((-72.0333333 43.7833333))"^^<http://www.opengis.net/ont/geosparql#wktLiteral>.	
+	
+ex:MeasureInDegreeCelsius rdf:type owl:Class;
+	rdfs:subClassOf qudt:QuantityValue,
+					[rdf:type owl:Restriction;
+					owl:onProperty qudt:unit;
+					owl:hasValue unit:DEG_C].
+					
+ex:NewHampshire rdf:type geo:Feature;
+	rdfs:label "New Hampshire"^^xsd:string;
+	geo:hasGeometry _:NewHampshireGeo.
+	
+_:NewHampshireGeo a geo:Geometry;
+	geo:asWKT "<http://www.opengis.net/def/crs/EPSG/8.5/4326>MULTIPOLYGON (((-72.2799172637037 42.7204673672513,-72.4557702638675 42.7258523672563,-72.4621712638734 42.7468403672758,-72.4793222638894 42.7615883672896,-72.5072692639154 42.7687323672962,-72.5130682639208 42.7892593673153,-72.5389172639449 42.8077333673326,-72.5534282639584 42.8606433673818,-72.5248102639318 42.9126143674302,-72.5202172639275 42.9516723674666,-72.5042632639126 42.9655843674796,-72.4733412638838 42.9761433674894,-72.4571592638688 42.9996033675112,-72.4617522638731 43.0465043675549,-72.443464263856 43.0790393675852,-72.4376052638506 43.1162703676199,-72.4523982638643 43.1560223676569,-72.4355982638487 43.2322533677279,-72.4024192638178 43.3073823677979,-72.4102312638251 43.3234043678128,-72.3976282638133 43.3510063678385,-72.4121392638268 43.3771253678628,-72.396248263812 43.4101563678936,-72.3825152637992 43.484629367963,-72.3949982638109 43.5175543679936,-72.3734982637909 43.5723743680447,-72.3330852637532 43.597364368068,-72.3040402637262 43.6985303681622,-72.2600552636852 43.7353003681964,-72.2191232636471 43.7506923682107,-72.2060922636349 43.7646353682237,-72.1848362636152 43.8016903682582,-72.1700892636014 43.8789173683302,-72.1216492635563 43.9092173683584,-72.1132042635484 43.9391663683863,-72.0917112635284 43.9579913684038,-72.1128082635481 43.9765153684211,-72.1099092635454 43.9892293684329,-72.0852042635224 44.0089243684512,-72.0769192635146 44.0320403684728,-72.0347282634754 44.0833743685206,-72.0324472634732 44.0960993685324,-72.0495152634891 44.1004523685365,-72.0349202634755 44.1207463685554,-72.0447242634847 44.1564353685886,-72.0592822634982 44.1821763686126,-72.0443902634843 44.2343793686612,-72.0595662634985 44.2614943686865,-72.0354952634761 44.2994343687218,-71.9944332634378 44.327548368748,-71.9389052633861 44.3257863687463,-71.9283612633763 44.336112368756,-71.8348162632892 44.3441993687635,-71.8211972632765 44.3503603687692,-71.7977292632546 44.3841723688007,-71.7665702632256 44.3982483688138,-71.6768842631421 44.4213423688353,-71.656399263123 44.4401373688528,-71.6477092631149 44.4691743688799,-71.6365542631045 44.4767313688869,-71.6142232630837 44.4745073688849,-71.586619263058 44.4945373689035,-71.5752432630474 44.5258053689326,-71.5914412630625 44.5388743689448,-71.5922882630633 44.5512033689563,-71.5367912630116 44.5789313689821,-71.5541022630277 44.5965893689986,-71.5680272630407 44.6374463690366,-71.58874926306 44.6505993690489,-71.6076782630776 44.6778623690742,-71.6311332630995 44.7417103691337,-71.5835012630551 44.7791973691686,-71.5751012630473 44.8160193692029,-71.5063652629833 44.8996713692808,-71.5169772629932 44.9436963693218,-71.5409272630155 44.9765633693524,-71.5053722629823 45.0133513693867,-71.5029992629801 45.05989036943,-71.4304102629125 45.1169923694832,-71.4025222628866 45.2028033695631,-71.4465602629276 45.2360823695941,-71.3863782628715 45.2349303695931,-71.2972352627885 45.2934943696476,-71.1530892626543 45.2379693695959,-71.0875092625932 45.301469369655,-71.0287262625384 44.6685383690656,-71.0085962625197 44.2821463687057,-70.9844422624972 43.7911633682484,-70.9738742624874 43.5718303680442,-70.9565242624712 43.564143368037,-70.9496192624648 43.5489533680229,-70.9642682624784 43.5319893680071,-70.9592782624738 43.5163883679925,-70.9707912624845 43.4702113679495,-70.9614832624758 43.4381263679197,-70.9790992624922 43.3961843678806,-70.9696992624835 43.3663803678528,-70.905801262424 43.3020693677929,-70.9010862624196 43.2810203677733,-70.8132072623377 43.2352223677307,-70.8305482623539 43.1591743676599,-70.8186682623428 43.1218713676251,-70.8847482624043 43.1277063676306,-70.8746312623949 43.1015273676062,-70.9054162624236 43.0840213675899,-70.886494262406 43.0588833675665,-70.8104272623351 43.0897403675952,-70.7341392622641 43.0587633675663,-70.8138802623383 42.8670653673878,-70.8497402623717 42.8634293673844,-70.8981112624168 42.8868773674063,-70.9213362624384 42.8851493674047,-71.0254262625354 42.851171367373,-71.0655642625727 42.8043193673294,-71.120604262624 42.8182813673424,-71.1810612626803 42.8073173673322,-71.1863472626852 42.7387603672683,-71.2404792627356 42.7435553672728,-71.2524112627468 42.7260693672565,-71.2871942627792 42.6986033672309,-71.9009422633508 42.7053783672372,-71.930216263378 42.7072093672389,-72.2799172637037 42.7204673672513)))"^^<http://www.opengis.net/ont/geosparql#wktLiteral>.
+					
+ex:TimeInterval_2013-2022 a time:ProperInterval;
+	time:hasBeginning [a time:Instant;           
+					   time:inXSDDateTimeStamp "2013-01-01T00:00:00-05:00"^^xsd:dateTimeStamp];
+	time:hasEnd [a time:Instant;          
+			     time:inXSDDateTimeStamp "2022-12-31T23:00:00-05:00"^^xsd:dateTimeStamp].
+
+ex:WinterMonth a owl:Class;
+	rdfs:subClassOf time:ProperInterval.
+								  
+ex:BeginningOfJanuary rdf:type owl:Class;
+	rdfs:subClassOf time:Instant;
+	owl:equivalentClass	[a owl:Restriction;
+						owl:onProperty time:inDateTime;
+						owl:someValuesFrom  ex:BJanDTD].
+
+ex:BJanDTD rdf:type owl:Class;
+	rdfs:subClassOf time:DateTimeDescription;
+	owl:equivalentClass[owl:intersectionOf(	[a owl:Restriction;
+											owl:onProperty time:day;
+											owl:hasValue "---01"^^xsd:gDay]
+											[a owl:Restriction;
+											owl:onProperty time:month;
+											owl:hasValue "--01"^^xsd:gMonth]
+											[a owl:Restriction;
+											owl:onProperty time:year;
+											owl:someValuesFrom xsd:gYear]);
+											rdf:type owl:Class].
+						
+ex:EndOfJanuary rdf:type owl:Class;
+	rdfs:subClassOf time:Instant;
+	owl:equivalentClass	[a owl:Restriction;
+						owl:onProperty time:inDateTime;
+						owl:someValuesFrom  ex:EJanDTD].
+
+ex:EJanDTD rdf:type owl:Class;
+	rdfs:subClassOf time:DateTimeDescription;
+	owl:equivalentClass[owl:intersectionOf( [a owl:Restriction;
+											owl:onProperty time:day;
+											owl:hasValue "---31"^^xsd:gDay]
+											[a owl:Restriction;
+											owl:onProperty time:month;
+											owl:hasValue "--01"^^xsd:gMonth]
+											[a owl:Restriction;
+											owl:onProperty time:year;
+											owl:someValuesFrom xsd:gYear]);
+						rdf:type owl:Class].
+					
+ex:OneMonthDuration rdf:type time:Duration;
+    time:numericDuration "1"^^xsd:decimal;
+    time:unitType time:unitMonth.
+
+ex:January rdf:type owl:Class;
+	rdfs:subClassOf time:ProperInterval,
+					ex:WinterMonth;
+	owl:equivalentClass [owl:intersectionOf([a owl:Restriction;
+						owl:onProperty time:hasBeginning;
+						owl:someValuesFrom ex:BeginningOfJanuary]
+						[a owl:Restriction;
+						owl:onProperty time:hasEnd;
+						owl:someValuesFrom ex:EndOfJanuary]
+						[a owl:Restriction;
+						owl:onProperty time:hasDuration;
+						owl:hasValue ex:OneMonthDuration]);
+			rdf:type owl:Class].						 
+								  
+
+ex:BeginningOfFebruary rdf:type owl:Class;
+	rdfs:subClassOf time:Instant;
+	owl:equivalentClass	[a owl:Restriction;
+						owl:onProperty time:inDateTime;
+						owl:someValuesFrom  ex:BFebDTD].
+
+ex:BFebDTD rdf:type owl:Class;
+	rdfs:subClassOf time:DateTimeDescription;
+	owl:equivalentClass[owl:intersectionOf(	[a owl:Restriction;
+											owl:onProperty time:day;
+											owl:hasValue "---01"^^xsd:gDay]
+											[a owl:Restriction;
+											owl:onProperty time:month;
+											owl:hasValue "--02"^^xsd:gMonth]
+											[a owl:Restriction;
+											owl:onProperty time:year;
+											owl:someValuesFrom xsd:gYear]);
+											rdf:type owl:Class].
+						
+ex:EndOfFebruary rdf:type owl:Class;
+	rdfs:subClassOf time:Instant;
+	owl:equivalentClass	[a owl:Restriction;
+						owl:onProperty time:inDateTime;
+						owl:someValuesFrom  ex:EFebDTD].
+
+ex:EFebDTD rdf:type owl:Class;
+	rdfs:subClassOf time:DateTimeDescription;
+	owl:equivalentClass[owl:intersectionOf( [a owl:Restriction;
+											owl:onProperty time:day;
+											owl:hasValue "---28"^^xsd:gDay]
+											[a owl:Restriction;
+											owl:onProperty time:month;
+											owl:hasValue "--02"^^xsd:gMonth]
+											[a owl:Restriction;
+											owl:onProperty time:year;
+											owl:someValuesFrom xsd:gYear]);
+						rdf:type owl:Class].
+
+ex:February rdf:type owl:Class;
+	rdfs:subClassOf time:ProperInterval,
+					ex:WinterMonth;
+	owl:equivalentClass [owl:intersectionOf([a owl:Restriction;
+						owl:onProperty time:hasBeginning;
+						owl:someValuesFrom ex:BeginningOfFebruary]
+						[a owl:Restriction;
+						owl:onProperty time:hasEnd;
+						owl:someValuesFrom ex:EndOfFebruary]
+						[a owl:Restriction;
+						owl:onProperty time:hasDuration;
+						owl:hasValue ex:OneMonthDuration]);
+			rdf:type owl:Class].
+
+ex:BeginningOfDecember rdf:type owl:Class;
+	rdfs:subClassOf time:Instant;
+	owl:equivalentClass	[a owl:Restriction;
+						owl:onProperty time:inDateTime;
+						owl:someValuesFrom  ex:BDecDTD].
+
+ex:BDecDTD rdf:type owl:Class;
+	rdfs:subClassOf time:DateTimeDescription;
+	owl:equivalentClass[owl:intersectionOf(	[a owl:Restriction;
+											owl:onProperty time:day;
+											owl:hasValue "---01"^^xsd:gDay]
+											[a owl:Restriction;
+											owl:onProperty time:month;
+											owl:hasValue "--12"^^xsd:gMonth]
+											[a owl:Restriction;
+											owl:onProperty time:year;
+											owl:someValuesFrom xsd:gYear]);
+											rdf:type owl:Class].
+						
+ex:EndOfDecember rdf:type owl:Class;
+	rdfs:subClassOf time:Instant;
+	owl:equivalentClass	[a owl:Restriction;
+						owl:onProperty time:inDateTime;
+						owl:someValuesFrom  ex:EDecDTD].
+
+ex:EDecDTD rdf:type owl:Class;
+	rdfs:subClassOf time:DateTimeDescription;
+	owl:equivalentClass[owl:intersectionOf( [a owl:Restriction;
+											owl:onProperty time:day;
+											owl:hasValue "---31"^^xsd:gDay]
+											[a owl:Restriction;
+											owl:onProperty time:month;
+											owl:hasValue "--12"^^xsd:gMonth]
+											[a owl:Restriction;
+											owl:onProperty time:year;
+											owl:someValuesFrom xsd:gYear]);
+						rdf:type owl:Class].
+
+ex:December rdf:type owl:Class;
+	rdfs:subClassOf time:ProperInterval,
+					ex:WinterMonth;
+	owl:equivalentClass [owl:intersectionOf([a owl:Restriction;
+						owl:onProperty time:hasBeginning;
+						owl:someValuesFrom ex:BeginningOfDecember]
+						[a owl:Restriction;
+						owl:onProperty time:hasEnd;
+						owl:someValuesFrom ex:EndOfDecember]
+						[a owl:Restriction;
+						owl:onProperty time:hasDuration;
+						owl:hasValue ex:OneMonthDuration]);
+			rdf:type owl:Class].
+
+
+ex:WinterMonth2013-2022 rdf:type owl:Class;
+	rdfs:subClassOf ex:WinterMonth,
+					[a owl:Restriction;
+					owl:onProperty time:intervalIn;
+					owl:hasValue ex:TimeInterval2013-2022].
+	
+ex:WinterAggregate2013-2022 rdf:type stad:NonConvexAggregationPeriod,
+	[a owl:Restriction;
+	owl:onProperty time:hasPart;
+	owl:allValuesFrom ex:WinterMonth2013-2022];
+	stad:hasExtent ex:TimeInterval2013-2022.
+	
+ex:SummerMonth a owl:Class;
+	rdfs:subClassOf time:ProperInterval.
+								  
+ex:BeginningOfJune rdf:type owl:Class;
+	rdfs:subClassOf time:Instant;
+	owl:equivalentClass	[a owl:Restriction;
+						owl:onProperty time:inDateTime;
+						owl:someValuesFrom  ex:BJunDTD].
+
+ex:BJunDTD rdf:type owl:Class;
+	rdfs:subClassOf time:DateTimeDescription;
+	owl:equivalentClass[owl:intersectionOf(	[a owl:Restriction;
+											owl:onProperty time:day;
+											owl:hasValue "---01"^^xsd:gDay]
+											[a owl:Restriction;
+											owl:onProperty time:month;
+											owl:hasValue "--06"^^xsd:gMonth]
+											[a owl:Restriction;
+											owl:onProperty time:year;
+											owl:someValuesFrom xsd:gYear]);
+											rdf:type owl:Class].
+						
+ex:EndOfJune rdf:type owl:Class;
+	rdfs:subClassOf time:Instant;
+	owl:equivalentClass	[a owl:Restriction;
+						owl:onProperty time:inDateTime;
+						owl:someValuesFrom  ex:EJunDTD].
+
+ex:EJunDTD rdf:type owl:Class;
+	rdfs:subClassOf time:DateTimeDescription;
+	owl:equivalentClass[owl:intersectionOf( [a owl:Restriction;
+											owl:onProperty time:day;
+											owl:hasValue "---30"^^xsd:gDay]
+											[a owl:Restriction;
+											owl:onProperty time:month;
+											owl:hasValue "--06"^^xsd:gMonth]
+											[a owl:Restriction;
+											owl:onProperty time:year;
+											owl:someValuesFrom xsd:gYear]);
+						rdf:type owl:Class].
+
+ex:June rdf:type owl:Class;
+	rdfs:subClassOf time:ProperInterval,
+					ex:SummerMonth;
+	owl:equivalentClass [owl:intersectionOf([a owl:Restriction;
+						owl:onProperty time:hasBeginning;
+						owl:someValuesFrom ex:BeginningOfJune]
+						[a owl:Restriction;
+						owl:onProperty time:hasEnd;
+						owl:someValuesFrom ex:EndOfJune]
+						[a owl:Restriction;
+						owl:onProperty time:hasDuration;
+						owl:hasValue ex:OneMonthDuration]);
+			rdf:type owl:Class].
+			
+ex:BeginningOfJuly rdf:type owl:Class;
+	rdfs:subClassOf time:Instant;
+	owl:equivalentClass	[a owl:Restriction;
+						owl:onProperty time:inDateTime;
+						owl:someValuesFrom  ex:BJulDTD].
+
+ex:BJulDTD rdf:type owl:Class;
+	rdfs:subClassOf time:DateTimeDescription;
+	owl:equivalentClass[owl:intersectionOf(	[a owl:Restriction;
+											owl:onProperty time:day;
+											owl:hasValue "---01"^^xsd:gDay]
+											[a owl:Restriction;
+											owl:onProperty time:month;
+											owl:hasValue "--07"^^xsd:gMonth]
+											[a owl:Restriction;
+											owl:onProperty time:year;
+											owl:someValuesFrom xsd:gYear]);
+											rdf:type owl:Class].
+						
+ex:EndOfJuly rdf:type owl:Class;
+	rdfs:subClassOf time:Instant;
+	owl:equivalentClass	[a owl:Restriction;
+						owl:onProperty time:inDateTime;
+						owl:someValuesFrom  ex:EJulDTD].
+
+ex:EJulDTD rdf:type owl:Class;
+	rdfs:subClassOf time:DateTimeDescription;
+	owl:equivalentClass[owl:intersectionOf( [a owl:Restriction;
+											owl:onProperty time:day;
+											owl:hasValue "---31"^^xsd:gDay]
+											[a owl:Restriction;
+											owl:onProperty time:month;
+											owl:hasValue "--07"^^xsd:gMonth]
+											[a owl:Restriction;
+											owl:onProperty time:year;
+											owl:someValuesFrom xsd:gYear]);
+						rdf:type owl:Class].
+
+ex:July rdf:type owl:Class;
+	rdfs:subClassOf time:ProperInterval,
+					ex:SummerMonth;
+	owl:equivalentClass [owl:intersectionOf([a owl:Restriction;
+						owl:onProperty time:hasBeginning;
+						owl:someValuesFrom ex:BeginningOfJuly]
+						[a owl:Restriction;
+						owl:onProperty time:hasEnd;
+						owl:someValuesFrom ex:EndOfJuly]
+						[a owl:Restriction;
+						owl:onProperty time:hasDuration;
+						owl:hasValue ex:OneMonthDuration]);
+			rdf:type owl:Class].
+			
+ex:BeginningOfAugust rdf:type owl:Class;
+	rdfs:subClassOf time:Instant;
+	owl:equivalentClass	[a owl:Restriction;
+						owl:onProperty time:inDateTime;
+						owl:someValuesFrom  ex:BAugDTD].
+
+ex:BAugDTD rdf:type owl:Class;
+	rdfs:subClassOf time:DateTimeDescription;
+	owl:equivalentClass[owl:intersectionOf(	[a owl:Restriction;
+											owl:onProperty time:day;
+											owl:hasValue "---01"^^xsd:gDay]
+											[a owl:Restriction;
+											owl:onProperty time:month;
+											owl:hasValue "--08"^^xsd:gMonth]
+											[a owl:Restriction;
+											owl:onProperty time:year;
+											owl:someValuesFrom xsd:gYear]);
+											rdf:type owl:Class].
+						
+ex:EndOfAugust rdf:type owl:Class;
+	rdfs:subClassOf time:Instant;
+	owl:equivalentClass	[a owl:Restriction;
+						owl:onProperty time:inDateTime;
+						owl:someValuesFrom  ex:EAugDTD].
+
+ex:EAugDTD rdf:type owl:Class;
+	rdfs:subClassOf time:DateTimeDescription;
+	owl:equivalentClass[owl:intersectionOf( [a owl:Restriction;
+											owl:onProperty time:day;
+											owl:hasValue "---31"^^xsd:gDay]
+											[a owl:Restriction;
+											owl:onProperty time:month;
+											owl:hasValue "--08"^^xsd:gMonth]
+											[a owl:Restriction;
+											owl:onProperty time:year;
+											owl:someValuesFrom xsd:gYear]);
+						rdf:type owl:Class].
+
+ex:August rdf:type owl:Class;
+	rdfs:subClassOf time:ProperInterval,
+					ex:SummerMonth;
+	owl:equivalentClass [owl:intersectionOf([a owl:Restriction;
+						owl:onProperty time:hasBeginning;
+						owl:someValuesFrom ex:BeginningOfAugust]
+						[a owl:Restriction;
+						owl:onProperty time:hasEnd;
+						owl:someValuesFrom ex:EndOfAugust]
+						[a owl:Restriction;
+						owl:onProperty time:hasDuration;
+						owl:hasValue ex:OneMonthDuration]);
+			rdf:type owl:Class].
+
+ex:SummerMonth2013-2022 rdf:type owl:Class;
+	rdfs:subClassOf ex:SummerMonth,
+					[a owl:Restriction;
+					owl:onProperty time:intervalIn;
+					owl:hasValue ex:TimeInterval2013-2022],
+					[a owl:Restriction;
+					owl:onProperty time:isPartOf;
+					owl:hasValue ex:SummerAggregate2013-2022].
+	
+ex:SummerAggregate2013-2022 rdf:type stad:NonConvexAggregationPeriod;
+	stad:hasExtent ex:TimeInterval2013-2022.
+	
+ex:DatasetDescription a stad:BaseDataDescription;
+    stad:hastemporalResolution [a time:Duration;
+								time:numericDuration "1"^^xsd:decimal;
+								time:unitType time:unitHour];
+	stad:hasSpatialResolution _:SpatialResolution.
+    
+_:SpatialResolution a stad:SpatialResolution;
+	stad:spatialResolutionKind stad:meanSpacing;
+	stad:spatialResolutionValue [a qudt:QuantityValue;
+								qudt:numericValue "30"^^xsd:decimal;
+								qudt:unit unit:KiloM].
+								
+### Quality kinds								
+ex:AnnualMeanTemperature rdf:type stad:QualityKind;
+	rdfs:label "Annual Mean Temperature"^^xsd:string. 
+	
+ex:DailyMeanTemperature rdf:type stad:QualityKind;
+	rdfs:label "Daily Mean Temperature"^^xsd:string.
+	
+ex:DailyMinimumTemperature rdf:type stad:QualityKind;
+	rdfs:label "Daily Minimum Temperature"^^xsd:string.
+	
+ex:DailyMaximumTemperature rdf:type stad:QualityKind;
+	rdfs:label "Daily Maximum Temperature"^^xsd:string.
+	
+ex:SummerMeanTemperature rdf:type stad:QualityKind;
+	rdfs:label "Summer Mean Temperature"^^xsd:string.
+	
+ex:WinterMeanTemperature rdf:type stad:QualityKind;
+	rdfs:label "Winter Mean Temperature"^^xsd:string.
+
+ex:ObservedTemperature rdf:type stad:QualityKind;
+	rdfs:label "Observed Temperature"^^xsd:string.
+	
+ex:PandasArithmeticMeanExecution rdf:type owl:Class;
+	rdfs:subClassOf stad:AlgorithmExecution,
+					[a owl:Restriction;
+					 owl:onProperty stad:executes;
+					 owl:hasValue ex:ArithmeticMeanImplementationInPandas],
+					[a owl:Restriction;
+					 owl:onProperty stad:realizes;
+					 owl:hasValue stad:ArithmeticMeanCalculation],
+					[a owl:Restriction;
+					 owl:onProperty stad:hasInput;
+					 owl:hasValue ex:AxisParameterSetting],
+					[a owl:Restriction;
+					 owl:onProperty stad:hasInput;
+					 owl:hasValue ex:SkipNaParameterSetting],
+					[a owl:Restriction;
+					 owl:onProperty stad:hasInput;
+					 owl:hasValue ex:LevelParameterSetting],
+					[a owl:Restriction;
+					 owl:onProperty stad:hasInput;
+					 owl:hasValue ex:NumericOnlyParameterSetting].
+
+ex:PandasArithmeticMinimumExecution rdf:type owl:Class;
+	rdfs:subClassOf stad:AlgorithmExecution,
+					[a owl:Restriction;
+					 owl:onProperty stad:executes;
+					 owl:hasValue ex:ArithmeticMinimumImplementationInPandas],
+					[a owl:Restriction;
+					 owl:onProperty stad:realizes;
+					 owl:hasValue stad:MinimumCalculation],
+					[a owl:Restriction;
+					 owl:onProperty stad:hasInput;
+					 owl:hasValue ex:AxisParameterSetting],
+					[a owl:Restriction;
+					 owl:onProperty stad:hasInput;
+					 owl:hasValue ex:SkipNaParameterSetting],
+					[a owl:Restriction;
+					 owl:onProperty stad:hasInput;
+					 owl:hasValue ex:LevelParameterSetting],
+					[a owl:Restriction;
+					 owl:onProperty stad:hasInput;
+					 owl:hasValue ex:NumericOnlyParameterSetting].
+					 
+ex:PandasArithmeticMaximumExecution rdf:type owl:Class;
+	rdfs:subClassOf stad:AlgorithmExecution,
+					[a owl:Restriction;
+					 owl:onProperty stad:executes;
+					 owl:hasValue ex:ArithmeticMaximumImplementationInPandas],
+					[a owl:Restriction;
+					 owl:onProperty stad:realizes;
+					 owl:hasValue stad:MaximumCalculation],
+					[a owl:Restriction;
+					 owl:onProperty stad:hasInput;
+					 owl:hasValue ex:AxisParameterSetting],
+					[a owl:Restriction;
+					 owl:onProperty stad:hasInput;
+					 owl:hasValue ex:SkipNaParameterSetting],
+					[a owl:Restriction;
+					 owl:onProperty stad:hasInput;
+					 owl:hasValue ex:LevelParameterSetting],
+					[a owl:Restriction;
+					 owl:onProperty stad:hasInput;
+					 owl:hasValue ex:NumericOnlyParameterSetting].
+					 
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( ex:PandasArithmeticMeanExecution
+                ex:PandasArithmeticMinimumExecution
+                ex:PandasArithmeticMaximumExecution
+              )
+] .
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( ex:ArithmeticMeanImplementationInPandas
+                ex:ArithmeticMinimumImplementationInPandas
+                ex:ArithmeticMaximumImplementationInPandas
+              )
+] .
+					 
+ex:ArithmeticMeanImplementationInPandas rdf:type stad:Implementation;
+	stad:implements stad:ArithmeticMeanCalculation;
+	stad:hasParameter ex:AxisParameter;
+	stad:hasParameter ex:SkipNaParameter;
+	stad:hasParameter ex:LevelParameter;
+	stad:hasParameter ex:NumericOnlyParameter.
+	
+ex:ArithmeticMinimumImplementationInPandas rdf:type stad:Implementation;
+	stad:implements stad:MinimumCalculation;
+	stad:hasParameter ex:AxisParameter;
+	stad:hasParameter ex:SkipNaParameter;
+	stad:hasParameter ex:LevelParameter;
+	stad:hasParameter ex:NumericOnlyParameter.
+
+ex:ArithmeticMaximumImplementationInPandas rdf:type stad:Implementation;
+	stad:implements stad:MaximumCalculation;
+	stad:hasParameter ex:AxisParameter;
+	stad:hasParameter ex:SkipNaParameter;
+	stad:hasParameter ex:LevelParameter;
+	stad:hasParameter ex:NumericOnlyParameter.
+	
+ex:AxisParameterSetting rdf:type stad:ParameterSetting;
+	stad:specifiedBy ex:AxisParameter;
+	stad:hasValue "0"^^xsd:int.
+	
+ex:SkipNaParameterSetting rdf:type stad:ParameterSetting;
+	stad:specifiedBy ex:SkipNaParameter;
+	stad:hasValue "True"^^xsd:string.
+	
+ex:LevelParameterSetting rdf:type stad:ParameterSetting;
+	stad:specifiedBy ex:LevelParameter;
+	stad:hasValue "None"^^xsd:string.
+	
+ex:NumericOnlyParameterSetting rdf:type stad:ParameterSetting;
+	stad:specifiedBy ex:NumericOnlyParameter;
+	stad:hasValue "False"^^xsd:string.
