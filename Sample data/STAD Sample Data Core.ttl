@@ -395,16 +395,15 @@ ex:SummerAggregate2013-2022 rdf:type stad:NonConvexAggregationPeriod;
 	stad:hasExtent ex:TimeInterval2013-2022.
 	
 ex:DatasetDescription a stad:BaseDataDescription;
-    stad:hastemporalResolution [a time:Duration;
+    stad:hasTemporalResolution [a time:Duration;
 								time:numericDuration "1"^^xsd:decimal;
 								time:unitType time:unitHour];
-	stad:hasSpatialResolution _:SpatialResolution.
-    
-_:SpatialResolution a stad:SpatialResolution;
-	stad:spatialResolutionKind stad:meanSpacing;
-	stad:spatialResolutionValue [a qudt:QuantityValue;
-								qudt:numericValue "30"^^xsd:decimal;
-								qudt:unit unit:KiloM].
+	stad:hasSpatialResolution [stad:spatialResolutionKind stad:meanSpacing;
+							   stad:spatialResolutionValue [a qudt:QuantityValue;
+															qudt:numericValue "30"^^xsd:decimal;
+															qudt:unit unit:KiloM
+															]
+								].
 								
 ### Quality kinds								
 ex:AnnualMeanTemperature rdf:type stad:QualityKind;
