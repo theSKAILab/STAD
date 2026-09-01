@@ -21,14 +21,13 @@
 										   owl:imports <http://www.w3.org/2006/time> ,
                                                        <https://raw.githubusercontent.com/w3c/sdw/gh-pages/time-aggregates/rdf/time-agg.ttl> ;
                                            dcterms:created "2022-06-12"^^xsd:date ;
-                                           dcterms:creator "Kate Beard - https://orcid.org/0000-0002-7703-0270"@en ,
-                                                           "Kingsley Wiafe-Kwakye - https://orcid.org/0009-0007-3741-3721"@en ,
-                                                           "Torsten Hahmann - http://orcid.org/0000-0002-5331-5052"@en ;
+                                           dcterms:creator "Kingsley Wiafe-Kwakye - https://orcid.org/0009-0007-3741-3721"@en ,
+                                                           "Torsten Hahmann - http://orcid.org/0000-0002-5331-5052"@en , "Kate Beard - https://orcid.org/0000-0002-7703-0270"@en ;
                                            dcterms:description "STAD provides syntax for describing the spatial and temporal characteristics of aggregate quantities."@en ;
                                            dcterms:identifier "http://purl.org/spatialai/stad/v2/core>"@en ;
                                            dcterms:issued "2022-06-12"^^xsd:date ;
                                            dcterms:license "This work is distributed under a Creative Commons Attribution License (https://creativecommons.org/licenses/by/4.0/)."@en ;
-                                           dcterms:modified "2024-05-30"^^xsd:date ;
+                                           dcterms:modified "2026-09-01"^^xsd:date ;
                                            dcterms:publisher "Spatial Knowledge and Artificial Intelligence (SKAI) Lab, University of Maine"@en ;
                                            dcterms:subject "Aggregate data" ,
                                                            "Spatial aggregate data" ,
@@ -137,10 +136,6 @@ stad:generatedBy rdf:type owl:ObjectProperty ;
 stad:hasAggregationPeriod rdf:type owl:ObjectProperty ;
                           rdfs:domain stad:StatisticalAggregateDatapoint ;
                           rdfs:range stad:AggregationPeriod .
-
-
-###  http://purl.org/spatialai/stad/v2/core#hasBaseData
-stad:hasBaseData rdf:type owl:ObjectProperty .
 
 
 ###  http://purl.org/spatialai/stad/v2/core#hasBaseDatapoint
@@ -491,7 +486,7 @@ stad:ComputationalDatapoint rdf:type owl:Class ;
                                               owl:allValuesFrom stad-mls:AlgorithmExecution
                                             ] ,
                                             [ rdf:type owl:Restriction ;
-                                              owl:onProperty stad:hasBaseData ;
+                                              owl:onProperty stad:hasBaseDatapoint ;
                                               owl:allValuesFrom stad:Datapoint
                                             ] ,
                                             [ rdf:type owl:Restriction ;
