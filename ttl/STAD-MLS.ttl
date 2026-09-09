@@ -1,0 +1,178 @@
+@prefix mls: <http://www.w3.org/ns/mls#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix stad: <http://purl.org/spatialai/stad/v2/core#> .
+@prefix stad-mls: <http://purl.org/spatialai/stad/v2/mls#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@base <http://purl.org/spatialai/stad/v2/mls/> .
+
+<http://purl.org/spatialai/stad/v2/mls/> rdf:type owl:Ontology ;
+	wl:versionIRI <http://purl.org/spatialai/stad/v2/mls> ;
+   owl:imports <http://purl.org/spatialai/stad/v2/core/> ;
+   rdfs:label "STAD-MLS extension"@en  ;
+   dcterms:created "2025-11-16"^^xsd:date ;
+   dcterms:creator "Kingsley Wiafe-Kwakye - https://orcid.org/0009-0007-3741-3721"@en ,
+				   "Torsten Hahmann - http://orcid.org/0000-0002-5331-5052"@en ;
+   dcterms:description "STAD provides syntax for describing the spatial and temporal characteristics of aggregate quantities. This extension includes concepts for describing the algorithms and implementations used for data transformations. It is based on the Machine Learning Schema (MLS)."@en ;
+   dcterms:identifier "http://purl.org/spatialai/stad/v2/mls>"@en ;
+   dcterms:issued "2026-09-09"^^xsd:date ;
+   dcterms:license "This work is distributed under a Creative Commons Attribution License (https://creativecommons.org/licenses/by/4.0/)."@en ;
+   dcterms:modified "2026-09-09"^^xsd:date ;
+   dcterms:publisher "Spatial Knowledge and Artificial Intelligence (SKAI) Lab, University of Maine"@en ;
+   dcterms:subject "Aggregate data" ,
+				   "Spatial aggregate data" ,
+				   "Temporal aggregate data" ,
+					"Data transformation";
+   dcterms:title "Spatial and Temporal Aggregate Data Ontology MLS extension (STAD-MLS)"@en ;
+   owl:versionInfo "1.0"@en .	
+	
+
+#################################################################
+#    Object Properties
+#################################################################
+
+stad-mls:executes rdf:type owl:ObjectProperty ;
+    rdfs:domain stad-mls:AlgorithmExecution ;
+    rdfs:range stad-mls:Implementation ;
+    rdfs:isDefinedBy <http://purl.org/spatialai/stad/v2/mls/> ;
+    rdfs:label "executes"@en ;
+    rdfs:seeAlso "http://ontologydesignpatterns.org/wiki/images/4/41/WOP2016_paper_07.pdf"^^xsd:anyURI ;
+    skos:definition "Relates an algorithm execution to the concrete implementation executed."@en ;
+    skos:related mls:executes .
+
+stad-mls:hasInput rdf:type owl:ObjectProperty ;
+    rdfs:isDefinedBy <http://purl.org/spatialai/stad/v2/mls/> ;
+    rdfs:label "has input"@en ;
+    rdfs:seeAlso "http://ontologydesignpatterns.org/wiki/images/4/41/WOP2016_paper_07.pdf"^^xsd:anyURI ;
+    skos:definition "Relates an algorithm execution to an input parameter setting."@en ;
+    skos:related mls:hasInput .
+
+stad-mls:hasParameter rdf:type owl:ObjectProperty ;
+    rdfs:domain stad-mls:Implementation ;
+    rdfs:range stad-mls:Parameter ;
+    rdfs:isDefinedBy <http://purl.org/spatialai/stad/v2/mls/> ;
+    rdfs:label "has parameter"@en ;
+    rdfs:seeAlso "http://ontologydesignpatterns.org/wiki/images/4/41/WOP2016_paper_07.pdf"^^xsd:anyURI ;
+    skos:definition "Relates an implementation to a parameter it accepts."@en ;
+    skos:related mls:hasHyperParameter .
+
+stad-mls:implements rdf:type owl:ObjectProperty ;
+    rdfs:domain stad-mls:Implementation ;
+    rdfs:range stad-mls:Algorithm ;
+    rdfs:isDefinedBy <http://purl.org/spatialai/stad/v2/mls/> ;
+    rdfs:label "implements"@en ;
+    rdfs:seeAlso "http://ontologydesignpatterns.org/wiki/images/4/41/WOP2016_paper_07.pdf"^^xsd:anyURI ;
+    skos:definition "Relates a concrete implementation to the algorithm it implements."@en ;
+    skos:related mls:implements .
+
+stad-mls:realizes rdf:type owl:ObjectProperty ;
+    rdfs:domain stad-mls:AlgorithmExecution ;
+    rdfs:range stad-mls:Algorithm ;
+    rdfs:isDefinedBy <http://purl.org/spatialai/stad/v2/mls/> ;
+    rdfs:label "realizes"@en ;
+    rdfs:seeAlso "http://ontologydesignpatterns.org/wiki/images/4/41/WOP2016_paper_07.pdf"^^xsd:anyURI ;
+    skos:definition "Relates an algorithm execution to the algorithm realized by that execution."@en ;
+    skos:related mls:realizes .
+
+stad-mls:specifiedBy rdf:type owl:ObjectProperty ;
+    rdfs:domain stad-mls:ParameterSetting ;
+    rdfs:range stad-mls:Parameter ;
+    rdfs:isDefinedBy <http://purl.org/spatialai/stad/v2/mls/> ;
+    rdfs:label "specified by"@en ;
+    rdfs:seeAlso "http://ontologydesignpatterns.org/wiki/images/4/41/WOP2016_paper_07.pdf"^^xsd:anyURI ;
+    skos:definition "Relates a parameter setting to the parameter whose value it specifies."@en ;
+    skos:related mls:specifiedBy .
+
+#################################################################
+#    Classes
+#################################################################
+
+stad:ComputationalDatapoint rdf:type owl:Class ;
+                            rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                              owl:onProperty stad:generatedBy ;
+                                              owl:allValuesFrom stad-mls:AlgorithmExecution
+                                            ].
+											
+stad:DataTransformation rdf:type owl:Class ;
+                        rdfs:subClassOf stad-mls:Algorithm .
+
+
+
+stad-mls:Algorithm rdf:type owl:Class ;
+    rdfs:isDefinedBy <http://purl.org/spatialai/stad/v2/mls/> ;
+    rdfs:label "algorithm"@en ;
+    rdfs:seeAlso "http://ontologydesignpatterns.org/wiki/images/4/41/WOP2016_paper_07.pdf"^^xsd:anyURI ;
+    skos:definition "A sequential set of instructions for solving a problem or achieving a goal, independent of a concrete implementation or execution."@en ;
+    skos:related mls:Algorithm .
+
+stad-mls:AlgorithmExecution rdf:type owl:Class ;
+    rdfs:subClassOf [ rdf:type owl:Restriction ;
+                      owl:onProperty stad-mls:hasInput ;
+                      owl:someValuesFrom stad:Dataset
+                    ] ,
+                    [ rdf:type owl:Restriction ;
+                      owl:onProperty stad-mls:hasInput ;
+                      owl:someValuesFrom stad-mls:ParameterSetting
+                    ] ,
+                    [ rdf:type owl:Restriction ;
+                      owl:onProperty stad-mls:realizes ;
+                      owl:someValuesFrom stad-mls:Algorithm
+                    ] ;
+    rdfs:isDefinedBy <http://purl.org/spatialai/stad/v2/mls/> ;
+    rdfs:label "algorithm execution"@en ;
+    rdfs:seeAlso "http://ontologydesignpatterns.org/wiki/images/4/41/WOP2016_paper_07.pdf"^^xsd:anyURI ;
+    skos:definition "A specific run of an implementation of an algorithm, using particular inputs and parameter settings."@en ;
+    skos:related mls:Run .
+
+stad-mls:Implementation rdf:type owl:Class ;
+    rdfs:subClassOf [ rdf:type owl:Restriction ;
+                      owl:onProperty stad-mls:hasParameter ;
+                      owl:someValuesFrom stad-mls:Parameter
+                    ] ,
+                    [ rdf:type owl:Restriction ;
+                      owl:onProperty stad-mls:implements ;
+                      owl:someValuesFrom stad-mls:Algorithm
+                    ] ;
+    rdfs:isDefinedBy <http://purl.org/spatialai/stad/v2/mls/> ;
+    rdfs:label "implementation"@en ;
+    rdfs:seeAlso "http://ontologydesignpatterns.org/wiki/images/4/41/WOP2016_paper_07.pdf"^^xsd:anyURI ;
+    skos:definition "An executable realization of an algorithm in a particular programming language or software environment."@en ;
+    skos:related mls:Implementation .
+
+stad-mls:Parameter rdf:type owl:Class ;
+    rdfs:isDefinedBy <http://purl.org/spatialai/stad/v2/mls/> ;
+    rdfs:label "parameter"@en ;
+    rdfs:seeAlso "http://ontologydesignpatterns.org/wiki/images/4/41/WOP2016_paper_07.pdf"^^xsd:anyURI ;
+    skos:definition "A named input accepted by an implementation and assigned a value in a parameter setting."@en ;
+    skos:related mls:HyperParameter .
+
+stad-mls:ParameterSetting rdf:type owl:Class ;
+    rdfs:subClassOf [ rdf:type owl:Restriction ;
+                      owl:onProperty stad-mls:specifiedBy ;
+                      owl:someValuesFrom stad-mls:Parameter
+                    ] ,
+                    [ rdf:type owl:Restriction ;
+                      owl:onProperty stad:hasValue ;
+                      owl:someValuesFrom rdfs:Literal
+                    ] ;
+    rdfs:isDefinedBy <http://purl.org/spatialai/stad/v2/mls/> ;
+    rdfs:label "parameter setting"@en ;
+    rdfs:seeAlso "http://ontologydesignpatterns.org/wiki/images/4/41/WOP2016_paper_07.pdf"^^xsd:anyURI ;
+    skos:definition "An assignment of a literal value to a parameter for a particular algorithm execution."@en ;
+    skos:related mls:HyperParameterSetting .
+
+#################################################################
+#    Object Properties
+#################################################################
+		  
+###  http://purl.org/spatialai/stad/v2/core#generatedBy
+stad:generatedBy rdf:type owl:ObjectProperty ;
+                 rdfs:domain stad:ComputationalDatapoint ;
+                 rdfs:range stad-mls:AlgorithmExecution .
+				 
+###  http://purl.org/spatialai/stad/v2/core#outputOf
+stad:outputOf rdf:type owl:ObjectProperty ;
+              rdfs:domain stad:ComputationalDatapoint ;
+              rdfs:range stad-mls:Algorithm .
