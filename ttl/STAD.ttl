@@ -124,7 +124,7 @@ xsd:date rdf:type rdfs:Datatype .
 ###  http://purl.org/dc/terms/hasPart
 dcterms:hasPart rdf:type owl:ObjectProperty ;
 	rdfs:label "has part"@en ;
-	skos:definition "" related resource that is included either physically or logically in the described resource." "@en .
+	skos:definition "related resource that is included either physically or logically in the described resource."@en .
 
 ###  http://purl.org/spatialai/stad/v2/core#containsDatapoint
 stad:containsDatapoint rdf:type owl:ObjectProperty ;
