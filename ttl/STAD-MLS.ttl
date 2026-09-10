@@ -18,7 +18,7 @@
    dcterms:description "STAD provides syntax for describing the spatial and temporal characteristics of aggregate quantities. This extension includes concepts for describing the algorithms and implementations used for data transformations. It is based on the Machine Learning Schema (MLS)."@en ;
    dcterms:identifier "http://purl.org/spatialai/stad/v2/mls>"@en ;
    dcterms:issued "2026-09-09"^^xsd:date ;
-   dcterms:license "This work is distributed under a Creative Commons Attribution License (https://creativecommons.org/licenses/by/4.0/)."@en ;
+   dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
    dcterms:modified "2026-09-09"^^xsd:date ;
    dcterms:publisher "Spatial Knowledge and Artificial Intelligence (SKAI) Lab, University of Maine"@en ;
    dcterms:subject "Aggregate data" ,

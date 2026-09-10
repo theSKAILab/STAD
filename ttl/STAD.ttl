@@ -30,7 +30,7 @@
                                            dcterms:description "STAD provides syntax for describing the spatial and temporal characteristics of aggregate quantities."@en ;
                                            dcterms:identifier "http://purl.org/spatialai/stad/v2/core>"@en ;
                                            dcterms:issued "2025-11-16"^^xsd:date ;
-                                           dcterms:license "This work is distributed under a Creative Commons Attribution License (https://creativecommons.org/licenses/by/4.0/)."@en ;
+                                           dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
                                            dcterms:modified "2026-09-09"^^xsd:date ;
                                            dcterms:publisher "Spatial Knowledge and Artificial Intelligence (SKAI) Lab, University of Maine"@en ;
                                            dcterms:subject "Aggregate data" ,
@@ -38,7 +38,7 @@
                                                            "Temporal aggregate data" ;
                                            dcterms:title "Spatial and Temporal Aggregate Data (STAD) Ontology"@en ;
 										   rdfs:seeAlso stad-mls: ;
-										   skos:related stad-mls: .
+										   skos:related stad-mls: ;
                                            owl:versionInfo "2.0"@en .
 
 #################################################################
@@ -122,8 +122,9 @@ xsd:date rdf:type rdfs:Datatype .
 #################################################################
 
 ###  http://purl.org/dc/terms/hasPart
-dcterms:hasPart rdf:type owl:ObjectProperty .
-
+dcterms:hasPart rdf:type owl:ObjectProperty ;
+	rdfs:label "has part"@en ;
+	skos:definition "" related resource that is included either physically or logically in the described resource." "@en .
 
 ###  http://purl.org/spatialai/stad/v2/core#containsDatapoint
 stad:containsDatapoint rdf:type owl:ObjectProperty ;
@@ -201,7 +202,6 @@ stad:hasDatasetDescription rdf:type owl:ObjectProperty ;
 
 ###  http://purl.org/spatialai/stad/v2/core#hasExtent
 stad:hasExtent rdf:type owl:ObjectProperty ;
-               owl:inverseOf stad:isExtentOf ;
                rdfs:domain stad:AggregationPeriod ;
                rdfs:range time:Interval ;
                rdfs:isDefinedBy stad: ;
