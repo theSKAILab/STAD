@@ -9,7 +9,7 @@
 @base <http://purl.org/spatialai/stad/v2/mls#> .
 
 <http://purl.org/spatialai/stad/v2/mls> rdf:type owl:Ontology ;
-	wl:versionIRI <http://purl.org/spatialai/stad/v2/mls#> ;
+   owl:versionIRI <http://purl.org/spatialai/stad/v2/mls#> ;
    owl:imports stad: ;
    rdfs:label "STAD-MLS extension"@en  ;
    dcterms:created "2025-11-16"^^xsd:date ;
@@ -176,3 +176,19 @@ stad:generatedBy rdf:type owl:ObjectProperty ;
 stad:outputOf rdf:type owl:ObjectProperty ;
               rdfs:domain stad:ComputationalDatapoint ;
               rdfs:range stad-mls:Algorithm .
+
+
+
+#################################################################
+#    General axioms
+#################################################################
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( stad-mls:Algorithm
+                stad-mls:AlgorithmExecution
+                stad-mls:Implementation
+                stad-mls:Parameter
+				stad-mls:ParameterSetting
+              )
+] .
