@@ -470,16 +470,6 @@ ex:VicSchoolTerms2020
 """ .
 
 
-#################################################################
-#    Data properties
-#################################################################
-
-###  http://purl.org/spatialai/stad/v2/core#hasValue
-stad:hasValue rdf:type owl:DatatypeProperty ;
-              rdfs:isDefinedBy stad: ;
-              rdfs:label "has value"@en ;
-              skos:definition "Relates a parameter setting to its literal value."@en .
-
 
 #################################################################
 #    Classes
