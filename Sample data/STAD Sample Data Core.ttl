@@ -1,5 +1,5 @@
 @prefix ex: <http://stad.spatialai.org/example/> .
-@prefix stad: <http://purl.org/spatialai/stad/v2/core/> .
+@prefix stad: <http://purl.org/spatialai/stad/v2/core#> .
 @prefix geo: <http://www.opengis.net/ont/geosparql#>.
 @prefix qudt: <http://qudt.org/schema/qudt/> .
 @prefix unit: <http://qudt.org/vocab/unit/> .
@@ -394,12 +394,15 @@ ex:SummerMonth2013-2022 rdf:type owl:Class;
 ex:SummerAggregate2013-2022 rdf:type stad:NonConvexAggregationPeriod;
 	stad:hasExtent ex:TimeInterval2013-2022.
 	
-ex:DatasetDescription a stad:BaseDataDescription;
-    stad:hasTemporalResolution [a time:Duration;
-								time:numericDuration "1"^^xsd:decimal;
-								time:unitType time:unitHour];
-	stad:hasSpatialResolution [stad:spatialResolutionKind stad:meanSpacing;
-							   stad:spatialResolutionValue [a qudt:QuantityValue;
+ex:SCAN_BaseDataDescription a stad:DatasetDescription;
+    stad:hasTemporalResolution [a stad:TemporalResolution;
+								stad:hasQuantitativeValue [a time:Duration;
+															time:numericDuration "1"^^xsd:decimal;
+															time:unitType time:unitHour]
+								];
+	stad:hasSpatialResolution [a stad:PointSpacingResolution;
+								stad:hasTransformationKind stad:ArithmeticMeanCalculation;
+							   stad:hasQuantitativeValue [a qudt:QuantityValue;
 															qudt:numericValue "30"^^xsd:decimal;
 															qudt:unit unit:KiloM
 															]
@@ -540,3 +543,4 @@ ex:LevelParameterSetting rdf:type stad:ParameterSetting;
 ex:NumericOnlyParameterSetting rdf:type stad:ParameterSetting;
 	stad:specifiedBy ex:NumericOnlyParameter;
 	stad:hasValue "False"^^xsd:string.
+

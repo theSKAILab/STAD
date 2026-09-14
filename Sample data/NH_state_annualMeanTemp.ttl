@@ -1,5 +1,5 @@
 @prefix ex: <http://stad.spatialai.org/example/> .
-@prefix stad: <http://purl.org/spatialai/stad/v2/core/>.
+@prefix stad: <http://purl.org/spatialai/stad/v2/core#> .
 @prefix dfds: <http://spatialai.org/digitalforest/datasets/core/>.
 @prefix qudt: <http://qudt.org/schema/qudt/> .
 @prefix unit: <http://qudt.org/vocab/unit/> .
@@ -33,7 +33,7 @@ time:hasEnd [a time:Instant;
 ex:ArithmeticMeanExecutionAnnual_NH_2013 a ex:PandasArithmeticMeanExecution;
     stad:hasInput ex:NH_Dataset_2013.
 
-ex:NH_Dataset_2013 stad:hasDatasetDescription ex:DatasetDescription;
+ex:NH_Dataset_2013 stad:hasDatasetDescription ex:SCAN_BaseDataDescription;
 stad:containsDatapoint
                      ex:2043_2013,
                      ex:2069_2013.
@@ -60,7 +60,7 @@ time:hasEnd [a time:Instant;
 ex:ArithmeticMeanExecutionAnnual_NH_2014 a ex:PandasArithmeticMeanExecution;
     stad:hasInput ex:NH_Dataset_2014.
 
-ex:NH_Dataset_2014 stad:hasDatasetDescription ex:DatasetDescription;
+ex:NH_Dataset_2014 stad:hasDatasetDescription ex:SCAN_BaseDataDescription;
 stad:containsDatapoint
                      ex:2043_2014,
                      ex:2069_2014.
@@ -87,7 +87,7 @@ time:hasEnd [a time:Instant;
 ex:ArithmeticMeanExecutionAnnual_NH_2015 a ex:PandasArithmeticMeanExecution;
     stad:hasInput ex:NH_Dataset_2015.
 
-ex:NH_Dataset_2015 stad:hasDatasetDescription ex:DatasetDescription;
+ex:NH_Dataset_2015 stad:hasDatasetDescription ex:SCAN_BaseDataDescription;
 stad:containsDatapoint
                      ex:2043_2015,
                      ex:2069_2015.
@@ -114,7 +114,7 @@ time:hasEnd [a time:Instant;
 ex:ArithmeticMeanExecutionAnnual_NH_2016 a ex:PandasArithmeticMeanExecution;
     stad:hasInput ex:NH_Dataset_2016.
 
-ex:NH_Dataset_2016 stad:hasDatasetDescription ex:DatasetDescription;
+ex:NH_Dataset_2016 stad:hasDatasetDescription ex:SCAN_BaseDataDescription;
 stad:containsDatapoint
                      ex:2043_2016,
                      ex:2069_2016.
@@ -141,7 +141,7 @@ time:hasEnd [a time:Instant;
 ex:ArithmeticMeanExecutionAnnual_NH_2017 a ex:PandasArithmeticMeanExecution;
     stad:hasInput ex:NH_Dataset_2017.
 
-ex:NH_Dataset_2017 stad:hasDatasetDescription ex:DatasetDescription;
+ex:NH_Dataset_2017 stad:hasDatasetDescription ex:SCAN_BaseDataDescription;
 stad:containsDatapoint
                      ex:2043_2017,
                      ex:2069_2017.
@@ -168,7 +168,7 @@ time:hasEnd [a time:Instant;
 ex:ArithmeticMeanExecutionAnnual_NH_2018 a ex:PandasArithmeticMeanExecution;
     stad:hasInput ex:NH_Dataset_2018.
 
-ex:NH_Dataset_2018 stad:hasDatasetDescription ex:DatasetDescription;
+ex:NH_Dataset_2018 stad:hasDatasetDescription ex:SCAN_BaseDataDescription;
 stad:containsDatapoint
                      ex:2043_2018,
                      ex:2069_2018.
@@ -195,7 +195,7 @@ time:hasEnd [a time:Instant;
 ex:ArithmeticMeanExecutionAnnual_NH_2019 a ex:PandasArithmeticMeanExecution;
     stad:hasInput ex:NH_Dataset_2019.
 
-ex:NH_Dataset_2019 stad:hasDatasetDescription ex:DatasetDescription;
+ex:NH_Dataset_2019 stad:hasDatasetDescription ex:SCAN_BaseDataDescription;
 stad:containsDatapoint
                      ex:2043_2019,
                      ex:2069_2019.
@@ -222,7 +222,7 @@ time:hasEnd [a time:Instant;
 ex:ArithmeticMeanExecutionAnnual_NH_2020 a ex:PandasArithmeticMeanExecution;
     stad:hasInput ex:NH_Dataset_2020.
 
-ex:NH_Dataset_2020 stad:hasDatasetDescription ex:DatasetDescription;
+ex:NH_Dataset_2020 stad:hasDatasetDescription ex:SCAN_BaseDataDescription;
 stad:containsDatapoint
                      ex:2043_2020,
                      ex:2069_2020.
@@ -249,7 +249,7 @@ time:hasEnd [a time:Instant;
 ex:ArithmeticMeanExecutionAnnual_NH_2021 a ex:PandasArithmeticMeanExecution;
     stad:hasInput ex:NH_Dataset_2021.
 
-ex:NH_Dataset_2021 stad:hasDatasetDescription ex:DatasetDescription;
+ex:NH_Dataset_2021 stad:hasDatasetDescription ex:SCAN_BaseDataDescription;
 stad:containsDatapoint
                      ex:2043_2021,
                      ex:2069_2021.
@@ -276,7 +276,7 @@ time:hasEnd [a time:Instant;
 ex:ArithmeticMeanExecutionAnnual_NH_2022 a ex:PandasArithmeticMeanExecution;
     stad:hasInput ex:NH_Dataset_2022.
 
-ex:NH_Dataset_2022 stad:hasDatasetDescription ex:DatasetDescription;
+ex:NH_Dataset_2022 stad:hasDatasetDescription ex:SCAN_BaseDataDescription;
 stad:containsDatapoint
                      ex:2043_2022,
                      ex:2069_2022.

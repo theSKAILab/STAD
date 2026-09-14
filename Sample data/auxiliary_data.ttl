@@ -1,0 +1,85 @@
+@prefix ex: <http://stad.spatialai.org/example/> .
+@prefix stad: <http://purl.org/spatialai/stad/v2/core#>  .
+@prefix geo: <http://www.opengis.net/ont/geosparql#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+
+
+ex:ClimateNA_Temperature_Dataset
+    a stad:Dataset ;
+    rdfs:label "ClimateNA Temperature Dataset" ;
+    stad:hasDatasetDescription ex:ClimateNA_DatasetDescription .
+
+ex:NOAA_Temperature_Dataset
+    a stad:Dataset ;
+    rdfs:label "NOAA Temperature Dataset" ;
+    stad:hasDatasetDescription ex:NOAA_DatasetDescription .
+	
+
+ex:ClimateNA_DatasetDescription
+    a stad:BaseDataDescription ;
+    stad:hasTemporalResolution [a stad:TemporalResolution;
+								stad:hasQuantitativeValue [a time:Duration ;
+															time:numericDuration "1"^^xsd:decimal ;
+															time:unitType time:unitHour]
+								] ;
+    stad:hasSpatialResolution [a stad:PointSpacingResolution;
+								stad:hasTransformationKind stad:ArithmeticMeanCalculation;
+								stad:hasQuantitativeValue [a qudt:QuantityValue ;
+															qudt:numericValue "10"^^xsd:decimal ;
+															qudt:unit unit:KiloM]
+								] .
+
+ex:NOAA_DatasetDescription
+    a stad:BaseDataDescription ;
+    stad:hasTemporalResolution [a stad:TemporalResolution;
+								stad:hasQuantitativeValue[a time:Duration ;
+															time:numericDuration "2"^^xsd:decimal ;
+															time:unitType time:unitHour]
+								] ;
+    stad:hasSpatialResolution [a stad:PointSpacingResolution;
+								stad:hasTransformationKind stad:ArithmeticMeanCalculation;
+								stad:hasQuantitativeValue [a qudt:QuantityValue ;
+															qudt:numericValue "50"^^xsd:decimal ;
+															qudt:unit unit:KiloM]
+								] .
+	
+	
+ex:ClimateNA_DailyMeanTemperature_NH_20130131
+    a stad:TemporalAggregateDatapoint ;
+    stad:hasQualityKind ex:DailyMeanTemperature ;
+    stad:hasSpatialCoverage ex:NewHampshire ;
+    stad:hasTemporalCoverage ex:NH_20130131_TemporalCoverage ;
+    stad:hasAggregationPeriod ex:NH_20130131_AggregationPeriod ;
+    stad:hasBaseDataset ex:ClimateNA_Temperature_Dataset ;
+    stad:generatedBy ex:ClimateNA_DailyMeanExecution .
+	
+ex:ClimateNA_DailyMeanExecution a ex:PandasArithmeticMeanExecution;
+    stad:hasInput ex:ClimateNA_Temperature_Dataset.
+
+	
+ex:NOAA_DailyMeanTemperature_NH_20130131
+    a stad:TemporalAggregateDatapoint ;
+    stad:hasQualityKind ex:DailyMeanTemperature ;
+    stad:hasSpatialCoverage ex:NewHampshire ;
+    stad:hasTemporalCoverage ex:NH_20130131_TemporalCoverage ;
+    stad:hasAggregationPeriod ex:NOAA_NH_20130131_AggregationPeriod ;
+    stad:hasBaseDataset ex:NOAA_Temperature_Dataset ;
+    stad:generatedBy ex:NOAA_DailyMeanExecution .	
+	
+ex:NOAA_DailyMeanExecution a ex:PandasArithmeticMeanExecution;
+    stad:hasInput ex:NOAA_Temperature_Dataset.
+	
+ex:NOAA_NH_20130131_AggregationPeriod a stad:ConvexAggregationPeriod;
+stad:hasExtent ex:NOAA_NH_20130131_AggregationPeriodExtent.
+
+ex:NOAA_NH_20130131_AggregationPeriodExtent a time:ProperInterval;
+    time:hasBeginning [a time:Instant;
+                time:inXSDDateTimeStamp "2013-01-31T06:00:00-05:00"^^xsd:dateTimeStamp];
+    time:hasEnd [a time:Instant;
+                time:inXSDDateTimeStamp "2013-01-31T18:00:00-05:00"^^xsd:dateTimeStamp].

@@ -1,5 +1,5 @@
 @prefix ex: <http://stad.spatialai.org/example/> .
-@prefix stad: <http://purl.org/spatialai/stad/v2/core/>.
+@prefix stad: <http://purl.org/spatialai/stad/v2/core#> .
 @prefix qudt: <http://qudt.org/schema/qudt/> .
 @prefix unit: <http://qudt.org/vocab/unit/> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
