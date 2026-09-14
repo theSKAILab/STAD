@@ -1,4 +1,4 @@
-# STAD Evaluation and Sample Data
+# STAD Evaluation Sample Data
 
 ## Overview
 
