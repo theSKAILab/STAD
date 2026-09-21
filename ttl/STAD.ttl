@@ -18,7 +18,7 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @base <http://purl.org/spatialai/stad/v2/core#> .
 
-<http://purl.org/spatialai/stad/v2/core> rdf:type owl:Ontology ;
+<http://purl.org/spatialai/stad/v2/core#> rdf:type owl:Ontology ;
                                            owl:versionIRI <http://purl.org/spatialai/stad/v2/core#> ;
                                            owl:imports <http://www.w3.org/2006/time> ,
 		<https://raw.githubusercontent.com/w3c/sdw/gh-pages/time-aggregates/rdf/time-agg.ttl> ;
@@ -463,7 +463,6 @@ time:hasTime rdf:type owl:ObjectProperty ;
 time:isPartOf rdf:type owl:ObjectProperty ;
               rdfs:domain time:TemporalEntity ;
               rdfs:range time:TemporalAggregate ;
-              rdfs:comment "Link to a temporal aggregate of which this temporal entity is a part" ;
               rdfs:isDefinedBy <https://raw.githubusercontent.com/w3c/sdw/gh-pages/time-aggregates/rdf/time-agg.ttl> ;
               rdfs:label "is a part of" ;
               skos:definition "Relates a temporal entity to a temporal aggregate of which it is a part."@en ;
@@ -758,10 +757,9 @@ stad:SpatialAggregateDatapoint rdf:type owl:Class ;
                                                  owl:onProperty stad:hasSpatialCoverage ;
                                                  owl:cardinality "1"^^xsd:nonNegativeInteger
                                                ] ;
-                               rdfs:comment "All quantities that are aggregated over space"@en ;
                                rdfs:isDefinedBy stad: ;
                                rdfs:label "spatial aggregate datapoint"@en ;
-                               skos:definition "A statistical aggregate datapoint computed over a spatial extent and having exactly one spatial coverage."@en .
+                               skos:definition "A statistical aggregate datapoint computed over a spatial extent. It has exactly one spatial coverage."@en .
 
 
 ###  http://purl.org/spatialai/stad/v2/core#SpatialCoverage
@@ -787,11 +785,8 @@ stad:SpatialResolution rdf:type owl:Class ;
 ###  http://purl.org/spatialai/stad/v2/core#SpatioTemporalAggregateDatapoint
 stad:SpatioTemporalAggregateDatapoint rdf:type owl:Class ;
                                       rdfs:subClassOf [ owl:intersectionOf ( stad:SpatialAggregateDatapoint
-                                                                             stad:TemporalAggregateDatapoint
-                                                                           ) ;
-                                                        rdf:type owl:Class
-                                                      ] ;
-                                      rdfs:comment "All quantities that are aggregated over both space and time"@en ;
+                                      stad:TemporalAggregateDatapoint) ;
+                                      rdf:type owl:Class] ;
                                       rdfs:isDefinedBy stad: ;
                                       rdfs:label "spatio-temporal aggregate datapoint"@en ;
                                       skos:definition "A statistical aggregate datapoint aggregated over both space and time."@en .
@@ -801,6 +796,9 @@ stad:SpatioTemporalAggregateDatapoint rdf:type owl:Class ;
 stad:StatisticalAggregateDatapoint rdf:type owl:Class ;
                                    rdfs:subClassOf stad:ComputationalDatapoint ,
                                                    [ rdf:type owl:Restriction ;
+                                                     owl:onProperty stad:hasTransformationKind ;
+                                                     owl:cardinality "1"^^xsd:nonNegativeInteger ],                                
+												   [ rdf:type owl:Restriction ;
                                                      owl:onProperty stad:hasAggregationPeriod ;
                                                      owl:maxCardinality "1"^^xsd:nonNegativeInteger
                                                    ] ,
@@ -815,7 +813,7 @@ stad:StatisticalAggregateDatapoint rdf:type owl:Class ;
                                    rdfs:comment "All quantities that are the statistical summary of a base quantity"@en ;
                                    rdfs:isDefinedBy stad: ;
                                    rdfs:label "statistical aggregate datapoint"@en ;
-                                   skos:definition "A computational datapoint whose value is a statistical summary of base data."@en .
+                                   skos:definition "A computational datapoint whose value is a statistical summary of the base data, aggregated using the described transformationKind. It may have a temporal coverage, an aggregation period, and a spatial coverage."@en .
 
 
 ###  http://purl.org/spatialai/stad/v2/core#TemporalAggregateDatapoint
@@ -905,7 +903,6 @@ geo:SpatialObject rdf:type owl:Class ;
 time:Instant rdf:type owl:Class ;
              rdfs:subClassOf time:TemporalEntity ;
              owl:disjointWith time:ProperInterval ;
-             rdfs:comment "A temporal entity with zero extent or duration"@en ;
              rdfs:isDefinedBy <http://www.w3.org/2006/time> ;
              rdfs:label "Time instant"@en ;
              skos:definition "A temporal entity with zero extent or duration"@en .
@@ -923,7 +920,6 @@ time:Interval rdf:type owl:Class ;
 ###  http://www.w3.org/2006/time#ProperInterval
 time:ProperInterval rdf:type owl:Class ;
                     rdfs:subClassOf time:Interval ;
-                    rdfs:comment "A temporal entity with non-zero extent or duration, i.e. for which the value of the beginning and end are different"@en ;
                     rdfs:isDefinedBy <http://www.w3.org/2006/time> ;
                     rdfs:label "Proper interval"@en ;
                     skos:definition "A temporal entity with non-zero extent or duration, i.e. for which the value of the beginning and end are different"@en .
@@ -936,9 +932,7 @@ time:TemporalAggregate rdf:type owl:Class ;
                                          owl:onProperty time:hasPart ;
                                          owl:minCardinality "1"^^xsd:nonNegativeInteger
                                        ] ;
-                       rdfs:comment """A temporal aggregate is temporal entity that is an aggregation of temporal entities
-
-Note: no ordering relationships are implied amongst the parts. Relationships between temporal entities are supported by explicit properties, such as time:after time:intervalMeets, etc""" ;
+                       rdfs:comment """Note: no ordering relationships are implied amongst the parts. Relationships between temporal entities are supported by explicit properties, such as time:after time:intervalMeets, etc.""" ;
                        rdfs:isDefinedBy <https://raw.githubusercontent.com/w3c/sdw/gh-pages/time-aggregates/rdf/time-agg.ttl> ;
                        rdfs:label "Temporal aggregate" ;
                        skos:definition "A temporal entity that is an aggregation of one or more temporal entities, without implied ordering among its parts."@en ;
