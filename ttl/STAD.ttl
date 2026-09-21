@@ -273,6 +273,15 @@ stad:hasQuantitativeValue rdf:type owl:ObjectProperty ;
                           rdfs:label "has quantitative value"@en ;
                           skos:definition "Relates a quantitative datapoint to its quantitative value."@en .
 
+###  http://purl.org/spatialai/stad/v2/core#hasResolution
+stad:hasResolution rdf:type owl:ObjectProperty ;
+                          rdfs:domain stad:DatasetDescription ;
+                          rdfs:range stad:ResolutionDescriptor ;
+                          rdfs:isDefinedBy stad: ;
+                          rdfs:label "has resolution"@en ;
+                          skos:definition "Relates a dataset description to a descriptor of one of the dataset's resolution."@en ;
+                          skos:note "No maximum cardinality is imposed because a dataset may report multiple complementary resolution descriptors."@en .
+
 
 ###  http://purl.org/spatialai/stad/v2/core#hasSpatialCoverage
 stad:hasSpatialCoverage rdf:type owl:ObjectProperty ;
@@ -290,7 +299,7 @@ stad:hasSpatialCoverage rdf:type owl:ObjectProperty ;
 
 ###  http://purl.org/spatialai/stad/v2/core#hasSpatialResolution
 stad:hasSpatialResolution rdf:type owl:ObjectProperty ;
-                          rdfs:domain stad:DatasetDescription ;
+                          rdfs:subPropertyOf stad:hasResolution ;
                           rdfs:range stad:SpatialResolution ;
                           rdfs:isDefinedBy stad: ;
                           rdfs:label "has spatial resolution"@en ;
@@ -327,7 +336,7 @@ stad:hasTemporalPart rdf:type owl:ObjectProperty ;
 
 ###  http://purl.org/spatialai/stad/v2/core#hasTemporalResolution
 stad:hasTemporalResolution rdf:type owl:ObjectProperty ;
-                           rdfs:domain stad:DatasetDescription ;
+						   rdfs:subPropertyOf stad:hasResolution ;
                            rdfs:range stad:TemporalResolution ;
                            rdfs:isDefinedBy stad: ;
                            rdfs:label "has temporal resolution"@en ;
@@ -726,7 +735,7 @@ stad:RegularTemporalResolution rdf:type owl:Class ;
 stad:ResolutionDescriptor rdf:type owl:Class ;
                           rdfs:subClassOf stad:QuantitativeDatapoint ,
                                           [ rdf:type owl:Restriction ;
-                                            owl:onProperty stad:hasQuantitativeValue ;
+                                            owl:onProperty stad:hasDataValue ;
                                             owl:cardinality "1"^^xsd:nonNegativeInteger
                                           ] ;
                           rdfs:isDefinedBy stad: ;
