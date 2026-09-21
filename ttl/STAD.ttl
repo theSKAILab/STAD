@@ -339,7 +339,7 @@ stad:hasTransformationKind rdf:type owl:ObjectProperty ;
                            rdfs:subPropertyOf stad:outputOf ;
                            rdfs:domain stad:StatisticalAggregateDatapoint ;
                            rdfs:range stad:DataTransformation ;
-                           rdfs:isDefinedBy stad: ;
+						   rdfs:isDefinedBy stad: ;
                            rdfs:label "has transformation kind"@en ;
                            skos:definition "Relates a statistical aggregate datapoint directly to the kind of data transformation used to produce it."@en .
 

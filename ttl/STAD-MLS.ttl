@@ -60,6 +60,14 @@ stad-mls:hasParameter rdf:type owl:ObjectProperty ;
     skos:definition "Relates an implementation to a parameter it accepts."@en ;
     skos:related mls:hasHyperParameter .
 
+stad:hasTransformationKind rdf:type owl:ObjectProperty ;
+                           owl:propertyChainAxiom ( stad:generatedBy
+                                              stad-mls:realizes) ;
+						   rdfs:isDefinedBy stad: ;
+                           rdfs:label "has transformation kind"@en ;
+                           skos:definition "Relates a statistical aggregate datapoint directly to the kind of data transformation used to produce it."@en .
+
+
 stad-mls:implements rdf:type owl:ObjectProperty ;
     rdfs:domain stad-mls:Implementation ;
     rdfs:range stad-mls:Algorithm ;
