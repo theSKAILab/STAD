@@ -410,7 +410,6 @@ time:hasBeginning rdf:type owl:ObjectProperty ;
                   rdfs:subPropertyOf time:hasTime ;
                   rdfs:domain time:TemporalEntity ;
                   rdfs:range time:Instant ;
-                  rdfs:comment "Beginning of a temporal entity"@en ;
                   rdfs:isDefinedBy time: ;
                   rdfs:label "has beginning"@en ;
                   skos:definition "Beginning of a temporal entity."@en .
@@ -421,7 +420,6 @@ time:hasEnd rdf:type owl:ObjectProperty ;
             rdfs:subPropertyOf time:hasTime ;
             rdfs:domain time:TemporalEntity ;
             rdfs:range time:Instant ;
-            rdfs:comment "End of a temporal entity."@en ;
             rdfs:isDefinedBy time: ;
             rdfs:label "has end"@en ;
             skos:definition "End of a temporal entity."@en .
@@ -434,7 +432,6 @@ time:hasPart rdf:type owl:ObjectProperty ;
              owl:inverseOf time:isPartOf ;
              rdfs:domain time:TemporalAggregate ;
              rdfs:range time:TemporalEntity ;
-             rdfs:comment "Link to a temporal entity that is a part of a temporal aggregate" ;
              rdfs:isDefinedBy <https://raw.githubusercontent.com/w3c/sdw/gh-pages/time-aggregates/rdf/time-agg.ttl> ;
              rdfs:label "has a part" ;
              skos:definition "Relates a temporal aggregate to a constituent temporal entity."@en ;
@@ -452,7 +449,6 @@ ex:t1
 ###  http://www.w3.org/2006/time#hasTime
 time:hasTime rdf:type owl:ObjectProperty ;
              rdfs:range time:TemporalEntity ;
-             rdfs:comment "Supports the association of a temporal entity (instant or interval) to any thing"@en ;
              rdfs:isDefinedBy time: ;
              rdfs:label "has time"@en ;
              skos:definition "Supports the association of a temporal entity (instant or interval) to any thing"@en ;
@@ -598,7 +594,6 @@ stad:Datapoint rdf:type owl:Class ;
                                  owl:someValuesFrom stad:QualityKind
                                ] ;
                owl:disjointWith stad:Dataset ;
-               rdfs:comment "super class for all data point categories"@en ;
                rdfs:isDefinedBy stad: ;
                rdfs:label "datapoint"@en ;
                skos:definition "An individual data item that has a quality kind and a corresponding data value."@en .
@@ -810,10 +805,9 @@ stad:StatisticalAggregateDatapoint rdf:type owl:Class ;
                                                      owl:onProperty stad:hasTemporalCoverage ;
                                                      owl:maxCardinality "1"^^xsd:nonNegativeInteger
                                                    ] ;
-                                   rdfs:comment "All quantities that are the statistical summary of a base quantity"@en ;
                                    rdfs:isDefinedBy stad: ;
                                    rdfs:label "statistical aggregate datapoint"@en ;
-                                   skos:definition "A computational datapoint whose value is a statistical summary of the base data, aggregated using the described transformationKind. It may have a temporal coverage, an aggregation period, and a spatial coverage."@en .
+                                   skos:definition "A statistical aggregate datapoint is a computational datapoint whose value is a statistical summary of some base data, aggregated using the described data transformation kind. It may have a temporal coverage, an aggregation period, and a spatial coverage."@en .
 
 
 ###  http://purl.org/spatialai/stad/v2/core#TemporalAggregateDatapoint
@@ -827,7 +821,6 @@ stad:TemporalAggregateDatapoint rdf:type owl:Class ;
                                                   owl:onProperty stad:hasTemporalCoverage ;
                                                   owl:cardinality "1"^^xsd:nonNegativeInteger
                                                 ] ;
-                                rdfs:comment "All quantities that are aggregated over time"@en ;
                                 rdfs:isDefinedBy stad: ;
                                 rdfs:label "temporal aggregate datapoint"@en ;
                                 skos:definition "A statistical aggregate datapoint aggregated over time and having exactly one temporal coverage and one aggregation period."@en .
@@ -911,7 +904,6 @@ time:Instant rdf:type owl:Class ;
 ###  http://www.w3.org/2006/time#Interval
 time:Interval rdf:type owl:Class ;
               rdfs:subClassOf time:TemporalEntity ;
-              rdfs:comment "A temporal entity with an extent or duration"@en ;
               rdfs:isDefinedBy <http://www.w3.org/2006/time> ;
               rdfs:label "Time interval"@en ;
               skos:definition "A temporal entity with an extent or duration"@en .
@@ -952,7 +944,6 @@ ex:VicSchoolTerms2020
 
 ###  http://www.w3.org/2006/time#TemporalDuration
 time:TemporalDuration rdf:type owl:Class ;
-                      rdfs:comment "Time extent; duration of a time interval separate from its particular start position"@en ;
                       rdfs:isDefinedBy <http://www.w3.org/2006/time> ;
                       rdfs:label "Temporal duration"@en ;
                       skos:definition "Time extent; duration of a time interval separate from its particular start position"@en .
@@ -966,7 +957,6 @@ time:TemporalEntity rdf:type owl:Class ;
                                                       )
                                         ] ;
                     rdfs:subClassOf owl:Thing ;
-                    rdfs:comment "A temporal interval or instant."@en ;
                     rdfs:isDefinedBy <http://www.w3.org/2006/time> ;
                     rdfs:label "Temporal entity"@en ;
                     skos:definition "A temporal interval or instant."@en .
