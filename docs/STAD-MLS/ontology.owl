@@ -1,0 +1,496 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://purl.org/spatialai/stad/v2/mls#"
+     xml:base="http://purl.org/spatialai/stad/v2/mls"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+     xmlns:terms="http://purl.org/dc/terms/">
+    <owl:Ontology rdf:about="http://purl.org/spatialai/stad/v2/mls#">
+        <owl:versionIRI rdf:resource="http://purl.org/spatialai/stad/v2/mls#"/>
+        <terms:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2025-11-16</terms:created>
+        <terms:creator xml:lang="en">Kingsley Wiafe-Kwakye - https://orcid.org/0009-0007-3741-3721</terms:creator>
+        <terms:creator xml:lang="en">Torsten Hahmann - http://orcid.org/0000-0002-5331-5052</terms:creator>
+        <terms:description xml:lang="en">STAD provides syntax for describing the spatial and temporal characteristics of aggregate quantities. This extension includes concepts for describing the algorithms and implementations used for data transformations. It is based on the Machine Learning Schema (MLS).</terms:description>
+        <terms:identifier xml:lang="en">http://purl.org/spatialai/stad/v2/mls&gt;</terms:identifier>
+        <terms:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-09-09</terms:issued>
+        <terms:license rdf:resource="https://creativecommons.org/licenses/by/4.0/"/>
+        <terms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-09-09</terms:modified>
+        <terms:publisher xml:lang="en">Spatial Knowledge and Artificial Intelligence (SKAI) Lab, University of Maine</terms:publisher>
+        <terms:subject>Aggregate data</terms:subject>
+        <terms:subject>Data transformation</terms:subject>
+        <terms:subject>Spatial aggregate data</terms:subject>
+        <terms:subject>Temporal aggregate data</terms:subject>
+        <terms:title xml:lang="en">Spatial and Temporal Aggregate Data Ontology MLS extension (STAD-MLS)</terms:title>
+        <rdfs:label xml:lang="en">STAD-MLS extension</rdfs:label>
+        <owl:versionInfo xml:lang="en">1.0</owl:versionInfo>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://purl.org/dc/terms/created -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/created"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/creator -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/creator"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/description -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/description"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/identifier -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/identifier"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/issued -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/issued"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/license -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/license"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/modified -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/modified"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/publisher -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/publisher"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/subject -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/subject"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/title -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/title"/>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#definition -->
+
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#definition"/>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#related -->
+
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#related"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://www.w3.org/2001/XMLSchema#date -->
+
+
+    <rdfs:Datatype rdf:about="http://www.w3.org/2001/XMLSchema#date"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://purl.org/spatialai/stad/v2/core#generatedBy -->
+
+
+    <owl:ObjectProperty rdf:about="http://purl.org/spatialai/stad/v2/core#generatedBy">
+        <rdfs:domain rdf:resource="http://purl.org/spatialai/stad/v2/core#ComputationalDatapoint"/>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/spatialai/stad/v2/core#"/>
+        <rdfs:label xml:lang="en">generated by</rdfs:label>
+        <skos:definition xml:lang="en">Links anything that is generated by an Algorithm to the specific AlgorithmExecution that was used.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/spatialai/stad/v2/core#hasTransformationKind -->
+
+
+    <owl:ObjectProperty rdf:about="http://purl.org/spatialai/stad/v2/core#hasTransformationKind">
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.org/spatialai/stad/v2/core#generatedBy"/>
+            <rdf:Description rdf:about="http://purl.org/spatialai/stad/v2/mls#realizes"/>
+        </owl:propertyChainAxiom>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/spatialai/stad/v2/core#"/>
+        <rdfs:label xml:lang="en">has transformation kind</rdfs:label>
+        <skos:definition xml:lang="en">Relates a statistical aggregate datapoint directly to the kind of data transformation used to produce it.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/spatialai/stad/v2/core#outputOf -->
+
+
+    <owl:ObjectProperty rdf:about="http://purl.org/spatialai/stad/v2/core#outputOf">
+        <rdfs:domain rdf:resource="http://purl.org/spatialai/stad/v2/core#ComputationalDatapoint"/>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/spatialai/stad/v2/core#"/>
+        <rdfs:label xml:lang="en">output of</rdfs:label>
+        <skos:definition xml:lang="en">Relates a computational datapoint to the algorithm of which it is an output.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/spatialai/stad/v2/mls#executes -->
+
+
+    <owl:ObjectProperty rdf:about="http://purl.org/spatialai/stad/v2/mls#executes">
+        <rdfs:domain rdf:resource="http://purl.org/spatialai/stad/v2/mls#AlgorithmExecution"/>
+        <rdfs:range rdf:resource="http://purl.org/spatialai/stad/v2/mls#Implementation"/>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/spatialai/stad/v2/mls#"/>
+        <rdfs:label xml:lang="en">executes</rdfs:label>
+        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://ontologydesignpatterns.org/wiki/images/4/41/WOP2016_paper_07.pdf</rdfs:seeAlso>
+        <skos:definition xml:lang="en">Relates an algorithm execution to the concrete implementation executed.</skos:definition>
+        <skos:related rdf:resource="http://www.w3.org/ns/mls#executes"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/spatialai/stad/v2/mls#hasInput -->
+
+
+    <owl:ObjectProperty rdf:about="http://purl.org/spatialai/stad/v2/mls#hasInput">
+        <rdfs:domain rdf:resource="http://purl.org/spatialai/stad/v2/mls#AlgorithmExecution"/>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/spatialai/stad/v2/mls#"/>
+        <rdfs:label xml:lang="en">has input</rdfs:label>
+        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://ontologydesignpatterns.org/wiki/images/4/41/WOP2016_paper_07.pdf</rdfs:seeAlso>
+        <skos:definition xml:lang="en">Relates an algorithm execution to some input, either input data or some parameter or parameter setting.</skos:definition>
+        <skos:related rdf:resource="http://www.w3.org/ns/mls#hasInput"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/spatialai/stad/v2/mls#hasParameter -->
+
+
+    <owl:ObjectProperty rdf:about="http://purl.org/spatialai/stad/v2/mls#hasParameter">
+        <rdfs:domain rdf:resource="http://purl.org/spatialai/stad/v2/mls#Implementation"/>
+        <rdfs:range rdf:resource="http://purl.org/spatialai/stad/v2/mls#Parameter"/>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/spatialai/stad/v2/mls#"/>
+        <rdfs:label xml:lang="en">has parameter</rdfs:label>
+        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://ontologydesignpatterns.org/wiki/images/4/41/WOP2016_paper_07.pdf</rdfs:seeAlso>
+        <skos:definition xml:lang="en">Relates an implementation to a parameter it accepts.</skos:definition>
+        <skos:related rdf:resource="http://www.w3.org/ns/mls#hasHyperParameter"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/spatialai/stad/v2/mls#implements -->
+
+
+    <owl:ObjectProperty rdf:about="http://purl.org/spatialai/stad/v2/mls#implements">
+        <rdfs:domain rdf:resource="http://purl.org/spatialai/stad/v2/mls#Implementation"/>
+        <rdfs:range rdf:resource="http://purl.org/spatialai/stad/v2/mls#Algorithm"/>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/spatialai/stad/v2/mls#"/>
+        <rdfs:label xml:lang="en">implements</rdfs:label>
+        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://ontologydesignpatterns.org/wiki/images/4/41/WOP2016_paper_07.pdf</rdfs:seeAlso>
+        <skos:definition xml:lang="en">Relates a concrete implementation to the algorithm it implements.</skos:definition>
+        <skos:related rdf:resource="http://www.w3.org/ns/mls#implements"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/spatialai/stad/v2/mls#realizes -->
+
+
+    <owl:ObjectProperty rdf:about="http://purl.org/spatialai/stad/v2/mls#realizes">
+        <rdfs:domain rdf:resource="http://purl.org/spatialai/stad/v2/mls#AlgorithmExecution"/>
+        <rdfs:range rdf:resource="http://purl.org/spatialai/stad/v2/mls#Algorithm"/>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/spatialai/stad/v2/mls#"/>
+        <rdfs:label xml:lang="en">realizes</rdfs:label>
+        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://ontologydesignpatterns.org/wiki/images/4/41/WOP2016_paper_07.pdf</rdfs:seeAlso>
+        <skos:definition xml:lang="en">Relates an algorithm execution to the algorithm realized by that execution.</skos:definition>
+        <skos:related rdf:resource="http://www.w3.org/ns/mls#realizes"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/spatialai/stad/v2/mls#specifiedBy -->
+
+
+    <owl:ObjectProperty rdf:about="http://purl.org/spatialai/stad/v2/mls#specifiedBy">
+        <rdfs:domain rdf:resource="http://purl.org/spatialai/stad/v2/mls#ParameterSetting"/>
+        <rdfs:range rdf:resource="http://purl.org/spatialai/stad/v2/mls#Parameter"/>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/spatialai/stad/v2/mls#"/>
+        <rdfs:label xml:lang="en">specified by</rdfs:label>
+        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://ontologydesignpatterns.org/wiki/images/4/41/WOP2016_paper_07.pdf</rdfs:seeAlso>
+        <skos:definition xml:lang="en">Relates a parameter setting to the parameter whose value it specifies.</skos:definition>
+        <skos:related rdf:resource="http://www.w3.org/ns/mls#specifiedBy"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://purl.org/spatialai/stad/v2/mls#hasValue -->
+
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/spatialai/stad/v2/mls#hasValue">
+        <rdfs:domain rdf:resource="http://purl.org/spatialai/stad/v2/mls#ParameterSetting"/>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/spatialai/stad/v2/mls#"/>
+        <rdfs:label xml:lang="en">has value</rdfs:label>
+        <skos:definition xml:lang="en">Relates a parameter setting to its literal value.</skos:definition>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://purl.org/spatialai/stad/v2/core#ComputationalDatapoint -->
+
+
+    <owl:Class rdf:about="http://purl.org/spatialai/stad/v2/core#ComputationalDatapoint">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/spatialai/stad/v2/core#generatedBy"/>
+                <owl:allValuesFrom rdf:resource="http://purl.org/spatialai/stad/v2/mls#AlgorithmExecution"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/spatialai/stad/v2/core#"/>
+        <rdfs:label xml:lang="en">computational datapoint</rdfs:label>
+        <skos:definition xml:lang="en">A datapoint generated by one algorithm execution from one or more base datapoints or datasets.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/spatialai/stad/v2/core#DataTransformation -->
+
+
+    <owl:Class rdf:about="http://purl.org/spatialai/stad/v2/core#DataTransformation">
+        <rdfs:subClassOf rdf:resource="http://purl.org/spatialai/stad/v2/mls#Algorithm"/>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/spatialai/stad/v2/core#"/>
+        <rdfs:label xml:lang="en">data transformation</rdfs:label>
+        <skos:definition xml:lang="en">An algorithm that manipulates or converts data from one form into another, including filtering, sorting, aggregation, type conversion, or mathematical operations.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/spatialai/stad/v2/core#Dataset -->
+
+
+    <owl:Class rdf:about="http://purl.org/spatialai/stad/v2/core#Dataset">
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/spatialai/stad/v2/core#"/>
+        <rdfs:label xml:lang="en">dataset</rdfs:label>
+        <skos:definition xml:lang="en">A collection of datapoints that has an associated dataset description.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/spatialai/stad/v2/mls#Algorithm -->
+
+
+    <owl:Class rdf:about="http://purl.org/spatialai/stad/v2/mls#Algorithm">
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/spatialai/stad/v2/mls#"/>
+        <rdfs:label xml:lang="en">algorithm</rdfs:label>
+        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://ontologydesignpatterns.org/wiki/images/4/41/WOP2016_paper_07.pdf</rdfs:seeAlso>
+        <skos:definition xml:lang="en">A sequential set of instructions for solving a problem or achieving a goal, independent of a concrete implementation or execution.</skos:definition>
+        <skos:related rdf:resource="http://www.w3.org/ns/mls#Algorithm"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/spatialai/stad/v2/mls#AlgorithmExecution -->
+
+
+    <owl:Class rdf:about="http://purl.org/spatialai/stad/v2/mls#AlgorithmExecution">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/spatialai/stad/v2/mls#hasInput"/>
+                <owl:someValuesFrom rdf:resource="http://purl.org/spatialai/stad/v2/core#Dataset"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/spatialai/stad/v2/mls#hasInput"/>
+                <owl:someValuesFrom rdf:resource="http://purl.org/spatialai/stad/v2/mls#ParameterSetting"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/spatialai/stad/v2/mls#realizes"/>
+                <owl:someValuesFrom rdf:resource="http://purl.org/spatialai/stad/v2/mls#Algorithm"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/spatialai/stad/v2/mls#"/>
+        <rdfs:label xml:lang="en">algorithm execution</rdfs:label>
+        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://ontologydesignpatterns.org/wiki/images/4/41/WOP2016_paper_07.pdf</rdfs:seeAlso>
+        <skos:definition xml:lang="en">A specific run of an implementation of an algorithm, using particular inputs and parameter settings.</skos:definition>
+        <skos:related rdf:resource="http://www.w3.org/ns/mls#Run"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/spatialai/stad/v2/mls#Implementation -->
+
+
+    <owl:Class rdf:about="http://purl.org/spatialai/stad/v2/mls#Implementation">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/spatialai/stad/v2/mls#hasParameter"/>
+                <owl:someValuesFrom rdf:resource="http://purl.org/spatialai/stad/v2/mls#Parameter"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/spatialai/stad/v2/mls#implements"/>
+                <owl:someValuesFrom rdf:resource="http://purl.org/spatialai/stad/v2/mls#Algorithm"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/spatialai/stad/v2/mls#"/>
+        <rdfs:label xml:lang="en">implementation</rdfs:label>
+        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://ontologydesignpatterns.org/wiki/images/4/41/WOP2016_paper_07.pdf</rdfs:seeAlso>
+        <skos:definition xml:lang="en">An executable realization of an algorithm in a particular programming language or software environment.</skos:definition>
+        <skos:related rdf:resource="http://www.w3.org/ns/mls#Implementation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/spatialai/stad/v2/mls#Parameter -->
+
+
+    <owl:Class rdf:about="http://purl.org/spatialai/stad/v2/mls#Parameter">
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/spatialai/stad/v2/mls#"/>
+        <rdfs:label xml:lang="en">parameter</rdfs:label>
+        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://ontologydesignpatterns.org/wiki/images/4/41/WOP2016_paper_07.pdf</rdfs:seeAlso>
+        <skos:definition xml:lang="en">A named input accepted by an implementation and assigned a value in a parameter setting.</skos:definition>
+        <skos:related rdf:resource="http://www.w3.org/ns/mls#HyperParameter"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/spatialai/stad/v2/mls#ParameterSetting -->
+
+
+    <owl:Class rdf:about="http://purl.org/spatialai/stad/v2/mls#ParameterSetting">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/spatialai/stad/v2/mls#specifiedBy"/>
+                <owl:someValuesFrom rdf:resource="http://purl.org/spatialai/stad/v2/mls#Parameter"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/spatialai/stad/v2/mls#hasValue"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/spatialai/stad/v2/mls#"/>
+        <rdfs:label xml:lang="en">parameter setting</rdfs:label>
+        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://ontologydesignpatterns.org/wiki/images/4/41/WOP2016_paper_07.pdf</rdfs:seeAlso>
+        <skos:definition xml:lang="en">An assignment of a literal value to a parameter for a particular algorithm execution.</skos:definition>
+        <skos:related rdf:resource="http://www.w3.org/ns/mls#HyperParameterSetting"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.org/spatialai/stad/v2/mls#Algorithm"/>
+            <rdf:Description rdf:about="http://purl.org/spatialai/stad/v2/mls#AlgorithmExecution"/>
+            <rdf:Description rdf:about="http://purl.org/spatialai/stad/v2/mls#Implementation"/>
+            <rdf:Description rdf:about="http://purl.org/spatialai/stad/v2/mls#Parameter"/>
+            <rdf:Description rdf:about="http://purl.org/spatialai/stad/v2/mls#ParameterSetting"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/ -->
+
+

@@ -1,0 +1,3546 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" href="resources/primer.css" media="screen"/>
+<link rel="stylesheet" href="resources/rec.css" media="screen"/>
+<link rel="stylesheet" href="resources/extra.css" media="screen"/>
+<link rel="stylesheet" href="resources/owl.css" media="screen"/>
+<link rel="stylesheet" href="resources/dark.css" media="(prefers-color-scheme: dark)"/>
+<link rel="stylesheet" href="resources/light.css" media="(prefers-color-scheme: light)"/>
+<link rel="stylesheet" href="resources/slider.css" media="screen"/>
+<meta name="color-scheme" content="dark light">
+<script type="module" src="resources/dark-mode-toggle.mjs"></script><div class="darkmode">
+	<dark-mode-toggle class="slider"></dark-mode-toggle>
+</div>
+ <title>Spatial and Temporal Aggregate Data (STAD) Ontology</title>
+
+
+<!-- SCHEMA.ORG METADATA -->
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","url":"http://purl.org/spatialai/stad/v2/core#","image":"http://vowl.visualdataweb.org/webvowl/#iri=http://purl.org/spatialai/stad/v2/core#","name":"Spatial and Temporal Aggregate Data (STAD) Ontology", "headline":"The Spatial Temporal Aggregate Data (STAD) ontology provides a machine-interpretable representation of the semantics of statistically aggregated spatial and temporal data.  Published aggregate data often lack explicit information about how values were computed, which source data were used, and the spatial and temporal conditions under which the values apply. STAD addresses this limitation by representing four central aspects of an aggregate datapoint: its base data, transformation method, spatial support (spatial coverage), and temporal support (temporal coverage and aggregation period), together with its quality kind and value. It provides a reusable ontology built around this core ontology design pattern, with refinements specifically targeting spatial and temporal aggregates. The ontology supports semantically describing other important concepts and relationships closely related to aggregate datapoints, including datasets, datapoints (including quality kinds and values), spatial and temporal resolution, and computational transformation kinds. Implemented as a reusable OWL 2 ontology, STAD supports the consistent publication, discovery, comparison, integration, and querying of aggregated data across heterogeneous datasets and knowledge graphs.", "dateReleased":"2022-06-12", "dateModified":"2026-09-21", "version":"2.0", "license":"https://creativecommons.org/licenses/by/4.0/", "author":[{"@type":"Person","name":"Kingsley Wiafe-Kwakye","url":"https://orcid.org/0009-0007-3741-3721"},{"@type":"Person","name":"Torsten Hahmann","url":"http://orcid.org/0000-0002-5331-5052"},{"@type":"Person","name":"Kate Beard","url":"https://orcid.org/0000-0002-7703-0270"}]}</script>
+
+<script src="resources/jquery.js"></script> 
+<script src="resources/marked.min.js"></script> 
+    <script> 
+function loadHash() {
+  jQuery(".markdown").each(function(el){jQuery(this).after(marked.parse(jQuery(this).text())).remove()});
+	var hash = location.hash;
+	if($(hash).offset()!=null){
+	  $('html, body').animate({scrollTop: $(hash).offset().top}, 0);
+}
+	loadTOC();
+}
+function loadTOC(){
+	//process toc dynamically
+	  var t='<h2>Table of contents</h2><ul>';i = 1;j=0;
+	  jQuery(".list").each(function(){
+		if(jQuery(this).is('h2')){
+			if(j>0){
+				t+='</ul>';
+				j=0;
+			}
+			t+= '<li>'+i+'. <a href=#'+ jQuery(this).attr('id')+'>'+ jQuery(this).ignore("span").text()+'</a></li>';
+			i++;
+		}
+		if(jQuery(this).is('h3')){
+			if(j==0){
+				t+='<ul>';
+			}
+			j++;
+			t+= '<li>'+(i-1)+'.'+j+'. '+'<a href=#'+ jQuery(this).attr('id')+'>'+ jQuery(this).ignore("span").text()+'</a></li>';
+		}
+	  });
+	  t+='</ul>';
+	  $("#toc").html(t); 
+}
+$(function(){
+    loadHash();
+}); $.fn.ignore = function(sel){
+        return this.clone().find(sel||">*").remove().end();
+ }; 
+   </script> 
+  </head> 
+
+<body>
+<div class="container">
+<div class="head">
+<div style="float:right">language <a href="index-en.html"><b>en</b></a> </div>
+<h1>Spatial and Temporal Aggregate Data (STAD) Ontology</h1>
+<h2>Release: 2025-12-15</h2>
+
+
+<dl>
+<dt>Modified on: 2026-09-21</dt>
+<dt>This version:</dt>
+<dd><a href="http://purl.org/spatialai/stad/v2/core#">http://purl.org/spatialai/stad/v2/core#</a></dd>
+<dt>Latest version:</dt>
+<dd><a href="http://purl.org/spatialai/stad/v2/core#">http://purl.org/spatialai/stad/v2/core#</a></dd>
+<dt>Revision:</dt>
+<dd>2.0</dd>
+<dt>Issued on:</dt>
+<dd>2025-12-15</dd>
+<dt>Authors:</dt>
+<dd><a href="https://orcid.org/0009-0007-3741-3721">Kingsley Wiafe-Kwakye</a>, University of Maine, ME, USA</dd><dd><a href="http://orcid.org/0000-0002-5331-5052">Torsten Hahmann</a>, University of Maine, ME, USA</dd><dd><a href="https://orcid.org/0000-0002-7703-0270">Kate Beard</a>, University of Maine, ME, USA</dd>
+
+<dt>Publisher:</dt>
+<dd>Spatial Knowledge and Artificial Intelligence (SKAI) Lab, University of Maine</dd>
+<dt>Imported Ontologies:</dt>
+<dd><a href="http://www.w3.org/2006/time">time</a></dd><dd><a href="https://raw.githubusercontent.com/w3c/sdw/gh-pages/time-aggregates/rdf/time-agg.ttl">agg</a></dd>
+
+<dt>Download serialization:</dt><dd><span><a href="ontology.jsonld" target="_blank"><img src="https://img.shields.io/badge/Format-JSON_LD-blue.svg" alt="JSON-LD" /></a> </span><span><a href="ontology.owl" target="_blank"><img src="https://img.shields.io/badge/Format-RDF/XML-blue.svg" alt="RDF/XML" /></a> </span><span><a href="ontology.nt" target="_blank"><img src="https://img.shields.io/badge/Format-N_Triples-blue.svg" alt="N-Triples" /></a> </span><span><a href="ontology.ttl" target="_blank"><img src="https://img.shields.io/badge/Format-TTL-blue.svg" alt="TTL" /></a> </span></dd><dt>License:</dt><dd><a href="https://creativecommons.org/licenses/by/4.0/" target="_blank"><img src="https://img.shields.io/badge/License-Creative%20Commons%20Attribution%20License-blue.svg" alt="https://creativecommons.org/licenses/by/4.0/" /></a>
+<a href="https://creativecommons.org/licenses/by/4.0/" rel="license" target="_blank">
+<img src="null" style="border-width:0" alt="License" />
+</a>
+<br/></dd><dt>Visualization:</dt><dd><a href="webvowl/index.html#" target="_blank"><img src="https://img.shields.io/badge/Visualize_with-WebVowl-blue.svg" alt="Visualize with WebVowl" /></a></dd>
+<!-- <dt>Evaluation:</dt><dd><a href="OOPSevaluation/oopsEval.html#" target="_blank"><img src="https://img.shields.io/badge/Evaluate_with-OOPS! (OntOlogy Pitfall Scanner!)-blue.svg" alt="Evaluate with OOPS!" /></a></dd> --><dt>Cite as:</dt>
+<dd>Kingsley Wiafe-Kwakye, Torsten Hahmann, Kate Beard. Spatial and Temporal Aggregate Data (STAD) Ontology Design Pattern. Revision: 2.0. Retrieved from: http://purl.org/spatialai/stad/v2/core/</dd>
+</dl>
+
+<hr/>
+</div>
+<div class="status">
+<div>
+<span>Released Version (V2)</span>
+</div>
+</div>     <div id="abstract"><h2>Abstract</h2><span class="markdown">
+The Spatial Temporal Aggregate Data (STAD) ontology provides a machine-interpretable representation of the semantics of statistically aggregated spatial and temporal data.  Published aggregate data often lack explicit information about how values were computed, which source data were used, and the spatial and temporal conditions under which the values apply. STAD addresses this limitation by representing four central aspects of an aggregate datapoint: its base data, transformation method, spatial support (spatial coverage), and temporal support (temporal coverage and aggregation period), together with its quality kind and value. It provides a reusable ontology built around this core ontology design pattern, with refinements specifically targeting spatial and temporal aggregates. The ontology supports semantically describing other important concepts and relationships closely related to aggregate datapoints, including datasets, datapoints (including quality kinds and values), spatial and temporal resolution, and computational transformation kinds. Implemented as a reusable OWL 2 ontology, STAD supports the consistent publication, discovery, comparison, integration, and querying of aggregated data across heterogeneous datasets and knowledge graphs.</span>
+</div>
+<div id="toc"></div> 
+
+<!--INTRODUCTION SECTION-->
+    <div id="introduction"><h2 id="intro" class="list">Introduction <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<span class="markdown">Advances in data collection technologies have made large volumes of spatial and temporal data available across environmental science, climate research, ecology, public health, and many other domains. Such data are frequently aggregated using operations such as the arithmetic mean, minimum, maximum, or percentile. Aggregation can reduce storage and processing requirements, reveal broader patterns, facilitate decision-making, and protect sensitive information.
+
+Nevertheless, an aggregate value cannot be interpreted reliably from its label alone. Two values described as “daily mean temperature,” for example, may have been calculated from 24 hourly observations, from minute-level observations, or from only the daily minimum and maximum. Similarly, two seasonal aggregates may differ in the periods regarded as belonging to the season, the spatial areas they represent, the resolution of their source data, or the transformations used to compute them. Without explicit descriptions of these characteristics, aggregate data can be difficult to discover, compare, integrate, and reuse correctly.
+
+The Spatial Temporal Aggregate Data (STAD) ontology addresses this problem by making aggregation semantics explicit and machine interpretable. STAD provides an ontology design pattern for characterizing aggregate datapoints through their base data, transformation method, spatial support, and temporal support. It extends this pattern into a broader semantic framework for datasets, datapoints, values, quality kinds, resolution, and computational provenance. STAD is intended for use across domains in which spatially or temporally aggregated data must be represented, queried, or compared.
+</span>
+</div>
+  
+
+<!--OVERVIEW SECTION-->
+    <div id="overview"><h2 id="overv" class="list">Spatial and Temporal Aggregate Data (STAD) Ontology: Overview <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<span>
+<p>STAD consists of a core ontology and a complementary computational provenance module called STAD-MLS. The core ontology uses the namespace <a href="http://purl.org/spatialai/stad/v2/core#">http://purl.org/spatialai/stad/v2/core#</a>, while STAD-MLS uses <a href="http://purl.org/spatialai/stad/v2/mls#">http://purl.org/spatialai/stad/v2/mls#</a>. The ontologies are formalized in OWL 2 RL and are designed for direct reuse in RDF knowledge graphs.</p>
+
+<p>The general data model centers on the class <a href="#Data" title="http://purl.org/spatialai/stad/v2/core#Data">Data</a>, with <a href="#Datapoint" title="http://purl.org/spatialai/stad/v2/core#Datapoint">Datapoint</a> and <a href="#Dataset" title="http://purl.org/spatialai/stad/v2/core#Dataset">Dataset</a> as its principal subclasses. A Datapoint represents an atomic unit of data and is associated with a <a href="#QualityKind">QualityKind</a> describing what it represents and a <a href="#DataValue" title="http://purl.org/spatialai/stad/v2/core#DataValue">DataValue</a> recording its value. Datapoints may be quantitative or qualitative and may result from observation or computation. A Dataset groups datapoints and may be associated with a DatasetDescription containing metadata about the dataset, including its spatial and temporal resolution.</p>
+
+<p><a href="#StatisticalAggregateDatapoint">StatisticalAggregateDatapoint</a> represents a datapoint obtained by statistically transforming other data. STAD distinguishes <a href="#SpatialAggregateDatapoint">SpatialAggregateDatapoint</a>, <a href="#TemporalAggregateDatapoint">TemporalAggregateDatapoint</a>, and <a href="#SpatioTemporalAggregateDatapoint">SpatioTemporalAggregateDatapoint</a> according to whether the aggregation has spatial support, temporal support, or both. Each statistical aggregate can be characterized along four principal semantic dimensions:
+
+<ul>
+<li>Base data identify the source data from which the aggregate was derived. They may be represented as individual datapoints or as an entire dataset.</li>
+
+<li><a href="#DataTransformation">DataTransformation</a> describes the kind of method that was used to compute the aggregate. A transformation may be represented at a general level, such as an arithmetic mean, minimum, or maximum, or described in greater computational detail through <a href="http://purl.org/spatialai/stad/v2/mls#">STAD-MLS</a>.</li>
+
+<li>Spatial support identifies the spatial extent, represented as <a href="#SpatialCoverage">SpatialCoverage</a> over which the base data were aggregated and for which the resulting value is meaningful. Spatial coverage may be represented using GeoSPARQL features and geometries.</li>
+
+<li>Temporal support describes when the aggregate applies. STAD distinguishes <a href="#TemporalCoverage">TemporalCoverage</a>, representing the overall temporal extent of an aggregate, from its <a href="#AggregationPeriod">AggregationPeriod</a>, representing the potentially discontinuous portions of that extent from which observations were actually included.</li>
+</ul>
+</p>
+
+<p>Spatial and temporal resolution are modeled separately from spatial and temporal support. Both <a href="#ResolutionDescriptor">ResolutionDescriptors</a> characterizes the granularity or sampling structure of a base dataset and is therefore recorded in its <a href="#DatasetDescription">DatasetDescription</a>. <a href="#SpatialResolution">SpatialResolution</a> can describe characteristics such as raster-cell size, spacing between observation locations, sampling density, or coverage ratio. <a href="#TemporalResolution">TemporalResolution</a> can describe a regular sampling interval or a statistical summary of irregular temporal spacing.</p>
+
+<p>The optional <a href="http://purl.org/spatialai/stad/v2/mls#">STAD-MLS</a> extension supports more detailed descriptions of computational provenance. It distinguishes an algorithm from its implementation and from a particular execution of that implementation. An execution can be linked to its inputs, outputs, and parameter settings, enabling aggregates to be documented at the level needed for reproducibility. When such detail is unavailable or unnecessary, an aggregate may instead be linked directly to a more general transformation kind.</p>
+
+<p>STAD reuses and aligns with established semantic standards. It uses OWL-Time to describe temporal entities and temporal aggregates and selected GeoSPARQL terms to describe spatial features and geometries. Quantitative values may be represented using QUDT, OM, or another suitable quantities-and-units ontology. This modular design allows STAD to express aggregation semantics at different levels of detail and to complement the domain ontologies already used by a dataset or knowledge graph.<p>
+
+
+<p>This ontology has the following classes and properties.</p>
+
+</span>
+<h4>Classes</h4>
+<ul xmlns:widoco="https://w3id.org/widoco/vocab#"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    class="hlist">
+   <li>
+      <a href="#AggregationPeriod"
+         title="http://purl.org/spatialai/stad/v2/core#AggregationPeriod">aggregation period</a>
+   </li>
+   <li>
+      <a href="#AverageCalculationDataTransformation"
+         title="http://purl.org/spatialai/stad/v2/core#AverageCalculationDataTransformation">average calculation data transformation</a>
+   </li>
+   <li>
+      <a href="#CentralTendencyCalculationDataTransformation"
+         title="http://purl.org/spatialai/stad/v2/core#CentralTendencyCalculationDataTransformation">central tendency calculation data transformation</a>
+   </li>
+   <li>
+      <a href="#ComputationalDatapoint"
+         title="http://purl.org/spatialai/stad/v2/core#ComputationalDatapoint">computational datapoint</a>
+   </li>
+   <li>
+      <a href="#ComputationalPredictedDatapoint"
+         title="http://purl.org/spatialai/stad/v2/core#ComputationalPredictedDatapoint">computational predicted datapoint</a>
+   </li>
+   <li>
+      <a href="#ConvexAggregationPeriod"
+         title="http://purl.org/spatialai/stad/v2/core#ConvexAggregationPeriod">convex aggregation period</a>
+   </li>
+   <li>
+      <a href="#CoverageRatioResolution"
+         title="http://purl.org/spatialai/stad/v2/core#CoverageRatioResolution">coverage ratio resolution</a>
+   </li>
+   <li>
+      <a href="#Data" title="http://purl.org/spatialai/stad/v2/core#Data">data</a>
+   </li>
+   <li>
+      <a href="#DataTransformation"
+         title="http://purl.org/spatialai/stad/v2/core#DataTransformation">data transformation</a>
+   </li>
+   <li>
+      <a href="#DataValue"
+         title="http://purl.org/spatialai/stad/v2/core#DataValue">data value</a>
+   </li>
+   <li>
+      <a href="#Datapoint"
+         title="http://purl.org/spatialai/stad/v2/core#Datapoint">datapoint</a>
+   </li>
+   <li>
+      <a href="#Dataset" title="http://purl.org/spatialai/stad/v2/core#Dataset">dataset</a>
+   </li>
+   <li>
+      <a href="#DatasetDescription"
+         title="http://purl.org/spatialai/stad/v2/core#DatasetDescription">dataset description</a>
+   </li>
+   <li>
+      <a href="#ExtremumCalculationDataTransformation"
+         title="http://purl.org/spatialai/stad/v2/core#ExtremumCalculationDataTransformation">extremum calculation data transformation</a>
+   </li>
+   <li>
+      <a href="#http://www.opengis.net/ont/geosparql#Feature" title="http://www.opengis.net/ont/geosparql#Feature">feature</a>
+   </li>
+   <li>
+      <a href="#http://www.opengis.net/ont/geosparql#Geometry" title="http://www.opengis.net/ont/geosparql#Geometry">geometry</a>
+   </li>
+   <li>
+      <a href="#NonConvexAggregationPeriod"
+         title="http://purl.org/spatialai/stad/v2/core#NonConvexAggregationPeriod">non-convex aggregation period</a>
+   </li>
+   <li>
+      <a href="#ObservationalDatapoint"
+         title="http://purl.org/spatialai/stad/v2/core#ObservationalDatapoint">observational datapoint</a>
+   </li>
+   <li>
+      <a href="#PixelSizeResolution"
+         title="http://purl.org/spatialai/stad/v2/core#PixelSizeResolution">pixel size resolution</a>
+   </li>
+   <li>
+      <a href="#PointSpacingResolution"
+         title="http://purl.org/spatialai/stad/v2/core#PointSpacingResolution">point spacing resolution</a>
+   </li>
+   <li>
+      <a href="#http://www.w3.org/2006/time#ProperInterval" title="http://www.w3.org/2006/time#ProperInterval">Proper interval</a>
+   </li>
+   <li>
+      <a href="#QualitativeDatapoint"
+         title="http://purl.org/spatialai/stad/v2/core#QualitativeDatapoint">qualitative datapoint</a>
+   </li>
+   <li>
+      <a href="#QualitativeValue"
+         title="http://purl.org/spatialai/stad/v2/core#QualitativeValue">qualitative value</a>
+   </li>
+   <li>
+      <a href="#QualityKind"
+         title="http://purl.org/spatialai/stad/v2/core#QualityKind">quality kind</a>
+   </li>
+   <li>
+      <a href="#QuantitativeDatapoint"
+         title="http://purl.org/spatialai/stad/v2/core#QuantitativeDatapoint">quantitative datapoint</a>
+   </li>
+   <li>
+      <a href="#QuantitativeValue"
+         title="http://purl.org/spatialai/stad/v2/core#QuantitativeValue">quantitative value</a>
+   </li>
+   <li>
+      <a href="#RegularTemporalResolution"
+         title="http://purl.org/spatialai/stad/v2/core#RegularTemporalResolution">regular temporal resolution</a>
+   </li>
+   <li>
+      <a href="#ResolutionDescriptor"
+         title="http://purl.org/spatialai/stad/v2/core#ResolutionDescriptor">resolution descriptor</a>
+   </li>
+   <li>
+      <a href="#SamplingDensityResolution"
+         title="http://purl.org/spatialai/stad/v2/core#SamplingDensityResolution">sampling density resolution</a>
+   </li>
+   <li>
+      <a href="#SpatialAggregateDatapoint"
+         title="http://purl.org/spatialai/stad/v2/core#SpatialAggregateDatapoint">spatial aggregate datapoint</a>
+   </li>
+   <li>
+      <a href="#SpatialCoverage"
+         title="http://purl.org/spatialai/stad/v2/core#SpatialCoverage">spatial coverage</a>
+   </li>
+   <li>
+      <a href="#http://www.opengis.net/ont/geosparql#SpatialObject"
+         title="http://www.opengis.net/ont/geosparql#SpatialObject">spatial object</a>
+   </li>
+   <li>
+      <a href="#SpatialResolution"
+         title="http://purl.org/spatialai/stad/v2/core#SpatialResolution">spatial resolution</a>
+   </li>
+   <li>
+      <a href="#SpatioTemporalAggregateDatapoint"
+         title="http://purl.org/spatialai/stad/v2/core#SpatioTemporalAggregateDatapoint">spatio-temporal aggregate datapoint</a>
+   </li>
+   <li>
+      <a href="#StatisticalAggregateDatapoint"
+         title="http://purl.org/spatialai/stad/v2/core#StatisticalAggregateDatapoint">statistical aggregate datapoint</a>
+   </li>
+   <li>
+      <a href="#http://www.w3.org/2006/time#TemporalAggregate" title="http://www.w3.org/2006/time#TemporalAggregate">Temporal aggregate</a>
+   </li>
+   <li>
+      <a href="#TemporalAggregateDatapoint"
+         title="http://purl.org/spatialai/stad/v2/core#TemporalAggregateDatapoint">temporal aggregate datapoint</a>
+   </li>
+   <li>
+      <a href="#TemporalCoverage"
+         title="http://purl.org/spatialai/stad/v2/core#TemporalCoverage">temporal coverage</a>
+   </li>
+   <li>
+      <a href="#http://www.w3.org/2006/time#TemporalDuration" title="http://www.w3.org/2006/time#TemporalDuration">Temporal duration</a>
+   </li>
+   <li>
+      <a href="#http://www.w3.org/2006/time#TemporalEntity" title="http://www.w3.org/2006/time#TemporalEntity">Temporal entity</a>
+   </li>
+   <li>
+      <a href="#TemporalResolution"
+         title="http://purl.org/spatialai/stad/v2/core#TemporalResolution">temporal resolution</a>
+   </li>
+   <li>
+      <a href="#TemporalSpacingResolution"
+         title="http://purl.org/spatialai/stad/v2/core#TemporalSpacingResolution">temporal spacing resolution</a>
+   </li>
+   <li>
+      <a href="#http://www.w3.org/2006/time#Instant" title="http://www.w3.org/2006/time#Instant">Time instant</a>
+   </li>
+   <li>
+      <a href="#http://www.w3.org/2006/time#Interval" title="http://www.w3.org/2006/time#Interval">Time interval</a>
+   </li>
+</ul><h4>Object Properties</h4><ul xmlns:widoco="https://w3id.org/widoco/vocab#"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    class="hlist">
+   <li>
+      <a href="#containsDatapoint"
+         title="http://purl.org/spatialai/stad/v2/core#containsDatapoint">contains datapoint</a>
+   </li>
+   <li>
+      <a href="#generatedBy"
+         title="http://purl.org/spatialai/stad/v2/core#generatedBy">generated by</a>
+   </li>
+   <li>
+      <a href="#http://www.w3.org/2006/time#hasPart" title="http://www.w3.org/2006/time#hasPart">has a part</a>
+   </li>
+   <li>
+      <a href="#hasTemporalPart"
+         title="http://purl.org/spatialai/stad/v2/core#hasTemporalPart">has a temporal part (STAD relation)</a>
+   </li>
+   <li>
+      <a href="#hasAggregationPeriod"
+         title="http://purl.org/spatialai/stad/v2/core#hasAggregationPeriod">has aggregation period</a>
+   </li>
+   <li>
+      <a href="#hasBaseDatapoint"
+         title="http://purl.org/spatialai/stad/v2/core#hasBaseDatapoint">has base datapoint</a>
+   </li>
+   <li>
+      <a href="#hasBaseDataset"
+         title="http://purl.org/spatialai/stad/v2/core#hasBaseDataset">has base dataset</a>
+   </li>
+   <li>
+      <a href="#http://www.w3.org/2006/time#hasBeginning" title="http://www.w3.org/2006/time#hasBeginning">has beginning</a>
+   </li>
+   <li>
+      <a href="#hasConvexAggregationPeriod"
+         title="http://purl.org/spatialai/stad/v2/core#hasConvexAggregationPeriod">has convex aggregation period</a>
+   </li>
+   <li>
+      <a href="#hasDataValue"
+         title="http://purl.org/spatialai/stad/v2/core#hasDataValue">has data value</a>
+   </li>
+   <li>
+      <a href="#hasDatasetDescription"
+         title="http://purl.org/spatialai/stad/v2/core#hasDatasetDescription">has dataset description</a>
+   </li>
+   <li>
+      <a href="#http://www.w3.org/2006/time#hasEnd" title="http://www.w3.org/2006/time#hasEnd">has end</a>
+   </li>
+   <li>
+      <a href="#hasExtent" title="http://purl.org/spatialai/stad/v2/core#hasExtent">has extent</a>
+   </li>
+   <li>
+      <a href="#http://www.opengis.net/ont/geosparql#hasGeometry" title="http://www.opengis.net/ont/geosparql#hasGeometry">has geometry</a>
+   </li>
+   <li>
+      <a href="#hasInput" title="http://purl.org/spatialai/stad/v2/core#hasInput">has input</a>
+   </li>
+   <li>
+      <a href="#hasInstant"
+         title="http://purl.org/spatialai/stad/v2/core#hasInstant">has instant</a>
+   </li>
+   <li>
+      <a href="#hasInterval"
+         title="http://purl.org/spatialai/stad/v2/core#hasInterval">has interval</a>
+   </li>
+   <li>
+      <a href="#hasNonConvexAggregationPeriod"
+         title="http://purl.org/spatialai/stad/v2/core#hasNonConvexAggregationPeriod">has non-convex aggregation period</a>
+   </li>
+   <li>
+      <a href="#http://purl.org/dc/terms/hasPart" title="http://purl.org/dc/terms/hasPart">has part</a>
+   </li>
+   <li>
+      <a href="#hasQualitativeValue"
+         title="http://purl.org/spatialai/stad/v2/core#hasQualitativeValue">has qualitative value</a>
+   </li>
+   <li>
+      <a href="#hasQualityKind"
+         title="http://purl.org/spatialai/stad/v2/core#hasQualityKind">has quality kind</a>
+   </li>
+   <li>
+      <a href="#hasQuantitativeValue"
+         title="http://purl.org/spatialai/stad/v2/core#hasQuantitativeValue">has quantitative value</a>
+   </li>
+   <li>
+      <a href="#hasResolution"
+         title="http://purl.org/spatialai/stad/v2/core#hasResolution">has resolution</a>
+   </li>
+   <li>
+      <a href="#hasSpatialCoverage"
+         title="http://purl.org/spatialai/stad/v2/core#hasSpatialCoverage">has spatial coverage</a>
+   </li>
+   <li>
+      <a href="#hasSpatialResolution"
+         title="http://purl.org/spatialai/stad/v2/core#hasSpatialResolution">has spatial resolution</a>
+   </li>
+   <li>
+      <a href="#hasTemporalCoverage"
+         title="http://purl.org/spatialai/stad/v2/core#hasTemporalCoverage">has temporal coverage</a>
+   </li>
+   <li>
+      <a href="#hasTemporalResolution"
+         title="http://purl.org/spatialai/stad/v2/core#hasTemporalResolution">has temporal resolution</a>
+   </li>
+   <li>
+      <a href="#http://www.w3.org/2006/time#hasTime" title="http://www.w3.org/2006/time#hasTime">has time</a>
+   </li>
+   <li>
+      <a href="#hasTransformationKind"
+         title="http://purl.org/spatialai/stad/v2/core#hasTransformationKind">has transformation kind</a>
+   </li>
+   <li>
+      <a href="#instantPartOf"
+         title="http://purl.org/spatialai/stad/v2/core#instantPartOf">instant part of</a>
+   </li>
+   <li>
+      <a href="#intervalPartOf"
+         title="http://purl.org/spatialai/stad/v2/core#intervalPartOf">interval part of</a>
+   </li>
+   <li>
+      <a href="#http://www.w3.org/2006/time#isPartOf" title="http://www.w3.org/2006/time#isPartOf">is a part of</a>
+   </li>
+   <li>
+      <a href="#outputOf" title="http://purl.org/spatialai/stad/v2/core#outputOf">output of</a>
+   </li>
+   <li>
+      <a href="#spatialCoverageOf"
+         title="http://purl.org/spatialai/stad/v2/core#spatialCoverageOf">spatial coverage of</a>
+   </li>
+   <li>
+      <a href="#temporalCoverageOf"
+         title="http://purl.org/spatialai/stad/v2/core#temporalCoverageOf">temporal coverage of</a>
+   </li>
+</ul><h4>Named Individuals</h4><ul xmlns:widoco="https://w3id.org/widoco/vocab#"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    class="hlist">
+   <li>
+      <a href="#ArithmeticMeanCalculation"
+         title="http://purl.org/spatialai/stad/v2/core#ArithmeticMeanCalculation">arithmetic mean calculation</a>
+   </li>
+   <li>
+      <a href="#GeometricMeanCalculation"
+         title="http://purl.org/spatialai/stad/v2/core#GeometricMeanCalculation">geometric mean calculation</a>
+   </li>
+   <li>
+      <a href="#MaximumCalculation"
+         title="http://purl.org/spatialai/stad/v2/core#MaximumCalculation">maximum calculation</a>
+   </li>
+   <li>
+      <a href="#MedianCalculation"
+         title="http://purl.org/spatialai/stad/v2/core#MedianCalculation">median calculation</a>
+   </li>
+   <li>
+      <a href="#MinimumCalculation"
+         title="http://purl.org/spatialai/stad/v2/core#MinimumCalculation">minimum calculation</a>
+   </li>
+   <li>
+      <a href="#ModeCalculation"
+         title="http://purl.org/spatialai/stad/v2/core#ModeCalculation">mode calculation</a>
+   </li>
+   <li>
+      <a href="#spatialResolutionQualityKind"
+         title="http://purl.org/spatialai/stad/v2/core#spatialResolutionQualityKind">spatial resolution</a>
+   </li>
+   <li>
+      <a href="#temporalResolutionQualityKind"
+         title="http://purl.org/spatialai/stad/v2/core#temporalResolutionQualityKind">temporal resolution</a>
+   </li>
+</ul><iframe src="webvowl/index.html"></iframe> 
+</div>
+  
+
+<!--DESCRIPTION SECTION-->
+    <div id="description"><h2 id="desc" class="list">Spatial and Temporal Aggregate Data (STAD) Ontology: Description <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+
+<span class="markdown">STAD provides syntax for describing the spatial and temporal characteristics of aggregate quantities.</span></div>
+   
+
+<!--CROSSREF SECTION-->
+   <div id="crossref"><h2 id="crossreference" class="list">Cross-reference for Spatial and Temporal Aggregate Data (STAD) Ontology classes, object properties and data properties <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+This section provides details for each class and property defined by Spatial and Temporal Aggregate Data (STAD) Ontology.
+<div xmlns:widoco="https://w3id.org/widoco/vocab#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="classes">
+ <h3 id="classes-headline" class="list">Classes</h3>
+ <ul class="hlist">
+  <li><a href="#AggregationPeriod" title="http://purl.org/spatialai/stad/v2/core#AggregationPeriod">aggregation period</a></li>
+  <li><a href="#AverageCalculationDataTransformation" title="http://purl.org/spatialai/stad/v2/core#AverageCalculationDataTransformation">average calculation data transformation</a></li>
+  <li><a href="#CentralTendencyCalculationDataTransformation" title="http://purl.org/spatialai/stad/v2/core#CentralTendencyCalculationDataTransformation">central tendency calculation data transformation</a></li>
+  <li><a href="#ComputationalDatapoint" title="http://purl.org/spatialai/stad/v2/core#ComputationalDatapoint">computational datapoint</a></li>
+  <li><a href="#ComputationalPredictedDatapoint" title="http://purl.org/spatialai/stad/v2/core#ComputationalPredictedDatapoint">computational predicted datapoint</a></li>
+  <li><a href="#ConvexAggregationPeriod" title="http://purl.org/spatialai/stad/v2/core#ConvexAggregationPeriod">convex aggregation period</a></li>
+  <li><a href="#CoverageRatioResolution" title="http://purl.org/spatialai/stad/v2/core#CoverageRatioResolution">coverage ratio resolution</a></li>
+  <li><a href="#Data" title="http://purl.org/spatialai/stad/v2/core#Data">data</a></li>
+  <li><a href="#DataTransformation" title="http://purl.org/spatialai/stad/v2/core#DataTransformation">data transformation</a></li>
+  <li><a href="#DataValue" title="http://purl.org/spatialai/stad/v2/core#DataValue">data value</a></li>
+  <li><a href="#Datapoint" title="http://purl.org/spatialai/stad/v2/core#Datapoint">datapoint</a></li>
+  <li><a href="#Dataset" title="http://purl.org/spatialai/stad/v2/core#Dataset">dataset</a></li>
+  <li><a href="#DatasetDescription" title="http://purl.org/spatialai/stad/v2/core#DatasetDescription">dataset description</a></li>
+  <li><a href="#ExtremumCalculationDataTransformation" title="http://purl.org/spatialai/stad/v2/core#ExtremumCalculationDataTransformation">extremum calculation data transformation</a></li>
+  <li><a href="#http://www.opengis.net/ont/geosparql#Feature" title="http://www.opengis.net/ont/geosparql#Feature">feature</a></li>
+  <li><a href="#http://www.opengis.net/ont/geosparql#Geometry" title="http://www.opengis.net/ont/geosparql#Geometry">geometry</a></li>
+  <li><a href="#NonConvexAggregationPeriod" title="http://purl.org/spatialai/stad/v2/core#NonConvexAggregationPeriod">non-convex aggregation period</a></li>
+  <li><a href="#ObservationalDatapoint" title="http://purl.org/spatialai/stad/v2/core#ObservationalDatapoint">observational datapoint</a></li>
+  <li><a href="#PixelSizeResolution" title="http://purl.org/spatialai/stad/v2/core#PixelSizeResolution">pixel size resolution</a></li>
+  <li><a href="#PointSpacingResolution" title="http://purl.org/spatialai/stad/v2/core#PointSpacingResolution">point spacing resolution</a></li>
+  <li><a href="#http://www.w3.org/2006/time#ProperInterval" title="http://www.w3.org/2006/time#ProperInterval">Proper interval</a></li>
+  <li><a href="#QualitativeDatapoint" title="http://purl.org/spatialai/stad/v2/core#QualitativeDatapoint">qualitative datapoint</a></li>
+  <li><a href="#QualitativeValue" title="http://purl.org/spatialai/stad/v2/core#QualitativeValue">qualitative value</a></li>
+  <li><a href="#QualityKind" title="http://purl.org/spatialai/stad/v2/core#QualityKind">quality kind</a></li>
+  <li><a href="#QuantitativeDatapoint" title="http://purl.org/spatialai/stad/v2/core#QuantitativeDatapoint">quantitative datapoint</a></li>
+  <li><a href="#QuantitativeValue" title="http://purl.org/spatialai/stad/v2/core#QuantitativeValue">quantitative value</a></li>
+  <li><a href="#RegularTemporalResolution" title="http://purl.org/spatialai/stad/v2/core#RegularTemporalResolution">regular temporal resolution</a></li>
+  <li><a href="#ResolutionDescriptor" title="http://purl.org/spatialai/stad/v2/core#ResolutionDescriptor">resolution descriptor</a></li>
+  <li><a href="#SamplingDensityResolution" title="http://purl.org/spatialai/stad/v2/core#SamplingDensityResolution">sampling density resolution</a></li>
+  <li><a href="#SpatialAggregateDatapoint" title="http://purl.org/spatialai/stad/v2/core#SpatialAggregateDatapoint">spatial aggregate datapoint</a></li>
+  <li><a href="#SpatialCoverage" title="http://purl.org/spatialai/stad/v2/core#SpatialCoverage">spatial coverage</a></li>
+  <li><a href="#http://www.opengis.net/ont/geosparql#SpatialObject" title="http://www.opengis.net/ont/geosparql#SpatialObject">spatial object</a></li>
+  <li><a href="#SpatialResolution" title="http://purl.org/spatialai/stad/v2/core#SpatialResolution">spatial resolution</a></li>
+  <li><a href="#SpatioTemporalAggregateDatapoint" title="http://purl.org/spatialai/stad/v2/core#SpatioTemporalAggregateDatapoint">spatio-temporal aggregate datapoint</a></li>
+  <li><a href="#StatisticalAggregateDatapoint" title="http://purl.org/spatialai/stad/v2/core#StatisticalAggregateDatapoint">statistical aggregate datapoint</a></li>
+  <li><a href="#http://www.w3.org/2006/time#TemporalAggregate" title="http://www.w3.org/2006/time#TemporalAggregate">Temporal aggregate</a></li>
+  <li><a href="#TemporalAggregateDatapoint" title="http://purl.org/spatialai/stad/v2/core#TemporalAggregateDatapoint">temporal aggregate datapoint</a></li>
+  <li><a href="#TemporalCoverage" title="http://purl.org/spatialai/stad/v2/core#TemporalCoverage">temporal coverage</a></li>
+  <li><a href="#http://www.w3.org/2006/time#TemporalDuration" title="http://www.w3.org/2006/time#TemporalDuration">Temporal duration</a></li>
+  <li><a href="#http://www.w3.org/2006/time#TemporalEntity" title="http://www.w3.org/2006/time#TemporalEntity">Temporal entity</a></li>
+  <li><a href="#TemporalResolution" title="http://purl.org/spatialai/stad/v2/core#TemporalResolution">temporal resolution</a></li>
+  <li><a href="#TemporalSpacingResolution" title="http://purl.org/spatialai/stad/v2/core#TemporalSpacingResolution">temporal spacing resolution</a></li>
+  <li><a href="#http://www.w3.org/2006/time#Instant" title="http://www.w3.org/2006/time#Instant">Time instant</a></li>
+  <li><a href="#http://www.w3.org/2006/time#Interval" title="http://www.w3.org/2006/time#Interval">Time interval</a></li>
+ </ul>
+ <div class="entity" id="AggregationPeriod">
+  <h3>aggregation period<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/spatialai/stad/v2/core#AggregationPeriod</p>
+  <div class="comment">
+   <span class="markdown">A temporal aggregate comprising the temporal entities over which base data were selected for an aggregation, together with one minimal convex extent.</span>
+  </div>
+  <dl class="definedBy">
+   <dt>
+    Is defined by
+   </dt>
+   <dd>
+    <a href="http://purl.org/spatialai/stad/v2/core#">http://purl.org/spatialai/stad/v2/core#</a>
+   </dd>
+  </dl>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#http://www.w3.org/2006/time#TemporalAggregate" title="http://www.w3.org/2006/time#TemporalAggregate">Temporal aggregate</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has sub-classes
+   </dt>
+   <dd>
+    <a href="#ConvexAggregationPeriod" title="http://purl.org/spatialai/stad/v2/core#ConvexAggregationPeriod">convex aggregation period</a> <sup class="type-c" title="class">c</sup>, <a href="#NonConvexAggregationPeriod" title="http://purl.org/spatialai/stad/v2/core#NonConvexAggregationPeriod">non-convex aggregation period</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#hasExtent" title="http://purl.org/spatialai/stad/v2/core#hasExtent">has extent</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#hasAggregationPeriod" title="http://purl.org/spatialai/stad/v2/core#hasAggregationPeriod">has aggregation period</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="AverageCalculationDataTransformation">
+  <h3>average calculation data transformation<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/spatialai/stad/v2/core#AverageCalculationDataTransformation</p>
+  <div class="comment">
+   <span class="markdown">A data transformation that calculates an average of input values.</span>
+  </div>
+  <dl class="definedBy">
+   <dt>
+    Is defined by
+   </dt>
+   <dd>
+    <a href="http://purl.org/spatialai/stad/v2/core#">http://purl.org/spatialai/stad/v2/core#</a>
+   </dd>
+  </dl>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#CentralTendencyCalculationDataTransformation" title="http://purl.org/spatialai/stad/v2/core#CentralTendencyCalculationDataTransformation">central tendency calculation data transformation</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has members
+   </dt>
+   <dd>
+    <a href="#ArithmeticMeanCalculation" title="http://purl.org/spatialai/stad/v2/core#ArithmeticMeanCalculation">arithmetic mean calculation</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#GeometricMeanCalculation" title="http://purl.org/spatialai/stad/v2/core#GeometricMeanCalculation">geometric mean calculation</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="CentralTendencyCalculationDataTransformation">
+  <h3>central tendency calculation data transformation<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/spatialai/stad/v2/core#CentralTendencyCalculationDataTransformation</p>
+  <div class="comment">
+   <span class="markdown">A data transformation that calculates a measure representing the center or typical value of a set of values.</span>
+  </div>
+  <dl class="definedBy">
+   <dt>
+    Is defined by
+   </dt>
+   <dd>
+    <a href="http://purl.org/spatialai/stad/v2/core#">http://purl.org/spatialai/stad/v2/core#</a>
+   </dd>
+  </dl>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#DataTransformation" title="http://purl.org/spatialai/stad/v2/core#DataTransformation">data transformation</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has sub-classes
+   </dt>
+   <dd>
+    <a href="#AverageCalculationDataTransformation" title="http://purl.org/spatialai/stad/v2/core#AverageCalculationDataTransformation">average calculation data transformation</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has members
+   </dt>
+   <dd>
+    <a href="#MedianCalculation" title="http://purl.org/spatialai/stad/v2/core#MedianCalculation">median calculation</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#ModeCalculation" title="http://purl.org/spatialai/stad/v2/core#ModeCalculation">mode calculation</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="ComputationalDatapoint">
+  <h3>computational datapoint<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/spatialai/stad/v2/core#ComputationalDatapoint</p>
+  <div class="comment">
+   <span class="markdown">A datapoint generated by one algorithm execution from one or more base datapoints or datasets.</span>
+  </div>
+  <dl class="definedBy">
+   <dt>
+    Is defined by
+   </dt>
+   <dd>
+    <a href="http://purl.org/spatialai/stad/v2/core#">http://purl.org/spatialai/stad/v2/core#</a>
+   </dd>
+  </dl>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#Datapoint" title="http://purl.org/spatialai/stad/v2/core#Datapoint">datapoint</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has sub-classes
+   </dt>
+   <dd>
+    <a href="#ComputationalPredictedDatapoint" title="http://purl.org/spatialai/stad/v2/core#ComputationalPredictedDatapoint">computational predicted datapoint</a> <sup class="type-c" title="class">c</sup>, <a href="#StatisticalAggregateDatapoint" title="http://purl.org/spatialai/stad/v2/core#StatisticalAggregateDatapoint">statistical aggregate datapoint</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#generatedBy" title="http://purl.org/spatialai/stad/v2/core#generatedBy">generated by</a> <sup class="type-op" title="object property">op</sup>, <a href="#hasBaseDatapoint" title="http://purl.org/spatialai/stad/v2/core#hasBaseDatapoint">has base datapoint</a> <sup class="type-op" title="object property">op</sup>, <a href="#hasBaseDataset" title="http://purl.org/spatialai/stad/v2/core#hasBaseDataset">has base dataset</a> <sup class="type-op" title="object property">op</sup>, <a href="#outputOf" title="http://purl.org/spatialai/stad/v2/core#outputOf">output of</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is disjoint with
+   </dt>
+   <dd>
+    <a href="#ObservationalDatapoint" title="http://purl.org/spatialai/stad/v2/core#ObservationalDatapoint">observational datapoint</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="ComputationalPredictedDatapoint">
+  <h3>computational predicted datapoint<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/spatialai/stad/v2/core#ComputationalPredictedDatapoint</p>
+  <div class="comment">
+   <span class="markdown">A computational datapoint whose value is predicted rather than obtained as a statistical aggregate.</span>
+  </div>
+  <dl class="definedBy">
+   <dt>
+    Is defined by
+   </dt>
+   <dd>
+    <a href="http://purl.org/spatialai/stad/v2/core#">http://purl.org/spatialai/stad/v2/core#</a>
+   </dd>
+  </dl>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#ComputationalDatapoint" title="http://purl.org/spatialai/stad/v2/core#ComputationalDatapoint">computational datapoint</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is disjoint with
+   </dt>
+   <dd>
+    <a href="#StatisticalAggregateDatapoint" title="http://purl.org/spatialai/stad/v2/core#StatisticalAggregateDatapoint">statistical aggregate datapoint</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="ConvexAggregationPeriod">
+  <h3>convex aggregation period<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/spatialai/stad/v2/core#ConvexAggregationPeriod</p>
+  <div class="comment">
+   <span class="markdown">An aggregation period consisting of a single continuous temporal part that matches its overall extent.</span>
+  </div>
+  <dl class="definedBy">
+   <dt>
+    Is defined by
+   </dt>
+   <dd>
+    <a href="http://purl.org/spatialai/stad/v2/core#">http://purl.org/spatialai/stad/v2/core#</a>
+   </dd>
+  </dl>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#AggregationPeriod" title="http://purl.org/spatialai/stad/v2/core#AggregationPeriod">aggregation period</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#hasConvexAggregationPeriod" title="http://purl.org/spatialai/stad/v2/core#hasConvexAggregationPeriod">has convex aggregation period</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is disjoint with
+   </dt>
+   <dd>
+    <a href="#NonConvexAggregationPeriod" title="http://purl.org/spatialai/stad/v2/core#NonConvexAggregationPeriod">non-convex aggregation period</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="CoverageRatioResolution">
+  <h3>coverage ratio resolution<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/spatialai/stad/v2/core#CoverageRatioResolution</p>
+  <div class="comment">
+   <span class="markdown">A spatial resolution expressed as the ratio of the area represented by observations to the total study area.</span>
+  </div>
+  <dl class="definedBy">
+   <dt>
+    Is defined by
+   </dt>
+   <dd>
+    <a href="http://purl.org/spatialai/stad/v2/core#">http://purl.org/spatialai/stad/v2/core#</a>
+   </dd>
+  </dl>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#SpatialResolution" title="http://purl.org/spatialai/stad/v2/core#SpatialResolution">spatial resolution</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is disjoint with
+   </dt>
+   <dd>
+    <a href="#PixelSizeResolution" title="http://purl.org/spatialai/stad/v2/core#PixelSizeResolution">pixel size resolution</a> <sup class="type-c" title="class">c</sup>, <a href="#PointSpacingResolution" title="http://purl.org/spatialai/stad/v2/core#PointSpacingResolution">point spacing resolution</a> <sup class="type-c" title="class">c</sup>, <a href="#SamplingDensityResolution" title="http://purl.org/spatialai/stad/v2/core#SamplingDensityResolution">sampling density resolution</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Data">
+  <h3>data<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/spatialai/stad/v2/core#Data</p>
+  <div class="comment">
+   <span class="markdown">An entity that represents some data.</span>
+  </div>
+  <dl class="definedBy">
+   <dt>
+    Is defined by
+   </dt>
+   <dd>
+    <a href="http://purl.org/spatialai/stad/v2/core#">http://purl.org/spatialai/stad/v2/core#</a>
+   </dd>
+  </dl>
+  <dl class="description">
+   <dt>
+    has sub-classes
+   </dt>
+   <dd>
+    <a href="#Datapoint" title="http://purl.org/spatialai/stad/v2/core#Datapoint">datapoint</a> <sup class="type-c" title="class">c</sup>, <a href="#Dataset" title="http://purl.org/spatialai/stad/v2/core#Dataset">dataset</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is disjoint with
+   </dt>
+   <dd>
+    <a href="#DataTransformation" title="http://purl.org/spatialai/stad/v2/core#DataTransformation">data transformation</a> <sup class="type-c" title="class">c</sup>, <a href="#DataValue" title="http://purl.org/spatialai/stad/v2/core#DataValue">data value</a> <sup class="type-c" title="class">c</sup>, <a href="#QualityKind" title="http://purl.org/spatialai/stad/v2/core#QualityKind">quality kind</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="DataTransformation">
+  <h3>data transformation<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/spatialai/stad/v2/core#DataTransformation</p>
+  <div class="comment">
+   <span class="markdown">An algorithm that manipulates or converts data from one form into another, including filtering, sorting, aggregation, type conversion, or mathematical operations.</span>
+  </div>
+  <dl class="definedBy">
+   <dt>
+    Is defined by
+   </dt>
+   <dd>
+    <a href="http://purl.org/spatialai/stad/v2/core#">http://purl.org/spatialai/stad/v2/core#</a>
+   </dd>
+  </dl>
+  <dl class="description">
+   <dt>
+    has sub-classes
+   </dt>
+   <dd>
+    <a href="#CentralTendencyCalculationDataTransformation" title="http://purl.org/spatialai/stad/v2/core#CentralTendencyCalculationDataTransformation">central tendency calculation data transformation</a> <sup class="type-c" title="class">c</sup>, <a href="#ExtremumCalculationDataTransformation" title="http://purl.org/spatialai/stad/v2/core#ExtremumCalculationDataTransformation">extremum calculation data transformation</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#hasTransformationKind" title="http://purl.org/spatialai/stad/v2/core#hasTransformationKind">has transformation kind</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is disjoint with
+   </dt>
+   <dd>
+    <a href="#Data" title="http://purl.org/spatialai/stad/v2/core#Data">data</a> <sup class="type-c" title="class">c</sup>, <a href="#DataValue" title="http://purl.org/spatialai/stad/v2/core#DataValue">data value</a> <sup class="type-c" title="class">c</sup>, <a href="#QualityKind" title="http://purl.org/spatialai/stad/v2/core#QualityKind">quality kind</a> <sup class="type-c" title="class">c</sup>, <a href="#Datapoint" title="http://purl.org/spatialai/stad/v2/core#Datapoint">datapoint</a> <sup class="type-c" title="class">c</sup>, <a href="#Dataset" title="http://purl.org/spatialai/stad/v2/core#Dataset">dataset</a> <sup class="type-c" title="class">c</sup>, <a href="#DatasetDescription" title="http://purl.org/spatialai/stad/v2/core#DatasetDescription">dataset description</a> <sup class="type-c" title="class">c</sup>, <a href="#SpatialCoverage" title="http://purl.org/spatialai/stad/v2/core#SpatialCoverage">spatial coverage</a> <sup class="type-c" title="class">c</sup>, <a href="#TemporalCoverage" title="http://purl.org/spatialai/stad/v2/core#TemporalCoverage">temporal coverage</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="DataValue">
+  <h3>data value<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/spatialai/stad/v2/core#DataValue</p>
+  <div class="comment">
+   <span class="markdown">A value carried by a datapoint.</span>
+  </div>
+  <dl class="definedBy">
+   <dt>
+    Is defined by
+   </dt>
+   <dd>
+    <a href="http://purl.org/spatialai/stad/v2/core#">http://purl.org/spatialai/stad/v2/core#</a>
+   </dd>
+  </dl>
+  <dl class="description">
+   <dt>
+    has sub-classes
+   </dt>
+   <dd>
+    <a href="#QualitativeValue" title="http://purl.org/spatialai/stad/v2/core#QualitativeValue">qualitative value</a> <sup class="type-c" title="class">c</sup>, <a href="#QuantitativeValue" title="http://purl.org/spatialai/stad/v2/core#QuantitativeValue">quantitative value</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#hasDataValue" title="http://purl.org/spatialai/stad/v2/core#hasDataValue">has data value</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is disjoint with
+   </dt>
+   <dd>
+    <a href="#Data" title="http://purl.org/spatialai/stad/v2/core#Data">data</a> <sup class="type-c" title="class">c</sup>, <a href="#DataTransformation" title="http://purl.org/spatialai/stad/v2/core#DataTransformation">data transformation</a> <sup class="type-c" title="class">c</sup>, <a href="#QualityKind" title="http://purl.org/spatialai/stad/v2/core#QualityKind">quality kind</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Datapoint">
+  <h3>datapoint<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/spatialai/stad/v2/core#Datapoint</p>
+  <div class="comment">
+   <span class="markdown">An individual data item that has a quality kind and a corresponding data value.</span>
+  </div>
+  <dl class="definedBy">
+   <dt>
+    Is defined by
+   </dt>
+   <dd>
+    <a href="http://purl.org/spatialai/stad/v2/core#">http://purl.org/spatialai/stad/v2/core#</a>
+   </dd>
+  </dl>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#Data" title="http://purl.org/spatialai/stad/v2/core#Data">data</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has sub-classes
+   </dt>
+   <dd>
+    <a href="#ComputationalDatapoint" title="http://purl.org/spatialai/stad/v2/core#ComputationalDatapoint">computational datapoint</a> <sup class="type-c" title="class">c</sup>, <a href="#ObservationalDatapoint" title="http://purl.org/spatialai/stad/v2/core#ObservationalDatapoint">observational datapoint</a> <sup class="type-c" title="class">c</sup>, <a href="#QualitativeDatapoint" title="http://purl.org/spatialai/stad/v2/core#QualitativeDatapoint">qualitative datapoint</a> <sup class="type-c" title="class">c</sup>, <a href="#QuantitativeDatapoint" title="http://purl.org/spatialai/stad/v2/core#QuantitativeDatapoint">quantitative datapoint</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#hasDataValue" title="http://purl.org/spatialai/stad/v2/core#hasDataValue">has data value</a> <sup class="type-op" title="object property">op</sup>, <a href="#hasQualityKind" title="http://purl.org/spatialai/stad/v2/core#hasQualityKind">has quality kind</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#containsDatapoint" title="http://purl.org/spatialai/stad/v2/core#containsDatapoint">contains datapoint</a> <sup class="type-op" title="object property">op</sup>, <a href="#hasBaseDatapoint" title="http://purl.org/spatialai/stad/v2/core#hasBaseDatapoint">has base datapoint</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is disjoint with
+   </dt>
+   <dd>
+    <a href="#Dataset" title="http://purl.org/spatialai/stad/v2/core#Dataset">dataset</a> <sup class="type-c" title="class">c</sup>, <a href="#DataTransformation" title="http://purl.org/spatialai/stad/v2/core#DataTransformation">data transformation</a> <sup class="type-c" title="class">c</sup>, <a href="#Dataset" title="http://purl.org/spatialai/stad/v2/core#Dataset">dataset</a> <sup class="type-c" title="class">c</sup>, <a href="#DatasetDescription" title="http://purl.org/spatialai/stad/v2/core#DatasetDescription">dataset description</a> <sup class="type-c" title="class">c</sup>, <a href="#SpatialCoverage" title="http://purl.org/spatialai/stad/v2/core#SpatialCoverage">spatial coverage</a> <sup class="type-c" title="class">c</sup>, <a href="#TemporalCoverage" title="http://purl.org/spatialai/stad/v2/core#TemporalCoverage">temporal coverage</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Dataset">
+  <h3>dataset<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/spatialai/stad/v2/core#Dataset</p>
+  <div class="comment">
+   <span class="markdown">A collection of datapoints that has an associated dataset description.</span>
+  </div>
+  <dl class="definedBy">
+   <dt>
+    Is defined by
+   </dt>
+   <dd>
+    <a href="http://purl.org/spatialai/stad/v2/core#">http://purl.org/spatialai/stad/v2/core#</a>
+   </dd>
+  </dl>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#Data" title="http://purl.org/spatialai/stad/v2/core#Data">data</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#containsDatapoint" title="http://purl.org/spatialai/stad/v2/core#containsDatapoint">contains datapoint</a> <sup class="type-op" title="object property">op</sup>, <a href="#hasDatasetDescription" title="http://purl.org/spatialai/stad/v2/core#hasDatasetDescription">has dataset description</a> <sup class="type-op" title="object property">op</sup>, <a href="#hasSpatialCoverage" title="http://purl.org/spatialai/stad/v2/core#hasSpatialCoverage">has spatial coverage</a> <sup class="type-op" title="object property">op</sup>, <a href="#hasTemporalCoverage" title="http://purl.org/spatialai/stad/v2/core#hasTemporalCoverage">has temporal coverage</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#hasBaseDataset" title="http://purl.org/spatialai/stad/v2/core#hasBaseDataset">has base dataset</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is disjoint with
+   </dt>
+   <dd>
+    <a href="#Datapoint" title="http://purl.org/spatialai/stad/v2/core#Datapoint">datapoint</a> <sup class="type-c" title="class">c</sup>, <a href="#DatasetDescription" title="http://purl.org/spatialai/stad/v2/core#DatasetDescription">dataset description</a> <sup class="type-c" title="class">c</sup>, <a href="#DataTransformation" title="http://purl.org/spatialai/stad/v2/core#DataTransformation">data transformation</a> <sup class="type-c" title="class">c</sup>, <a href="#Datapoint" title="http://purl.org/spatialai/stad/v2/core#Datapoint">datapoint</a> <sup class="type-c" title="class">c</sup>, <a href="#DatasetDescription" title="http://purl.org/spatialai/stad/v2/core#DatasetDescription">dataset description</a> <sup class="type-c" title="class">c</sup>, <a href="#SpatialCoverage" title="http://purl.org/spatialai/stad/v2/core#SpatialCoverage">spatial coverage</a> <sup class="type-c" title="class">c</sup>, <a href="#TemporalCoverage" title="http://purl.org/spatialai/stad/v2/core#TemporalCoverage">temporal coverage</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="DatasetDescription">
+  <h3>dataset description<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/spatialai/stad/v2/core#DatasetDescription</p>
+  <div class="comment">
+   <span class="markdown">A description of dataset-level characteristics, including spatial and temporal resolution.</span>
+  </div>
+  <dl class="definedBy">
+   <dt>
+    Is defined by
+   </dt>
+   <dd>
+    <a href="http://purl.org/spatialai/stad/v2/core#">http://purl.org/spatialai/stad/v2/core#</a>
+   </dd>
+  </dl>
+  <dl class="description">
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#hasResolution" title="http://purl.org/spatialai/stad/v2/core#hasResolution">has resolution</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#hasDatasetDescription" title="http://purl.org/spatialai/stad/v2/core#hasDatasetDescription">has dataset description</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is disjoint with
+   </dt>
+   <dd>
+    <a href="#Dataset" title="http://purl.org/spatialai/stad/v2/core#Dataset">dataset</a> <sup class="type-c" title="class">c</sup>, <a href="#DataTransformation" title="http://purl.org/spatialai/stad/v2/core#DataTransformation">data transformation</a> <sup class="type-c" title="class">c</sup>, <a href="#Datapoint" title="http://purl.org/spatialai/stad/v2/core#Datapoint">datapoint</a> <sup class="type-c" title="class">c</sup>, <a href="#Dataset" title="http://purl.org/spatialai/stad/v2/core#Dataset">dataset</a> <sup class="type-c" title="class">c</sup>, <a href="#SpatialCoverage" title="http://purl.org/spatialai/stad/v2/core#SpatialCoverage">spatial coverage</a> <sup class="type-c" title="class">c</sup>, <a href="#TemporalCoverage" title="http://purl.org/spatialai/stad/v2/core#TemporalCoverage">temporal coverage</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="ExtremumCalculationDataTransformation">
+  <h3>extremum calculation data transformation<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/spatialai/stad/v2/core#ExtremumCalculationDataTransformation</p>
+  <div class="comment">
+   <span class="markdown">A data transformation that calculates an extreme value, such as a minimum or maximum.</span>
+  </div>
+  <dl class="definedBy">
+   <dt>
+    Is defined by
+   </dt>
+   <dd>
+    <a href="http://purl.org/spatialai/stad/v2/core#">http://purl.org/spatialai/stad/v2/core#</a>
+   </dd>
+  </dl>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#DataTransformation" title="http://purl.org/spatialai/stad/v2/core#DataTransformation">data transformation</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has members
+   </dt>
+   <dd>
+    <a href="#MaximumCalculation" title="http://purl.org/spatialai/stad/v2/core#MaximumCalculation">maximum calculation</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#MinimumCalculation" title="http://purl.org/spatialai/stad/v2/core#MinimumCalculation">minimum calculation</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://www.opengis.net/ont/geosparql#Feature">
+  <h3>feature<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.opengis.net/ont/geosparql#Feature</p>
+  <div class="comment">
+   <span class="markdown">A discrete spatial phenomenon in a universe of discourse.</span>
+  </div>
+  <dl class="definedBy">
+   <dt>
+    Is defined by
+   </dt>
+   <dd>
+    <a href="http://www.opengis.net/ont/geosparql#">http://www.opengis.net/ont/geosparql#</a>
+   </dd>
+  </dl>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#http://www.opengis.net/ont/geosparql#SpatialObject" title="http://www.opengis.net/ont/geosparql#SpatialObject">spatial object</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has sub-classes
+   </dt>
+   <dd>
+    <a href="#SpatialCoverage" title="http://purl.org/spatialai/stad/v2/core#SpatialCoverage">spatial coverage</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#http://www.opengis.net/ont/geosparql#hasGeometry" title="http://www.opengis.net/ont/geosparql#hasGeometry">has geometry</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is disjoint with
+   </dt>
+   <dd>
+    <a href="#http://www.opengis.net/ont/geosparql#Geometry" title="http://www.opengis.net/ont/geosparql#Geometry">geometry</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://www.opengis.net/ont/geosparql#Geometry">
+  <h3>geometry<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.opengis.net/ont/geosparql#Geometry</p>
+  <div class="comment">
+   <span class="markdown">A coherent set of direct positions in space. The positions are held within a Spatial Reference System (SRS).</span>
+  </div>
+  <dl class="definedBy">
+   <dt>
+    Is defined by
+   </dt>
+   <dd>
+    <a href="http://www.opengis.net/ont/geosparql#">http://www.opengis.net/ont/geosparql#</a>
+   </dd>
+  </dl>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#http://www.opengis.net/ont/geosparql#SpatialObject" title="http://www.opengis.net/ont/geosparql#SpatialObject">spatial object</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#http://www.opengis.net/ont/geosparql#hasGeometry" title="http://www.opengis.net/ont/geosparql#hasGeometry">has geometry</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is disjoint with
+   </dt>
+   <dd>
+    <a href="#http://www.opengis.net/ont/geosparql#Feature" title="http://www.opengis.net/ont/geosparql#Feature">feature</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="NonConvexAggregationPeriod">
+  <h3>non-convex aggregation period<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/spatialai/stad/v2/core#NonConvexAggregationPeriod</p>
+  <div class="comment">
+   <span class="markdown">An aggregation period composed of multiple disconnected temporal parts.</span>
+  </div>
+  <dl class="definedBy">
+   <dt>
+    Is defined by
+   </dt>
+   <dd>
+    <a href="http://purl.org/spatialai/stad/v2/core#">http://purl.org/spatialai/stad/v2/core#</a>
+   </dd>
+  </dl>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#AggregationPeriod" title="http://purl.org/spatialai/stad/v2/core#AggregationPeriod">aggregation period</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#hasNonConvexAggregationPeriod" title="http://purl.org/spatialai/stad/v2/core#hasNonConvexAggregationPeriod">has non-convex aggregation period</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is disjoint with
+   </dt>
+   <dd>
+    <a href="#ConvexAggregationPeriod" title="http://purl.org/spatialai/stad/v2/core#ConvexAggregationPeriod">convex aggregation period</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="ObservationalDatapoint">
+  <h3>observational datapoint<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/spatialai/stad/v2/core#ObservationalDatapoint</p>
+  <div class="comment">
+   <span class="markdown">A datapoint obtained through observation rather than computation.</span>
+  </div>
+  <dl class="definedBy">
+   <dt>
+    Is defined by
+   </dt>
+   <dd>
+    <a href="http://purl.org/spatialai/stad/v2/core#">http://purl.org/spatialai/stad/v2/core#</a>
+   </dd>
+  </dl>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#Datapoint" title="http://purl.org/spatialai/stad/v2/core#Datapoint">datapoint</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is disjoint with
+   </dt>
+   <dd>
+    <a href="#ComputationalDatapoint" title="http://purl.org/spatialai/stad/v2/core#ComputationalDatapoint">computational datapoint</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="PixelSizeResolution">
+  <h3>pixel size resolution<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/spatialai/stad/v2/core#PixelSizeResolution</p>
+  <div class="comment">
+   <span class="markdown">A spatial resolution expressed by the ground dimensions of a raster or grid cell.</span>
+  </div>
+  <dl class="definedBy">
+   <dt>
+    Is defined by
+   </dt>
+   <dd>
+    <a href="http://purl.org/spatialai/stad/v2/core#">http://purl.org/spatialai/stad/v2/core#</a>
+   </dd>
+  </dl>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#SpatialResolution" title="http://purl.org/spatialai/stad/v2/core#SpatialResolution">spatial resolution</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is disjoint with
+   </dt>
+   <dd>
+    <a href="#CoverageRatioResolution" title="http://purl.org/spatialai/stad/v2/core#CoverageRatioResolution">coverage ratio resolution</a> <sup class="type-c" title="class">c</sup>, <a href="#PointSpacingResolution" title="http://purl.org/spatialai/stad/v2/core#PointSpacingResolution">point spacing resolution</a> <sup class="type-c" title="class">c</sup>, <a href="#SamplingDensityResolution" title="http://purl.org/spatialai/stad/v2/core#SamplingDensityResolution">sampling density resolution</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="PointSpacingResolution">
+  <h3>point spacing resolution<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/spatialai/stad/v2/core#PointSpacingResolution</p>
+  <div class="comment">
+   <span class="markdown">A spatial resolution expressed by a statistical summary of distances between neighboring sampling locations in non-gridded spatial data.</span>
+  </div>
+  <dl class="definedBy">
+   <dt>
+    Is defined by
+   </dt>
+   <dd>
+    <a href="http://purl.org/spatialai/stad/v2/core#">http://purl.org/spatialai/stad/v2/core#</a>
+   </dd>
+  </dl>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#SpatialResolution" title="http://purl.org/spatialai/stad/v2/core#SpatialResolution">spatial resolution</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is disjoint with
+   </dt>
+   <dd>
+    <a href="#CoverageRatioResolution" title="http://purl.org/spatialai/stad/v2/core#CoverageRatioResolution">coverage ratio resolution</a> <sup class="type-c" title="class">c</sup>, <a href="#PixelSizeResolution" title="http://purl.org/spatialai/stad/v2/core#PixelSizeResolution">pixel size resolution</a> <sup class="type-c" title="class">c</sup>, <a href="#SamplingDensityResolution" title="http://purl.org/spatialai/stad/v2/core#SamplingDensityResolution">sampling density resolution</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://www.w3.org/2006/time#ProperInterval">
+  <h3>Proper interval<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.w3.org/2006/time#ProperInterval</p>
+  <div class="comment">
+   <span class="markdown">A temporal entity with non-zero extent or duration, i.e. for which the value of the beginning and end are different</span>
+  </div>
+  <dl class="definedBy">
+   <dt>
+    Is defined by
+   </dt>
+   <dd>
+    <a href="http://www.w3.org/2006/time">http://www.w3.org/2006/time</a>
+   </dd>
+  </dl>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#http://www.w3.org/2006/time#Interval" title="http://www.w3.org/2006/time#Interval">Time interval</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has sub-classes
+   </dt>
+   <dd>
+    <a href="#TemporalCoverage" title="http://purl.org/spatialai/stad/v2/core#TemporalCoverage">temporal coverage</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is disjoint with
+   </dt>
+   <dd>
+    <a href="#http://www.w3.org/2006/time#Instant" title="http://www.w3.org/2006/time#Instant">Time instant</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="QualitativeDatapoint">
+  <h3>qualitative datapoint<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/spatialai/stad/v2/core#QualitativeDatapoint</p>
+  <div class="comment">
+   <span class="markdown">A datapoint whose value is qualitative, such as a category or class.</span>
+  </div>
+  <dl class="definedBy">
+   <dt>
+    Is defined by
+   </dt>
+   <dd>
+    <a href="http://purl.org/spatialai/stad/v2/core#">http://purl.org/spatialai/stad/v2/core#</a>
+   </dd>
+  </dl>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#Datapoint" title="http://purl.org/spatialai/stad/v2/core#Datapoint">datapoint</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#hasQualitativeValue" title="http://purl.org/spatialai/stad/v2/core#hasQualitativeValue">has qualitative value</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is disjoint with
+   </dt>
+   <dd>
+    <a href="#QuantitativeDatapoint" title="http://purl.org/spatialai/stad/v2/core#QuantitativeDatapoint">quantitative datapoint</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="QualitativeValue">
+  <h3>qualitative value<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/spatialai/stad/v2/core#QualitativeValue</p>
+  <div class="comment">
+   <span class="markdown">A non-numerical data value, such as a categorical value.</span>
+  </div>
+  <dl class="definedBy">
+   <dt>
+    Is defined by
+   </dt>
+   <dd>
+    <a href="http://purl.org/spatialai/stad/v2/core#">http://purl.org/spatialai/stad/v2/core#</a>
+   </dd>
+  </dl>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#DataValue" title="http://purl.org/spatialai/stad/v2/core#DataValue">data value</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#hasQualitativeValue" title="http://purl.org/spatialai/stad/v2/core#hasQualitativeValue">has qualitative value</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is disjoint with
+   </dt>
+   <dd>
+    <a href="#QuantitativeValue" title="http://purl.org/spatialai/stad/v2/core#QuantitativeValue">quantitative value</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="QualityKind">
+  <h3>quality kind<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/spatialai/stad/v2/core#QualityKind</p>
+  <div class="comment">
+   <span class="markdown">The kind of quality or property represented by a datapoint, distinct from the value of that quality.</span>
+  </div>
+  <dl class="definedBy">
+   <dt>
+    Is defined by
+   </dt>
+   <dd>
+    <a href="http://purl.org/spatialai/stad/v2/core#">http://purl.org/spatialai/stad/v2/core#</a>
+   </dd>
+  </dl>
+  <dl class="description">
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#hasQualityKind" title="http://purl.org/spatialai/stad/v2/core#hasQualityKind">has quality kind</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    has members
+   </dt>
+   <dd>
+    <a href="#spatialResolutionQualityKind" title="http://purl.org/spatialai/stad/v2/core#spatialResolutionQualityKind">spatial resolution</a> <sup class="type-ni" title="named individual">ni</sup>, <a href="#temporalResolutionQualityKind" title="http://purl.org/spatialai/stad/v2/core#temporalResolutionQualityKind">temporal resolution</a> <sup class="type-ni" title="named individual">ni</sup>
+   </dd>
+   <dt>
+    is disjoint with
+   </dt>
+   <dd>
+    <a href="#Data" title="http://purl.org/spatialai/stad/v2/core#Data">data</a> <sup class="type-c" title="class">c</sup>, <a href="#DataTransformation" title="http://purl.org/spatialai/stad/v2/core#DataTransformation">data transformation</a> <sup class="type-c" title="class">c</sup>, <a href="#DataValue" title="http://purl.org/spatialai/stad/v2/core#DataValue">data value</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="QuantitativeDatapoint">
+  <h3>quantitative datapoint<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/spatialai/stad/v2/core#QuantitativeDatapoint</p>
+  <div class="comment">
+   <span class="markdown">A datapoint whose value is quantitative.</span>
+  </div>
+  <dl class="definedBy">
+   <dt>
+    Is defined by
+   </dt>
+   <dd>
+    <a href="http://purl.org/spatialai/stad/v2/core#">http://purl.org/spatialai/stad/v2/core#</a>
+   </dd>
+  </dl>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#Datapoint" title="http://purl.org/spatialai/stad/v2/core#Datapoint">datapoint</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has sub-classes
+   </dt>
+   <dd>
+    <a href="#ResolutionDescriptor" title="http://purl.org/spatialai/stad/v2/core#ResolutionDescriptor">resolution descriptor</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#hasQuantitativeValue" title="http://purl.org/spatialai/stad/v2/core#hasQuantitativeValue">has quantitative value</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is disjoint with
+   </dt>
+   <dd>
+    <a href="#QualitativeDatapoint" title="http://purl.org/spatialai/stad/v2/core#QualitativeDatapoint">qualitative datapoint</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="QuantitativeValue">
+  <h3>quantitative value<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/spatialai/stad/v2/core#QuantitativeValue</p>
+  <div class="comment">
+   <span class="markdown">A numerical data value, typically represented with a numeric value and unit.</span>
+  </div>
+  <dl class="definedBy">
+   <dt>
+    Is defined by
+   </dt>
+   <dd>
+    <a href="http://purl.org/spatialai/stad/v2/core#">http://purl.org/spatialai/stad/v2/core#</a>
+   </dd>
+  </dl>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#DataValue" title="http://purl.org/spatialai/stad/v2/core#DataValue">data value</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#hasQuantitativeValue" title="http://purl.org/spatialai/stad/v2/core#hasQuantitativeValue">has quantitative value</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is disjoint with
+   </dt>
+   <dd>
+    <a href="#QualitativeValue" title="http://purl.org/spatialai/stad/v2/core#QualitativeValue">qualitative value</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="RegularTemporalResolution">
+  <h3>regular temporal resolution<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/spatialai/stad/v2/core#RegularTemporalResolution</p>
+  <div class="comment">
+   <span class="markdown">A temporal resolution expressed by the constant or nominal interval between successive observations.</span>
+  </div>
+  <dl class="definedBy">
+   <dt>
+    Is defined by
+   </dt>
+   <dd>
+    <a href="http://purl.org/spatialai/stad/v2/core#">http://purl.org/spatialai/stad/v2/core#</a>
+   </dd>
+  </dl>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#TemporalResolution" title="http://purl.org/spatialai/stad/v2/core#TemporalResolution">temporal resolution</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="ResolutionDescriptor">
+  <h3>resolution descriptor<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/spatialai/stad/v2/core#ResolutionDescriptor</p>
+  <div class="comment">
+   <span class="markdown">A description of the spatial or temporal granularity at which data in a dataset are represented or distinguished.</span>
+  </div>
+  <dl class="definedBy">
+   <dt>
+    Is defined by
+   </dt>
+   <dd>
+    <a href="http://purl.org/spatialai/stad/v2/core#">http://purl.org/spatialai/stad/v2/core#</a>
+   </dd>
+  </dl>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#QuantitativeDatapoint" title="http://purl.org/spatialai/stad/v2/core#QuantitativeDatapoint">quantitative datapoint</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has sub-classes
+   </dt>
+   <dd>
+    <a href="#SpatialResolution" title="http://purl.org/spatialai/stad/v2/core#SpatialResolution">spatial resolution</a> <sup class="type-c" title="class">c</sup>, <a href="#TemporalResolution" title="http://purl.org/spatialai/stad/v2/core#TemporalResolution">temporal resolution</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#hasResolution" title="http://purl.org/spatialai/stad/v2/core#hasResolution">has resolution</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is disjoint with
+   </dt>
+   <dd>
+    <a href="#SpatialCoverage" title="http://purl.org/spatialai/stad/v2/core#SpatialCoverage">spatial coverage</a> <sup class="type-c" title="class">c</sup>, <a href="#TemporalCoverage" title="http://purl.org/spatialai/stad/v2/core#TemporalCoverage">temporal coverage</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="SamplingDensityResolution">
+  <h3>sampling density resolution<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/spatialai/stad/v2/core#SamplingDensityResolution</p>
+  <div class="comment">
+   <span class="markdown">A spatial resolution expressed as the number of datapoints or sampling locations per unit area.</span>
+  </div>
+  <dl class="definedBy">
+   <dt>
+    Is defined by
+   </dt>
+   <dd>
+    <a href="http://purl.org/spatialai/stad/v2/core#">http://purl.org/spatialai/stad/v2/core#</a>
+   </dd>
+  </dl>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#SpatialResolution" title="http://purl.org/spatialai/stad/v2/core#SpatialResolution">spatial resolution</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is disjoint with
+   </dt>
+   <dd>
+    <a href="#CoverageRatioResolution" title="http://purl.org/spatialai/stad/v2/core#CoverageRatioResolution">coverage ratio resolution</a> <sup class="type-c" title="class">c</sup>, <a href="#PixelSizeResolution" title="http://purl.org/spatialai/stad/v2/core#PixelSizeResolution">pixel size resolution</a> <sup class="type-c" title="class">c</sup>, <a href="#PointSpacingResolution" title="http://purl.org/spatialai/stad/v2/core#PointSpacingResolution">point spacing resolution</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="SpatialAggregateDatapoint">
+  <h3>spatial aggregate datapoint<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/spatialai/stad/v2/core#SpatialAggregateDatapoint</p>
+  <div class="comment">
+   <span class="markdown">A statistical aggregate datapoint computed over a spatial extent. It has exactly one spatial coverage.</span>
+  </div>
+  <dl class="definedBy">
+   <dt>
+    Is defined by
+   </dt>
+   <dd>
+    <a href="http://purl.org/spatialai/stad/v2/core#">http://purl.org/spatialai/stad/v2/core#</a>
+   </dd>
+  </dl>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#StatisticalAggregateDatapoint" title="http://purl.org/spatialai/stad/v2/core#StatisticalAggregateDatapoint">statistical aggregate datapoint</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#hasSpatialCoverage" title="http://purl.org/spatialai/stad/v2/core#hasSpatialCoverage">has spatial coverage</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="SpatialCoverage">
+  <h3>spatial coverage<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/spatialai/stad/v2/core#SpatialCoverage</p>
+  <div class="comment">
+   <span class="markdown">The spatial extent, typically an area, over which base data are aggregated or a dataset applies.</span>
+  </div>
+  <dl class="definedBy">
+   <dt>
+    Is defined by
+   </dt>
+   <dd>
+    <a href="http://purl.org/spatialai/stad/v2/core#">http://purl.org/spatialai/stad/v2/core#</a>
+   </dd>
+  </dl>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#http://www.opengis.net/ont/geosparql#Feature" title="http://www.opengis.net/ont/geosparql#Feature">feature</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#hasSpatialCoverage" title="http://purl.org/spatialai/stad/v2/core#hasSpatialCoverage">has spatial coverage</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is disjoint with
+   </dt>
+   <dd>
+    <a href="#DataTransformation" title="http://purl.org/spatialai/stad/v2/core#DataTransformation">data transformation</a> <sup class="type-c" title="class">c</sup>, <a href="#Datapoint" title="http://purl.org/spatialai/stad/v2/core#Datapoint">datapoint</a> <sup class="type-c" title="class">c</sup>, <a href="#Dataset" title="http://purl.org/spatialai/stad/v2/core#Dataset">dataset</a> <sup class="type-c" title="class">c</sup>, <a href="#DatasetDescription" title="http://purl.org/spatialai/stad/v2/core#DatasetDescription">dataset description</a> <sup class="type-c" title="class">c</sup>, <a href="#TemporalCoverage" title="http://purl.org/spatialai/stad/v2/core#TemporalCoverage">temporal coverage</a> <sup class="type-c" title="class">c</sup>, <a href="#ResolutionDescriptor" title="http://purl.org/spatialai/stad/v2/core#ResolutionDescriptor">resolution descriptor</a> <sup class="type-c" title="class">c</sup>, <a href="#TemporalCoverage" title="http://purl.org/spatialai/stad/v2/core#TemporalCoverage">temporal coverage</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://www.opengis.net/ont/geosparql#SpatialObject">
+  <h3>spatial object<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.opengis.net/ont/geosparql#SpatialObject</p>
+  <div class="comment">
+   <span class="markdown">Anything spatial (being or having a shape, position or an extent).</span>
+  </div>
+  <dl class="definedBy">
+   <dt>
+    Is defined by
+   </dt>
+   <dd>
+    <a href="http://www.opengis.net/ont/geosparql#">http://www.opengis.net/ont/geosparql#</a>
+   </dd>
+  </dl>
+  <dl class="description">
+   <dt>
+    has sub-classes
+   </dt>
+   <dd>
+    <a href="#http://www.opengis.net/ont/geosparql#Feature" title="http://www.opengis.net/ont/geosparql#Feature">feature</a> <sup class="type-c" title="class">c</sup>, <a href="#http://www.opengis.net/ont/geosparql#Geometry" title="http://www.opengis.net/ont/geosparql#Geometry">geometry</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="SpatialResolution">
+  <h3>spatial resolution<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/spatialai/stad/v2/core#SpatialResolution</p>
+  <div class="comment">
+   <span class="markdown">A resolution descriptor characterizing the spatial granularity or spatial sampling of a dataset.</span>
+  </div>
+  <dl class="definedBy">
+   <dt>
+    Is defined by
+   </dt>
+   <dd>
+    <a href="http://purl.org/spatialai/stad/v2/core#">http://purl.org/spatialai/stad/v2/core#</a>
+   </dd>
+  </dl>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#ResolutionDescriptor" title="http://purl.org/spatialai/stad/v2/core#ResolutionDescriptor">resolution descriptor</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has sub-classes
+   </dt>
+   <dd>
+    <a href="#CoverageRatioResolution" title="http://purl.org/spatialai/stad/v2/core#CoverageRatioResolution">coverage ratio resolution</a> <sup class="type-c" title="class">c</sup>, <a href="#PixelSizeResolution" title="http://purl.org/spatialai/stad/v2/core#PixelSizeResolution">pixel size resolution</a> <sup class="type-c" title="class">c</sup>, <a href="#PointSpacingResolution" title="http://purl.org/spatialai/stad/v2/core#PointSpacingResolution">point spacing resolution</a> <sup class="type-c" title="class">c</sup>, <a href="#SamplingDensityResolution" title="http://purl.org/spatialai/stad/v2/core#SamplingDensityResolution">sampling density resolution</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#hasSpatialResolution" title="http://purl.org/spatialai/stad/v2/core#hasSpatialResolution">has spatial resolution</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="SpatioTemporalAggregateDatapoint">
+  <h3>spatio-temporal aggregate datapoint<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/spatialai/stad/v2/core#SpatioTemporalAggregateDatapoint</p>
+  <div class="comment">
+   <span class="markdown">A statistical aggregate datapoint aggregated over both space and time.</span>
+  </div>
+  <dl class="definedBy">
+   <dt>
+    Is defined by
+   </dt>
+   <dd>
+    <a href="http://purl.org/spatialai/stad/v2/core#">http://purl.org/spatialai/stad/v2/core#</a>
+   </dd>
+  </dl>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd></dd>
+  </dl>
+ </div>
+ <div class="entity" id="StatisticalAggregateDatapoint">
+  <h3>statistical aggregate datapoint<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/spatialai/stad/v2/core#StatisticalAggregateDatapoint</p>
+  <div class="comment">
+   <span class="markdown">A statistical aggregate datapoint is a computational datapoint whose value is a statistical summary of some base data, aggregated using the described data transformation kind. It may have a temporal coverage, an aggregation period, and a spatial coverage.</span>
+  </div>
+  <dl class="definedBy">
+   <dt>
+    Is defined by
+   </dt>
+   <dd>
+    <a href="http://purl.org/spatialai/stad/v2/core#">http://purl.org/spatialai/stad/v2/core#</a>
+   </dd>
+  </dl>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#ComputationalDatapoint" title="http://purl.org/spatialai/stad/v2/core#ComputationalDatapoint">computational datapoint</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has sub-classes
+   </dt>
+   <dd>
+    <a href="#SpatialAggregateDatapoint" title="http://purl.org/spatialai/stad/v2/core#SpatialAggregateDatapoint">spatial aggregate datapoint</a> <sup class="type-c" title="class">c</sup>, <a href="#TemporalAggregateDatapoint" title="http://purl.org/spatialai/stad/v2/core#TemporalAggregateDatapoint">temporal aggregate datapoint</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#hasAggregationPeriod" title="http://purl.org/spatialai/stad/v2/core#hasAggregationPeriod">has aggregation period</a> <sup class="type-op" title="object property">op</sup>, <a href="#hasTemporalCoverage" title="http://purl.org/spatialai/stad/v2/core#hasTemporalCoverage">has temporal coverage</a> <sup class="type-op" title="object property">op</sup>, <a href="#hasTransformationKind" title="http://purl.org/spatialai/stad/v2/core#hasTransformationKind">has transformation kind</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is disjoint with
+   </dt>
+   <dd>
+    <a href="#ComputationalPredictedDatapoint" title="http://purl.org/spatialai/stad/v2/core#ComputationalPredictedDatapoint">computational predicted datapoint</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://www.w3.org/2006/time#TemporalAggregate">
+  <h3>Temporal aggregate<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.w3.org/2006/time#TemporalAggregate</p>
+  <div class="comment">
+   <span class="markdown">Note: no ordering relationships are implied amongst the parts. Relationships between temporal entities are supported by explicit properties, such as time:after time:intervalMeets, etc.</span>
+  </div>
+  <div class="comment">
+   <span class="markdown">A temporal entity that is an aggregation of one or more temporal entities, without implied ordering among its parts.</span>
+  </div>
+  <dl class="definedBy">
+   <dt>
+    Is defined by
+   </dt>
+   <dd>
+    <a href="https://raw.githubusercontent.com/w3c/sdw/gh-pages/time-aggregates/rdf/time-agg.ttl">https://raw.githubusercontent.com/w3c/sdw/gh-pages/time-aggregates/rdf/time-agg.ttl</a>
+   </dd>
+  </dl>
+  <dl>
+   <dt>
+    Example
+   </dt>
+   <dd>
+    <pre>ex:VicSchoolTerms2020
+  a time:TemporalAggregate ;
+  rdfs:label "Public school year - Victoria 2020 " ;
+  time:hasBeginning ex:t1b ;
+  time:hasEnd ex:t4e ;
+  time:hasPart ex:t1 ;
+  time:hasPart ex:t2 ;
+  time:hasPart ex:t3 ;
+  time:hasPart ex:t4 ;
+.
+</pre>
+   </dd>
+  </dl>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#http://www.w3.org/2006/time#TemporalEntity" title="http://www.w3.org/2006/time#TemporalEntity">Temporal entity</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has sub-classes
+   </dt>
+   <dd>
+    <a href="#AggregationPeriod" title="http://purl.org/spatialai/stad/v2/core#AggregationPeriod">aggregation period</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#http://www.w3.org/2006/time#hasPart" title="http://www.w3.org/2006/time#hasPart">has a part</a> <sup class="type-op" title="object property">op</sup>, <a href="#hasTemporalPart" title="http://purl.org/spatialai/stad/v2/core#hasTemporalPart">has a temporal part (STAD relation)</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#http://www.w3.org/2006/time#isPartOf" title="http://www.w3.org/2006/time#isPartOf">is a part of</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="TemporalAggregateDatapoint">
+  <h3>temporal aggregate datapoint<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/spatialai/stad/v2/core#TemporalAggregateDatapoint</p>
+  <div class="comment">
+   <span class="markdown">A statistical aggregate datapoint aggregated over time and having exactly one temporal coverage and one aggregation period.</span>
+  </div>
+  <dl class="definedBy">
+   <dt>
+    Is defined by
+   </dt>
+   <dd>
+    <a href="http://purl.org/spatialai/stad/v2/core#">http://purl.org/spatialai/stad/v2/core#</a>
+   </dd>
+  </dl>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#StatisticalAggregateDatapoint" title="http://purl.org/spatialai/stad/v2/core#StatisticalAggregateDatapoint">statistical aggregate datapoint</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="TemporalCoverage">
+  <h3>temporal coverage<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/spatialai/stad/v2/core#TemporalCoverage</p>
+  <div class="comment">
+   <span class="markdown">The proper interval giving the overall temporal boundaries of a dataset or statistical aggregate datapoint.</span>
+  </div>
+  <dl class="definedBy">
+   <dt>
+    Is defined by
+   </dt>
+   <dd>
+    <a href="http://purl.org/spatialai/stad/v2/core#">http://purl.org/spatialai/stad/v2/core#</a>
+   </dd>
+  </dl>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#http://www.w3.org/2006/time#ProperInterval" title="http://www.w3.org/2006/time#ProperInterval">Proper interval</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#hasTemporalCoverage" title="http://purl.org/spatialai/stad/v2/core#hasTemporalCoverage">has temporal coverage</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is disjoint with
+   </dt>
+   <dd>
+    <a href="#DataTransformation" title="http://purl.org/spatialai/stad/v2/core#DataTransformation">data transformation</a> <sup class="type-c" title="class">c</sup>, <a href="#Datapoint" title="http://purl.org/spatialai/stad/v2/core#Datapoint">datapoint</a> <sup class="type-c" title="class">c</sup>, <a href="#Dataset" title="http://purl.org/spatialai/stad/v2/core#Dataset">dataset</a> <sup class="type-c" title="class">c</sup>, <a href="#DatasetDescription" title="http://purl.org/spatialai/stad/v2/core#DatasetDescription">dataset description</a> <sup class="type-c" title="class">c</sup>, <a href="#SpatialCoverage" title="http://purl.org/spatialai/stad/v2/core#SpatialCoverage">spatial coverage</a> <sup class="type-c" title="class">c</sup>, <a href="#ResolutionDescriptor" title="http://purl.org/spatialai/stad/v2/core#ResolutionDescriptor">resolution descriptor</a> <sup class="type-c" title="class">c</sup>, <a href="#SpatialCoverage" title="http://purl.org/spatialai/stad/v2/core#SpatialCoverage">spatial coverage</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://www.w3.org/2006/time#TemporalDuration">
+  <h3>Temporal duration<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.w3.org/2006/time#TemporalDuration</p>
+  <div class="comment">
+   <span class="markdown">Time extent; duration of a time interval separate from its particular start position</span>
+  </div>
+  <dl class="definedBy">
+   <dt>
+    Is defined by
+   </dt>
+   <dd>
+    <a href="http://www.w3.org/2006/time">http://www.w3.org/2006/time</a>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://www.w3.org/2006/time#TemporalEntity">
+  <h3>Temporal entity<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.w3.org/2006/time#TemporalEntity</p>
+  <div class="comment">
+   <span class="markdown">A temporal interval or instant.</span>
+  </div>
+  <dl class="definedBy">
+   <dt>
+    Is defined by
+   </dt>
+   <dd>
+    <a href="http://www.w3.org/2006/time">http://www.w3.org/2006/time</a>
+   </dd>
+  </dl>
+  <dl class="description">
+   <dt>
+    is equivalent to
+   </dt>
+   <dd>
+    <a href="#http://www.w3.org/2006/time#Instant" title="http://www.w3.org/2006/time#Instant">Time instant</a> <sup class="type-c" title="class">c</sup> <span class="logic">or</span> <a href="#http://www.w3.org/2006/time#Interval" title="http://www.w3.org/2006/time#Interval">Time interval</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="http://www.w3.org/2002/07/owl#Thing" target="_blank" title="http://www.w3.org/2002/07/owl#Thing">Thing</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has sub-classes
+   </dt>
+   <dd>
+    <a href="#http://www.w3.org/2006/time#TemporalAggregate" title="http://www.w3.org/2006/time#TemporalAggregate">Temporal aggregate</a> <sup class="type-c" title="class">c</sup>, <a href="#http://www.w3.org/2006/time#Instant" title="http://www.w3.org/2006/time#Instant">Time instant</a> <sup class="type-c" title="class">c</sup>, <a href="#http://www.w3.org/2006/time#Interval" title="http://www.w3.org/2006/time#Interval">Time interval</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#http://www.w3.org/2006/time#hasBeginning" title="http://www.w3.org/2006/time#hasBeginning">has beginning</a> <sup class="type-op" title="object property">op</sup>, <a href="#http://www.w3.org/2006/time#hasEnd" title="http://www.w3.org/2006/time#hasEnd">has end</a> <sup class="type-op" title="object property">op</sup>, <a href="#http://www.w3.org/2006/time#isPartOf" title="http://www.w3.org/2006/time#isPartOf">is a part of</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#http://www.w3.org/2006/time#hasPart" title="http://www.w3.org/2006/time#hasPart">has a part</a> <sup class="type-op" title="object property">op</sup>, <a href="#hasTemporalPart" title="http://purl.org/spatialai/stad/v2/core#hasTemporalPart">has a temporal part (STAD relation)</a> <sup class="type-op" title="object property">op</sup>, <a href="#http://www.w3.org/2006/time#hasTime" title="http://www.w3.org/2006/time#hasTime">has time</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="TemporalResolution">
+  <h3>temporal resolution<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/spatialai/stad/v2/core#TemporalResolution</p>
+  <div class="comment">
+   <span class="markdown">A resolution descriptor characterizing the temporal granularity or spacing of observations in a dataset.</span>
+  </div>
+  <dl class="definedBy">
+   <dt>
+    Is defined by
+   </dt>
+   <dd>
+    <a href="http://purl.org/spatialai/stad/v2/core#">http://purl.org/spatialai/stad/v2/core#</a>
+   </dd>
+  </dl>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#ResolutionDescriptor" title="http://purl.org/spatialai/stad/v2/core#ResolutionDescriptor">resolution descriptor</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has sub-classes
+   </dt>
+   <dd>
+    <a href="#RegularTemporalResolution" title="http://purl.org/spatialai/stad/v2/core#RegularTemporalResolution">regular temporal resolution</a> <sup class="type-c" title="class">c</sup>, <a href="#TemporalSpacingResolution" title="http://purl.org/spatialai/stad/v2/core#TemporalSpacingResolution">temporal spacing resolution</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#hasTemporalResolution" title="http://purl.org/spatialai/stad/v2/core#hasTemporalResolution">has temporal resolution</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="TemporalSpacingResolution">
+  <h3>temporal spacing resolution<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/spatialai/stad/v2/core#TemporalSpacingResolution</p>
+  <div class="comment">
+   <span class="markdown">A temporal resolution expressed by a statistical summary of intervals between observations.</span>
+  </div>
+  <dl class="definedBy">
+   <dt>
+    Is defined by
+   </dt>
+   <dd>
+    <a href="http://purl.org/spatialai/stad/v2/core#">http://purl.org/spatialai/stad/v2/core#</a>
+   </dd>
+  </dl>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#TemporalResolution" title="http://purl.org/spatialai/stad/v2/core#TemporalResolution">temporal resolution</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://www.w3.org/2006/time#Instant">
+  <h3>Time instant<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.w3.org/2006/time#Instant</p>
+  <div class="comment">
+   <span class="markdown">A temporal entity with zero extent or duration</span>
+  </div>
+  <dl class="definedBy">
+   <dt>
+    Is defined by
+   </dt>
+   <dd>
+    <a href="http://www.w3.org/2006/time">http://www.w3.org/2006/time</a>
+   </dd>
+  </dl>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#http://www.w3.org/2006/time#TemporalEntity" title="http://www.w3.org/2006/time#TemporalEntity">Temporal entity</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#http://www.w3.org/2006/time#hasBeginning" title="http://www.w3.org/2006/time#hasBeginning">has beginning</a> <sup class="type-op" title="object property">op</sup>, <a href="#http://www.w3.org/2006/time#hasEnd" title="http://www.w3.org/2006/time#hasEnd">has end</a> <sup class="type-op" title="object property">op</sup>, <a href="#hasInstant" title="http://purl.org/spatialai/stad/v2/core#hasInstant">has instant</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is disjoint with
+   </dt>
+   <dd>
+    <a href="#http://www.w3.org/2006/time#ProperInterval" title="http://www.w3.org/2006/time#ProperInterval">Proper interval</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://www.w3.org/2006/time#Interval">
+  <h3>Time interval<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.w3.org/2006/time#Interval</p>
+  <div class="comment">
+   <span class="markdown">A temporal entity with an extent or duration</span>
+  </div>
+  <dl class="definedBy">
+   <dt>
+    Is defined by
+   </dt>
+   <dd>
+    <a href="http://www.w3.org/2006/time">http://www.w3.org/2006/time</a>
+   </dd>
+  </dl>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#http://www.w3.org/2006/time#TemporalEntity" title="http://www.w3.org/2006/time#TemporalEntity">Temporal entity</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has sub-classes
+   </dt>
+   <dd>
+    <a href="#http://www.w3.org/2006/time#ProperInterval" title="http://www.w3.org/2006/time#ProperInterval">Proper interval</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#hasExtent" title="http://purl.org/spatialai/stad/v2/core#hasExtent">has extent</a> <sup class="type-op" title="object property">op</sup>, <a href="#hasInterval" title="http://purl.org/spatialai/stad/v2/core#hasInterval">has interval</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+</div><div xmlns:widoco="https://w3id.org/widoco/vocab#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="objectproperties">
+ <h3 id="properties" class="list">Object Properties</h3>
+ <ul class="hlist">
+  <li><a href="#containsDatapoint" title="http://purl.org/spatialai/stad/v2/core#containsDatapoint">contains datapoint</a></li>
+  <li><a href="#generatedBy" title="http://purl.org/spatialai/stad/v2/core#generatedBy">generated by</a></li>
+  <li><a href="#http://www.w3.org/2006/time#hasPart" title="http://www.w3.org/2006/time#hasPart">has a part</a></li>
+  <li><a href="#hasTemporalPart" title="http://purl.org/spatialai/stad/v2/core#hasTemporalPart">has a temporal part (STAD relation)</a></li>
+  <li><a href="#hasAggregationPeriod" title="http://purl.org/spatialai/stad/v2/core#hasAggregationPeriod">has aggregation period</a></li>
+  <li><a href="#hasBaseDatapoint" title="http://purl.org/spatialai/stad/v2/core#hasBaseDatapoint">has base datapoint</a></li>
+  <li><a href="#hasBaseDataset" title="http://purl.org/spatialai/stad/v2/core#hasBaseDataset">has base dataset</a></li>
+  <li><a href="#http://www.w3.org/2006/time#hasBeginning" title="http://www.w3.org/2006/time#hasBeginning">has beginning</a></li>
+  <li><a href="#hasConvexAggregationPeriod" title="http://purl.org/spatialai/stad/v2/core#hasConvexAggregationPeriod">has convex aggregation period</a></li>
+  <li><a href="#hasDataValue" title="http://purl.org/spatialai/stad/v2/core#hasDataValue">has data value</a></li>
+  <li><a href="#hasDatasetDescription" title="http://purl.org/spatialai/stad/v2/core#hasDatasetDescription">has dataset description</a></li>
+  <li><a href="#http://www.w3.org/2006/time#hasEnd" title="http://www.w3.org/2006/time#hasEnd">has end</a></li>
+  <li><a href="#hasExtent" title="http://purl.org/spatialai/stad/v2/core#hasExtent">has extent</a></li>
+  <li><a href="#http://www.opengis.net/ont/geosparql#hasGeometry" title="http://www.opengis.net/ont/geosparql#hasGeometry">has geometry</a></li>
+  <li><a href="#hasInput" title="http://purl.org/spatialai/stad/v2/core#hasInput">has input</a></li>
+  <li><a href="#hasInstant" title="http://purl.org/spatialai/stad/v2/core#hasInstant">has instant</a></li>
+  <li><a href="#hasInterval" title="http://purl.org/spatialai/stad/v2/core#hasInterval">has interval</a></li>
+  <li><a href="#hasNonConvexAggregationPeriod" title="http://purl.org/spatialai/stad/v2/core#hasNonConvexAggregationPeriod">has non-convex aggregation period</a></li>
+  <li><a href="#http://purl.org/dc/terms/hasPart" title="http://purl.org/dc/terms/hasPart">has part</a></li>
+  <li><a href="#hasQualitativeValue" title="http://purl.org/spatialai/stad/v2/core#hasQualitativeValue">has qualitative value</a></li>
+  <li><a href="#hasQualityKind" title="http://purl.org/spatialai/stad/v2/core#hasQualityKind">has quality kind</a></li>
+  <li><a href="#hasQuantitativeValue" title="http://purl.org/spatialai/stad/v2/core#hasQuantitativeValue">has quantitative value</a></li>
+  <li><a href="#hasResolution" title="http://purl.org/spatialai/stad/v2/core#hasResolution">has resolution</a></li>
+  <li><a href="#hasSpatialCoverage" title="http://purl.org/spatialai/stad/v2/core#hasSpatialCoverage">has spatial coverage</a></li>
+  <li><a href="#hasSpatialResolution" title="http://purl.org/spatialai/stad/v2/core#hasSpatialResolution">has spatial resolution</a></li>
+  <li><a href="#hasTemporalCoverage" title="http://purl.org/spatialai/stad/v2/core#hasTemporalCoverage">has temporal coverage</a></li>
+  <li><a href="#hasTemporalResolution" title="http://purl.org/spatialai/stad/v2/core#hasTemporalResolution">has temporal resolution</a></li>
+  <li><a href="#http://www.w3.org/2006/time#hasTime" title="http://www.w3.org/2006/time#hasTime">has time</a></li>
+  <li><a href="#hasTransformationKind" title="http://purl.org/spatialai/stad/v2/core#hasTransformationKind">has transformation kind</a></li>
+  <li><a href="#instantPartOf" title="http://purl.org/spatialai/stad/v2/core#instantPartOf">instant part of</a></li>
+  <li><a href="#intervalPartOf" title="http://purl.org/spatialai/stad/v2/core#intervalPartOf">interval part of</a></li>
+  <li><a href="#http://www.w3.org/2006/time#isPartOf" title="http://www.w3.org/2006/time#isPartOf">is a part of</a></li>
+  <li><a href="#outputOf" title="http://purl.org/spatialai/stad/v2/core#outputOf">output of</a></li>
+  <li><a href="#spatialCoverageOf" title="http://purl.org/spatialai/stad/v2/core#spatialCoverageOf">spatial coverage of</a></li>
+  <li><a href="#temporalCoverageOf" title="http://purl.org/spatialai/stad/v2/core#temporalCoverageOf">temporal coverage of</a></li>
+ </ul>
+ <div class="entity" id="containsDatapoint">
+  <h3>contains datapoint<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/spatialai/stad/v2/core#containsDatapoint</p>
+  <div class="comment">
+   <span class="markdown">Relates a dataset to a datapoint contained in that dataset.</span>
+  </div>
+  <dl class="definedBy">
+   <dt>
+    Is defined by
+   </dt>
+   <dd>
+    <a href="http://purl.org/spatialai/stad/v2/core#">http://purl.org/spatialai/stad/v2/core#</a>
+   </dd>
+  </dl>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Dataset" title="http://purl.org/spatialai/stad/v2/core#Dataset">dataset</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#Datapoint" title="http://purl.org/spatialai/stad/v2/core#Datapoint">datapoint</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="generatedBy">
+  <h3>generated by<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/spatialai/stad/v2/core#generatedBy</p>
+  <div class="comment">
+   <span class="markdown">Links anything that is generated by an Algorithm to the specific AlgorithmExecution that was used.</span>
+  </div>
+  <dl class="definedBy">
+   <dt>
+    Is defined by
+   </dt>
+   <dd>
+    <a href="http://purl.org/spatialai/stad/v2/core#">http://purl.org/spatialai/stad/v2/core#</a>
+   </dd>
+  </dl>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#ComputationalDatapoint" title="http://purl.org/spatialai/stad/v2/core#ComputationalDatapoint">computational datapoint</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="http://www.w3.org/2006/time#hasPart">
+  <h3>has a part<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.w3.org/2006/time#hasPart</p>
+  <div class="comment">
+   <span class="markdown">Relates a temporal aggregate to a constituent temporal entity.</span>
+  </div>
+  <dl class="definedBy">
+   <dt>
+    Is defined by
+   </dt>
+   <dd>
+    <a href="https://raw.githubusercontent.com/w3c/sdw/gh-pages/time-aggregates/rdf/time-agg.ttl">https://raw.githubusercontent.com/w3c/sdw/gh-pages/time-aggregates/rdf/time-agg.ttl</a>
+   </dd>
+  </dl>
+  <dl>
+   <dt>
+    Example
+   </dt>
+   <dd>
+    <pre>ex:VicSchoolTerms2020
+  a time:TemporalAggregate ;
+  time:hasPart ex:t1 ;
+.
+ex:t1
+  a time:ProperInterval ;
+.
+</pre>
+   </dd>
+  </dl>
+  <div class="description">
+   <dl>
+    <dt>
+     has super-properties
+    </dt>
+    <dd>
+     <a href="#http://purl.org/dc/terms/hasPart" title="http://purl.org/dc/terms/hasPart">has part</a> <sup class="type-op" title="object property">op</sup>, <a href="http://www.w3.org/2000/01/rdf-schema#member" target="_blank" title="http://www.w3.org/2000/01/rdf-schema#member">member</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+    <dt>
+     has sub-properties
+    </dt>
+    <dd>
+     <a href="#hasTemporalPart" title="http://purl.org/spatialai/stad/v2/core#hasTemporalPart">has a temporal part (STAD relation)</a> <sup class="type-op" title="object property">op</sup>, <a href="#hasInstant" title="http://purl.org/spatialai/stad/v2/core#hasInstant">has instant</a> <sup class="type-op" title="object property">op</sup>, <a href="#hasInterval" title="http://purl.org/spatialai/stad/v2/core#hasInterval">has interval</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#http://www.w3.org/2006/time#TemporalAggregate" title="http://www.w3.org/2006/time#TemporalAggregate">Temporal aggregate</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#http://www.w3.org/2006/time#TemporalEntity" title="http://www.w3.org/2006/time#TemporalEntity">Temporal entity</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     is inverse of
+    </dt>
+    <dd>
+     <a href="#http://www.w3.org/2006/time#isPartOf" title="http://www.w3.org/2006/time#isPartOf">is a part of</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="hasTemporalPart">
+  <h3>has a temporal part (STAD relation)<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/spatialai/stad/v2/core#hasTemporalPart</p>
+  <div class="comment">
+   <span class="markdown">Relates a temporal aggregate to one of its constituent temporal entities, including an inferred extent for a convex aggregation period.</span>
+  </div>
+  <dl class="definedBy">
+   <dt>
+    Is defined by
+   </dt>
+   <dd>
+    <a href="http://purl.org/spatialai/stad/v2/core#">http://purl.org/spatialai/stad/v2/core#</a>
+   </dd>
+  </dl>
+  <div class="description">
+   <dl>
+    <dt>
+     has super-properties
+    </dt>
+    <dd>
+     <a href="#http://www.w3.org/2006/time#hasPart" title="http://www.w3.org/2006/time#hasPart">has a part</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#http://www.w3.org/2006/time#TemporalAggregate" title="http://www.w3.org/2006/time#TemporalAggregate">Temporal aggregate</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#http://www.w3.org/2006/time#TemporalEntity" title="http://www.w3.org/2006/time#TemporalEntity">Temporal entity</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has sub-property chains
+    </dt>
+    <dd>
+     <a href="#hasConvexAggregationPeriod" title="http://purl.org/spatialai/stad/v2/core#hasConvexAggregationPeriod">has convex aggregation period</a> <sup class="type-op" title="object property">op</sup> <span class="logic">o</span> <a href="#hasExtent" title="http://purl.org/spatialai/stad/v2/core#hasExtent">has extent</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="hasAggregationPeriod">
+  <h3>has aggregation period<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/spatialai/stad/v2/core#hasAggregationPeriod</p>
+  <div class="comment">
+   <span class="markdown">Relates a statistical aggregate datapoint to the temporal entities over which its base data were selected for aggregation.</span>
+  </div>
+  <dl class="definedBy">
+   <dt>
+    Is defined by
+   </dt>
+   <dd>
+    <a href="http://purl.org/spatialai/stad/v2/core#">http://purl.org/spatialai/stad/v2/core#</a>
+   </dd>
+  </dl>
+  <div class="description">
+   <dl>
+    <dt>
+     has sub-properties
+    </dt>
+    <dd>
+     <a href="#hasConvexAggregationPeriod" title="http://purl.org/spatialai/stad/v2/core#hasConvexAggregationPeriod">has convex aggregation period</a> <sup class="type-op" title="object property">op</sup>, <a href="#hasNonConvexAggregationPeriod" title="http://purl.org/spatialai/stad/v2/core#hasNonConvexAggregationPeriod">has non-convex aggregation period</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#StatisticalAggregateDatapoint" title="http://purl.org/spatialai/stad/v2/core#StatisticalAggregateDatapoint">statistical aggregate datapoint</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#AggregationPeriod" title="http://purl.org/spatialai/stad/v2/core#AggregationPeriod">aggregation period</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="hasBaseDatapoint">
+  <h3>has base datapoint<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/spatialai/stad/v2/core#hasBaseDatapoint</p>
+  <div class="comment">
+   <span class="markdown">Relates a computational datapoint to a datapoint used to compute it; this relation can be inferred through its base dataset.</span>
+  </div>
+  <dl class="definedBy">
+   <dt>
+    Is defined by
+   </dt>
+   <dd>
+    <a href="http://purl.org/spatialai/stad/v2/core#">http://purl.org/spatialai/stad/v2/core#</a>
+   </dd>
+  </dl>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#ComputationalDatapoint" title="http://purl.org/spatialai/stad/v2/core#ComputationalDatapoint">computational datapoint</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#Datapoint" title="http://purl.org/spatialai/stad/v2/core#Datapoint">datapoint</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has sub-property chains
+    </dt>
+    <dd>
+     <a href="#hasBaseDataset" title="http://purl.org/spatialai/stad/v2/core#hasBaseDataset">has base dataset</a> <sup class="type-op" title="object property">op</sup> <span class="logic">o</span> <a href="#containsDatapoint" title="http://purl.org/spatialai/stad/v2/core#containsDatapoint">contains datapoint</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="hasBaseDataset">
+  <h3>has base dataset<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/spatialai/stad/v2/core#hasBaseDataset</p>
+  <div class="comment">
+   <span class="markdown">Relates a computational datapoint to a dataset used to compute it.</span>
+  </div>
+  <dl class="definedBy">
+   <dt>
+    Is defined by
+   </dt>
+   <dd>
+    <a href="http://purl.org/spatialai/stad/v2/core#">http://purl.org/spatialai/stad/v2/core#</a>
+   </dd>
+  </dl>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#ComputationalDatapoint" title="http://purl.org/spatialai/stad/v2/core#ComputationalDatapoint">computational datapoint</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#Dataset" title="http://purl.org/spatialai/stad/v2/core#Dataset">dataset</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="http://www.w3.org/2006/time#hasBeginning">
+  <h3>has beginning<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.w3.org/2006/time#hasBeginning</p>
+  <div class="comment">
+   <span class="markdown">Beginning of a temporal entity.</span>
+  </div>
+  <dl class="definedBy">
+   <dt>
+    Is defined by
+   </dt>
+   <dd>
+    <a href="http://www.w3.org/2006/time#">http://www.w3.org/2006/time#</a>
+   </dd>
+  </dl>
+  <div class="description">
+   <dl>
+    <dt>
+     has super-properties
+    </dt>
+    <dd>
+     <a href="#http://www.w3.org/2006/time#hasTime" title="http://www.w3.org/2006/time#hasTime">has time</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#http://www.w3.org/2006/time#TemporalEntity" title="http://www.w3.org/2006/time#TemporalEntity">Temporal entity</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#http://www.w3.org/2006/time#Instant" title="http://www.w3.org/2006/time#Instant">Time instant</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="hasConvexAggregationPeriod">
+  <h3>has convex aggregation period<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/spatialai/stad/v2/core#hasConvexAggregationPeriod</p>
+  <div class="comment">
+   <span class="markdown">Relates an aggregate datapoint to a convex aggregation period.</span>
+  </div>
+  <dl class="definedBy">
+   <dt>
+    Is defined by
+   </dt>
+   <dd>
+    <a href="http://purl.org/spatialai/stad/v2/core#">http://purl.org/spatialai/stad/v2/core#</a>
+   </dd>
+  </dl>
+  <div class="description">
+   <dl>
+    <dt>
+     has super-properties
+    </dt>
+    <dd>
+     <a href="#hasAggregationPeriod" title="http://purl.org/spatialai/stad/v2/core#hasAggregationPeriod">has aggregation period</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#ConvexAggregationPeriod" title="http://purl.org/spatialai/stad/v2/core#ConvexAggregationPeriod">convex aggregation period</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="hasDataValue">
+  <h3>has data value<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/spatialai/stad/v2/core#hasDataValue</p>
+  <div class="comment">
+   <span class="markdown">Relates a datapoint to the value it carries.</span>
+  </div>
+  <dl class="definedBy">
+   <dt>
+    Is defined by
+   </dt>
+   <dd>
+    <a href="http://purl.org/spatialai/stad/v2/core#">http://purl.org/spatialai/stad/v2/core#</a>
+   </dd>
+  </dl>
+  <div class="description">
+   <dl>
+    <dt>
+     has sub-properties
+    </dt>
+    <dd>
+     <a href="#hasQualitativeValue" title="http://purl.org/spatialai/stad/v2/core#hasQualitativeValue">has qualitative value</a> <sup class="type-op" title="object property">op</sup>, <a href="#hasQuantitativeValue" title="http://purl.org/spatialai/stad/v2/core#hasQuantitativeValue">has quantitative value</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Datapoint" title="http://purl.org/spatialai/stad/v2/core#Datapoint">datapoint</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#DataValue" title="http://purl.org/spatialai/stad/v2/core#DataValue">data value</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="hasDatasetDescription">
+  <h3>has dataset description<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/spatialai/stad/v2/core#hasDatasetDescription</p>
+  <div class="comment">
+   <span class="markdown">Relates a dataset to a description of characteristics such as its spatial and temporal resolution.</span>
+  </div>
+  <dl class="definedBy">
+   <dt>
+    Is defined by
+   </dt>
+   <dd>
+    <a href="http://purl.org/spatialai/stad/v2/core#">http://purl.org/spatialai/stad/v2/core#</a>
+   </dd>
+  </dl>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Dataset" title="http://purl.org/spatialai/stad/v2/core#Dataset">dataset</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#DatasetDescription" title="http://purl.org/spatialai/stad/v2/core#DatasetDescription">dataset description</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="http://www.w3.org/2006/time#hasEnd">
+  <h3>has end<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.w3.org/2006/time#hasEnd</p>
+  <div class="comment">
+   <span class="markdown">End of a temporal entity.</span>
+  </div>
+  <dl class="definedBy">
+   <dt>
+    Is defined by
+   </dt>
+   <dd>
+    <a href="http://www.w3.org/2006/time#">http://www.w3.org/2006/time#</a>
+   </dd>
+  </dl>
+  <div class="description">
+   <dl>
+    <dt>
+     has super-properties
+    </dt>
+    <dd>
+     <a href="#http://www.w3.org/2006/time#hasTime" title="http://www.w3.org/2006/time#hasTime">has time</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#http://www.w3.org/2006/time#TemporalEntity" title="http://www.w3.org/2006/time#TemporalEntity">Temporal entity</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#http://www.w3.org/2006/time#Instant" title="http://www.w3.org/2006/time#Instant">Time instant</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="hasExtent">
+  <h3>has extent<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/spatialai/stad/v2/core#hasExtent</p>
+  <div class="comment">
+   <span class="markdown">Relates an aggregation period to the single proper interval forming its minimal convex temporal extent.</span>
+  </div>
+  <dl class="definedBy">
+   <dt>
+    Is defined by
+   </dt>
+   <dd>
+    <a href="http://purl.org/spatialai/stad/v2/core#">http://purl.org/spatialai/stad/v2/core#</a>
+   </dd>
+  </dl>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#AggregationPeriod" title="http://purl.org/spatialai/stad/v2/core#AggregationPeriod">aggregation period</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#http://www.w3.org/2006/time#Interval" title="http://www.w3.org/2006/time#Interval">Time interval</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="http://www.opengis.net/ont/geosparql#hasGeometry">
+  <h3>has geometry<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.opengis.net/ont/geosparql#hasGeometry</p>
+  <div class="comment">
+   <span class="markdown">A spatial representation for a given Feature.</span>
+  </div>
+  <dl class="definedBy">
+   <dt>
+    Is defined by
+   </dt>
+   <dd>
+    <a href="http://www.opengis.net/ont/geosparql#">http://www.opengis.net/ont/geosparql#</a>
+   </dd>
+  </dl>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#http://www.opengis.net/ont/geosparql#Feature" title="http://www.opengis.net/ont/geosparql#Feature">feature</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#http://www.opengis.net/ont/geosparql#Geometry" title="http://www.opengis.net/ont/geosparql#Geometry">geometry</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="hasInput">
+  <h3>has input<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/spatialai/stad/v2/core#hasInput</p>
+  <div class="comment">
+   <span class="markdown">Relates an algorithm execution to an input dataset.</span>
+  </div>
+  <dl class="definedBy">
+   <dt>
+    Is defined by
+   </dt>
+   <dd>
+    <a href="http://purl.org/spatialai/stad/v2/core#">http://purl.org/spatialai/stad/v2/core#</a>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="hasInstant">
+  <h3>has instant<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/spatialai/stad/v2/core#hasInstant</p>
+  <div class="comment">
+   <span class="markdown">Relates a temporal aggregate to an instant that is one of its temporal parts.</span>
+  </div>
+  <dl class="definedBy">
+   <dt>
+    Is defined by
+   </dt>
+   <dd>
+    <a href="http://purl.org/spatialai/stad/v2/core#">http://purl.org/spatialai/stad/v2/core#</a>
+   </dd>
+  </dl>
+  <div class="description">
+   <dl>
+    <dt>
+     has super-properties
+    </dt>
+    <dd>
+     <a href="#http://www.w3.org/2006/time#hasPart" title="http://www.w3.org/2006/time#hasPart">has a part</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#http://www.w3.org/2006/time#Instant" title="http://www.w3.org/2006/time#Instant">Time instant</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     is inverse of
+    </dt>
+    <dd>
+     <a href="#instantPartOf" title="http://purl.org/spatialai/stad/v2/core#instantPartOf">instant part of</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="hasInterval">
+  <h3>has interval<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/spatialai/stad/v2/core#hasInterval</p>
+  <div class="comment">
+   <span class="markdown">Relates a temporal aggregate to an interval that is one of its temporal parts.</span>
+  </div>
+  <dl class="definedBy">
+   <dt>
+    Is defined by
+   </dt>
+   <dd>
+    <a href="http://purl.org/spatialai/stad/v2/core#">http://purl.org/spatialai/stad/v2/core#</a>
+   </dd>
+  </dl>
+  <div class="description">
+   <dl>
+    <dt>
+     has super-properties
+    </dt>
+    <dd>
+     <a href="#http://www.w3.org/2006/time#hasPart" title="http://www.w3.org/2006/time#hasPart">has a part</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#http://www.w3.org/2006/time#Interval" title="http://www.w3.org/2006/time#Interval">Time interval</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     is inverse of
+    </dt>
+    <dd>
+     <a href="#intervalPartOf" title="http://purl.org/spatialai/stad/v2/core#intervalPartOf">interval part of</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="hasNonConvexAggregationPeriod">
+  <h3>has non-convex aggregation period<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/spatialai/stad/v2/core#hasNonConvexAggregationPeriod</p>
+  <div class="comment">
+   <span class="markdown">Relates an aggregate datapoint to a non-convex aggregation period.</span>
+  </div>
+  <dl class="definedBy">
+   <dt>
+    Is defined by
+   </dt>
+   <dd>
+    <a href="http://purl.org/spatialai/stad/v2/core#">http://purl.org/spatialai/stad/v2/core#</a>
+   </dd>
+  </dl>
+  <div class="description">
+   <dl>
+    <dt>
+     has super-properties
+    </dt>
+    <dd>
+     <a href="#hasAggregationPeriod" title="http://purl.org/spatialai/stad/v2/core#hasAggregationPeriod">has aggregation period</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#NonConvexAggregationPeriod" title="http://purl.org/spatialai/stad/v2/core#NonConvexAggregationPeriod">non-convex aggregation period</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="http://purl.org/dc/terms/hasPart">
+  <h3>has part<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/dc/terms/hasPart</p>
+  <div class="comment">
+   <span class="markdown">related resource that is included either physically or logically in the described resource.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has sub-properties
+    </dt>
+    <dd>
+     <a href="#http://www.w3.org/2006/time#hasPart" title="http://www.w3.org/2006/time#hasPart">has a part</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="hasQualitativeValue">
+  <h3>has qualitative value<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/spatialai/stad/v2/core#hasQualitativeValue</p>
+  <div class="comment">
+   <span class="markdown">Relates a qualitative datapoint to its qualitative value.</span>
+  </div>
+  <dl class="definedBy">
+   <dt>
+    Is defined by
+   </dt>
+   <dd>
+    <a href="http://purl.org/spatialai/stad/v2/core#">http://purl.org/spatialai/stad/v2/core#</a>
+   </dd>
+  </dl>
+  <div class="description">
+   <dl>
+    <dt>
+     has super-properties
+    </dt>
+    <dd>
+     <a href="#hasDataValue" title="http://purl.org/spatialai/stad/v2/core#hasDataValue">has data value</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#QualitativeDatapoint" title="http://purl.org/spatialai/stad/v2/core#QualitativeDatapoint">qualitative datapoint</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#QualitativeValue" title="http://purl.org/spatialai/stad/v2/core#QualitativeValue">qualitative value</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="hasQualityKind">
+  <h3>has quality kind<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/spatialai/stad/v2/core#hasQualityKind</p>
+  <div class="comment">
+   <span class="markdown">Relates a datapoint to the quality or property kind whose value it represents.</span>
+  </div>
+  <dl class="definedBy">
+   <dt>
+    Is defined by
+   </dt>
+   <dd>
+    <a href="http://purl.org/spatialai/stad/v2/core#">http://purl.org/spatialai/stad/v2/core#</a>
+   </dd>
+  </dl>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Datapoint" title="http://purl.org/spatialai/stad/v2/core#Datapoint">datapoint</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#QualityKind" title="http://purl.org/spatialai/stad/v2/core#QualityKind">quality kind</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="hasQuantitativeValue">
+  <h3>has quantitative value<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/spatialai/stad/v2/core#hasQuantitativeValue</p>
+  <div class="comment">
+   <span class="markdown">Relates a quantitative datapoint to its quantitative value.</span>
+  </div>
+  <dl class="definedBy">
+   <dt>
+    Is defined by
+   </dt>
+   <dd>
+    <a href="http://purl.org/spatialai/stad/v2/core#">http://purl.org/spatialai/stad/v2/core#</a>
+   </dd>
+  </dl>
+  <div class="description">
+   <dl>
+    <dt>
+     has super-properties
+    </dt>
+    <dd>
+     <a href="#hasDataValue" title="http://purl.org/spatialai/stad/v2/core#hasDataValue">has data value</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#QuantitativeDatapoint" title="http://purl.org/spatialai/stad/v2/core#QuantitativeDatapoint">quantitative datapoint</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#QuantitativeValue" title="http://purl.org/spatialai/stad/v2/core#QuantitativeValue">quantitative value</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="hasResolution">
+  <h3>has resolution<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/spatialai/stad/v2/core#hasResolution</p>
+  <div class="comment">
+   <span class="markdown">Relates a dataset description to a descriptor of one of the dataset's resolution.</span>
+  </div>
+  <dl class="definedBy">
+   <dt>
+    Is defined by
+   </dt>
+   <dd>
+    <a href="http://purl.org/spatialai/stad/v2/core#">http://purl.org/spatialai/stad/v2/core#</a>
+   </dd>
+  </dl>
+  <div class="description">
+   <dl>
+    <dt>
+     has sub-properties
+    </dt>
+    <dd>
+     <a href="#hasSpatialResolution" title="http://purl.org/spatialai/stad/v2/core#hasSpatialResolution">has spatial resolution</a> <sup class="type-op" title="object property">op</sup>, <a href="#hasTemporalResolution" title="http://purl.org/spatialai/stad/v2/core#hasTemporalResolution">has temporal resolution</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#DatasetDescription" title="http://purl.org/spatialai/stad/v2/core#DatasetDescription">dataset description</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#ResolutionDescriptor" title="http://purl.org/spatialai/stad/v2/core#ResolutionDescriptor">resolution descriptor</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="hasSpatialCoverage">
+  <h3>has spatial coverage<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/spatialai/stad/v2/core#hasSpatialCoverage</p>
+  <div class="comment">
+   <span class="markdown">Relates a dataset or spatial aggregate datapoint to the spatial extent it covers or summarizes.</span>
+  </div>
+  <dl class="definedBy">
+   <dt>
+    Is defined by
+   </dt>
+   <dd>
+    <a href="http://purl.org/spatialai/stad/v2/core#">http://purl.org/spatialai/stad/v2/core#</a>
+   </dd>
+  </dl>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Dataset" title="http://purl.org/spatialai/stad/v2/core#Dataset">dataset</a> <sup class="type-c" title="class">c</sup> <span class="logic">or</span> <a href="#SpatialAggregateDatapoint" title="http://purl.org/spatialai/stad/v2/core#SpatialAggregateDatapoint">spatial aggregate datapoint</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#SpatialCoverage" title="http://purl.org/spatialai/stad/v2/core#SpatialCoverage">spatial coverage</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     is inverse of
+    </dt>
+    <dd>
+     <a href="#spatialCoverageOf" title="http://purl.org/spatialai/stad/v2/core#spatialCoverageOf">spatial coverage of</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="hasSpatialResolution">
+  <h3>has spatial resolution<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/spatialai/stad/v2/core#hasSpatialResolution</p>
+  <div class="comment">
+   <span class="markdown">Relates a dataset description to a descriptor of the dataset's spatial resolution.</span>
+  </div>
+  <dl class="definedBy">
+   <dt>
+    Is defined by
+   </dt>
+   <dd>
+    <a href="http://purl.org/spatialai/stad/v2/core#">http://purl.org/spatialai/stad/v2/core#</a>
+   </dd>
+  </dl>
+  <div class="description">
+   <dl>
+    <dt>
+     has super-properties
+    </dt>
+    <dd>
+     <a href="#hasResolution" title="http://purl.org/spatialai/stad/v2/core#hasResolution">has resolution</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#SpatialResolution" title="http://purl.org/spatialai/stad/v2/core#SpatialResolution">spatial resolution</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="hasTemporalCoverage">
+  <h3>has temporal coverage<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/spatialai/stad/v2/core#hasTemporalCoverage</p>
+  <div class="comment">
+   <span class="markdown">Relates a dataset or statistical aggregate datapoint to the overall interval covered by its data.</span>
+  </div>
+  <dl class="definedBy">
+   <dt>
+    Is defined by
+   </dt>
+   <dd>
+    <a href="http://purl.org/spatialai/stad/v2/core#">http://purl.org/spatialai/stad/v2/core#</a>
+   </dd>
+  </dl>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Dataset" title="http://purl.org/spatialai/stad/v2/core#Dataset">dataset</a> <sup class="type-c" title="class">c</sup> <span class="logic">or</span> <a href="#StatisticalAggregateDatapoint" title="http://purl.org/spatialai/stad/v2/core#StatisticalAggregateDatapoint">statistical aggregate datapoint</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#TemporalCoverage" title="http://purl.org/spatialai/stad/v2/core#TemporalCoverage">temporal coverage</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     is inverse of
+    </dt>
+    <dd>
+     <a href="#temporalCoverageOf" title="http://purl.org/spatialai/stad/v2/core#temporalCoverageOf">temporal coverage of</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="hasTemporalResolution">
+  <h3>has temporal resolution<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/spatialai/stad/v2/core#hasTemporalResolution</p>
+  <div class="comment">
+   <span class="markdown">Relates a dataset description to a descriptor of the dataset's temporal resolution.</span>
+  </div>
+  <dl class="definedBy">
+   <dt>
+    Is defined by
+   </dt>
+   <dd>
+    <a href="http://purl.org/spatialai/stad/v2/core#">http://purl.org/spatialai/stad/v2/core#</a>
+   </dd>
+  </dl>
+  <div class="description">
+   <dl>
+    <dt>
+     has super-properties
+    </dt>
+    <dd>
+     <a href="#hasResolution" title="http://purl.org/spatialai/stad/v2/core#hasResolution">has resolution</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#TemporalResolution" title="http://purl.org/spatialai/stad/v2/core#TemporalResolution">temporal resolution</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="http://www.w3.org/2006/time#hasTime">
+  <h3>has time<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.w3.org/2006/time#hasTime</p>
+  <div class="comment">
+   <span class="markdown">Supports the association of a temporal entity (instant or interval) to any thing</span>
+  </div>
+  <dl>
+   <dt>
+    editorial note
+   </dt>
+   <dd>
+    Feature at risk - added in 2017 revision, and not yet widely used.
+   </dd>
+  </dl>
+  <dl class="definedBy">
+   <dt>
+    Is defined by
+   </dt>
+   <dd>
+    <a href="http://www.w3.org/2006/time#">http://www.w3.org/2006/time#</a>
+   </dd>
+  </dl>
+  <div class="description">
+   <dl>
+    <dt>
+     has sub-properties
+    </dt>
+    <dd>
+     <a href="#http://www.w3.org/2006/time#hasBeginning" title="http://www.w3.org/2006/time#hasBeginning">has beginning</a> <sup class="type-op" title="object property">op</sup>, <a href="#http://www.w3.org/2006/time#hasEnd" title="http://www.w3.org/2006/time#hasEnd">has end</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#http://www.w3.org/2006/time#TemporalEntity" title="http://www.w3.org/2006/time#TemporalEntity">Temporal entity</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="hasTransformationKind">
+  <h3>has transformation kind<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/spatialai/stad/v2/core#hasTransformationKind</p>
+  <div class="comment">
+   <span class="markdown">Relates a statistical aggregate datapoint directly to the kind of data transformation used to produce it.</span>
+  </div>
+  <dl class="definedBy">
+   <dt>
+    Is defined by
+   </dt>
+   <dd>
+    <a href="http://purl.org/spatialai/stad/v2/core#">http://purl.org/spatialai/stad/v2/core#</a>
+   </dd>
+  </dl>
+  <div class="description">
+   <dl>
+    <dt>
+     has super-properties
+    </dt>
+    <dd>
+     <a href="#outputOf" title="http://purl.org/spatialai/stad/v2/core#outputOf">output of</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#StatisticalAggregateDatapoint" title="http://purl.org/spatialai/stad/v2/core#StatisticalAggregateDatapoint">statistical aggregate datapoint</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#DataTransformation" title="http://purl.org/spatialai/stad/v2/core#DataTransformation">data transformation</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="instantPartOf">
+  <h3>instant part of<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/spatialai/stad/v2/core#instantPartOf</p>
+  <div class="comment">
+   <span class="markdown">Relates an instant to the temporal aggregate of which it is a part.</span>
+  </div>
+  <dl class="definedBy">
+   <dt>
+    Is defined by
+   </dt>
+   <dd>
+    <a href="http://purl.org/spatialai/stad/v2/core#">http://purl.org/spatialai/stad/v2/core#</a>
+   </dd>
+  </dl>
+  <div class="description">
+   <dl>
+    <dt>
+     has super-properties
+    </dt>
+    <dd>
+     <a href="#http://www.w3.org/2006/time#isPartOf" title="http://www.w3.org/2006/time#isPartOf">is a part of</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+    <dt>
+     is inverse of
+    </dt>
+    <dd>
+     <a href="#hasInstant" title="http://purl.org/spatialai/stad/v2/core#hasInstant">has instant</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="intervalPartOf">
+  <h3>interval part of<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/spatialai/stad/v2/core#intervalPartOf</p>
+  <div class="comment">
+   <span class="markdown">Relates an interval to the temporal aggregate of which it is a part.</span>
+  </div>
+  <dl class="definedBy">
+   <dt>
+    Is defined by
+   </dt>
+   <dd>
+    <a href="http://purl.org/spatialai/stad/v2/core#">http://purl.org/spatialai/stad/v2/core#</a>
+   </dd>
+  </dl>
+  <div class="description">
+   <dl>
+    <dt>
+     has super-properties
+    </dt>
+    <dd>
+     <a href="#http://www.w3.org/2006/time#isPartOf" title="http://www.w3.org/2006/time#isPartOf">is a part of</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+    <dt>
+     is inverse of
+    </dt>
+    <dd>
+     <a href="#hasInterval" title="http://purl.org/spatialai/stad/v2/core#hasInterval">has interval</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="http://www.w3.org/2006/time#isPartOf">
+  <h3>is a part of<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.w3.org/2006/time#isPartOf</p>
+  <div class="comment">
+   <span class="markdown">Relates a temporal entity to a temporal aggregate of which it is a part.</span>
+  </div>
+  <dl class="definedBy">
+   <dt>
+    Is defined by
+   </dt>
+   <dd>
+    <a href="https://raw.githubusercontent.com/w3c/sdw/gh-pages/time-aggregates/rdf/time-agg.ttl">https://raw.githubusercontent.com/w3c/sdw/gh-pages/time-aggregates/rdf/time-agg.ttl</a>
+   </dd>
+  </dl>
+  <dl>
+   <dt>
+    Example
+   </dt>
+   <dd>
+    <pre>ex:t1
+  a time:ProperInterval ;
+  time:isPartOf ex:VicSchoolTerms2020 ;
+.
+ex:VicSchoolTerms2020
+  a time:TemporalAggregate ;
+.
+</pre>
+   </dd>
+  </dl>
+  <div class="description">
+   <dl>
+    <dt>
+     has sub-properties
+    </dt>
+    <dd>
+     <a href="#instantPartOf" title="http://purl.org/spatialai/stad/v2/core#instantPartOf">instant part of</a> <sup class="type-op" title="object property">op</sup>, <a href="#intervalPartOf" title="http://purl.org/spatialai/stad/v2/core#intervalPartOf">interval part of</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#http://www.w3.org/2006/time#TemporalEntity" title="http://www.w3.org/2006/time#TemporalEntity">Temporal entity</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#http://www.w3.org/2006/time#TemporalAggregate" title="http://www.w3.org/2006/time#TemporalAggregate">Temporal aggregate</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     is inverse of
+    </dt>
+    <dd>
+     <a href="#http://www.w3.org/2006/time#hasPart" title="http://www.w3.org/2006/time#hasPart">has a part</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="outputOf">
+  <h3>output of<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/spatialai/stad/v2/core#outputOf</p>
+  <div class="comment">
+   <span class="markdown">Relates a computational datapoint to the algorithm of which it is an output.</span>
+  </div>
+  <dl class="definedBy">
+   <dt>
+    Is defined by
+   </dt>
+   <dd>
+    <a href="http://purl.org/spatialai/stad/v2/core#">http://purl.org/spatialai/stad/v2/core#</a>
+   </dd>
+  </dl>
+  <div class="description">
+   <dl>
+    <dt>
+     has sub-properties
+    </dt>
+    <dd>
+     <a href="#hasTransformationKind" title="http://purl.org/spatialai/stad/v2/core#hasTransformationKind">has transformation kind</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#ComputationalDatapoint" title="http://purl.org/spatialai/stad/v2/core#ComputationalDatapoint">computational datapoint</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="spatialCoverageOf">
+  <h3>spatial coverage of<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/spatialai/stad/v2/core#spatialCoverageOf</p>
+  <div class="comment">
+   <span class="markdown">Relates a spatial coverage to a dataset or spatial aggregate datapoint that it covers; inverse of has spatial coverage.</span>
+  </div>
+  <dl class="definedBy">
+   <dt>
+    Is defined by
+   </dt>
+   <dd>
+    <a href="http://purl.org/spatialai/stad/v2/core#">http://purl.org/spatialai/stad/v2/core#</a>
+   </dd>
+  </dl>
+  <div class="description">
+   <dl>
+    <dt>
+     is inverse of
+    </dt>
+    <dd>
+     <a href="#hasSpatialCoverage" title="http://purl.org/spatialai/stad/v2/core#hasSpatialCoverage">has spatial coverage</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="temporalCoverageOf">
+  <h3>temporal coverage of<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/spatialai/stad/v2/core#temporalCoverageOf</p>
+  <div class="comment">
+   <span class="markdown">Relates a temporal coverage to a dataset or statistical aggregate datapoint that it covers; inverse of has temporal coverage.</span>
+  </div>
+  <dl class="definedBy">
+   <dt>
+    Is defined by
+   </dt>
+   <dd>
+    <a href="http://purl.org/spatialai/stad/v2/core#">http://purl.org/spatialai/stad/v2/core#</a>
+   </dd>
+  </dl>
+  <div class="description">
+   <dl>
+    <dt>
+     is inverse of
+    </dt>
+    <dd>
+     <a href="#hasTemporalCoverage" title="http://purl.org/spatialai/stad/v2/core#hasTemporalCoverage">has temporal coverage</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+</div><div xmlns:widoco="https://w3id.org/widoco/vocab#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="namedindividuals">
+ <h3 id="namedindividuals" class="list">Named Individuals</h3>
+ <ul class="hlist">
+  <li><a href="#ArithmeticMeanCalculation" title="http://purl.org/spatialai/stad/v2/core#ArithmeticMeanCalculation">arithmetic mean calculation</a></li>
+  <li><a href="#GeometricMeanCalculation" title="http://purl.org/spatialai/stad/v2/core#GeometricMeanCalculation">geometric mean calculation</a></li>
+  <li><a href="#MaximumCalculation" title="http://purl.org/spatialai/stad/v2/core#MaximumCalculation">maximum calculation</a></li>
+  <li><a href="#MedianCalculation" title="http://purl.org/spatialai/stad/v2/core#MedianCalculation">median calculation</a></li>
+  <li><a href="#MinimumCalculation" title="http://purl.org/spatialai/stad/v2/core#MinimumCalculation">minimum calculation</a></li>
+  <li><a href="#ModeCalculation" title="http://purl.org/spatialai/stad/v2/core#ModeCalculation">mode calculation</a></li>
+  <li><a href="#spatialResolutionQualityKind" title="http://purl.org/spatialai/stad/v2/core#spatialResolutionQualityKind">spatial resolution</a></li>
+  <li><a href="#temporalResolutionQualityKind" title="http://purl.org/spatialai/stad/v2/core#temporalResolutionQualityKind">temporal resolution</a></li>
+ </ul>
+ <div class="entity" id="ArithmeticMeanCalculation">
+  <h3>arithmetic mean calculation<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/spatialai/stad/v2/core#ArithmeticMeanCalculation</p>
+  <div class="comment">
+   <span class="markdown">A data transformation that calculates the arithmetic mean of input values.</span>
+  </div>
+  <dl class="definedBy">
+   <dt>
+    Is defined by
+   </dt>
+   <dd>
+    <a href="http://purl.org/spatialai/stad/v2/core#">http://purl.org/spatialai/stad/v2/core#</a>
+   </dd>
+  </dl>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="#AverageCalculationDataTransformation" title="http://purl.org/spatialai/stad/v2/core#AverageCalculationDataTransformation">average calculation data transformation</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has facts
+   </dt>
+   <dd>
+    <a href="http://www.w3.org/2004/02/skos/core#definition" target="_blank" title="http://www.w3.org/2004/02/skos/core#definition">definition</a> <sup class="type-ap" title="annotation property">ap</sup> <span class="literal">"A data transformation that calculates the arithmetic mean of input values."@en</span>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="GeometricMeanCalculation">
+  <h3>geometric mean calculation<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/spatialai/stad/v2/core#GeometricMeanCalculation</p>
+  <div class="comment">
+   <span class="markdown">A data transformation that calculates the geometric mean of input values.</span>
+  </div>
+  <dl class="definedBy">
+   <dt>
+    Is defined by
+   </dt>
+   <dd>
+    <a href="http://purl.org/spatialai/stad/v2/core#">http://purl.org/spatialai/stad/v2/core#</a>
+   </dd>
+  </dl>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="#AverageCalculationDataTransformation" title="http://purl.org/spatialai/stad/v2/core#AverageCalculationDataTransformation">average calculation data transformation</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has facts
+   </dt>
+   <dd>
+    <a href="http://www.w3.org/2004/02/skos/core#definition" target="_blank" title="http://www.w3.org/2004/02/skos/core#definition">definition</a> <sup class="type-ap" title="annotation property">ap</sup> <span class="literal">"A data transformation that calculates the geometric mean of input values."@en</span>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="MaximumCalculation">
+  <h3>maximum calculation<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/spatialai/stad/v2/core#MaximumCalculation</p>
+  <div class="comment">
+   <span class="markdown">A data transformation that returns the maximum input value.</span>
+  </div>
+  <dl class="definedBy">
+   <dt>
+    Is defined by
+   </dt>
+   <dd>
+    <a href="http://purl.org/spatialai/stad/v2/core#">http://purl.org/spatialai/stad/v2/core#</a>
+   </dd>
+  </dl>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="#ExtremumCalculationDataTransformation" title="http://purl.org/spatialai/stad/v2/core#ExtremumCalculationDataTransformation">extremum calculation data transformation</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has facts
+   </dt>
+   <dd>
+    <a href="http://www.w3.org/2004/02/skos/core#definition" target="_blank" title="http://www.w3.org/2004/02/skos/core#definition">definition</a> <sup class="type-ap" title="annotation property">ap</sup> <span class="literal">"A data transformation that returns the maximum input value."@en</span>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="MedianCalculation">
+  <h3>median calculation<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/spatialai/stad/v2/core#MedianCalculation</p>
+  <div class="comment">
+   <span class="markdown">A data transformation that calculates the median of a set of values.</span>
+  </div>
+  <dl class="definedBy">
+   <dt>
+    Is defined by
+   </dt>
+   <dd>
+    <a href="http://purl.org/spatialai/stad/v2/core#">http://purl.org/spatialai/stad/v2/core#</a>
+   </dd>
+  </dl>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="#CentralTendencyCalculationDataTransformation" title="http://purl.org/spatialai/stad/v2/core#CentralTendencyCalculationDataTransformation">central tendency calculation data transformation</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has facts
+   </dt>
+   <dd>
+    <a href="http://www.w3.org/2004/02/skos/core#definition" target="_blank" title="http://www.w3.org/2004/02/skos/core#definition">definition</a> <sup class="type-ap" title="annotation property">ap</sup> <span class="literal">"A data transformation that calculates the median of a set of values."@en</span>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="MinimumCalculation">
+  <h3>minimum calculation<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/spatialai/stad/v2/core#MinimumCalculation</p>
+  <div class="comment">
+   <span class="markdown">A data transformation that returns the minimum input value.</span>
+  </div>
+  <dl class="definedBy">
+   <dt>
+    Is defined by
+   </dt>
+   <dd>
+    <a href="http://purl.org/spatialai/stad/v2/core#">http://purl.org/spatialai/stad/v2/core#</a>
+   </dd>
+  </dl>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="#ExtremumCalculationDataTransformation" title="http://purl.org/spatialai/stad/v2/core#ExtremumCalculationDataTransformation">extremum calculation data transformation</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has facts
+   </dt>
+   <dd>
+    <a href="http://www.w3.org/2004/02/skos/core#definition" target="_blank" title="http://www.w3.org/2004/02/skos/core#definition">definition</a> <sup class="type-ap" title="annotation property">ap</sup> <span class="literal">"A data transformation that returns the minimum input value."@en</span>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="ModeCalculation">
+  <h3>mode calculation<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/spatialai/stad/v2/core#ModeCalculation</p>
+  <div class="comment">
+   <span class="markdown">A data transformation that returns the most frequently occurring input value.</span>
+  </div>
+  <dl class="definedBy">
+   <dt>
+    Is defined by
+   </dt>
+   <dd>
+    <a href="http://purl.org/spatialai/stad/v2/core#">http://purl.org/spatialai/stad/v2/core#</a>
+   </dd>
+  </dl>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="#CentralTendencyCalculationDataTransformation" title="http://purl.org/spatialai/stad/v2/core#CentralTendencyCalculationDataTransformation">central tendency calculation data transformation</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has facts
+   </dt>
+   <dd>
+    <a href="http://www.w3.org/2004/02/skos/core#definition" target="_blank" title="http://www.w3.org/2004/02/skos/core#definition">definition</a> <sup class="type-ap" title="annotation property">ap</sup> <span class="literal">"A data transformation that returns the most frequently occurring input value."@en</span>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="spatialResolutionQualityKind">
+  <h3>spatial resolution<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/spatialai/stad/v2/core#spatialResolutionQualityKind</p>
+  <div class="comment">
+   <span class="markdown">The quality kind describing the spatial granularity or spatial sampling of a dataset.</span>
+  </div>
+  <dl class="definedBy">
+   <dt>
+    Is defined by
+   </dt>
+   <dd>
+    <a href="http://purl.org/spatialai/stad/v2/core#">http://purl.org/spatialai/stad/v2/core#</a>
+   </dd>
+  </dl>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="#QualityKind" title="http://purl.org/spatialai/stad/v2/core#QualityKind">quality kind</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has facts
+   </dt>
+   <dd>
+    <a href="http://www.w3.org/2004/02/skos/core#definition" target="_blank" title="http://www.w3.org/2004/02/skos/core#definition">definition</a> <sup class="type-ap" title="annotation property">ap</sup> <span class="literal">"The quality kind describing the spatial granularity or spatial sampling of a dataset."@en</span>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="temporalResolutionQualityKind">
+  <h3>temporal resolution<sup class="type-ni" title="named individual">ni</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/spatialai/stad/v2/core#temporalResolutionQualityKind</p>
+  <div class="comment">
+   <span class="markdown">The quality kind describing the temporal granularity or spacing of observations in a dataset.</span>
+  </div>
+  <dl class="definedBy">
+   <dt>
+    Is defined by
+   </dt>
+   <dd>
+    <a href="http://purl.org/spatialai/stad/v2/core#">http://purl.org/spatialai/stad/v2/core#</a>
+   </dd>
+  </dl>
+  <dl class="description">
+   <dt>
+    belongs to
+   </dt>
+   <dd>
+    <a href="#QualityKind" title="http://purl.org/spatialai/stad/v2/core#QualityKind">quality kind</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has facts
+   </dt>
+   <dd>
+    <a href="http://www.w3.org/2004/02/skos/core#definition" target="_blank" title="http://www.w3.org/2004/02/skos/core#definition">definition</a> <sup class="type-ap" title="annotation property">ap</sup> <span class="literal">"The quality kind describing the temporal granularity or spacing of observations in a dataset."@en</span>
+   </dd>
+  </dl>
+ </div>
+</div><div id="legend">
+<h2>Legend <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<div   class="entity">
+<sup class="type-c" title="Classes">c</sup>: Classes <br/>
+<sup class="type-op" title="Object Properties">op</sup>: Object Properties <br/>
+<sup class="type-ni" title="Named Individuals">ni</sup>: Named Individuals <br/>
+</div>
+</div>
+</div>
+    
+
+<!--REFERENCES SECTION-->
+  <div id="references">
+<h2 id="ref" class="list">References <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<span class="markdown">
+Add your references here. It is recommended to have them as a list.</span>
+
+</div>
+<div id="acknowledgments">
+<h2 id="ack" class="list">Acknowledgments <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<p>
+The authors would like to thank <a href="http://www.essepuntato.it/">Silvio Peroni</a> for developing <a href="http://www.essepuntato.it/lode">LODE</a>, a Live OWL Documentation Environment, which is used for representing the Cross Referencing Section of this document and <a href="https://w3id.org/people/dgarijo">Daniel Garijo</a> for developing <a href="https://github.com/dgarijo/Widoco">Widoco</a>, the program used to create the template used in this documentation.</p>
+</div>
+
+
+</div>
+</body>
+</html>

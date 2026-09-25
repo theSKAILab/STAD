@@ -1,0 +1,1004 @@
+<http://purl.org/spatialai/stad/v2/core#> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
+<http://purl.org/spatialai/stad/v2/core#> <http://www.w3.org/2002/07/owl#versionIRI> <http://purl.org/spatialai/stad/v2/core#> .
+<http://purl.org/spatialai/stad/v2/core#> <http://www.w3.org/2002/07/owl#imports> <http://www.w3.org/2006/time> .
+<http://purl.org/spatialai/stad/v2/core#> <http://www.w3.org/2002/07/owl#imports> <https://raw.githubusercontent.com/w3c/sdw/gh-pages/time-aggregates/rdf/time-agg.ttl> .
+<http://purl.org/spatialai/stad/v2/core#> <http://purl.org/dc/terms/created> "2025-11-16"^^<http://www.w3.org/2001/XMLSchema#date> .
+<http://purl.org/spatialai/stad/v2/core#> <http://purl.org/dc/terms/creator> "Kate Beard - https://orcid.org/0000-0002-7703-0270"@en .
+<http://purl.org/spatialai/stad/v2/core#> <http://purl.org/dc/terms/creator> "Kingsley Wiafe-Kwakye - https://orcid.org/0009-0007-3741-3721"@en .
+<http://purl.org/spatialai/stad/v2/core#> <http://purl.org/dc/terms/creator> "Torsten Hahmann - http://orcid.org/0000-0002-5331-5052"@en .
+<http://purl.org/spatialai/stad/v2/core#> <http://purl.org/dc/terms/description> "STAD provides syntax for describing the spatial and temporal characteristics of aggregate quantities."@en .
+<http://purl.org/spatialai/stad/v2/core#> <http://purl.org/dc/terms/identifier> "http://purl.org/spatialai/stad/v2/core>"@en .
+<http://purl.org/spatialai/stad/v2/core#> <http://purl.org/dc/terms/issued> "2025-11-16"^^<http://www.w3.org/2001/XMLSchema#date> .
+<http://purl.org/spatialai/stad/v2/core#> <http://purl.org/dc/terms/license> <https://creativecommons.org/licenses/by/4.0/> .
+<http://purl.org/spatialai/stad/v2/core#> <http://purl.org/dc/terms/modified> "2026-09-09"^^<http://www.w3.org/2001/XMLSchema#date> .
+<http://purl.org/spatialai/stad/v2/core#> <http://purl.org/dc/terms/publisher> "Spatial Knowledge and Artificial Intelligence (SKAI) Lab, University of Maine"@en .
+<http://purl.org/spatialai/stad/v2/core#> <http://purl.org/dc/terms/subject> "Aggregate data" .
+<http://purl.org/spatialai/stad/v2/core#> <http://purl.org/dc/terms/subject> "Spatial aggregate data" .
+<http://purl.org/spatialai/stad/v2/core#> <http://purl.org/dc/terms/subject> "Temporal aggregate data" .
+<http://purl.org/spatialai/stad/v2/core#> <http://purl.org/dc/terms/title> "Spatial and Temporal Aggregate Data (STAD) Ontology"@en .
+<http://purl.org/spatialai/stad/v2/core#> <http://www.w3.org/2000/01/rdf-schema#label> "STAD Ontology"@en .
+<http://purl.org/spatialai/stad/v2/core#> <http://www.w3.org/2000/01/rdf-schema#seeAlso> <http://purl.org/spatialai/stad/v2/mls#> .
+<http://purl.org/spatialai/stad/v2/core#> <http://www.w3.org/2002/07/owl#versionInfo> "2.0"@en .
+<http://purl.org/spatialai/stad/v2/core#> <http://www.w3.org/2004/02/skos/core#related> <http://purl.org/spatialai/stad/v2/mls#> .
+# 
+# 
+# #################################################################
+# #
+# #    Annotation properties
+# #
+# #################################################################
+# 
+# 
+# http://purl.org/dc/terms/created
+<http://purl.org/dc/terms/created> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/creator
+<http://purl.org/dc/terms/creator> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/description
+<http://purl.org/dc/terms/description> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/identifier
+<http://purl.org/dc/terms/identifier> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/issued
+<http://purl.org/dc/terms/issued> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/license
+<http://purl.org/dc/terms/license> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/modified
+<http://purl.org/dc/terms/modified> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/publisher
+<http://purl.org/dc/terms/publisher> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/subject
+<http://purl.org/dc/terms/subject> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/title
+<http://purl.org/dc/terms/title> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://www.w3.org/2004/02/skos/core#definition
+<http://www.w3.org/2004/02/skos/core#definition> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://www.w3.org/2004/02/skos/core#editorialNote
+<http://www.w3.org/2004/02/skos/core#editorialNote> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://www.w3.org/2004/02/skos/core#example
+<http://www.w3.org/2004/02/skos/core#example> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://www.w3.org/2004/02/skos/core#note
+<http://www.w3.org/2004/02/skos/core#note> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://www.w3.org/2004/02/skos/core#prefLabel
+<http://www.w3.org/2004/02/skos/core#prefLabel> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://www.w3.org/2004/02/skos/core#related
+<http://www.w3.org/2004/02/skos/core#related> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Datatypes
+# #
+# #################################################################
+# 
+# 
+# http://www.w3.org/2001/XMLSchema#date
+<http://www.w3.org/2001/XMLSchema#date> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Datatype> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Object Properties
+# #
+# #################################################################
+# 
+# 
+# http://purl.org/dc/terms/hasPart
+<http://purl.org/dc/terms/hasPart> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://purl.org/dc/terms/hasPart> <http://www.w3.org/2000/01/rdf-schema#label> "has part"@en .
+<http://purl.org/dc/terms/hasPart> <http://www.w3.org/2004/02/skos/core#definition> "related resource that is included either physically or logically in the described resource."@en .
+# 
+# http://purl.org/spatialai/stad/v2/core#containsDatapoint
+<http://purl.org/spatialai/stad/v2/core#containsDatapoint> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://purl.org/spatialai/stad/v2/core#containsDatapoint> <http://www.w3.org/2000/01/rdf-schema#domain> <http://purl.org/spatialai/stad/v2/core#Dataset> .
+<http://purl.org/spatialai/stad/v2/core#containsDatapoint> <http://www.w3.org/2000/01/rdf-schema#range> <http://purl.org/spatialai/stad/v2/core#Datapoint> .
+<http://purl.org/spatialai/stad/v2/core#containsDatapoint> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spatialai/stad/v2/core#> .
+<http://purl.org/spatialai/stad/v2/core#containsDatapoint> <http://www.w3.org/2000/01/rdf-schema#label> "contains datapoint"@en .
+<http://purl.org/spatialai/stad/v2/core#containsDatapoint> <http://www.w3.org/2004/02/skos/core#definition> "Relates a dataset to a datapoint contained in that dataset."@en .
+# 
+# http://purl.org/spatialai/stad/v2/core#generatedBy
+<http://purl.org/spatialai/stad/v2/core#generatedBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://purl.org/spatialai/stad/v2/core#generatedBy> <http://www.w3.org/2000/01/rdf-schema#domain> <http://purl.org/spatialai/stad/v2/core#ComputationalDatapoint> .
+<http://purl.org/spatialai/stad/v2/core#generatedBy> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spatialai/stad/v2/core#> .
+<http://purl.org/spatialai/stad/v2/core#generatedBy> <http://www.w3.org/2000/01/rdf-schema#label> "generated by"@en .
+<http://purl.org/spatialai/stad/v2/core#generatedBy> <http://www.w3.org/2004/02/skos/core#definition> "Links anything that is generated by an Algorithm to the specific AlgorithmExecution that was used."@en .
+# 
+# http://purl.org/spatialai/stad/v2/core#hasAggregationPeriod
+<http://purl.org/spatialai/stad/v2/core#hasAggregationPeriod> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://purl.org/spatialai/stad/v2/core#hasAggregationPeriod> <http://www.w3.org/2000/01/rdf-schema#domain> <http://purl.org/spatialai/stad/v2/core#StatisticalAggregateDatapoint> .
+<http://purl.org/spatialai/stad/v2/core#hasAggregationPeriod> <http://www.w3.org/2000/01/rdf-schema#range> <http://purl.org/spatialai/stad/v2/core#AggregationPeriod> .
+<http://purl.org/spatialai/stad/v2/core#hasAggregationPeriod> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spatialai/stad/v2/core#> .
+<http://purl.org/spatialai/stad/v2/core#hasAggregationPeriod> <http://www.w3.org/2000/01/rdf-schema#label> "has aggregation period"@en .
+<http://purl.org/spatialai/stad/v2/core#hasAggregationPeriod> <http://www.w3.org/2004/02/skos/core#definition> "Relates a statistical aggregate datapoint to the temporal entities over which its base data were selected for aggregation."@en .
+# 
+# http://purl.org/spatialai/stad/v2/core#hasBaseDatapoint
+<http://purl.org/spatialai/stad/v2/core#hasBaseDatapoint> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://purl.org/spatialai/stad/v2/core#hasBaseDatapoint> <http://www.w3.org/2000/01/rdf-schema#domain> <http://purl.org/spatialai/stad/v2/core#ComputationalDatapoint> .
+<http://purl.org/spatialai/stad/v2/core#hasBaseDatapoint> <http://www.w3.org/2000/01/rdf-schema#range> <http://purl.org/spatialai/stad/v2/core#Datapoint> .
+<http://purl.org/spatialai/stad/v2/core#hasBaseDatapoint> <http://www.w3.org/2002/07/owl#propertyChainAxiom> _:genid2 .
+_:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid1 .
+_:genid1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://purl.org/spatialai/stad/v2/core#containsDatapoint> .
+_:genid1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://purl.org/spatialai/stad/v2/core#hasBaseDataset> .
+_:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+<http://purl.org/spatialai/stad/v2/core#hasBaseDatapoint> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spatialai/stad/v2/core#> .
+<http://purl.org/spatialai/stad/v2/core#hasBaseDatapoint> <http://www.w3.org/2000/01/rdf-schema#label> "has base datapoint"@en .
+<http://purl.org/spatialai/stad/v2/core#hasBaseDatapoint> <http://www.w3.org/2004/02/skos/core#definition> "Relates a computational datapoint to a datapoint used to compute it; this relation can be inferred through its base dataset."@en .
+# 
+# http://purl.org/spatialai/stad/v2/core#hasBaseDataset
+<http://purl.org/spatialai/stad/v2/core#hasBaseDataset> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://purl.org/spatialai/stad/v2/core#hasBaseDataset> <http://www.w3.org/2000/01/rdf-schema#domain> <http://purl.org/spatialai/stad/v2/core#ComputationalDatapoint> .
+<http://purl.org/spatialai/stad/v2/core#hasBaseDataset> <http://www.w3.org/2000/01/rdf-schema#range> <http://purl.org/spatialai/stad/v2/core#Dataset> .
+<http://purl.org/spatialai/stad/v2/core#hasBaseDataset> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spatialai/stad/v2/core#> .
+<http://purl.org/spatialai/stad/v2/core#hasBaseDataset> <http://www.w3.org/2000/01/rdf-schema#label> "has base dataset"@en .
+<http://purl.org/spatialai/stad/v2/core#hasBaseDataset> <http://www.w3.org/2004/02/skos/core#definition> "Relates a computational datapoint to a dataset used to compute it."@en .
+# 
+# http://purl.org/spatialai/stad/v2/core#hasConvexAggregationPeriod
+<http://purl.org/spatialai/stad/v2/core#hasConvexAggregationPeriod> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://purl.org/spatialai/stad/v2/core#hasConvexAggregationPeriod> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://purl.org/spatialai/stad/v2/core#hasAggregationPeriod> .
+<http://purl.org/spatialai/stad/v2/core#hasConvexAggregationPeriod> <http://www.w3.org/2000/01/rdf-schema#range> <http://purl.org/spatialai/stad/v2/core#ConvexAggregationPeriod> .
+<http://purl.org/spatialai/stad/v2/core#hasConvexAggregationPeriod> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spatialai/stad/v2/core#> .
+<http://purl.org/spatialai/stad/v2/core#hasConvexAggregationPeriod> <http://www.w3.org/2000/01/rdf-schema#label> "has convex aggregation period"@en .
+<http://purl.org/spatialai/stad/v2/core#hasConvexAggregationPeriod> <http://www.w3.org/2004/02/skos/core#definition> "Relates an aggregate datapoint to a convex aggregation period."@en .
+# 
+# http://purl.org/spatialai/stad/v2/core#hasDataValue
+<http://purl.org/spatialai/stad/v2/core#hasDataValue> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://purl.org/spatialai/stad/v2/core#hasDataValue> <http://www.w3.org/2000/01/rdf-schema#domain> <http://purl.org/spatialai/stad/v2/core#Datapoint> .
+<http://purl.org/spatialai/stad/v2/core#hasDataValue> <http://www.w3.org/2000/01/rdf-schema#range> <http://purl.org/spatialai/stad/v2/core#DataValue> .
+<http://purl.org/spatialai/stad/v2/core#hasDataValue> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spatialai/stad/v2/core#> .
+<http://purl.org/spatialai/stad/v2/core#hasDataValue> <http://www.w3.org/2000/01/rdf-schema#label> "has data value"@en .
+<http://purl.org/spatialai/stad/v2/core#hasDataValue> <http://www.w3.org/2004/02/skos/core#definition> "Relates a datapoint to the value it carries."@en .
+# 
+# http://purl.org/spatialai/stad/v2/core#hasDatasetDescription
+<http://purl.org/spatialai/stad/v2/core#hasDatasetDescription> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://purl.org/spatialai/stad/v2/core#hasDatasetDescription> <http://www.w3.org/2000/01/rdf-schema#domain> <http://purl.org/spatialai/stad/v2/core#Dataset> .
+<http://purl.org/spatialai/stad/v2/core#hasDatasetDescription> <http://www.w3.org/2000/01/rdf-schema#range> <http://purl.org/spatialai/stad/v2/core#DatasetDescription> .
+<http://purl.org/spatialai/stad/v2/core#hasDatasetDescription> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spatialai/stad/v2/core#> .
+<http://purl.org/spatialai/stad/v2/core#hasDatasetDescription> <http://www.w3.org/2000/01/rdf-schema#label> "has dataset description"@en .
+<http://purl.org/spatialai/stad/v2/core#hasDatasetDescription> <http://www.w3.org/2004/02/skos/core#definition> "Relates a dataset to a description of characteristics such as its spatial and temporal resolution."@en .
+# 
+# http://purl.org/spatialai/stad/v2/core#hasExtent
+<http://purl.org/spatialai/stad/v2/core#hasExtent> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://purl.org/spatialai/stad/v2/core#hasExtent> <http://www.w3.org/2000/01/rdf-schema#domain> <http://purl.org/spatialai/stad/v2/core#AggregationPeriod> .
+<http://purl.org/spatialai/stad/v2/core#hasExtent> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2006/time#Interval> .
+<http://purl.org/spatialai/stad/v2/core#hasExtent> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spatialai/stad/v2/core#> .
+<http://purl.org/spatialai/stad/v2/core#hasExtent> <http://www.w3.org/2000/01/rdf-schema#label> "has extent"@en .
+<http://purl.org/spatialai/stad/v2/core#hasExtent> <http://www.w3.org/2004/02/skos/core#definition> "Relates an aggregation period to the single proper interval forming its minimal convex temporal extent."@en .
+# 
+# http://purl.org/spatialai/stad/v2/core#hasInput
+<http://purl.org/spatialai/stad/v2/core#hasInput> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://purl.org/spatialai/stad/v2/core#hasInput> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spatialai/stad/v2/core#> .
+<http://purl.org/spatialai/stad/v2/core#hasInput> <http://www.w3.org/2000/01/rdf-schema#label> "has input"@en .
+<http://purl.org/spatialai/stad/v2/core#hasInput> <http://www.w3.org/2004/02/skos/core#definition> "Relates an algorithm execution to an input dataset."@en .
+# 
+# http://purl.org/spatialai/stad/v2/core#hasInstant
+<http://purl.org/spatialai/stad/v2/core#hasInstant> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://purl.org/spatialai/stad/v2/core#hasInstant> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2006/time#hasPart> .
+<http://purl.org/spatialai/stad/v2/core#hasInstant> <http://www.w3.org/2002/07/owl#inverseOf> <http://purl.org/spatialai/stad/v2/core#instantPartOf> .
+<http://purl.org/spatialai/stad/v2/core#hasInstant> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2006/time#Instant> .
+<http://purl.org/spatialai/stad/v2/core#hasInstant> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spatialai/stad/v2/core#> .
+<http://purl.org/spatialai/stad/v2/core#hasInstant> <http://www.w3.org/2000/01/rdf-schema#label> "has instant"@en .
+<http://purl.org/spatialai/stad/v2/core#hasInstant> <http://www.w3.org/2004/02/skos/core#definition> "Relates a temporal aggregate to an instant that is one of its temporal parts."@en .
+# 
+# http://purl.org/spatialai/stad/v2/core#hasInterval
+<http://purl.org/spatialai/stad/v2/core#hasInterval> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://purl.org/spatialai/stad/v2/core#hasInterval> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2006/time#hasPart> .
+<http://purl.org/spatialai/stad/v2/core#hasInterval> <http://www.w3.org/2002/07/owl#inverseOf> <http://purl.org/spatialai/stad/v2/core#intervalPartOf> .
+<http://purl.org/spatialai/stad/v2/core#hasInterval> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2006/time#Interval> .
+<http://purl.org/spatialai/stad/v2/core#hasInterval> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spatialai/stad/v2/core#> .
+<http://purl.org/spatialai/stad/v2/core#hasInterval> <http://www.w3.org/2000/01/rdf-schema#label> "has interval"@en .
+<http://purl.org/spatialai/stad/v2/core#hasInterval> <http://www.w3.org/2004/02/skos/core#definition> "Relates a temporal aggregate to an interval that is one of its temporal parts."@en .
+# 
+# http://purl.org/spatialai/stad/v2/core#hasNonConvexAggregationPeriod
+<http://purl.org/spatialai/stad/v2/core#hasNonConvexAggregationPeriod> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://purl.org/spatialai/stad/v2/core#hasNonConvexAggregationPeriod> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://purl.org/spatialai/stad/v2/core#hasAggregationPeriod> .
+<http://purl.org/spatialai/stad/v2/core#hasNonConvexAggregationPeriod> <http://www.w3.org/2000/01/rdf-schema#range> <http://purl.org/spatialai/stad/v2/core#NonConvexAggregationPeriod> .
+<http://purl.org/spatialai/stad/v2/core#hasNonConvexAggregationPeriod> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spatialai/stad/v2/core#> .
+<http://purl.org/spatialai/stad/v2/core#hasNonConvexAggregationPeriod> <http://www.w3.org/2000/01/rdf-schema#label> "has non-convex aggregation period"@en .
+<http://purl.org/spatialai/stad/v2/core#hasNonConvexAggregationPeriod> <http://www.w3.org/2004/02/skos/core#definition> "Relates an aggregate datapoint to a non-convex aggregation period."@en .
+# 
+# http://purl.org/spatialai/stad/v2/core#hasQualitativeValue
+<http://purl.org/spatialai/stad/v2/core#hasQualitativeValue> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://purl.org/spatialai/stad/v2/core#hasQualitativeValue> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://purl.org/spatialai/stad/v2/core#hasDataValue> .
+<http://purl.org/spatialai/stad/v2/core#hasQualitativeValue> <http://www.w3.org/2000/01/rdf-schema#domain> <http://purl.org/spatialai/stad/v2/core#QualitativeDatapoint> .
+<http://purl.org/spatialai/stad/v2/core#hasQualitativeValue> <http://www.w3.org/2000/01/rdf-schema#range> <http://purl.org/spatialai/stad/v2/core#QualitativeValue> .
+<http://purl.org/spatialai/stad/v2/core#hasQualitativeValue> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spatialai/stad/v2/core#> .
+<http://purl.org/spatialai/stad/v2/core#hasQualitativeValue> <http://www.w3.org/2000/01/rdf-schema#label> "has qualitative value"@en .
+<http://purl.org/spatialai/stad/v2/core#hasQualitativeValue> <http://www.w3.org/2004/02/skos/core#definition> "Relates a qualitative datapoint to its qualitative value."@en .
+# 
+# http://purl.org/spatialai/stad/v2/core#hasQualityKind
+<http://purl.org/spatialai/stad/v2/core#hasQualityKind> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://purl.org/spatialai/stad/v2/core#hasQualityKind> <http://www.w3.org/2000/01/rdf-schema#domain> <http://purl.org/spatialai/stad/v2/core#Datapoint> .
+<http://purl.org/spatialai/stad/v2/core#hasQualityKind> <http://www.w3.org/2000/01/rdf-schema#range> <http://purl.org/spatialai/stad/v2/core#QualityKind> .
+<http://purl.org/spatialai/stad/v2/core#hasQualityKind> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spatialai/stad/v2/core#> .
+<http://purl.org/spatialai/stad/v2/core#hasQualityKind> <http://www.w3.org/2000/01/rdf-schema#label> "has quality kind"@en .
+<http://purl.org/spatialai/stad/v2/core#hasQualityKind> <http://www.w3.org/2004/02/skos/core#definition> "Relates a datapoint to the quality or property kind whose value it represents."@en .
+# 
+# http://purl.org/spatialai/stad/v2/core#hasQuantitativeValue
+<http://purl.org/spatialai/stad/v2/core#hasQuantitativeValue> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://purl.org/spatialai/stad/v2/core#hasQuantitativeValue> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://purl.org/spatialai/stad/v2/core#hasDataValue> .
+<http://purl.org/spatialai/stad/v2/core#hasQuantitativeValue> <http://www.w3.org/2000/01/rdf-schema#domain> <http://purl.org/spatialai/stad/v2/core#QuantitativeDatapoint> .
+<http://purl.org/spatialai/stad/v2/core#hasQuantitativeValue> <http://www.w3.org/2000/01/rdf-schema#range> <http://purl.org/spatialai/stad/v2/core#QuantitativeValue> .
+<http://purl.org/spatialai/stad/v2/core#hasQuantitativeValue> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spatialai/stad/v2/core#> .
+<http://purl.org/spatialai/stad/v2/core#hasQuantitativeValue> <http://www.w3.org/2000/01/rdf-schema#label> "has quantitative value"@en .
+<http://purl.org/spatialai/stad/v2/core#hasQuantitativeValue> <http://www.w3.org/2004/02/skos/core#definition> "Relates a quantitative datapoint to its quantitative value."@en .
+# 
+# http://purl.org/spatialai/stad/v2/core#hasResolution
+<http://purl.org/spatialai/stad/v2/core#hasResolution> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://purl.org/spatialai/stad/v2/core#hasResolution> <http://www.w3.org/2000/01/rdf-schema#domain> <http://purl.org/spatialai/stad/v2/core#DatasetDescription> .
+<http://purl.org/spatialai/stad/v2/core#hasResolution> <http://www.w3.org/2000/01/rdf-schema#range> <http://purl.org/spatialai/stad/v2/core#ResolutionDescriptor> .
+<http://purl.org/spatialai/stad/v2/core#hasResolution> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spatialai/stad/v2/core#> .
+<http://purl.org/spatialai/stad/v2/core#hasResolution> <http://www.w3.org/2000/01/rdf-schema#label> "has resolution"@en .
+<http://purl.org/spatialai/stad/v2/core#hasResolution> <http://www.w3.org/2004/02/skos/core#definition> "Relates a dataset description to a descriptor of one of the dataset's resolution."@en .
+<http://purl.org/spatialai/stad/v2/core#hasResolution> <http://www.w3.org/2004/02/skos/core#note> "No maximum cardinality is imposed because a dataset may report multiple complementary resolution descriptors."@en .
+# 
+# http://purl.org/spatialai/stad/v2/core#hasSpatialCoverage
+<http://purl.org/spatialai/stad/v2/core#hasSpatialCoverage> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://purl.org/spatialai/stad/v2/core#hasSpatialCoverage> <http://www.w3.org/2002/07/owl#inverseOf> <http://purl.org/spatialai/stad/v2/core#spatialCoverageOf> .
+<http://purl.org/spatialai/stad/v2/core#hasSpatialCoverage> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid3 .
+_:genid3 <http://www.w3.org/2002/07/owl#unionOf> _:genid5 .
+_:genid5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid4 .
+_:genid4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://purl.org/spatialai/stad/v2/core#SpatialAggregateDatapoint> .
+_:genid4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://purl.org/spatialai/stad/v2/core#Dataset> .
+_:genid5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/spatialai/stad/v2/core#hasSpatialCoverage> <http://www.w3.org/2000/01/rdf-schema#range> <http://purl.org/spatialai/stad/v2/core#SpatialCoverage> .
+<http://purl.org/spatialai/stad/v2/core#hasSpatialCoverage> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spatialai/stad/v2/core#> .
+<http://purl.org/spatialai/stad/v2/core#hasSpatialCoverage> <http://www.w3.org/2000/01/rdf-schema#label> "has spatial coverage"@en .
+<http://purl.org/spatialai/stad/v2/core#hasSpatialCoverage> <http://www.w3.org/2004/02/skos/core#definition> "Relates a dataset or spatial aggregate datapoint to the spatial extent it covers or summarizes."@en .
+# 
+# http://purl.org/spatialai/stad/v2/core#hasSpatialResolution
+<http://purl.org/spatialai/stad/v2/core#hasSpatialResolution> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://purl.org/spatialai/stad/v2/core#hasSpatialResolution> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://purl.org/spatialai/stad/v2/core#hasResolution> .
+<http://purl.org/spatialai/stad/v2/core#hasSpatialResolution> <http://www.w3.org/2000/01/rdf-schema#range> <http://purl.org/spatialai/stad/v2/core#SpatialResolution> .
+<http://purl.org/spatialai/stad/v2/core#hasSpatialResolution> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spatialai/stad/v2/core#> .
+<http://purl.org/spatialai/stad/v2/core#hasSpatialResolution> <http://www.w3.org/2000/01/rdf-schema#label> "has spatial resolution"@en .
+<http://purl.org/spatialai/stad/v2/core#hasSpatialResolution> <http://www.w3.org/2004/02/skos/core#definition> "Relates a dataset description to a descriptor of the dataset's spatial resolution."@en .
+<http://purl.org/spatialai/stad/v2/core#hasSpatialResolution> <http://www.w3.org/2004/02/skos/core#note> "No maximum cardinality is imposed because a dataset may report multiple complementary spatial resolution measures."@en .
+# 
+# http://purl.org/spatialai/stad/v2/core#hasTemporalCoverage
+<http://purl.org/spatialai/stad/v2/core#hasTemporalCoverage> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://purl.org/spatialai/stad/v2/core#hasTemporalCoverage> <http://www.w3.org/2002/07/owl#inverseOf> <http://purl.org/spatialai/stad/v2/core#temporalCoverageOf> .
+<http://purl.org/spatialai/stad/v2/core#hasTemporalCoverage> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid6 .
+_:genid6 <http://www.w3.org/2002/07/owl#unionOf> _:genid8 .
+_:genid8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid7 .
+_:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://purl.org/spatialai/stad/v2/core#StatisticalAggregateDatapoint> .
+_:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://purl.org/spatialai/stad/v2/core#Dataset> .
+_:genid8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/spatialai/stad/v2/core#hasTemporalCoverage> <http://www.w3.org/2000/01/rdf-schema#range> <http://purl.org/spatialai/stad/v2/core#TemporalCoverage> .
+<http://purl.org/spatialai/stad/v2/core#hasTemporalCoverage> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spatialai/stad/v2/core#> .
+<http://purl.org/spatialai/stad/v2/core#hasTemporalCoverage> <http://www.w3.org/2000/01/rdf-schema#label> "has temporal coverage"@en .
+<http://purl.org/spatialai/stad/v2/core#hasTemporalCoverage> <http://www.w3.org/2004/02/skos/core#definition> "Relates a dataset or statistical aggregate datapoint to the overall interval covered by its data."@en .
+# 
+# http://purl.org/spatialai/stad/v2/core#hasTemporalPart
+<http://purl.org/spatialai/stad/v2/core#hasTemporalPart> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://purl.org/spatialai/stad/v2/core#hasTemporalPart> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2006/time#hasPart> .
+<http://purl.org/spatialai/stad/v2/core#hasTemporalPart> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.w3.org/2006/time#TemporalAggregate> .
+<http://purl.org/spatialai/stad/v2/core#hasTemporalPart> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2006/time#TemporalEntity> .
+<http://purl.org/spatialai/stad/v2/core#hasTemporalPart> <http://www.w3.org/2002/07/owl#propertyChainAxiom> _:genid10 .
+_:genid10 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid9 .
+_:genid9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://purl.org/spatialai/stad/v2/core#hasExtent> .
+_:genid9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid10 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://purl.org/spatialai/stad/v2/core#hasConvexAggregationPeriod> .
+_:genid10 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+<http://purl.org/spatialai/stad/v2/core#hasTemporalPart> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spatialai/stad/v2/core#> .
+<http://purl.org/spatialai/stad/v2/core#hasTemporalPart> <http://www.w3.org/2000/01/rdf-schema#label> "has a temporal part (STAD relation)" .
+<http://purl.org/spatialai/stad/v2/core#hasTemporalPart> <http://www.w3.org/2004/02/skos/core#definition> "Relates a temporal aggregate to one of its constituent temporal entities, including an inferred extent for a convex aggregation period."@en .
+# 
+# http://purl.org/spatialai/stad/v2/core#hasTemporalResolution
+<http://purl.org/spatialai/stad/v2/core#hasTemporalResolution> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://purl.org/spatialai/stad/v2/core#hasTemporalResolution> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://purl.org/spatialai/stad/v2/core#hasResolution> .
+<http://purl.org/spatialai/stad/v2/core#hasTemporalResolution> <http://www.w3.org/2000/01/rdf-schema#range> <http://purl.org/spatialai/stad/v2/core#TemporalResolution> .
+<http://purl.org/spatialai/stad/v2/core#hasTemporalResolution> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spatialai/stad/v2/core#> .
+<http://purl.org/spatialai/stad/v2/core#hasTemporalResolution> <http://www.w3.org/2000/01/rdf-schema#label> "has temporal resolution"@en .
+<http://purl.org/spatialai/stad/v2/core#hasTemporalResolution> <http://www.w3.org/2004/02/skos/core#definition> "Relates a dataset description to a descriptor of the dataset's temporal resolution."@en .
+# 
+# http://purl.org/spatialai/stad/v2/core#hasTransformationKind
+<http://purl.org/spatialai/stad/v2/core#hasTransformationKind> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://purl.org/spatialai/stad/v2/core#hasTransformationKind> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://purl.org/spatialai/stad/v2/core#outputOf> .
+<http://purl.org/spatialai/stad/v2/core#hasTransformationKind> <http://www.w3.org/2000/01/rdf-schema#domain> <http://purl.org/spatialai/stad/v2/core#StatisticalAggregateDatapoint> .
+<http://purl.org/spatialai/stad/v2/core#hasTransformationKind> <http://www.w3.org/2000/01/rdf-schema#range> <http://purl.org/spatialai/stad/v2/core#DataTransformation> .
+<http://purl.org/spatialai/stad/v2/core#hasTransformationKind> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spatialai/stad/v2/core#> .
+<http://purl.org/spatialai/stad/v2/core#hasTransformationKind> <http://www.w3.org/2000/01/rdf-schema#label> "has transformation kind"@en .
+<http://purl.org/spatialai/stad/v2/core#hasTransformationKind> <http://www.w3.org/2004/02/skos/core#definition> "Relates a statistical aggregate datapoint directly to the kind of data transformation used to produce it."@en .
+# 
+# http://purl.org/spatialai/stad/v2/core#instantPartOf
+<http://purl.org/spatialai/stad/v2/core#instantPartOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://purl.org/spatialai/stad/v2/core#instantPartOf> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2006/time#isPartOf> .
+<http://purl.org/spatialai/stad/v2/core#instantPartOf> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spatialai/stad/v2/core#> .
+<http://purl.org/spatialai/stad/v2/core#instantPartOf> <http://www.w3.org/2000/01/rdf-schema#label> "instant part of"@en .
+<http://purl.org/spatialai/stad/v2/core#instantPartOf> <http://www.w3.org/2004/02/skos/core#definition> "Relates an instant to the temporal aggregate of which it is a part."@en .
+# 
+# http://purl.org/spatialai/stad/v2/core#intervalPartOf
+<http://purl.org/spatialai/stad/v2/core#intervalPartOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://purl.org/spatialai/stad/v2/core#intervalPartOf> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2006/time#isPartOf> .
+<http://purl.org/spatialai/stad/v2/core#intervalPartOf> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spatialai/stad/v2/core#> .
+<http://purl.org/spatialai/stad/v2/core#intervalPartOf> <http://www.w3.org/2000/01/rdf-schema#label> "interval part of"@en .
+<http://purl.org/spatialai/stad/v2/core#intervalPartOf> <http://www.w3.org/2004/02/skos/core#definition> "Relates an interval to the temporal aggregate of which it is a part."@en .
+# 
+# http://purl.org/spatialai/stad/v2/core#outputOf
+<http://purl.org/spatialai/stad/v2/core#outputOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://purl.org/spatialai/stad/v2/core#outputOf> <http://www.w3.org/2000/01/rdf-schema#domain> <http://purl.org/spatialai/stad/v2/core#ComputationalDatapoint> .
+<http://purl.org/spatialai/stad/v2/core#outputOf> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spatialai/stad/v2/core#> .
+<http://purl.org/spatialai/stad/v2/core#outputOf> <http://www.w3.org/2000/01/rdf-schema#label> "output of"@en .
+<http://purl.org/spatialai/stad/v2/core#outputOf> <http://www.w3.org/2004/02/skos/core#definition> "Relates a computational datapoint to the algorithm of which it is an output."@en .
+# 
+# http://purl.org/spatialai/stad/v2/core#spatialCoverageOf
+<http://purl.org/spatialai/stad/v2/core#spatialCoverageOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://purl.org/spatialai/stad/v2/core#spatialCoverageOf> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spatialai/stad/v2/core#> .
+<http://purl.org/spatialai/stad/v2/core#spatialCoverageOf> <http://www.w3.org/2000/01/rdf-schema#label> "spatial coverage of"@en .
+<http://purl.org/spatialai/stad/v2/core#spatialCoverageOf> <http://www.w3.org/2004/02/skos/core#definition> "Relates a spatial coverage to a dataset or spatial aggregate datapoint that it covers; inverse of has spatial coverage."@en .
+# 
+# http://purl.org/spatialai/stad/v2/core#temporalCoverageOf
+<http://purl.org/spatialai/stad/v2/core#temporalCoverageOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://purl.org/spatialai/stad/v2/core#temporalCoverageOf> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spatialai/stad/v2/core#> .
+<http://purl.org/spatialai/stad/v2/core#temporalCoverageOf> <http://www.w3.org/2000/01/rdf-schema#label> "temporal coverage of"@en .
+<http://purl.org/spatialai/stad/v2/core#temporalCoverageOf> <http://www.w3.org/2004/02/skos/core#definition> "Relates a temporal coverage to a dataset or statistical aggregate datapoint that it covers; inverse of has temporal coverage."@en .
+# 
+# http://www.opengis.net/ont/geosparql#hasGeometry
+<http://www.opengis.net/ont/geosparql#hasGeometry> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.opengis.net/ont/geosparql#hasGeometry> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.opengis.net/ont/geosparql#Feature> .
+<http://www.opengis.net/ont/geosparql#hasGeometry> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.opengis.net/ont/geosparql#Geometry> .
+<http://www.opengis.net/ont/geosparql#hasGeometry> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://www.opengis.net/ont/geosparql#> .
+<http://www.opengis.net/ont/geosparql#hasGeometry> <http://www.w3.org/2000/01/rdf-schema#label> "has geometry"@en .
+<http://www.opengis.net/ont/geosparql#hasGeometry> <http://www.w3.org/2004/02/skos/core#definition> "A spatial representation for a given Feature."@en .
+<http://www.opengis.net/ont/geosparql#hasGeometry> <http://www.w3.org/2004/02/skos/core#prefLabel> "has geometry"@en .
+# 
+# http://www.w3.org/2000/01/rdf-schema#member
+<http://www.w3.org/2000/01/rdf-schema#member> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+# 
+# http://www.w3.org/2006/time#hasBeginning
+<http://www.w3.org/2006/time#hasBeginning> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.w3.org/2006/time#hasBeginning> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2006/time#hasTime> .
+<http://www.w3.org/2006/time#hasBeginning> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.w3.org/2006/time#TemporalEntity> .
+<http://www.w3.org/2006/time#hasBeginning> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2006/time#Instant> .
+<http://www.w3.org/2006/time#hasBeginning> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://www.w3.org/2006/time#> .
+<http://www.w3.org/2006/time#hasBeginning> <http://www.w3.org/2000/01/rdf-schema#label> "has beginning"@en .
+<http://www.w3.org/2006/time#hasBeginning> <http://www.w3.org/2004/02/skos/core#definition> "Beginning of a temporal entity."@en .
+# 
+# http://www.w3.org/2006/time#hasEnd
+<http://www.w3.org/2006/time#hasEnd> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.w3.org/2006/time#hasEnd> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2006/time#hasTime> .
+<http://www.w3.org/2006/time#hasEnd> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.w3.org/2006/time#TemporalEntity> .
+<http://www.w3.org/2006/time#hasEnd> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2006/time#Instant> .
+<http://www.w3.org/2006/time#hasEnd> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://www.w3.org/2006/time#> .
+<http://www.w3.org/2006/time#hasEnd> <http://www.w3.org/2000/01/rdf-schema#label> "has end"@en .
+<http://www.w3.org/2006/time#hasEnd> <http://www.w3.org/2004/02/skos/core#definition> "End of a temporal entity."@en .
+# 
+# http://www.w3.org/2006/time#hasPart
+<http://www.w3.org/2006/time#hasPart> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.w3.org/2006/time#hasPart> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://purl.org/dc/terms/hasPart> .
+<http://www.w3.org/2006/time#hasPart> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2000/01/rdf-schema#member> .
+<http://www.w3.org/2006/time#hasPart> <http://www.w3.org/2002/07/owl#inverseOf> <http://www.w3.org/2006/time#isPartOf> .
+<http://www.w3.org/2006/time#hasPart> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.w3.org/2006/time#TemporalAggregate> .
+<http://www.w3.org/2006/time#hasPart> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2006/time#TemporalEntity> .
+<http://www.w3.org/2006/time#hasPart> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://raw.githubusercontent.com/w3c/sdw/gh-pages/time-aggregates/rdf/time-agg.ttl> .
+<http://www.w3.org/2006/time#hasPart> <http://www.w3.org/2000/01/rdf-schema#label> "has a part" .
+<http://www.w3.org/2006/time#hasPart> <http://www.w3.org/2004/02/skos/core#definition> "Relates a temporal aggregate to a constituent temporal entity."@en .
+<http://www.w3.org/2006/time#hasPart> <http://www.w3.org/2004/02/skos/core#example> "\r\nex:VicSchoolTerms2020\r\n  a time:TemporalAggregate ;\r\n  time:hasPart ex:t1 ;\r\n.\r\nex:t1\r\n  a time:ProperInterval ;\r\n.\r\n" .
+# 
+# http://www.w3.org/2006/time#hasTime
+<http://www.w3.org/2006/time#hasTime> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.w3.org/2006/time#hasTime> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2006/time#TemporalEntity> .
+<http://www.w3.org/2006/time#hasTime> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://www.w3.org/2006/time#> .
+<http://www.w3.org/2006/time#hasTime> <http://www.w3.org/2000/01/rdf-schema#label> "has time"@en .
+<http://www.w3.org/2006/time#hasTime> <http://www.w3.org/2004/02/skos/core#definition> "Supports the association of a temporal entity (instant or interval) to any thing"@en .
+<http://www.w3.org/2006/time#hasTime> <http://www.w3.org/2004/02/skos/core#editorialNote> "Feature at risk - added in 2017 revision, and not yet widely used. "@en .
+# 
+# http://www.w3.org/2006/time#isPartOf
+<http://www.w3.org/2006/time#isPartOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://www.w3.org/2006/time#isPartOf> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.w3.org/2006/time#TemporalEntity> .
+<http://www.w3.org/2006/time#isPartOf> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2006/time#TemporalAggregate> .
+<http://www.w3.org/2006/time#isPartOf> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://raw.githubusercontent.com/w3c/sdw/gh-pages/time-aggregates/rdf/time-agg.ttl> .
+<http://www.w3.org/2006/time#isPartOf> <http://www.w3.org/2000/01/rdf-schema#label> "is a part of" .
+<http://www.w3.org/2006/time#isPartOf> <http://www.w3.org/2004/02/skos/core#definition> "Relates a temporal entity to a temporal aggregate of which it is a part."@en .
+<http://www.w3.org/2006/time#isPartOf> <http://www.w3.org/2004/02/skos/core#example> "\r\nex:t1\r\n  a time:ProperInterval ;\r\n  time:isPartOf ex:VicSchoolTerms2020 ;\r\n.\r\nex:VicSchoolTerms2020\r\n  a time:TemporalAggregate ;\r\n.\r\n" .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Classes
+# #
+# #################################################################
+# 
+# 
+# http://purl.org/spatialai/stad/v2/core#AggregationPeriod
+<http://purl.org/spatialai/stad/v2/core#AggregationPeriod> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/spatialai/stad/v2/core#AggregationPeriod> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/2006/time#TemporalAggregate> .
+<http://purl.org/spatialai/stad/v2/core#AggregationPeriod> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid11 .
+_:genid11 <http://www.w3.org/2002/07/owl#onClass> <http://www.w3.org/2006/time#TemporalEntity> .
+_:genid11 <http://www.w3.org/2002/07/owl#minQualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid11 <http://www.w3.org/2002/07/owl#onProperty> <http://www.w3.org/2006/time#hasPart> .
+_:genid11 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://purl.org/spatialai/stad/v2/core#AggregationPeriod> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid12 .
+_:genid12 <http://www.w3.org/2002/07/owl#onClass> <http://www.w3.org/2006/time#ProperInterval> .
+_:genid12 <http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid12 <http://www.w3.org/2002/07/owl#onProperty> <http://purl.org/spatialai/stad/v2/core#hasExtent> .
+_:genid12 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://purl.org/spatialai/stad/v2/core#AggregationPeriod> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spatialai/stad/v2/core#> .
+<http://purl.org/spatialai/stad/v2/core#AggregationPeriod> <http://www.w3.org/2000/01/rdf-schema#label> "aggregation period"@en .
+<http://purl.org/spatialai/stad/v2/core#AggregationPeriod> <http://www.w3.org/2004/02/skos/core#definition> "A temporal aggregate comprising the temporal entities over which base data were selected for an aggregation, together with one minimal convex extent."@en .
+# 
+# http://purl.org/spatialai/stad/v2/core#AverageCalculationDataTransformation
+<http://purl.org/spatialai/stad/v2/core#AverageCalculationDataTransformation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/spatialai/stad/v2/core#AverageCalculationDataTransformation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/spatialai/stad/v2/core#CentralTendencyCalculationDataTransformation> .
+<http://purl.org/spatialai/stad/v2/core#AverageCalculationDataTransformation> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spatialai/stad/v2/core#> .
+<http://purl.org/spatialai/stad/v2/core#AverageCalculationDataTransformation> <http://www.w3.org/2000/01/rdf-schema#label> "average calculation data transformation"@en .
+<http://purl.org/spatialai/stad/v2/core#AverageCalculationDataTransformation> <http://www.w3.org/2004/02/skos/core#definition> "A data transformation that calculates an average of input values."@en .
+# 
+# http://purl.org/spatialai/stad/v2/core#CentralTendencyCalculationDataTransformation
+<http://purl.org/spatialai/stad/v2/core#CentralTendencyCalculationDataTransformation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/spatialai/stad/v2/core#CentralTendencyCalculationDataTransformation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/spatialai/stad/v2/core#DataTransformation> .
+<http://purl.org/spatialai/stad/v2/core#CentralTendencyCalculationDataTransformation> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spatialai/stad/v2/core#> .
+<http://purl.org/spatialai/stad/v2/core#CentralTendencyCalculationDataTransformation> <http://www.w3.org/2000/01/rdf-schema#label> "central tendency calculation data transformation"@en .
+<http://purl.org/spatialai/stad/v2/core#CentralTendencyCalculationDataTransformation> <http://www.w3.org/2004/02/skos/core#definition> "A data transformation that calculates a measure representing the center or typical value of a set of values."@en .
+# 
+# http://purl.org/spatialai/stad/v2/core#ComputationalDatapoint
+<http://purl.org/spatialai/stad/v2/core#ComputationalDatapoint> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/spatialai/stad/v2/core#ComputationalDatapoint> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/spatialai/stad/v2/core#Datapoint> .
+<http://purl.org/spatialai/stad/v2/core#ComputationalDatapoint> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid13 .
+_:genid13 <http://www.w3.org/2002/07/owl#allValuesFrom> <http://purl.org/spatialai/stad/v2/core#Datapoint> .
+_:genid13 <http://www.w3.org/2002/07/owl#onProperty> <http://purl.org/spatialai/stad/v2/core#hasBaseDatapoint> .
+_:genid13 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://purl.org/spatialai/stad/v2/core#ComputationalDatapoint> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid14 .
+_:genid14 <http://www.w3.org/2002/07/owl#allValuesFrom> <http://purl.org/spatialai/stad/v2/core#Dataset> .
+_:genid14 <http://www.w3.org/2002/07/owl#onProperty> <http://purl.org/spatialai/stad/v2/core#hasBaseDataset> .
+_:genid14 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://purl.org/spatialai/stad/v2/core#ComputationalDatapoint> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid15 .
+_:genid15 <http://www.w3.org/2002/07/owl#maxCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid15 <http://www.w3.org/2002/07/owl#onProperty> <http://purl.org/spatialai/stad/v2/core#generatedBy> .
+_:genid15 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://purl.org/spatialai/stad/v2/core#ComputationalDatapoint> <http://www.w3.org/2002/07/owl#disjointWith> <http://purl.org/spatialai/stad/v2/core#ObservationalDatapoint> .
+<http://purl.org/spatialai/stad/v2/core#ComputationalDatapoint> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spatialai/stad/v2/core#> .
+<http://purl.org/spatialai/stad/v2/core#ComputationalDatapoint> <http://www.w3.org/2000/01/rdf-schema#label> "computational datapoint"@en .
+<http://purl.org/spatialai/stad/v2/core#ComputationalDatapoint> <http://www.w3.org/2004/02/skos/core#definition> "A datapoint generated by one algorithm execution from one or more base datapoints or datasets."@en .
+# 
+# http://purl.org/spatialai/stad/v2/core#ComputationalPredictedDatapoint
+<http://purl.org/spatialai/stad/v2/core#ComputationalPredictedDatapoint> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/spatialai/stad/v2/core#ComputationalPredictedDatapoint> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/spatialai/stad/v2/core#ComputationalDatapoint> .
+<http://purl.org/spatialai/stad/v2/core#ComputationalPredictedDatapoint> <http://www.w3.org/2002/07/owl#disjointWith> <http://purl.org/spatialai/stad/v2/core#StatisticalAggregateDatapoint> .
+<http://purl.org/spatialai/stad/v2/core#ComputationalPredictedDatapoint> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spatialai/stad/v2/core#> .
+<http://purl.org/spatialai/stad/v2/core#ComputationalPredictedDatapoint> <http://www.w3.org/2000/01/rdf-schema#label> "computational predicted datapoint"@en .
+<http://purl.org/spatialai/stad/v2/core#ComputationalPredictedDatapoint> <http://www.w3.org/2004/02/skos/core#definition> "A computational datapoint whose value is predicted rather than obtained as a statistical aggregate."@en .
+# 
+# http://purl.org/spatialai/stad/v2/core#ConvexAggregationPeriod
+<http://purl.org/spatialai/stad/v2/core#ConvexAggregationPeriod> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/spatialai/stad/v2/core#ConvexAggregationPeriod> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/spatialai/stad/v2/core#AggregationPeriod> .
+<http://purl.org/spatialai/stad/v2/core#ConvexAggregationPeriod> <http://www.w3.org/2002/07/owl#disjointWith> <http://purl.org/spatialai/stad/v2/core#NonConvexAggregationPeriod> .
+<http://purl.org/spatialai/stad/v2/core#ConvexAggregationPeriod> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spatialai/stad/v2/core#> .
+<http://purl.org/spatialai/stad/v2/core#ConvexAggregationPeriod> <http://www.w3.org/2000/01/rdf-schema#label> "convex aggregation period"@en .
+<http://purl.org/spatialai/stad/v2/core#ConvexAggregationPeriod> <http://www.w3.org/2004/02/skos/core#definition> "An aggregation period consisting of a single continuous temporal part that matches its overall extent."@en .
+# 
+# http://purl.org/spatialai/stad/v2/core#CoverageRatioResolution
+<http://purl.org/spatialai/stad/v2/core#CoverageRatioResolution> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/spatialai/stad/v2/core#CoverageRatioResolution> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/spatialai/stad/v2/core#SpatialResolution> .
+<http://purl.org/spatialai/stad/v2/core#CoverageRatioResolution> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spatialai/stad/v2/core#> .
+<http://purl.org/spatialai/stad/v2/core#CoverageRatioResolution> <http://www.w3.org/2000/01/rdf-schema#label> "coverage ratio resolution"@en .
+<http://purl.org/spatialai/stad/v2/core#CoverageRatioResolution> <http://www.w3.org/2004/02/skos/core#definition> "A spatial resolution expressed as the ratio of the area represented by observations to the total study area."@en .
+<http://purl.org/spatialai/stad/v2/core#CoverageRatioResolution> <http://www.w3.org/2004/02/skos/core#note> "The method used to determine the area represented by observations should be specified when it is not determined directly by raster cells or explicit sampling units."@en .
+# 
+# http://purl.org/spatialai/stad/v2/core#Data
+<http://purl.org/spatialai/stad/v2/core#Data> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/spatialai/stad/v2/core#Data> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spatialai/stad/v2/core#> .
+<http://purl.org/spatialai/stad/v2/core#Data> <http://www.w3.org/2000/01/rdf-schema#label> "data"@en .
+<http://purl.org/spatialai/stad/v2/core#Data> <http://www.w3.org/2004/02/skos/core#definition> "An entity that represents some data."@en .
+# 
+# http://purl.org/spatialai/stad/v2/core#DataTransformation
+<http://purl.org/spatialai/stad/v2/core#DataTransformation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/spatialai/stad/v2/core#DataTransformation> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spatialai/stad/v2/core#> .
+<http://purl.org/spatialai/stad/v2/core#DataTransformation> <http://www.w3.org/2000/01/rdf-schema#label> "data transformation"@en .
+<http://purl.org/spatialai/stad/v2/core#DataTransformation> <http://www.w3.org/2004/02/skos/core#definition> "An algorithm that manipulates or converts data from one form into another, including filtering, sorting, aggregation, type conversion, or mathematical operations."@en .
+# 
+# http://purl.org/spatialai/stad/v2/core#DataValue
+<http://purl.org/spatialai/stad/v2/core#DataValue> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/spatialai/stad/v2/core#DataValue> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spatialai/stad/v2/core#> .
+<http://purl.org/spatialai/stad/v2/core#DataValue> <http://www.w3.org/2000/01/rdf-schema#label> "data value"@en .
+<http://purl.org/spatialai/stad/v2/core#DataValue> <http://www.w3.org/2004/02/skos/core#definition> "A value carried by a datapoint."@en .
+# 
+# http://purl.org/spatialai/stad/v2/core#Datapoint
+<http://purl.org/spatialai/stad/v2/core#Datapoint> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/spatialai/stad/v2/core#Datapoint> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/spatialai/stad/v2/core#Data> .
+<http://purl.org/spatialai/stad/v2/core#Datapoint> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid16 .
+_:genid16 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://purl.org/spatialai/stad/v2/core#DataValue> .
+_:genid16 <http://www.w3.org/2002/07/owl#onProperty> <http://purl.org/spatialai/stad/v2/core#hasDataValue> .
+_:genid16 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://purl.org/spatialai/stad/v2/core#Datapoint> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid17 .
+_:genid17 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://purl.org/spatialai/stad/v2/core#QualityKind> .
+_:genid17 <http://www.w3.org/2002/07/owl#onProperty> <http://purl.org/spatialai/stad/v2/core#hasQualityKind> .
+_:genid17 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://purl.org/spatialai/stad/v2/core#Datapoint> <http://www.w3.org/2002/07/owl#disjointWith> <http://purl.org/spatialai/stad/v2/core#Dataset> .
+<http://purl.org/spatialai/stad/v2/core#Datapoint> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spatialai/stad/v2/core#> .
+<http://purl.org/spatialai/stad/v2/core#Datapoint> <http://www.w3.org/2000/01/rdf-schema#label> "datapoint"@en .
+<http://purl.org/spatialai/stad/v2/core#Datapoint> <http://www.w3.org/2004/02/skos/core#definition> "An individual data item that has a quality kind and a corresponding data value."@en .
+# 
+# http://purl.org/spatialai/stad/v2/core#Dataset
+<http://purl.org/spatialai/stad/v2/core#Dataset> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/spatialai/stad/v2/core#Dataset> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/spatialai/stad/v2/core#Data> .
+<http://purl.org/spatialai/stad/v2/core#Dataset> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid18 .
+_:genid18 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://purl.org/spatialai/stad/v2/core#Datapoint> .
+_:genid18 <http://www.w3.org/2002/07/owl#onProperty> <http://purl.org/spatialai/stad/v2/core#containsDatapoint> .
+_:genid18 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://purl.org/spatialai/stad/v2/core#Dataset> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid19 .
+_:genid19 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://purl.org/spatialai/stad/v2/core#DatasetDescription> .
+_:genid19 <http://www.w3.org/2002/07/owl#onProperty> <http://purl.org/spatialai/stad/v2/core#hasDatasetDescription> .
+_:genid19 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://purl.org/spatialai/stad/v2/core#Dataset> <http://www.w3.org/2002/07/owl#disjointWith> <http://purl.org/spatialai/stad/v2/core#DatasetDescription> .
+<http://purl.org/spatialai/stad/v2/core#Dataset> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spatialai/stad/v2/core#> .
+<http://purl.org/spatialai/stad/v2/core#Dataset> <http://www.w3.org/2000/01/rdf-schema#label> "dataset"@en .
+<http://purl.org/spatialai/stad/v2/core#Dataset> <http://www.w3.org/2004/02/skos/core#definition> "A collection of datapoints that has an associated dataset description."@en .
+# 
+# http://purl.org/spatialai/stad/v2/core#DatasetDescription
+<http://purl.org/spatialai/stad/v2/core#DatasetDescription> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/spatialai/stad/v2/core#DatasetDescription> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spatialai/stad/v2/core#> .
+<http://purl.org/spatialai/stad/v2/core#DatasetDescription> <http://www.w3.org/2000/01/rdf-schema#label> "dataset description"@en .
+<http://purl.org/spatialai/stad/v2/core#DatasetDescription> <http://www.w3.org/2004/02/skos/core#definition> "A description of dataset-level characteristics, including spatial and temporal resolution."@en .
+# 
+# http://purl.org/spatialai/stad/v2/core#ExtremumCalculationDataTransformation
+<http://purl.org/spatialai/stad/v2/core#ExtremumCalculationDataTransformation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/spatialai/stad/v2/core#ExtremumCalculationDataTransformation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/spatialai/stad/v2/core#DataTransformation> .
+<http://purl.org/spatialai/stad/v2/core#ExtremumCalculationDataTransformation> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spatialai/stad/v2/core#> .
+<http://purl.org/spatialai/stad/v2/core#ExtremumCalculationDataTransformation> <http://www.w3.org/2000/01/rdf-schema#label> "extremum calculation data transformation"@en .
+<http://purl.org/spatialai/stad/v2/core#ExtremumCalculationDataTransformation> <http://www.w3.org/2004/02/skos/core#definition> "A data transformation that calculates an extreme value, such as a minimum or maximum."@en .
+# 
+# http://purl.org/spatialai/stad/v2/core#NonConvexAggregationPeriod
+<http://purl.org/spatialai/stad/v2/core#NonConvexAggregationPeriod> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/spatialai/stad/v2/core#NonConvexAggregationPeriod> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/spatialai/stad/v2/core#AggregationPeriod> .
+<http://purl.org/spatialai/stad/v2/core#NonConvexAggregationPeriod> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spatialai/stad/v2/core#> .
+<http://purl.org/spatialai/stad/v2/core#NonConvexAggregationPeriod> <http://www.w3.org/2000/01/rdf-schema#label> "non-convex aggregation period"@en .
+<http://purl.org/spatialai/stad/v2/core#NonConvexAggregationPeriod> <http://www.w3.org/2004/02/skos/core#definition> "An aggregation period composed of multiple disconnected temporal parts."@en .
+# 
+# http://purl.org/spatialai/stad/v2/core#ObservationalDatapoint
+<http://purl.org/spatialai/stad/v2/core#ObservationalDatapoint> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/spatialai/stad/v2/core#ObservationalDatapoint> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/spatialai/stad/v2/core#Datapoint> .
+<http://purl.org/spatialai/stad/v2/core#ObservationalDatapoint> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spatialai/stad/v2/core#> .
+<http://purl.org/spatialai/stad/v2/core#ObservationalDatapoint> <http://www.w3.org/2000/01/rdf-schema#label> "observational datapoint"@en .
+<http://purl.org/spatialai/stad/v2/core#ObservationalDatapoint> <http://www.w3.org/2004/02/skos/core#definition> "A datapoint obtained through observation rather than computation."@en .
+# 
+# http://purl.org/spatialai/stad/v2/core#PixelSizeResolution
+<http://purl.org/spatialai/stad/v2/core#PixelSizeResolution> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/spatialai/stad/v2/core#PixelSizeResolution> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/spatialai/stad/v2/core#SpatialResolution> .
+<http://purl.org/spatialai/stad/v2/core#PixelSizeResolution> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spatialai/stad/v2/core#> .
+<http://purl.org/spatialai/stad/v2/core#PixelSizeResolution> <http://www.w3.org/2000/01/rdf-schema#label> "pixel size resolution"@en .
+<http://purl.org/spatialai/stad/v2/core#PixelSizeResolution> <http://www.w3.org/2004/02/skos/core#definition> "A spatial resolution expressed by the ground dimensions of a raster or grid cell."@en .
+# 
+# http://purl.org/spatialai/stad/v2/core#PointSpacingResolution
+<http://purl.org/spatialai/stad/v2/core#PointSpacingResolution> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/spatialai/stad/v2/core#PointSpacingResolution> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/spatialai/stad/v2/core#SpatialResolution> .
+<http://purl.org/spatialai/stad/v2/core#PointSpacingResolution> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid20 .
+_:genid20 <http://www.w3.org/2002/07/owl#cardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid20 <http://www.w3.org/2002/07/owl#onProperty> <http://purl.org/spatialai/stad/v2/core#hasTransformationKind> .
+_:genid20 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://purl.org/spatialai/stad/v2/core#PointSpacingResolution> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spatialai/stad/v2/core#> .
+<http://purl.org/spatialai/stad/v2/core#PointSpacingResolution> <http://www.w3.org/2000/01/rdf-schema#label> "point spacing resolution"@en .
+<http://purl.org/spatialai/stad/v2/core#PointSpacingResolution> <http://www.w3.org/2004/02/skos/core#definition> "A spatial resolution expressed by a statistical summary of distances between neighboring sampling locations in non-gridded spatial data."@en .
+<http://purl.org/spatialai/stad/v2/core#PointSpacingResolution> <http://www.w3.org/2004/02/skos/core#note> "The method used to identify neighboring datapoints should be specified when it is not evident from the sampling design."@en .
+# 
+# http://purl.org/spatialai/stad/v2/core#QualitativeDatapoint
+<http://purl.org/spatialai/stad/v2/core#QualitativeDatapoint> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/spatialai/stad/v2/core#QualitativeDatapoint> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/spatialai/stad/v2/core#Datapoint> .
+<http://purl.org/spatialai/stad/v2/core#QualitativeDatapoint> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid21 .
+_:genid21 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://purl.org/spatialai/stad/v2/core#QualitativeValue> .
+_:genid21 <http://www.w3.org/2002/07/owl#onProperty> <http://purl.org/spatialai/stad/v2/core#hasQualitativeValue> .
+_:genid21 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://purl.org/spatialai/stad/v2/core#QualitativeDatapoint> <http://www.w3.org/2002/07/owl#disjointWith> <http://purl.org/spatialai/stad/v2/core#QuantitativeDatapoint> .
+<http://purl.org/spatialai/stad/v2/core#QualitativeDatapoint> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spatialai/stad/v2/core#> .
+<http://purl.org/spatialai/stad/v2/core#QualitativeDatapoint> <http://www.w3.org/2000/01/rdf-schema#label> "qualitative datapoint"@en .
+<http://purl.org/spatialai/stad/v2/core#QualitativeDatapoint> <http://www.w3.org/2004/02/skos/core#definition> "A datapoint whose value is qualitative, such as a category or class."@en .
+# 
+# http://purl.org/spatialai/stad/v2/core#QualitativeValue
+<http://purl.org/spatialai/stad/v2/core#QualitativeValue> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/spatialai/stad/v2/core#QualitativeValue> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/spatialai/stad/v2/core#DataValue> .
+<http://purl.org/spatialai/stad/v2/core#QualitativeValue> <http://www.w3.org/2002/07/owl#disjointWith> <http://purl.org/spatialai/stad/v2/core#QuantitativeValue> .
+<http://purl.org/spatialai/stad/v2/core#QualitativeValue> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spatialai/stad/v2/core#> .
+<http://purl.org/spatialai/stad/v2/core#QualitativeValue> <http://www.w3.org/2000/01/rdf-schema#label> "qualitative value"@en .
+<http://purl.org/spatialai/stad/v2/core#QualitativeValue> <http://www.w3.org/2004/02/skos/core#definition> "A non-numerical data value, such as a categorical value."@en .
+# 
+# http://purl.org/spatialai/stad/v2/core#QualityKind
+<http://purl.org/spatialai/stad/v2/core#QualityKind> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/spatialai/stad/v2/core#QualityKind> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spatialai/stad/v2/core#> .
+<http://purl.org/spatialai/stad/v2/core#QualityKind> <http://www.w3.org/2000/01/rdf-schema#label> "quality kind"@en .
+<http://purl.org/spatialai/stad/v2/core#QualityKind> <http://www.w3.org/2004/02/skos/core#definition> "The kind of quality or property represented by a datapoint, distinct from the value of that quality."@en .
+# 
+# http://purl.org/spatialai/stad/v2/core#QuantitativeDatapoint
+<http://purl.org/spatialai/stad/v2/core#QuantitativeDatapoint> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/spatialai/stad/v2/core#QuantitativeDatapoint> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/spatialai/stad/v2/core#Datapoint> .
+<http://purl.org/spatialai/stad/v2/core#QuantitativeDatapoint> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid22 .
+_:genid22 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://purl.org/spatialai/stad/v2/core#QuantitativeValue> .
+_:genid22 <http://www.w3.org/2002/07/owl#onProperty> <http://purl.org/spatialai/stad/v2/core#hasQuantitativeValue> .
+_:genid22 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://purl.org/spatialai/stad/v2/core#QuantitativeDatapoint> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spatialai/stad/v2/core#> .
+<http://purl.org/spatialai/stad/v2/core#QuantitativeDatapoint> <http://www.w3.org/2000/01/rdf-schema#label> "quantitative datapoint"@en .
+<http://purl.org/spatialai/stad/v2/core#QuantitativeDatapoint> <http://www.w3.org/2004/02/skos/core#definition> "A datapoint whose value is quantitative."@en .
+# 
+# http://purl.org/spatialai/stad/v2/core#QuantitativeValue
+<http://purl.org/spatialai/stad/v2/core#QuantitativeValue> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/spatialai/stad/v2/core#QuantitativeValue> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/spatialai/stad/v2/core#DataValue> .
+<http://purl.org/spatialai/stad/v2/core#QuantitativeValue> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spatialai/stad/v2/core#> .
+<http://purl.org/spatialai/stad/v2/core#QuantitativeValue> <http://www.w3.org/2000/01/rdf-schema#label> "quantitative value"@en .
+<http://purl.org/spatialai/stad/v2/core#QuantitativeValue> <http://www.w3.org/2004/02/skos/core#definition> "A numerical data value, typically represented with a numeric value and unit."@en .
+# 
+# http://purl.org/spatialai/stad/v2/core#RegularTemporalResolution
+<http://purl.org/spatialai/stad/v2/core#RegularTemporalResolution> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/spatialai/stad/v2/core#RegularTemporalResolution> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/spatialai/stad/v2/core#TemporalResolution> .
+<http://purl.org/spatialai/stad/v2/core#RegularTemporalResolution> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spatialai/stad/v2/core#> .
+<http://purl.org/spatialai/stad/v2/core#RegularTemporalResolution> <http://www.w3.org/2000/01/rdf-schema#label> "regular temporal resolution"@en .
+<http://purl.org/spatialai/stad/v2/core#RegularTemporalResolution> <http://www.w3.org/2004/02/skos/core#definition> "A temporal resolution expressed by the constant or nominal interval between successive observations."@en .
+# 
+# http://purl.org/spatialai/stad/v2/core#ResolutionDescriptor
+<http://purl.org/spatialai/stad/v2/core#ResolutionDescriptor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/spatialai/stad/v2/core#ResolutionDescriptor> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/spatialai/stad/v2/core#QuantitativeDatapoint> .
+<http://purl.org/spatialai/stad/v2/core#ResolutionDescriptor> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid23 .
+_:genid23 <http://www.w3.org/2002/07/owl#cardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid23 <http://www.w3.org/2002/07/owl#onProperty> <http://purl.org/spatialai/stad/v2/core#hasDataValue> .
+_:genid23 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://purl.org/spatialai/stad/v2/core#ResolutionDescriptor> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spatialai/stad/v2/core#> .
+<http://purl.org/spatialai/stad/v2/core#ResolutionDescriptor> <http://www.w3.org/2000/01/rdf-schema#label> "resolution descriptor"@en .
+<http://purl.org/spatialai/stad/v2/core#ResolutionDescriptor> <http://www.w3.org/2004/02/skos/core#definition> "A description of the spatial or temporal granularity at which data in a dataset are represented or distinguished."@en .
+# 
+# http://purl.org/spatialai/stad/v2/core#SamplingDensityResolution
+<http://purl.org/spatialai/stad/v2/core#SamplingDensityResolution> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/spatialai/stad/v2/core#SamplingDensityResolution> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/spatialai/stad/v2/core#SpatialResolution> .
+<http://purl.org/spatialai/stad/v2/core#SamplingDensityResolution> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spatialai/stad/v2/core#> .
+<http://purl.org/spatialai/stad/v2/core#SamplingDensityResolution> <http://www.w3.org/2000/01/rdf-schema#label> "sampling density resolution"@en .
+<http://purl.org/spatialai/stad/v2/core#SamplingDensityResolution> <http://www.w3.org/2004/02/skos/core#definition> "A spatial resolution expressed as the number of datapoints or sampling locations per unit area."@en .
+# 
+# http://purl.org/spatialai/stad/v2/core#SpatialAggregateDatapoint
+<http://purl.org/spatialai/stad/v2/core#SpatialAggregateDatapoint> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/spatialai/stad/v2/core#SpatialAggregateDatapoint> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/spatialai/stad/v2/core#StatisticalAggregateDatapoint> .
+<http://purl.org/spatialai/stad/v2/core#SpatialAggregateDatapoint> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid24 .
+_:genid24 <http://www.w3.org/2002/07/owl#cardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid24 <http://www.w3.org/2002/07/owl#onProperty> <http://purl.org/spatialai/stad/v2/core#hasSpatialCoverage> .
+_:genid24 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://purl.org/spatialai/stad/v2/core#SpatialAggregateDatapoint> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spatialai/stad/v2/core#> .
+<http://purl.org/spatialai/stad/v2/core#SpatialAggregateDatapoint> <http://www.w3.org/2000/01/rdf-schema#label> "spatial aggregate datapoint"@en .
+<http://purl.org/spatialai/stad/v2/core#SpatialAggregateDatapoint> <http://www.w3.org/2004/02/skos/core#definition> "A statistical aggregate datapoint computed over a spatial extent. It has exactly one spatial coverage."@en .
+# 
+# http://purl.org/spatialai/stad/v2/core#SpatialCoverage
+<http://purl.org/spatialai/stad/v2/core#SpatialCoverage> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/spatialai/stad/v2/core#SpatialCoverage> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.opengis.net/ont/geosparql#Feature> .
+<http://purl.org/spatialai/stad/v2/core#SpatialCoverage> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spatialai/stad/v2/core#> .
+<http://purl.org/spatialai/stad/v2/core#SpatialCoverage> <http://www.w3.org/2000/01/rdf-schema#label> "spatial coverage"@en .
+<http://purl.org/spatialai/stad/v2/core#SpatialCoverage> <http://www.w3.org/2004/02/skos/core#definition> "The spatial extent, typically an area, over which base data are aggregated or a dataset applies."@en .
+# 
+# http://purl.org/spatialai/stad/v2/core#SpatialResolution
+<http://purl.org/spatialai/stad/v2/core#SpatialResolution> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/spatialai/stad/v2/core#SpatialResolution> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/spatialai/stad/v2/core#ResolutionDescriptor> .
+<http://purl.org/spatialai/stad/v2/core#SpatialResolution> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid25 .
+_:genid25 <http://www.w3.org/2002/07/owl#hasValue> <http://purl.org/spatialai/stad/v2/core#spatialResolutionQualityKind> .
+_:genid25 <http://www.w3.org/2002/07/owl#onProperty> <http://purl.org/spatialai/stad/v2/core#hasQualityKind> .
+_:genid25 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://purl.org/spatialai/stad/v2/core#SpatialResolution> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spatialai/stad/v2/core#> .
+<http://purl.org/spatialai/stad/v2/core#SpatialResolution> <http://www.w3.org/2000/01/rdf-schema#label> "spatial resolution"@en .
+<http://purl.org/spatialai/stad/v2/core#SpatialResolution> <http://www.w3.org/2004/02/skos/core#definition> "A resolution descriptor characterizing the spatial granularity or spatial sampling of a dataset."@en .
+# 
+# http://purl.org/spatialai/stad/v2/core#SpatioTemporalAggregateDatapoint
+<http://purl.org/spatialai/stad/v2/core#SpatioTemporalAggregateDatapoint> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/spatialai/stad/v2/core#SpatioTemporalAggregateDatapoint> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid26 .
+_:genid26 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid26 <http://www.w3.org/2002/07/owl#intersectionOf> _:genid28 .
+_:genid28 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid27 .
+_:genid27 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid27 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://purl.org/spatialai/stad/v2/core#TemporalAggregateDatapoint> .
+_:genid27 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid28 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://purl.org/spatialai/stad/v2/core#SpatialAggregateDatapoint> .
+_:genid28 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+<http://purl.org/spatialai/stad/v2/core#SpatioTemporalAggregateDatapoint> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spatialai/stad/v2/core#> .
+<http://purl.org/spatialai/stad/v2/core#SpatioTemporalAggregateDatapoint> <http://www.w3.org/2000/01/rdf-schema#label> "spatio-temporal aggregate datapoint"@en .
+<http://purl.org/spatialai/stad/v2/core#SpatioTemporalAggregateDatapoint> <http://www.w3.org/2004/02/skos/core#definition> "A statistical aggregate datapoint aggregated over both space and time."@en .
+# 
+# http://purl.org/spatialai/stad/v2/core#StatisticalAggregateDatapoint
+<http://purl.org/spatialai/stad/v2/core#StatisticalAggregateDatapoint> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/spatialai/stad/v2/core#StatisticalAggregateDatapoint> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/spatialai/stad/v2/core#ComputationalDatapoint> .
+<http://purl.org/spatialai/stad/v2/core#StatisticalAggregateDatapoint> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid29 .
+_:genid29 <http://www.w3.org/2002/07/owl#cardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid29 <http://www.w3.org/2002/07/owl#onProperty> <http://purl.org/spatialai/stad/v2/core#hasTransformationKind> .
+_:genid29 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://purl.org/spatialai/stad/v2/core#StatisticalAggregateDatapoint> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid30 .
+_:genid30 <http://www.w3.org/2002/07/owl#maxCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid30 <http://www.w3.org/2002/07/owl#onProperty> <http://purl.org/spatialai/stad/v2/core#hasAggregationPeriod> .
+_:genid30 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://purl.org/spatialai/stad/v2/core#StatisticalAggregateDatapoint> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid31 .
+_:genid31 <http://www.w3.org/2002/07/owl#maxCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid31 <http://www.w3.org/2002/07/owl#onProperty> <http://purl.org/spatialai/stad/v2/core#hasSpatialCoverage> .
+_:genid31 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://purl.org/spatialai/stad/v2/core#StatisticalAggregateDatapoint> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid32 .
+_:genid32 <http://www.w3.org/2002/07/owl#maxCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid32 <http://www.w3.org/2002/07/owl#onProperty> <http://purl.org/spatialai/stad/v2/core#hasTemporalCoverage> .
+_:genid32 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://purl.org/spatialai/stad/v2/core#StatisticalAggregateDatapoint> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spatialai/stad/v2/core#> .
+<http://purl.org/spatialai/stad/v2/core#StatisticalAggregateDatapoint> <http://www.w3.org/2000/01/rdf-schema#label> "statistical aggregate datapoint"@en .
+<http://purl.org/spatialai/stad/v2/core#StatisticalAggregateDatapoint> <http://www.w3.org/2004/02/skos/core#definition> "A statistical aggregate datapoint is a computational datapoint whose value is a statistical summary of some base data, aggregated using the described data transformation kind. It may have a temporal coverage, an aggregation period, and a spatial coverage."@en .
+# 
+# http://purl.org/spatialai/stad/v2/core#TemporalAggregateDatapoint
+<http://purl.org/spatialai/stad/v2/core#TemporalAggregateDatapoint> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/spatialai/stad/v2/core#TemporalAggregateDatapoint> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/spatialai/stad/v2/core#StatisticalAggregateDatapoint> .
+<http://purl.org/spatialai/stad/v2/core#TemporalAggregateDatapoint> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid33 .
+_:genid33 <http://www.w3.org/2002/07/owl#cardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid33 <http://www.w3.org/2002/07/owl#onProperty> <http://purl.org/spatialai/stad/v2/core#hasAggregationPeriod> .
+_:genid33 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://purl.org/spatialai/stad/v2/core#TemporalAggregateDatapoint> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid34 .
+_:genid34 <http://www.w3.org/2002/07/owl#cardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid34 <http://www.w3.org/2002/07/owl#onProperty> <http://purl.org/spatialai/stad/v2/core#hasTemporalCoverage> .
+_:genid34 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://purl.org/spatialai/stad/v2/core#TemporalAggregateDatapoint> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spatialai/stad/v2/core#> .
+<http://purl.org/spatialai/stad/v2/core#TemporalAggregateDatapoint> <http://www.w3.org/2000/01/rdf-schema#label> "temporal aggregate datapoint"@en .
+<http://purl.org/spatialai/stad/v2/core#TemporalAggregateDatapoint> <http://www.w3.org/2004/02/skos/core#definition> "A statistical aggregate datapoint aggregated over time and having exactly one temporal coverage and one aggregation period."@en .
+# 
+# http://purl.org/spatialai/stad/v2/core#TemporalCoverage
+<http://purl.org/spatialai/stad/v2/core#TemporalCoverage> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/spatialai/stad/v2/core#TemporalCoverage> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/2006/time#ProperInterval> .
+<http://purl.org/spatialai/stad/v2/core#TemporalCoverage> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spatialai/stad/v2/core#> .
+<http://purl.org/spatialai/stad/v2/core#TemporalCoverage> <http://www.w3.org/2000/01/rdf-schema#label> "temporal coverage"@en .
+<http://purl.org/spatialai/stad/v2/core#TemporalCoverage> <http://www.w3.org/2004/02/skos/core#definition> "The proper interval giving the overall temporal boundaries of a dataset or statistical aggregate datapoint."@en .
+# 
+# http://purl.org/spatialai/stad/v2/core#TemporalResolution
+<http://purl.org/spatialai/stad/v2/core#TemporalResolution> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/spatialai/stad/v2/core#TemporalResolution> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/spatialai/stad/v2/core#ResolutionDescriptor> .
+<http://purl.org/spatialai/stad/v2/core#TemporalResolution> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid35 .
+_:genid35 <http://www.w3.org/2002/07/owl#allValuesFrom> <http://www.w3.org/2006/time#TemporalDuration> .
+_:genid35 <http://www.w3.org/2002/07/owl#onProperty> <http://purl.org/spatialai/stad/v2/core#hasQuantitativeValue> .
+_:genid35 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://purl.org/spatialai/stad/v2/core#TemporalResolution> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid36 .
+_:genid36 <http://www.w3.org/2002/07/owl#hasValue> <http://purl.org/spatialai/stad/v2/core#temporalResolutionQualityKind> .
+_:genid36 <http://www.w3.org/2002/07/owl#onProperty> <http://purl.org/spatialai/stad/v2/core#hasQualityKind> .
+_:genid36 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://purl.org/spatialai/stad/v2/core#TemporalResolution> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spatialai/stad/v2/core#> .
+<http://purl.org/spatialai/stad/v2/core#TemporalResolution> <http://www.w3.org/2000/01/rdf-schema#label> "temporal resolution"@en .
+<http://purl.org/spatialai/stad/v2/core#TemporalResolution> <http://www.w3.org/2004/02/skos/core#definition> "A resolution descriptor characterizing the temporal granularity or spacing of observations in a dataset."@en .
+# 
+# http://purl.org/spatialai/stad/v2/core#TemporalSpacingResolution
+<http://purl.org/spatialai/stad/v2/core#TemporalSpacingResolution> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.org/spatialai/stad/v2/core#TemporalSpacingResolution> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/spatialai/stad/v2/core#TemporalResolution> .
+<http://purl.org/spatialai/stad/v2/core#TemporalSpacingResolution> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid37 .
+_:genid37 <http://www.w3.org/2002/07/owl#cardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid37 <http://www.w3.org/2002/07/owl#onProperty> <http://purl.org/spatialai/stad/v2/core#hasTransformationKind> .
+_:genid37 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://purl.org/spatialai/stad/v2/core#TemporalSpacingResolution> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spatialai/stad/v2/core#> .
+<http://purl.org/spatialai/stad/v2/core#TemporalSpacingResolution> <http://www.w3.org/2000/01/rdf-schema#label> "temporal spacing resolution"@en .
+<http://purl.org/spatialai/stad/v2/core#TemporalSpacingResolution> <http://www.w3.org/2004/02/skos/core#definition> "A temporal resolution expressed by a statistical summary of intervals between observations."@en .
+# 
+# http://www.opengis.net/ont/geosparql#Feature
+<http://www.opengis.net/ont/geosparql#Feature> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.opengis.net/ont/geosparql#Feature> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.opengis.net/ont/geosparql#SpatialObject> .
+<http://www.opengis.net/ont/geosparql#Feature> <http://www.w3.org/2002/07/owl#disjointWith> <http://www.opengis.net/ont/geosparql#Geometry> .
+<http://www.opengis.net/ont/geosparql#Feature> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://www.opengis.net/ont/geosparql#> .
+<http://www.opengis.net/ont/geosparql#Feature> <http://www.w3.org/2000/01/rdf-schema#label> "feature"@en .
+<http://www.opengis.net/ont/geosparql#Feature> <http://www.w3.org/2004/02/skos/core#definition> "A discrete spatial phenomenon in a universe of discourse."@en .
+<http://www.opengis.net/ont/geosparql#Feature> <http://www.w3.org/2004/02/skos/core#note> "A Feature represents a uniquely identifiable phenomenon, for example a river or an apple. While such phenomena (and therefore the Features used to represent them) are bounded, their boundaries may be crisp (e.g., the declared boundaries of a state), vague (e.g., the delineation of a valley versus its neighboring mountains), and change with time (e.g., a storm front). While discrete in nature, Features may be created from continuous observations, such as an isochrone that determines the region that can be reached by ambulance within 5 minutes."@en .
+<http://www.opengis.net/ont/geosparql#Feature> <http://www.w3.org/2004/02/skos/core#prefLabel> "Feature"@en .
+# 
+# http://www.opengis.net/ont/geosparql#Geometry
+<http://www.opengis.net/ont/geosparql#Geometry> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.opengis.net/ont/geosparql#Geometry> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.opengis.net/ont/geosparql#SpatialObject> .
+<http://www.opengis.net/ont/geosparql#Geometry> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://www.opengis.net/ont/geosparql#> .
+<http://www.opengis.net/ont/geosparql#Geometry> <http://www.w3.org/2000/01/rdf-schema#label> "geometry"@en .
+<http://www.opengis.net/ont/geosparql#Geometry> <http://www.w3.org/2004/02/skos/core#definition> "A coherent set of direct positions in space. The positions are held within a Spatial Reference System (SRS)."@en .
+<http://www.opengis.net/ont/geosparql#Geometry> <http://www.w3.org/2004/02/skos/core#note> "Geometry can be used as a representation of the shape, extent or location of a Feature and may exist as a self-contained entity."@en .
+<http://www.opengis.net/ont/geosparql#Geometry> <http://www.w3.org/2004/02/skos/core#prefLabel> "Geometry"@en .
+# 
+# http://www.opengis.net/ont/geosparql#SpatialObject
+<http://www.opengis.net/ont/geosparql#SpatialObject> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.opengis.net/ont/geosparql#SpatialObject> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://www.opengis.net/ont/geosparql#> .
+<http://www.opengis.net/ont/geosparql#SpatialObject> <http://www.w3.org/2000/01/rdf-schema#label> "spatial object"@en .
+<http://www.opengis.net/ont/geosparql#SpatialObject> <http://www.w3.org/2004/02/skos/core#definition> "Anything spatial (being or having a shape, position or an extent)."@en .
+<http://www.opengis.net/ont/geosparql#SpatialObject> <http://www.w3.org/2004/02/skos/core#note> "Subclasses of this class are expected to be used for instance data."@en .
+<http://www.opengis.net/ont/geosparql#SpatialObject> <http://www.w3.org/2004/02/skos/core#prefLabel> "Spatial Object"@en .
+# 
+# http://www.w3.org/2006/time#Instant
+<http://www.w3.org/2006/time#Instant> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.w3.org/2006/time#Instant> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/2006/time#TemporalEntity> .
+<http://www.w3.org/2006/time#Instant> <http://www.w3.org/2002/07/owl#disjointWith> <http://www.w3.org/2006/time#ProperInterval> .
+<http://www.w3.org/2006/time#Instant> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://www.w3.org/2006/time> .
+<http://www.w3.org/2006/time#Instant> <http://www.w3.org/2000/01/rdf-schema#label> "Time instant"@en .
+<http://www.w3.org/2006/time#Instant> <http://www.w3.org/2004/02/skos/core#definition> "A temporal entity with zero extent or duration"@en .
+# 
+# http://www.w3.org/2006/time#Interval
+<http://www.w3.org/2006/time#Interval> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.w3.org/2006/time#Interval> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/2006/time#TemporalEntity> .
+<http://www.w3.org/2006/time#Interval> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://www.w3.org/2006/time> .
+<http://www.w3.org/2006/time#Interval> <http://www.w3.org/2000/01/rdf-schema#label> "Time interval"@en .
+<http://www.w3.org/2006/time#Interval> <http://www.w3.org/2004/02/skos/core#definition> "A temporal entity with an extent or duration"@en .
+# 
+# http://www.w3.org/2006/time#ProperInterval
+<http://www.w3.org/2006/time#ProperInterval> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.w3.org/2006/time#ProperInterval> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/2006/time#Interval> .
+<http://www.w3.org/2006/time#ProperInterval> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://www.w3.org/2006/time> .
+<http://www.w3.org/2006/time#ProperInterval> <http://www.w3.org/2000/01/rdf-schema#label> "Proper interval"@en .
+<http://www.w3.org/2006/time#ProperInterval> <http://www.w3.org/2004/02/skos/core#definition> "A temporal entity with non-zero extent or duration, i.e. for which the value of the beginning and end are different"@en .
+# 
+# http://www.w3.org/2006/time#TemporalAggregate
+<http://www.w3.org/2006/time#TemporalAggregate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.w3.org/2006/time#TemporalAggregate> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/2006/time#TemporalEntity> .
+<http://www.w3.org/2006/time#TemporalAggregate> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid38 .
+_:genid38 <http://www.w3.org/2002/07/owl#minCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid38 <http://www.w3.org/2002/07/owl#onProperty> <http://www.w3.org/2006/time#hasPart> .
+_:genid38 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<http://www.w3.org/2006/time#TemporalAggregate> <http://www.w3.org/2000/01/rdf-schema#comment> "Note: no ordering relationships are implied amongst the parts. Relationships between temporal entities are supported by explicit properties, such as time:after time:intervalMeets, etc." .
+<http://www.w3.org/2006/time#TemporalAggregate> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <https://raw.githubusercontent.com/w3c/sdw/gh-pages/time-aggregates/rdf/time-agg.ttl> .
+<http://www.w3.org/2006/time#TemporalAggregate> <http://www.w3.org/2000/01/rdf-schema#label> "Temporal aggregate" .
+<http://www.w3.org/2006/time#TemporalAggregate> <http://www.w3.org/2004/02/skos/core#definition> "A temporal entity that is an aggregation of one or more temporal entities, without implied ordering among its parts."@en .
+<http://www.w3.org/2006/time#TemporalAggregate> <http://www.w3.org/2004/02/skos/core#example> "\r\nex:VicSchoolTerms2020\r\n  a time:TemporalAggregate ;\r\n  rdfs:label \"Public school year - Victoria 2020 \" ;\r\n  time:hasBeginning ex:t1b ;\r\n  time:hasEnd ex:t4e ;\r\n  time:hasPart ex:t1 ;\r\n  time:hasPart ex:t2 ;\r\n  time:hasPart ex:t3 ;\r\n  time:hasPart ex:t4 ;\r\n.\r\n" .
+# 
+# http://www.w3.org/2006/time#TemporalDuration
+<http://www.w3.org/2006/time#TemporalDuration> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.w3.org/2006/time#TemporalDuration> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://www.w3.org/2006/time> .
+<http://www.w3.org/2006/time#TemporalDuration> <http://www.w3.org/2000/01/rdf-schema#label> "Temporal duration"@en .
+<http://www.w3.org/2006/time#TemporalDuration> <http://www.w3.org/2004/02/skos/core#definition> "Time extent; duration of a time interval separate from its particular start position"@en .
+# 
+# http://www.w3.org/2006/time#TemporalEntity
+<http://www.w3.org/2006/time#TemporalEntity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.w3.org/2006/time#TemporalEntity> <http://www.w3.org/2002/07/owl#equivalentClass> _:genid39 .
+_:genid39 <http://www.w3.org/2002/07/owl#unionOf> _:genid41 .
+_:genid41 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid40 .
+_:genid40 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid40 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://www.w3.org/2006/time#Interval> .
+_:genid40 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid41 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://www.w3.org/2006/time#Instant> .
+_:genid41 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid39 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.w3.org/2006/time#TemporalEntity> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/2002/07/owl#Thing> .
+<http://www.w3.org/2006/time#TemporalEntity> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://www.w3.org/2006/time> .
+<http://www.w3.org/2006/time#TemporalEntity> <http://www.w3.org/2000/01/rdf-schema#label> "Temporal entity"@en .
+<http://www.w3.org/2006/time#TemporalEntity> <http://www.w3.org/2004/02/skos/core#definition> "A temporal interval or instant."@en .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Individuals
+# #
+# #################################################################
+# 
+# 
+# http://purl.org/spatialai/stad/v2/core#ArithmeticMeanCalculation
+<http://purl.org/spatialai/stad/v2/core#ArithmeticMeanCalculation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://purl.org/spatialai/stad/v2/core#ArithmeticMeanCalculation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spatialai/stad/v2/core#AverageCalculationDataTransformation> .
+<http://purl.org/spatialai/stad/v2/core#ArithmeticMeanCalculation> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spatialai/stad/v2/core#> .
+<http://purl.org/spatialai/stad/v2/core#ArithmeticMeanCalculation> <http://www.w3.org/2000/01/rdf-schema#label> "arithmetic mean calculation"@en .
+<http://purl.org/spatialai/stad/v2/core#ArithmeticMeanCalculation> <http://www.w3.org/2004/02/skos/core#definition> "A data transformation that calculates the arithmetic mean of input values."@en .
+# 
+# http://purl.org/spatialai/stad/v2/core#GeometricMeanCalculation
+<http://purl.org/spatialai/stad/v2/core#GeometricMeanCalculation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://purl.org/spatialai/stad/v2/core#GeometricMeanCalculation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spatialai/stad/v2/core#AverageCalculationDataTransformation> .
+<http://purl.org/spatialai/stad/v2/core#GeometricMeanCalculation> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spatialai/stad/v2/core#> .
+<http://purl.org/spatialai/stad/v2/core#GeometricMeanCalculation> <http://www.w3.org/2000/01/rdf-schema#label> "geometric mean calculation"@en .
+<http://purl.org/spatialai/stad/v2/core#GeometricMeanCalculation> <http://www.w3.org/2004/02/skos/core#definition> "A data transformation that calculates the geometric mean of input values."@en .
+# 
+# http://purl.org/spatialai/stad/v2/core#MaximumCalculation
+<http://purl.org/spatialai/stad/v2/core#MaximumCalculation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://purl.org/spatialai/stad/v2/core#MaximumCalculation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spatialai/stad/v2/core#ExtremumCalculationDataTransformation> .
+<http://purl.org/spatialai/stad/v2/core#MaximumCalculation> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spatialai/stad/v2/core#> .
+<http://purl.org/spatialai/stad/v2/core#MaximumCalculation> <http://www.w3.org/2000/01/rdf-schema#label> "maximum calculation"@en .
+<http://purl.org/spatialai/stad/v2/core#MaximumCalculation> <http://www.w3.org/2004/02/skos/core#definition> "A data transformation that returns the maximum input value."@en .
+# 
+# http://purl.org/spatialai/stad/v2/core#MedianCalculation
+<http://purl.org/spatialai/stad/v2/core#MedianCalculation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://purl.org/spatialai/stad/v2/core#MedianCalculation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spatialai/stad/v2/core#CentralTendencyCalculationDataTransformation> .
+<http://purl.org/spatialai/stad/v2/core#MedianCalculation> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spatialai/stad/v2/core#> .
+<http://purl.org/spatialai/stad/v2/core#MedianCalculation> <http://www.w3.org/2000/01/rdf-schema#label> "median calculation"@en .
+<http://purl.org/spatialai/stad/v2/core#MedianCalculation> <http://www.w3.org/2004/02/skos/core#definition> "A data transformation that calculates the median of a set of values."@en .
+# 
+# http://purl.org/spatialai/stad/v2/core#MinimumCalculation
+<http://purl.org/spatialai/stad/v2/core#MinimumCalculation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://purl.org/spatialai/stad/v2/core#MinimumCalculation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spatialai/stad/v2/core#ExtremumCalculationDataTransformation> .
+<http://purl.org/spatialai/stad/v2/core#MinimumCalculation> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spatialai/stad/v2/core#> .
+<http://purl.org/spatialai/stad/v2/core#MinimumCalculation> <http://www.w3.org/2000/01/rdf-schema#label> "minimum calculation"@en .
+<http://purl.org/spatialai/stad/v2/core#MinimumCalculation> <http://www.w3.org/2004/02/skos/core#definition> "A data transformation that returns the minimum input value."@en .
+# 
+# http://purl.org/spatialai/stad/v2/core#ModeCalculation
+<http://purl.org/spatialai/stad/v2/core#ModeCalculation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://purl.org/spatialai/stad/v2/core#ModeCalculation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spatialai/stad/v2/core#CentralTendencyCalculationDataTransformation> .
+<http://purl.org/spatialai/stad/v2/core#ModeCalculation> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spatialai/stad/v2/core#> .
+<http://purl.org/spatialai/stad/v2/core#ModeCalculation> <http://www.w3.org/2000/01/rdf-schema#label> "mode calculation"@en .
+<http://purl.org/spatialai/stad/v2/core#ModeCalculation> <http://www.w3.org/2004/02/skos/core#definition> "A data transformation that returns the most frequently occurring input value."@en .
+# 
+# http://purl.org/spatialai/stad/v2/core#spatialResolutionQualityKind
+<http://purl.org/spatialai/stad/v2/core#spatialResolutionQualityKind> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://purl.org/spatialai/stad/v2/core#spatialResolutionQualityKind> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spatialai/stad/v2/core#QualityKind> .
+<http://purl.org/spatialai/stad/v2/core#spatialResolutionQualityKind> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spatialai/stad/v2/core#> .
+<http://purl.org/spatialai/stad/v2/core#spatialResolutionQualityKind> <http://www.w3.org/2000/01/rdf-schema#label> "spatial resolution"@en .
+<http://purl.org/spatialai/stad/v2/core#spatialResolutionQualityKind> <http://www.w3.org/2004/02/skos/core#definition> "The quality kind describing the spatial granularity or spatial sampling of a dataset."@en .
+# 
+# http://purl.org/spatialai/stad/v2/core#temporalResolutionQualityKind
+<http://purl.org/spatialai/stad/v2/core#temporalResolutionQualityKind> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://purl.org/spatialai/stad/v2/core#temporalResolutionQualityKind> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/spatialai/stad/v2/core#QualityKind> .
+<http://purl.org/spatialai/stad/v2/core#temporalResolutionQualityKind> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://purl.org/spatialai/stad/v2/core#> .
+<http://purl.org/spatialai/stad/v2/core#temporalResolutionQualityKind> <http://www.w3.org/2000/01/rdf-schema#label> "temporal resolution"@en .
+<http://purl.org/spatialai/stad/v2/core#temporalResolutionQualityKind> <http://www.w3.org/2004/02/skos/core#definition> "The quality kind describing the temporal granularity or spacing of observations in a dataset."@en .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    General axioms
+# #
+# #################################################################
+# 
+# 
+_:genid42 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AllDisjointClasses> .
+_:genid42 <http://www.w3.org/2002/07/owl#members> _:genid46 .
+_:genid46 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid45 .
+_:genid45 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid44 .
+_:genid44 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid43 .
+_:genid43 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid43 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://purl.org/spatialai/stad/v2/core#SamplingDensityResolution> .
+_:genid43 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid44 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://purl.org/spatialai/stad/v2/core#PointSpacingResolution> .
+_:genid44 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid45 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://purl.org/spatialai/stad/v2/core#PixelSizeResolution> .
+_:genid45 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid46 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://purl.org/spatialai/stad/v2/core#CoverageRatioResolution> .
+_:genid46 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+# 
+_:genid47 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AllDisjointClasses> .
+_:genid47 <http://www.w3.org/2002/07/owl#members> _:genid51 .
+_:genid51 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid50 .
+_:genid50 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid49 .
+_:genid49 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid48 .
+_:genid48 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid48 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://purl.org/spatialai/stad/v2/core#QualityKind> .
+_:genid48 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid49 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://purl.org/spatialai/stad/v2/core#DataValue> .
+_:genid49 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid50 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://purl.org/spatialai/stad/v2/core#DataTransformation> .
+_:genid50 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid51 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://purl.org/spatialai/stad/v2/core#Data> .
+_:genid51 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+# 
+_:genid52 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AllDisjointClasses> .
+_:genid52 <http://www.w3.org/2002/07/owl#members> _:genid58 .
+_:genid58 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid57 .
+_:genid57 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid56 .
+_:genid56 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid55 .
+_:genid55 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid54 .
+_:genid54 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid53 .
+_:genid53 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid53 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://purl.org/spatialai/stad/v2/core#TemporalCoverage> .
+_:genid53 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid54 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://purl.org/spatialai/stad/v2/core#SpatialCoverage> .
+_:genid54 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid55 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://purl.org/spatialai/stad/v2/core#DatasetDescription> .
+_:genid55 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid56 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://purl.org/spatialai/stad/v2/core#Dataset> .
+_:genid56 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid57 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://purl.org/spatialai/stad/v2/core#Datapoint> .
+_:genid57 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid58 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://purl.org/spatialai/stad/v2/core#DataTransformation> .
+_:genid58 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+# 
+_:genid59 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AllDisjointClasses> .
+_:genid59 <http://www.w3.org/2002/07/owl#members> _:genid62 .
+_:genid62 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid61 .
+_:genid61 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid60 .
+_:genid60 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid60 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://purl.org/spatialai/stad/v2/core#TemporalCoverage> .
+_:genid60 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid61 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://purl.org/spatialai/stad/v2/core#SpatialCoverage> .
+_:genid61 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid62 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://purl.org/spatialai/stad/v2/core#ResolutionDescriptor> .
+_:genid62 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+# 
+# Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/

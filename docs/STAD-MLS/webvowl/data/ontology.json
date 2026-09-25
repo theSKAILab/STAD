@@ -1,0 +1,1166 @@
+{
+  "_comment" : "Created with OWL2VOWL (version 0.3.5), http://vowl.visualdataweb.org",
+  "header" : {
+    "languages" : [ "en", "undefined" ],
+    "baseIris" : [ "http://www.w3.org/1999/02/22-rdf-syntax-ns", "http://purl.org/spatialai/stad/v2/core", "http://purl.org/spatialai/stad/v2/mls", "http://www.w3.org/2000/01/rdf-schema", "http://www.w3.org/2001/XMLSchema" ],
+    "title" : {
+      "en" : "Spatial and Temporal Aggregate Data Ontology MLS extension (STAD-MLS)"
+    },
+    "iri" : "http://purl.org/spatialai/stad/v2/mls#",
+    "version" : "1.0",
+    "author" : [ "Torsten Hahmann - http://orcid.org/0000-0002-5331-5052", "Kingsley Wiafe-Kwakye - https://orcid.org/0009-0007-3741-3721" ],
+    "description" : {
+      "en" : "STAD provides syntax for describing the spatial and temporal characteristics of aggregate quantities. This extension includes concepts for describing the algorithms and implementations used for data transformations. It is based on the Machine Learning Schema (MLS)."
+    },
+    "labels" : {
+      "en" : "STAD-MLS extension"
+    },
+    "other" : {
+      "identifier" : [ {
+        "identifier" : "identifier",
+        "language" : "en",
+        "value" : "http://purl.org/spatialai/stad/v2/mls>",
+        "type" : "label"
+      } ],
+      "license" : [ {
+        "identifier" : "license",
+        "language" : "undefined",
+        "value" : "https://creativecommons.org/licenses/by/4.0/",
+        "type" : "iri"
+      } ],
+      "creator" : [ {
+        "identifier" : "creator",
+        "language" : "en",
+        "value" : "Kingsley Wiafe-Kwakye - https://orcid.org/0009-0007-3741-3721",
+        "type" : "label"
+      }, {
+        "identifier" : "creator",
+        "language" : "en",
+        "value" : "Torsten Hahmann - http://orcid.org/0000-0002-5331-5052",
+        "type" : "label"
+      } ],
+      "subject" : [ {
+        "identifier" : "subject",
+        "language" : "undefined",
+        "value" : "Data transformation",
+        "type" : "label"
+      }, {
+        "identifier" : "subject",
+        "language" : "undefined",
+        "value" : "Aggregate data",
+        "type" : "label"
+      }, {
+        "identifier" : "subject",
+        "language" : "undefined",
+        "value" : "Spatial aggregate data",
+        "type" : "label"
+      }, {
+        "identifier" : "subject",
+        "language" : "undefined",
+        "value" : "Temporal aggregate data",
+        "type" : "label"
+      } ],
+      "created" : [ {
+        "identifier" : "created",
+        "language" : "undefined",
+        "value" : "2025-11-16",
+        "type" : "label"
+      } ],
+      "publisher" : [ {
+        "identifier" : "publisher",
+        "language" : "en",
+        "value" : "Spatial Knowledge and Artificial Intelligence (SKAI) Lab, University of Maine",
+        "type" : "label"
+      } ],
+      "modified" : [ {
+        "identifier" : "modified",
+        "language" : "undefined",
+        "value" : "2026-09-09",
+        "type" : "label"
+      } ],
+      "versionInfo" : [ {
+        "identifier" : "versionInfo",
+        "language" : "en",
+        "value" : "1.0",
+        "type" : "label"
+      } ],
+      "issued" : [ {
+        "identifier" : "issued",
+        "language" : "undefined",
+        "value" : "2026-09-09",
+        "type" : "label"
+      } ],
+      "title" : [ {
+        "identifier" : "title",
+        "language" : "en",
+        "value" : "Spatial and Temporal Aggregate Data Ontology MLS extension (STAD-MLS)",
+        "type" : "label"
+      } ]
+    }
+  },
+  "namespace" : [ ],
+  "class" : [ {
+    "id" : "0",
+    "type" : "owl:Class"
+  }, {
+    "id" : "1",
+    "type" : "owl:Class"
+  }, {
+    "id" : "4",
+    "type" : "owl:Class"
+  }, {
+    "id" : "7",
+    "type" : "owl:Class"
+  }, {
+    "id" : "9",
+    "type" : "owl:Class"
+  }, {
+    "id" : "6",
+    "type" : "owl:Class"
+  }, {
+    "id" : "25",
+    "type" : "owl:Thing"
+  }, {
+    "id" : "24",
+    "type" : "owl:Thing"
+  }, {
+    "id" : "27",
+    "type" : "rdfs:Literal"
+  }, {
+    "id" : "22",
+    "type" : "owl:Class"
+  }, {
+    "id" : "19",
+    "type" : "owl:Class"
+  }, {
+    "id" : "32",
+    "type" : "rdfs:Literal"
+  }, {
+    "id" : "3",
+    "type" : "owl:Thing"
+  } ],
+  "classAttribute" : [ {
+    "iri" : "http://purl.org/spatialai/stad/v2/mls#AlgorithmExecution",
+    "baseIri" : "http://purl.org/spatialai/stad/v2/mls",
+    "instances" : 0,
+    "annotations" : {
+      "isDefinedBy" : [ {
+        "identifier" : "isDefinedBy",
+        "language" : "undefined",
+        "value" : "http://purl.org/spatialai/stad/v2/mls#",
+        "type" : "iri"
+      } ],
+      "related" : [ {
+        "identifier" : "related",
+        "language" : "undefined",
+        "value" : "http://www.w3.org/ns/mls#Run",
+        "type" : "iri"
+      } ],
+      "definition" : [ {
+        "identifier" : "definition",
+        "language" : "en",
+        "value" : "A specific run of an implementation of an algorithm, using particular inputs and parameter settings.",
+        "type" : "label"
+      } ],
+      "seeAlso" : [ {
+        "identifier" : "seeAlso",
+        "language" : "undefined",
+        "value" : "http://ontologydesignpatterns.org/wiki/images/4/41/WOP2016_paper_07.pdf",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "AlgorithmExecution",
+      "en" : "algorithm execution"
+    },
+    "id" : "0"
+  }, {
+    "iri" : "http://purl.org/spatialai/stad/v2/mls#ParameterSetting",
+    "baseIri" : "http://purl.org/spatialai/stad/v2/mls",
+    "instances" : 0,
+    "annotations" : {
+      "isDefinedBy" : [ {
+        "identifier" : "isDefinedBy",
+        "language" : "undefined",
+        "value" : "http://purl.org/spatialai/stad/v2/mls#",
+        "type" : "iri"
+      } ],
+      "related" : [ {
+        "identifier" : "related",
+        "language" : "undefined",
+        "value" : "http://www.w3.org/ns/mls#HyperParameterSetting",
+        "type" : "iri"
+      } ],
+      "definition" : [ {
+        "identifier" : "definition",
+        "language" : "en",
+        "value" : "An assignment of a literal value to a parameter for a particular algorithm execution.",
+        "type" : "label"
+      } ],
+      "seeAlso" : [ {
+        "identifier" : "seeAlso",
+        "language" : "undefined",
+        "value" : "http://ontologydesignpatterns.org/wiki/images/4/41/WOP2016_paper_07.pdf",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "ParameterSetting",
+      "en" : "parameter setting"
+    },
+    "id" : "1"
+  }, {
+    "iri" : "http://purl.org/spatialai/stad/v2/core#Dataset",
+    "baseIri" : "http://purl.org/spatialai/stad/v2/core",
+    "instances" : 0,
+    "annotations" : {
+      "isDefinedBy" : [ {
+        "identifier" : "isDefinedBy",
+        "language" : "undefined",
+        "value" : "http://purl.org/spatialai/stad/v2/core#",
+        "type" : "iri"
+      } ],
+      "definition" : [ {
+        "identifier" : "definition",
+        "language" : "en",
+        "value" : "A collection of datapoints that has an associated dataset description.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "Dataset",
+      "en" : "dataset"
+    },
+    "attributes" : [ "external" ],
+    "id" : "4"
+  }, {
+    "iri" : "http://purl.org/spatialai/stad/v2/mls#Implementation",
+    "baseIri" : "http://purl.org/spatialai/stad/v2/mls",
+    "instances" : 0,
+    "annotations" : {
+      "isDefinedBy" : [ {
+        "identifier" : "isDefinedBy",
+        "language" : "undefined",
+        "value" : "http://purl.org/spatialai/stad/v2/mls#",
+        "type" : "iri"
+      } ],
+      "related" : [ {
+        "identifier" : "related",
+        "language" : "undefined",
+        "value" : "http://www.w3.org/ns/mls#Implementation",
+        "type" : "iri"
+      } ],
+      "definition" : [ {
+        "identifier" : "definition",
+        "language" : "en",
+        "value" : "An executable realization of an algorithm in a particular programming language or software environment.",
+        "type" : "label"
+      } ],
+      "seeAlso" : [ {
+        "identifier" : "seeAlso",
+        "language" : "undefined",
+        "value" : "http://ontologydesignpatterns.org/wiki/images/4/41/WOP2016_paper_07.pdf",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "Implementation",
+      "en" : "implementation"
+    },
+    "id" : "7"
+  }, {
+    "iri" : "http://purl.org/spatialai/stad/v2/mls#Parameter",
+    "baseIri" : "http://purl.org/spatialai/stad/v2/mls",
+    "instances" : 0,
+    "annotations" : {
+      "isDefinedBy" : [ {
+        "identifier" : "isDefinedBy",
+        "language" : "undefined",
+        "value" : "http://purl.org/spatialai/stad/v2/mls#",
+        "type" : "iri"
+      } ],
+      "related" : [ {
+        "identifier" : "related",
+        "language" : "undefined",
+        "value" : "http://www.w3.org/ns/mls#HyperParameter",
+        "type" : "iri"
+      } ],
+      "definition" : [ {
+        "identifier" : "definition",
+        "language" : "en",
+        "value" : "A named input accepted by an implementation and assigned a value in a parameter setting.",
+        "type" : "label"
+      } ],
+      "seeAlso" : [ {
+        "identifier" : "seeAlso",
+        "language" : "undefined",
+        "value" : "http://ontologydesignpatterns.org/wiki/images/4/41/WOP2016_paper_07.pdf",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "Parameter",
+      "en" : "parameter"
+    },
+    "id" : "9"
+  }, {
+    "iri" : "http://purl.org/spatialai/stad/v2/mls#Algorithm",
+    "baseIri" : "http://purl.org/spatialai/stad/v2/mls",
+    "instances" : 0,
+    "annotations" : {
+      "isDefinedBy" : [ {
+        "identifier" : "isDefinedBy",
+        "language" : "undefined",
+        "value" : "http://purl.org/spatialai/stad/v2/mls#",
+        "type" : "iri"
+      } ],
+      "related" : [ {
+        "identifier" : "related",
+        "language" : "undefined",
+        "value" : "http://www.w3.org/ns/mls#Algorithm",
+        "type" : "iri"
+      } ],
+      "definition" : [ {
+        "identifier" : "definition",
+        "language" : "en",
+        "value" : "A sequential set of instructions for solving a problem or achieving a goal, independent of a concrete implementation or execution.",
+        "type" : "label"
+      } ],
+      "seeAlso" : [ {
+        "identifier" : "seeAlso",
+        "language" : "undefined",
+        "value" : "http://ontologydesignpatterns.org/wiki/images/4/41/WOP2016_paper_07.pdf",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "Algorithm",
+      "en" : "algorithm"
+    },
+    "subClasses" : [ "22" ],
+    "id" : "6"
+  }, {
+    "iri" : "http://www.w3.org/2002/07/owl#Thing",
+    "baseIri" : "http://owl2vowl.de",
+    "id" : "25",
+    "label" : {
+      "undefined" : "Thing"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2002/07/owl#Thing",
+    "baseIri" : "http://owl2vowl.de",
+    "id" : "24",
+    "label" : {
+      "undefined" : "Thing"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
+    "id" : "27",
+    "label" : {
+      "IRI-based" : "Literal",
+      "undefined" : "Literal"
+    }
+  }, {
+    "iri" : "http://purl.org/spatialai/stad/v2/core#DataTransformation",
+    "baseIri" : "http://purl.org/spatialai/stad/v2/core",
+    "instances" : 0,
+    "annotations" : {
+      "isDefinedBy" : [ {
+        "identifier" : "isDefinedBy",
+        "language" : "undefined",
+        "value" : "http://purl.org/spatialai/stad/v2/core#",
+        "type" : "iri"
+      } ],
+      "definition" : [ {
+        "identifier" : "definition",
+        "language" : "en",
+        "value" : "An algorithm that manipulates or converts data from one form into another, including filtering, sorting, aggregation, type conversion, or mathematical operations.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "DataTransformation",
+      "en" : "data transformation"
+    },
+    "attributes" : [ "external" ],
+    "id" : "22",
+    "superClasses" : [ "6" ]
+  }, {
+    "iri" : "http://purl.org/spatialai/stad/v2/core#ComputationalDatapoint",
+    "baseIri" : "http://purl.org/spatialai/stad/v2/core",
+    "instances" : 0,
+    "annotations" : {
+      "isDefinedBy" : [ {
+        "identifier" : "isDefinedBy",
+        "language" : "undefined",
+        "value" : "http://purl.org/spatialai/stad/v2/core#",
+        "type" : "iri"
+      } ],
+      "definition" : [ {
+        "identifier" : "definition",
+        "language" : "en",
+        "value" : "A datapoint generated by one algorithm execution from one or more base datapoints or datasets.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "ComputationalDatapoint",
+      "en" : "computational datapoint"
+    },
+    "attributes" : [ "external" ],
+    "id" : "19"
+  }, {
+    "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
+    "baseIri" : "http://www.w3.org/2000/01/rdf-schema",
+    "id" : "32",
+    "label" : {
+      "IRI-based" : "Literal",
+      "undefined" : "Literal"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2002/07/owl#Thing",
+    "baseIri" : "http://owl2vowl.de",
+    "id" : "3",
+    "label" : {
+      "undefined" : "Thing"
+    }
+  } ],
+  "property" : [ {
+    "id" : "2",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "5",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "8",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "10",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "11",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "12",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "13",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "14",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "15",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "16",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "17",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "18",
+    "type" : "owl:allValuesFrom"
+  }, {
+    "id" : "20",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "21",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "23",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "26",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "28",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "29",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "30",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "31",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "33",
+    "type" : "owl:someValuesFrom"
+  }, {
+    "id" : "34",
+    "type" : "owl:someValuesFrom"
+  }, {
+    "id" : "35",
+    "type" : "owl:someValuesFrom"
+  }, {
+    "id" : "36",
+    "type" : "owl:someValuesFrom"
+  }, {
+    "id" : "37",
+    "type" : "owl:someValuesFrom"
+  }, {
+    "id" : "38",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "39",
+    "type" : "owl:disjointWith"
+  }, {
+    "id" : "40",
+    "type" : "owl:someValuesFrom"
+  }, {
+    "id" : "41",
+    "type" : "owl:someValuesFrom"
+  } ],
+  "propertyAttribute" : [ {
+    "iri" : "http://purl.org/spatialai/stad/v2/mls#hasInput",
+    "baseIri" : "http://purl.org/spatialai/stad/v2/mls",
+    "range" : "3",
+    "annotations" : {
+      "isDefinedBy" : [ {
+        "identifier" : "isDefinedBy",
+        "language" : "undefined",
+        "value" : "http://purl.org/spatialai/stad/v2/mls#",
+        "type" : "iri"
+      } ],
+      "related" : [ {
+        "identifier" : "related",
+        "language" : "undefined",
+        "value" : "http://www.w3.org/ns/mls#hasInput",
+        "type" : "iri"
+      } ],
+      "definition" : [ {
+        "identifier" : "definition",
+        "language" : "en",
+        "value" : "Relates an algorithm execution to some input, either input data or some parameter or parameter setting.",
+        "type" : "label"
+      } ],
+      "seeAlso" : [ {
+        "identifier" : "seeAlso",
+        "language" : "undefined",
+        "value" : "http://ontologydesignpatterns.org/wiki/images/4/41/WOP2016_paper_07.pdf",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "hasInput",
+      "en" : "has input"
+    },
+    "domain" : "0",
+    "attributes" : [ "object" ],
+    "id" : "2"
+  }, {
+    "range" : "7",
+    "domain" : "6",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "5"
+  }, {
+    "range" : "9",
+    "domain" : "6",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "8"
+  }, {
+    "range" : "1",
+    "domain" : "6",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "10"
+  }, {
+    "range" : "7",
+    "domain" : "0",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "11"
+  }, {
+    "range" : "9",
+    "domain" : "0",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "12"
+  }, {
+    "iri" : "http://purl.org/spatialai/stad/v2/mls#executes",
+    "baseIri" : "http://purl.org/spatialai/stad/v2/mls",
+    "range" : "7",
+    "annotations" : {
+      "isDefinedBy" : [ {
+        "identifier" : "isDefinedBy",
+        "language" : "undefined",
+        "value" : "http://purl.org/spatialai/stad/v2/mls#",
+        "type" : "iri"
+      } ],
+      "related" : [ {
+        "identifier" : "related",
+        "language" : "undefined",
+        "value" : "http://www.w3.org/ns/mls#executes",
+        "type" : "iri"
+      } ],
+      "definition" : [ {
+        "identifier" : "definition",
+        "language" : "en",
+        "value" : "Relates an algorithm execution to the concrete implementation executed.",
+        "type" : "label"
+      } ],
+      "seeAlso" : [ {
+        "identifier" : "seeAlso",
+        "language" : "undefined",
+        "value" : "http://ontologydesignpatterns.org/wiki/images/4/41/WOP2016_paper_07.pdf",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "executes",
+      "en" : "executes"
+    },
+    "domain" : "0",
+    "attributes" : [ "object" ],
+    "id" : "13"
+  }, {
+    "range" : "1",
+    "domain" : "0",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "14"
+  }, {
+    "range" : "9",
+    "domain" : "7",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "15"
+  }, {
+    "range" : "1",
+    "domain" : "7",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "16"
+  }, {
+    "iri" : "http://purl.org/spatialai/stad/v2/mls#realizes",
+    "baseIri" : "http://purl.org/spatialai/stad/v2/mls",
+    "range" : "6",
+    "annotations" : {
+      "isDefinedBy" : [ {
+        "identifier" : "isDefinedBy",
+        "language" : "undefined",
+        "value" : "http://purl.org/spatialai/stad/v2/mls#",
+        "type" : "iri"
+      } ],
+      "related" : [ {
+        "identifier" : "related",
+        "language" : "undefined",
+        "value" : "http://www.w3.org/ns/mls#realizes",
+        "type" : "iri"
+      } ],
+      "definition" : [ {
+        "identifier" : "definition",
+        "language" : "en",
+        "value" : "Relates an algorithm execution to the algorithm realized by that execution.",
+        "type" : "label"
+      } ],
+      "seeAlso" : [ {
+        "identifier" : "seeAlso",
+        "language" : "undefined",
+        "value" : "http://ontologydesignpatterns.org/wiki/images/4/41/WOP2016_paper_07.pdf",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "realizes",
+      "en" : "realizes"
+    },
+    "domain" : "0",
+    "attributes" : [ "object" ],
+    "id" : "17"
+  }, {
+    "iri" : "http://purl.org/spatialai/stad/v2/core#generatedBy",
+    "baseIri" : "http://purl.org/spatialai/stad/v2/core",
+    "range" : "0",
+    "annotations" : {
+      "isDefinedBy" : [ {
+        "identifier" : "isDefinedBy",
+        "language" : "undefined",
+        "value" : "http://purl.org/spatialai/stad/v2/core#",
+        "type" : "iri"
+      } ],
+      "definition" : [ {
+        "identifier" : "definition",
+        "language" : "en",
+        "value" : "Links anything that is generated by an Algorithm to the specific AlgorithmExecution that was used.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "generatedBy",
+      "en" : "generated by"
+    },
+    "domain" : "19",
+    "attributes" : [ "allValues", "object", "external" ],
+    "id" : "18"
+  }, {
+    "range" : "0",
+    "domain" : "6",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "20"
+  }, {
+    "iri" : "http://purl.org/spatialai/stad/v2/mls#hasParameter",
+    "baseIri" : "http://purl.org/spatialai/stad/v2/mls",
+    "range" : "9",
+    "annotations" : {
+      "isDefinedBy" : [ {
+        "identifier" : "isDefinedBy",
+        "language" : "undefined",
+        "value" : "http://purl.org/spatialai/stad/v2/mls#",
+        "type" : "iri"
+      } ],
+      "related" : [ {
+        "identifier" : "related",
+        "language" : "undefined",
+        "value" : "http://www.w3.org/ns/mls#hasHyperParameter",
+        "type" : "iri"
+      } ],
+      "definition" : [ {
+        "identifier" : "definition",
+        "language" : "en",
+        "value" : "Relates an implementation to a parameter it accepts.",
+        "type" : "label"
+      } ],
+      "seeAlso" : [ {
+        "identifier" : "seeAlso",
+        "language" : "undefined",
+        "value" : "http://ontologydesignpatterns.org/wiki/images/4/41/WOP2016_paper_07.pdf",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "hasParameter",
+      "en" : "has parameter"
+    },
+    "domain" : "7",
+    "attributes" : [ "object" ],
+    "id" : "21"
+  }, {
+    "iri" : "http://purl.org/spatialai/stad/v2/core#outputOf",
+    "baseIri" : "http://purl.org/spatialai/stad/v2/core",
+    "range" : "24",
+    "annotations" : {
+      "isDefinedBy" : [ {
+        "identifier" : "isDefinedBy",
+        "language" : "undefined",
+        "value" : "http://purl.org/spatialai/stad/v2/core#",
+        "type" : "iri"
+      } ],
+      "definition" : [ {
+        "identifier" : "definition",
+        "language" : "en",
+        "value" : "Relates a computational datapoint to the algorithm of which it is an output.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "outputOf",
+      "en" : "output of"
+    },
+    "domain" : "19",
+    "attributes" : [ "object", "external" ],
+    "id" : "23"
+  }, {
+    "range" : "6",
+    "domain" : "22",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "26"
+  }, {
+    "iri" : "http://purl.org/spatialai/stad/v2/core#hasTransformationKind",
+    "baseIri" : "http://purl.org/spatialai/stad/v2/core",
+    "range" : "25",
+    "annotations" : {
+      "isDefinedBy" : [ {
+        "identifier" : "isDefinedBy",
+        "language" : "undefined",
+        "value" : "http://purl.org/spatialai/stad/v2/core#",
+        "type" : "iri"
+      } ],
+      "definition" : [ {
+        "identifier" : "definition",
+        "language" : "en",
+        "value" : "Relates a statistical aggregate datapoint directly to the kind of data transformation used to produce it.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "hasTransformationKind",
+      "en" : "has transformation kind"
+    },
+    "domain" : "25",
+    "attributes" : [ "object", "external" ],
+    "id" : "28"
+  }, {
+    "iri" : "http://purl.org/spatialai/stad/v2/mls#specifiedBy",
+    "baseIri" : "http://purl.org/spatialai/stad/v2/mls",
+    "range" : "9",
+    "annotations" : {
+      "isDefinedBy" : [ {
+        "identifier" : "isDefinedBy",
+        "language" : "undefined",
+        "value" : "http://purl.org/spatialai/stad/v2/mls#",
+        "type" : "iri"
+      } ],
+      "related" : [ {
+        "identifier" : "related",
+        "language" : "undefined",
+        "value" : "http://www.w3.org/ns/mls#specifiedBy",
+        "type" : "iri"
+      } ],
+      "definition" : [ {
+        "identifier" : "definition",
+        "language" : "en",
+        "value" : "Relates a parameter setting to the parameter whose value it specifies.",
+        "type" : "label"
+      } ],
+      "seeAlso" : [ {
+        "identifier" : "seeAlso",
+        "language" : "undefined",
+        "value" : "http://ontologydesignpatterns.org/wiki/images/4/41/WOP2016_paper_07.pdf",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "specifiedBy",
+      "en" : "specified by"
+    },
+    "domain" : "1",
+    "attributes" : [ "object" ],
+    "id" : "29"
+  }, {
+    "iri" : "http://purl.org/spatialai/stad/v2/core#generatedBy",
+    "baseIri" : "http://purl.org/spatialai/stad/v2/core",
+    "range" : "24",
+    "annotations" : {
+      "isDefinedBy" : [ {
+        "identifier" : "isDefinedBy",
+        "language" : "undefined",
+        "value" : "http://purl.org/spatialai/stad/v2/core#",
+        "type" : "iri"
+      } ],
+      "definition" : [ {
+        "identifier" : "definition",
+        "language" : "en",
+        "value" : "Links anything that is generated by an Algorithm to the specific AlgorithmExecution that was used.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "generatedBy",
+      "en" : "generated by"
+    },
+    "domain" : "19",
+    "attributes" : [ "object", "external" ],
+    "id" : "30"
+  }, {
+    "iri" : "http://purl.org/spatialai/stad/v2/mls#implements",
+    "baseIri" : "http://purl.org/spatialai/stad/v2/mls",
+    "range" : "6",
+    "annotations" : {
+      "isDefinedBy" : [ {
+        "identifier" : "isDefinedBy",
+        "language" : "undefined",
+        "value" : "http://purl.org/spatialai/stad/v2/mls#",
+        "type" : "iri"
+      } ],
+      "related" : [ {
+        "identifier" : "related",
+        "language" : "undefined",
+        "value" : "http://www.w3.org/ns/mls#implements",
+        "type" : "iri"
+      } ],
+      "definition" : [ {
+        "identifier" : "definition",
+        "language" : "en",
+        "value" : "Relates a concrete implementation to the algorithm it implements.",
+        "type" : "label"
+      } ],
+      "seeAlso" : [ {
+        "identifier" : "seeAlso",
+        "language" : "undefined",
+        "value" : "http://ontologydesignpatterns.org/wiki/images/4/41/WOP2016_paper_07.pdf",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "implements",
+      "en" : "implements"
+    },
+    "domain" : "7",
+    "attributes" : [ "object" ],
+    "id" : "31"
+  }, {
+    "iri" : "http://purl.org/spatialai/stad/v2/mls#hasValue",
+    "baseIri" : "http://purl.org/spatialai/stad/v2/mls",
+    "range" : "32",
+    "annotations" : {
+      "isDefinedBy" : [ {
+        "identifier" : "isDefinedBy",
+        "language" : "undefined",
+        "value" : "http://purl.org/spatialai/stad/v2/mls#",
+        "type" : "iri"
+      } ],
+      "definition" : [ {
+        "identifier" : "definition",
+        "language" : "en",
+        "value" : "Relates a parameter setting to its literal value.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "hasValue",
+      "en" : "has value"
+    },
+    "domain" : "1",
+    "attributes" : [ "datatype", "someValues" ],
+    "id" : "33"
+  }, {
+    "iri" : "http://purl.org/spatialai/stad/v2/mls#hasParameter",
+    "baseIri" : "http://purl.org/spatialai/stad/v2/mls",
+    "range" : "9",
+    "annotations" : {
+      "isDefinedBy" : [ {
+        "identifier" : "isDefinedBy",
+        "language" : "undefined",
+        "value" : "http://purl.org/spatialai/stad/v2/mls#",
+        "type" : "iri"
+      } ],
+      "related" : [ {
+        "identifier" : "related",
+        "language" : "undefined",
+        "value" : "http://www.w3.org/ns/mls#hasHyperParameter",
+        "type" : "iri"
+      } ],
+      "definition" : [ {
+        "identifier" : "definition",
+        "language" : "en",
+        "value" : "Relates an implementation to a parameter it accepts.",
+        "type" : "label"
+      } ],
+      "seeAlso" : [ {
+        "identifier" : "seeAlso",
+        "language" : "undefined",
+        "value" : "http://ontologydesignpatterns.org/wiki/images/4/41/WOP2016_paper_07.pdf",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "hasParameter",
+      "en" : "has parameter"
+    },
+    "domain" : "7",
+    "attributes" : [ "object", "someValues" ],
+    "id" : "34"
+  }, {
+    "iri" : "http://purl.org/spatialai/stad/v2/mls#hasInput",
+    "baseIri" : "http://purl.org/spatialai/stad/v2/mls",
+    "range" : "4",
+    "annotations" : {
+      "isDefinedBy" : [ {
+        "identifier" : "isDefinedBy",
+        "language" : "undefined",
+        "value" : "http://purl.org/spatialai/stad/v2/mls#",
+        "type" : "iri"
+      } ],
+      "related" : [ {
+        "identifier" : "related",
+        "language" : "undefined",
+        "value" : "http://www.w3.org/ns/mls#hasInput",
+        "type" : "iri"
+      } ],
+      "definition" : [ {
+        "identifier" : "definition",
+        "language" : "en",
+        "value" : "Relates an algorithm execution to some input, either input data or some parameter or parameter setting.",
+        "type" : "label"
+      } ],
+      "seeAlso" : [ {
+        "identifier" : "seeAlso",
+        "language" : "undefined",
+        "value" : "http://ontologydesignpatterns.org/wiki/images/4/41/WOP2016_paper_07.pdf",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "hasInput",
+      "en" : "has input"
+    },
+    "domain" : "0",
+    "attributes" : [ "object", "someValues" ],
+    "id" : "35"
+  }, {
+    "iri" : "http://purl.org/spatialai/stad/v2/mls#specifiedBy",
+    "baseIri" : "http://purl.org/spatialai/stad/v2/mls",
+    "range" : "9",
+    "annotations" : {
+      "isDefinedBy" : [ {
+        "identifier" : "isDefinedBy",
+        "language" : "undefined",
+        "value" : "http://purl.org/spatialai/stad/v2/mls#",
+        "type" : "iri"
+      } ],
+      "related" : [ {
+        "identifier" : "related",
+        "language" : "undefined",
+        "value" : "http://www.w3.org/ns/mls#specifiedBy",
+        "type" : "iri"
+      } ],
+      "definition" : [ {
+        "identifier" : "definition",
+        "language" : "en",
+        "value" : "Relates a parameter setting to the parameter whose value it specifies.",
+        "type" : "label"
+      } ],
+      "seeAlso" : [ {
+        "identifier" : "seeAlso",
+        "language" : "undefined",
+        "value" : "http://ontologydesignpatterns.org/wiki/images/4/41/WOP2016_paper_07.pdf",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "specifiedBy",
+      "en" : "specified by"
+    },
+    "domain" : "1",
+    "attributes" : [ "object", "someValues" ],
+    "id" : "36"
+  }, {
+    "iri" : "http://purl.org/spatialai/stad/v2/mls#implements",
+    "baseIri" : "http://purl.org/spatialai/stad/v2/mls",
+    "range" : "6",
+    "annotations" : {
+      "isDefinedBy" : [ {
+        "identifier" : "isDefinedBy",
+        "language" : "undefined",
+        "value" : "http://purl.org/spatialai/stad/v2/mls#",
+        "type" : "iri"
+      } ],
+      "related" : [ {
+        "identifier" : "related",
+        "language" : "undefined",
+        "value" : "http://www.w3.org/ns/mls#implements",
+        "type" : "iri"
+      } ],
+      "definition" : [ {
+        "identifier" : "definition",
+        "language" : "en",
+        "value" : "Relates a concrete implementation to the algorithm it implements.",
+        "type" : "label"
+      } ],
+      "seeAlso" : [ {
+        "identifier" : "seeAlso",
+        "language" : "undefined",
+        "value" : "http://ontologydesignpatterns.org/wiki/images/4/41/WOP2016_paper_07.pdf",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "implements",
+      "en" : "implements"
+    },
+    "domain" : "7",
+    "attributes" : [ "object", "someValues" ],
+    "id" : "37"
+  }, {
+    "iri" : "http://purl.org/spatialai/stad/v2/mls#hasValue",
+    "baseIri" : "http://purl.org/spatialai/stad/v2/mls",
+    "range" : "27",
+    "annotations" : {
+      "isDefinedBy" : [ {
+        "identifier" : "isDefinedBy",
+        "language" : "undefined",
+        "value" : "http://purl.org/spatialai/stad/v2/mls#",
+        "type" : "iri"
+      } ],
+      "definition" : [ {
+        "identifier" : "definition",
+        "language" : "en",
+        "value" : "Relates a parameter setting to its literal value.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "hasValue",
+      "en" : "has value"
+    },
+    "domain" : "1",
+    "attributes" : [ "datatype" ],
+    "id" : "38"
+  }, {
+    "range" : "1",
+    "domain" : "9",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "39"
+  }, {
+    "iri" : "http://purl.org/spatialai/stad/v2/mls#hasInput",
+    "baseIri" : "http://purl.org/spatialai/stad/v2/mls",
+    "range" : "1",
+    "annotations" : {
+      "isDefinedBy" : [ {
+        "identifier" : "isDefinedBy",
+        "language" : "undefined",
+        "value" : "http://purl.org/spatialai/stad/v2/mls#",
+        "type" : "iri"
+      } ],
+      "related" : [ {
+        "identifier" : "related",
+        "language" : "undefined",
+        "value" : "http://www.w3.org/ns/mls#hasInput",
+        "type" : "iri"
+      } ],
+      "definition" : [ {
+        "identifier" : "definition",
+        "language" : "en",
+        "value" : "Relates an algorithm execution to some input, either input data or some parameter or parameter setting.",
+        "type" : "label"
+      } ],
+      "seeAlso" : [ {
+        "identifier" : "seeAlso",
+        "language" : "undefined",
+        "value" : "http://ontologydesignpatterns.org/wiki/images/4/41/WOP2016_paper_07.pdf",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "hasInput",
+      "en" : "has input"
+    },
+    "domain" : "0",
+    "attributes" : [ "object", "someValues" ],
+    "id" : "40"
+  }, {
+    "iri" : "http://purl.org/spatialai/stad/v2/mls#realizes",
+    "baseIri" : "http://purl.org/spatialai/stad/v2/mls",
+    "range" : "6",
+    "annotations" : {
+      "isDefinedBy" : [ {
+        "identifier" : "isDefinedBy",
+        "language" : "undefined",
+        "value" : "http://purl.org/spatialai/stad/v2/mls#",
+        "type" : "iri"
+      } ],
+      "related" : [ {
+        "identifier" : "related",
+        "language" : "undefined",
+        "value" : "http://www.w3.org/ns/mls#realizes",
+        "type" : "iri"
+      } ],
+      "definition" : [ {
+        "identifier" : "definition",
+        "language" : "en",
+        "value" : "Relates an algorithm execution to the algorithm realized by that execution.",
+        "type" : "label"
+      } ],
+      "seeAlso" : [ {
+        "identifier" : "seeAlso",
+        "language" : "undefined",
+        "value" : "http://ontologydesignpatterns.org/wiki/images/4/41/WOP2016_paper_07.pdf",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "realizes",
+      "en" : "realizes"
+    },
+    "domain" : "0",
+    "attributes" : [ "object", "someValues" ],
+    "id" : "41"
+  } ]
+}

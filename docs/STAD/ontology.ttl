@@ -1,0 +1,1065 @@
+@prefix : <http://purl.org/spatialai/stad/v2/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://purl.org/spatialai/stad/v2/core#> .
+
+<http://purl.org/spatialai/stad/v2/core#> rdf:type owl:Ontology ;
+                                           owl:versionIRI <http://purl.org/spatialai/stad/v2/core#> ;
+                                           owl:imports <http://www.w3.org/2006/time> ,
+                                                       <https://raw.githubusercontent.com/w3c/sdw/gh-pages/time-aggregates/rdf/time-agg.ttl> ;
+                                           <http://purl.org/dc/terms/created> "2025-11-16"^^xsd:date ;
+                                           <http://purl.org/dc/terms/creator> "Kate Beard - https://orcid.org/0000-0002-7703-0270"@en ,
+                                                                              "Kingsley Wiafe-Kwakye - https://orcid.org/0009-0007-3741-3721"@en ,
+                                                                              "Torsten Hahmann - http://orcid.org/0000-0002-5331-5052"@en ;
+                                           <http://purl.org/dc/terms/description> "STAD provides syntax for describing the spatial and temporal characteristics of aggregate quantities."@en ;
+                                           <http://purl.org/dc/terms/identifier> "http://purl.org/spatialai/stad/v2/core>"@en ;
+                                           <http://purl.org/dc/terms/issued> "2025-11-16"^^xsd:date ;
+                                           <http://purl.org/dc/terms/license> <https://creativecommons.org/licenses/by/4.0/> ;
+                                           <http://purl.org/dc/terms/modified> "2026-09-09"^^xsd:date ;
+                                           <http://purl.org/dc/terms/publisher> "Spatial Knowledge and Artificial Intelligence (SKAI) Lab, University of Maine"@en ;
+                                           <http://purl.org/dc/terms/subject> "Aggregate data" ,
+                                                                              "Spatial aggregate data" ,
+                                                                              "Temporal aggregate data" ;
+                                           <http://purl.org/dc/terms/title> "Spatial and Temporal Aggregate Data (STAD) Ontology"@en ;
+                                           rdfs:label "STAD Ontology"@en ;
+                                           rdfs:seeAlso <http://purl.org/spatialai/stad/v2/mls#> ;
+                                           owl:versionInfo "2.0"@en ;
+                                           <http://www.w3.org/2004/02/skos/core#related> <http://purl.org/spatialai/stad/v2/mls#> .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/terms/created
+<http://purl.org/dc/terms/created> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/creator
+<http://purl.org/dc/terms/creator> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/description
+<http://purl.org/dc/terms/description> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/identifier
+<http://purl.org/dc/terms/identifier> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/issued
+<http://purl.org/dc/terms/issued> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/license
+<http://purl.org/dc/terms/license> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/modified
+<http://purl.org/dc/terms/modified> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/publisher
+<http://purl.org/dc/terms/publisher> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/subject
+<http://purl.org/dc/terms/subject> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/title
+<http://purl.org/dc/terms/title> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#definition
+<http://www.w3.org/2004/02/skos/core#definition> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#editorialNote
+<http://www.w3.org/2004/02/skos/core#editorialNote> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#example
+<http://www.w3.org/2004/02/skos/core#example> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#note
+<http://www.w3.org/2004/02/skos/core#note> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#prefLabel
+<http://www.w3.org/2004/02/skos/core#prefLabel> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#related
+<http://www.w3.org/2004/02/skos/core#related> rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Datatypes
+#################################################################
+
+###  http://www.w3.org/2001/XMLSchema#date
+xsd:date rdf:type rdfs:Datatype .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://purl.org/dc/terms/hasPart
+<http://purl.org/dc/terms/hasPart> rdf:type owl:ObjectProperty ;
+                                   rdfs:label "has part"@en ;
+                                   <http://www.w3.org/2004/02/skos/core#definition> "related resource that is included either physically or logically in the described resource."@en .
+
+
+###  http://purl.org/spatialai/stad/v2/core#containsDatapoint
+:containsDatapoint rdf:type owl:ObjectProperty ;
+                   rdfs:domain :Dataset ;
+                   rdfs:range :Datapoint ;
+                   rdfs:isDefinedBy <http://purl.org/spatialai/stad/v2/core#> ;
+                   rdfs:label "contains datapoint"@en ;
+                   <http://www.w3.org/2004/02/skos/core#definition> "Relates a dataset to a datapoint contained in that dataset."@en .
+
+
+###  http://purl.org/spatialai/stad/v2/core#generatedBy
+:generatedBy rdf:type owl:ObjectProperty ;
+             rdfs:domain :ComputationalDatapoint ;
+             rdfs:isDefinedBy <http://purl.org/spatialai/stad/v2/core#> ;
+             rdfs:label "generated by"@en ;
+             <http://www.w3.org/2004/02/skos/core#definition> "Links anything that is generated by an Algorithm to the specific AlgorithmExecution that was used."@en .
+
+
+###  http://purl.org/spatialai/stad/v2/core#hasAggregationPeriod
+:hasAggregationPeriod rdf:type owl:ObjectProperty ;
+                      rdfs:domain :StatisticalAggregateDatapoint ;
+                      rdfs:range :AggregationPeriod ;
+                      rdfs:isDefinedBy <http://purl.org/spatialai/stad/v2/core#> ;
+                      rdfs:label "has aggregation period"@en ;
+                      <http://www.w3.org/2004/02/skos/core#definition> "Relates a statistical aggregate datapoint to the temporal entities over which its base data were selected for aggregation."@en .
+
+
+###  http://purl.org/spatialai/stad/v2/core#hasBaseDatapoint
+:hasBaseDatapoint rdf:type owl:ObjectProperty ;
+                  rdfs:domain :ComputationalDatapoint ;
+                  rdfs:range :Datapoint ;
+                  owl:propertyChainAxiom ( :hasBaseDataset
+                                           :containsDatapoint
+                                         ) ;
+                  rdfs:isDefinedBy <http://purl.org/spatialai/stad/v2/core#> ;
+                  rdfs:label "has base datapoint"@en ;
+                  <http://www.w3.org/2004/02/skos/core#definition> "Relates a computational datapoint to a datapoint used to compute it; this relation can be inferred through its base dataset."@en .
+
+
+###  http://purl.org/spatialai/stad/v2/core#hasBaseDataset
+:hasBaseDataset rdf:type owl:ObjectProperty ;
+                rdfs:domain :ComputationalDatapoint ;
+                rdfs:range :Dataset ;
+                rdfs:isDefinedBy <http://purl.org/spatialai/stad/v2/core#> ;
+                rdfs:label "has base dataset"@en ;
+                <http://www.w3.org/2004/02/skos/core#definition> "Relates a computational datapoint to a dataset used to compute it."@en .
+
+
+###  http://purl.org/spatialai/stad/v2/core#hasConvexAggregationPeriod
+:hasConvexAggregationPeriod rdf:type owl:ObjectProperty ;
+                            rdfs:subPropertyOf :hasAggregationPeriod ;
+                            rdfs:range :ConvexAggregationPeriod ;
+                            rdfs:isDefinedBy <http://purl.org/spatialai/stad/v2/core#> ;
+                            rdfs:label "has convex aggregation period"@en ;
+                            <http://www.w3.org/2004/02/skos/core#definition> "Relates an aggregate datapoint to a convex aggregation period."@en .
+
+
+###  http://purl.org/spatialai/stad/v2/core#hasDataValue
+:hasDataValue rdf:type owl:ObjectProperty ;
+              rdfs:domain :Datapoint ;
+              rdfs:range :DataValue ;
+              rdfs:isDefinedBy <http://purl.org/spatialai/stad/v2/core#> ;
+              rdfs:label "has data value"@en ;
+              <http://www.w3.org/2004/02/skos/core#definition> "Relates a datapoint to the value it carries."@en .
+
+
+###  http://purl.org/spatialai/stad/v2/core#hasDatasetDescription
+:hasDatasetDescription rdf:type owl:ObjectProperty ;
+                       rdfs:domain :Dataset ;
+                       rdfs:range :DatasetDescription ;
+                       rdfs:isDefinedBy <http://purl.org/spatialai/stad/v2/core#> ;
+                       rdfs:label "has dataset description"@en ;
+                       <http://www.w3.org/2004/02/skos/core#definition> "Relates a dataset to a description of characteristics such as its spatial and temporal resolution."@en .
+
+
+###  http://purl.org/spatialai/stad/v2/core#hasExtent
+:hasExtent rdf:type owl:ObjectProperty ;
+           rdfs:domain :AggregationPeriod ;
+           rdfs:range <http://www.w3.org/2006/time#Interval> ;
+           rdfs:isDefinedBy <http://purl.org/spatialai/stad/v2/core#> ;
+           rdfs:label "has extent"@en ;
+           <http://www.w3.org/2004/02/skos/core#definition> "Relates an aggregation period to the single proper interval forming its minimal convex temporal extent."@en .
+
+
+###  http://purl.org/spatialai/stad/v2/core#hasInput
+:hasInput rdf:type owl:ObjectProperty ;
+          rdfs:isDefinedBy <http://purl.org/spatialai/stad/v2/core#> ;
+          rdfs:label "has input"@en ;
+          <http://www.w3.org/2004/02/skos/core#definition> "Relates an algorithm execution to an input dataset."@en .
+
+
+###  http://purl.org/spatialai/stad/v2/core#hasInstant
+:hasInstant rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf <http://www.w3.org/2006/time#hasPart> ;
+            owl:inverseOf :instantPartOf ;
+            rdfs:range <http://www.w3.org/2006/time#Instant> ;
+            rdfs:isDefinedBy <http://purl.org/spatialai/stad/v2/core#> ;
+            rdfs:label "has instant"@en ;
+            <http://www.w3.org/2004/02/skos/core#definition> "Relates a temporal aggregate to an instant that is one of its temporal parts."@en .
+
+
+###  http://purl.org/spatialai/stad/v2/core#hasInterval
+:hasInterval rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf <http://www.w3.org/2006/time#hasPart> ;
+             owl:inverseOf :intervalPartOf ;
+             rdfs:range <http://www.w3.org/2006/time#Interval> ;
+             rdfs:isDefinedBy <http://purl.org/spatialai/stad/v2/core#> ;
+             rdfs:label "has interval"@en ;
+             <http://www.w3.org/2004/02/skos/core#definition> "Relates a temporal aggregate to an interval that is one of its temporal parts."@en .
+
+
+###  http://purl.org/spatialai/stad/v2/core#hasNonConvexAggregationPeriod
+:hasNonConvexAggregationPeriod rdf:type owl:ObjectProperty ;
+                               rdfs:subPropertyOf :hasAggregationPeriod ;
+                               rdfs:range :NonConvexAggregationPeriod ;
+                               rdfs:isDefinedBy <http://purl.org/spatialai/stad/v2/core#> ;
+                               rdfs:label "has non-convex aggregation period"@en ;
+                               <http://www.w3.org/2004/02/skos/core#definition> "Relates an aggregate datapoint to a non-convex aggregation period."@en .
+
+
+###  http://purl.org/spatialai/stad/v2/core#hasQualitativeValue
+:hasQualitativeValue rdf:type owl:ObjectProperty ;
+                     rdfs:subPropertyOf :hasDataValue ;
+                     rdfs:domain :QualitativeDatapoint ;
+                     rdfs:range :QualitativeValue ;
+                     rdfs:isDefinedBy <http://purl.org/spatialai/stad/v2/core#> ;
+                     rdfs:label "has qualitative value"@en ;
+                     <http://www.w3.org/2004/02/skos/core#definition> "Relates a qualitative datapoint to its qualitative value."@en .
+
+
+###  http://purl.org/spatialai/stad/v2/core#hasQualityKind
+:hasQualityKind rdf:type owl:ObjectProperty ;
+                rdfs:domain :Datapoint ;
+                rdfs:range :QualityKind ;
+                rdfs:isDefinedBy <http://purl.org/spatialai/stad/v2/core#> ;
+                rdfs:label "has quality kind"@en ;
+                <http://www.w3.org/2004/02/skos/core#definition> "Relates a datapoint to the quality or property kind whose value it represents."@en .
+
+
+###  http://purl.org/spatialai/stad/v2/core#hasQuantitativeValue
+:hasQuantitativeValue rdf:type owl:ObjectProperty ;
+                      rdfs:subPropertyOf :hasDataValue ;
+                      rdfs:domain :QuantitativeDatapoint ;
+                      rdfs:range :QuantitativeValue ;
+                      rdfs:isDefinedBy <http://purl.org/spatialai/stad/v2/core#> ;
+                      rdfs:label "has quantitative value"@en ;
+                      <http://www.w3.org/2004/02/skos/core#definition> "Relates a quantitative datapoint to its quantitative value."@en .
+
+
+###  http://purl.org/spatialai/stad/v2/core#hasResolution
+:hasResolution rdf:type owl:ObjectProperty ;
+               rdfs:domain :DatasetDescription ;
+               rdfs:range :ResolutionDescriptor ;
+               rdfs:isDefinedBy <http://purl.org/spatialai/stad/v2/core#> ;
+               rdfs:label "has resolution"@en ;
+               <http://www.w3.org/2004/02/skos/core#definition> "Relates a dataset description to a descriptor of one of the dataset's resolution."@en ;
+               <http://www.w3.org/2004/02/skos/core#note> "No maximum cardinality is imposed because a dataset may report multiple complementary resolution descriptors."@en .
+
+
+###  http://purl.org/spatialai/stad/v2/core#hasSpatialCoverage
+:hasSpatialCoverage rdf:type owl:ObjectProperty ;
+                    owl:inverseOf :spatialCoverageOf ;
+                    rdfs:domain [ rdf:type owl:Class ;
+                                  owl:unionOf ( :Dataset
+                                                :SpatialAggregateDatapoint
+                                              )
+                                ] ;
+                    rdfs:range :SpatialCoverage ;
+                    rdfs:isDefinedBy <http://purl.org/spatialai/stad/v2/core#> ;
+                    rdfs:label "has spatial coverage"@en ;
+                    <http://www.w3.org/2004/02/skos/core#definition> "Relates a dataset or spatial aggregate datapoint to the spatial extent it covers or summarizes."@en .
+
+
+###  http://purl.org/spatialai/stad/v2/core#hasSpatialResolution
+:hasSpatialResolution rdf:type owl:ObjectProperty ;
+                      rdfs:subPropertyOf :hasResolution ;
+                      rdfs:range :SpatialResolution ;
+                      rdfs:isDefinedBy <http://purl.org/spatialai/stad/v2/core#> ;
+                      rdfs:label "has spatial resolution"@en ;
+                      <http://www.w3.org/2004/02/skos/core#definition> "Relates a dataset description to a descriptor of the dataset's spatial resolution."@en ;
+                      <http://www.w3.org/2004/02/skos/core#note> "No maximum cardinality is imposed because a dataset may report multiple complementary spatial resolution measures."@en .
+
+
+###  http://purl.org/spatialai/stad/v2/core#hasTemporalCoverage
+:hasTemporalCoverage rdf:type owl:ObjectProperty ;
+                     owl:inverseOf :temporalCoverageOf ;
+                     rdfs:domain [ rdf:type owl:Class ;
+                                   owl:unionOf ( :Dataset
+                                                 :StatisticalAggregateDatapoint
+                                               )
+                                 ] ;
+                     rdfs:range :TemporalCoverage ;
+                     rdfs:isDefinedBy <http://purl.org/spatialai/stad/v2/core#> ;
+                     rdfs:label "has temporal coverage"@en ;
+                     <http://www.w3.org/2004/02/skos/core#definition> "Relates a dataset or statistical aggregate datapoint to the overall interval covered by its data."@en .
+
+
+###  http://purl.org/spatialai/stad/v2/core#hasTemporalPart
+:hasTemporalPart rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf <http://www.w3.org/2006/time#hasPart> ;
+                 rdfs:domain <http://www.w3.org/2006/time#TemporalAggregate> ;
+                 rdfs:range <http://www.w3.org/2006/time#TemporalEntity> ;
+                 owl:propertyChainAxiom ( :hasConvexAggregationPeriod
+                                          :hasExtent
+                                        ) ;
+                 rdfs:isDefinedBy <http://purl.org/spatialai/stad/v2/core#> ;
+                 rdfs:label "has a temporal part (STAD relation)" ;
+                 <http://www.w3.org/2004/02/skos/core#definition> "Relates a temporal aggregate to one of its constituent temporal entities, including an inferred extent for a convex aggregation period."@en .
+
+
+###  http://purl.org/spatialai/stad/v2/core#hasTemporalResolution
+:hasTemporalResolution rdf:type owl:ObjectProperty ;
+                       rdfs:subPropertyOf :hasResolution ;
+                       rdfs:range :TemporalResolution ;
+                       rdfs:isDefinedBy <http://purl.org/spatialai/stad/v2/core#> ;
+                       rdfs:label "has temporal resolution"@en ;
+                       <http://www.w3.org/2004/02/skos/core#definition> "Relates a dataset description to a descriptor of the dataset's temporal resolution."@en .
+
+
+###  http://purl.org/spatialai/stad/v2/core#hasTransformationKind
+:hasTransformationKind rdf:type owl:ObjectProperty ;
+                       rdfs:subPropertyOf :outputOf ;
+                       rdfs:domain :StatisticalAggregateDatapoint ;
+                       rdfs:range :DataTransformation ;
+                       rdfs:isDefinedBy <http://purl.org/spatialai/stad/v2/core#> ;
+                       rdfs:label "has transformation kind"@en ;
+                       <http://www.w3.org/2004/02/skos/core#definition> "Relates a statistical aggregate datapoint directly to the kind of data transformation used to produce it."@en .
+
+
+###  http://purl.org/spatialai/stad/v2/core#instantPartOf
+:instantPartOf rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf <http://www.w3.org/2006/time#isPartOf> ;
+               rdfs:isDefinedBy <http://purl.org/spatialai/stad/v2/core#> ;
+               rdfs:label "instant part of"@en ;
+               <http://www.w3.org/2004/02/skos/core#definition> "Relates an instant to the temporal aggregate of which it is a part."@en .
+
+
+###  http://purl.org/spatialai/stad/v2/core#intervalPartOf
+:intervalPartOf rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf <http://www.w3.org/2006/time#isPartOf> ;
+                rdfs:isDefinedBy <http://purl.org/spatialai/stad/v2/core#> ;
+                rdfs:label "interval part of"@en ;
+                <http://www.w3.org/2004/02/skos/core#definition> "Relates an interval to the temporal aggregate of which it is a part."@en .
+
+
+###  http://purl.org/spatialai/stad/v2/core#outputOf
+:outputOf rdf:type owl:ObjectProperty ;
+          rdfs:domain :ComputationalDatapoint ;
+          rdfs:isDefinedBy <http://purl.org/spatialai/stad/v2/core#> ;
+          rdfs:label "output of"@en ;
+          <http://www.w3.org/2004/02/skos/core#definition> "Relates a computational datapoint to the algorithm of which it is an output."@en .
+
+
+###  http://purl.org/spatialai/stad/v2/core#spatialCoverageOf
+:spatialCoverageOf rdf:type owl:ObjectProperty ;
+                   rdfs:isDefinedBy <http://purl.org/spatialai/stad/v2/core#> ;
+                   rdfs:label "spatial coverage of"@en ;
+                   <http://www.w3.org/2004/02/skos/core#definition> "Relates a spatial coverage to a dataset or spatial aggregate datapoint that it covers; inverse of has spatial coverage."@en .
+
+
+###  http://purl.org/spatialai/stad/v2/core#temporalCoverageOf
+:temporalCoverageOf rdf:type owl:ObjectProperty ;
+                    rdfs:isDefinedBy <http://purl.org/spatialai/stad/v2/core#> ;
+                    rdfs:label "temporal coverage of"@en ;
+                    <http://www.w3.org/2004/02/skos/core#definition> "Relates a temporal coverage to a dataset or statistical aggregate datapoint that it covers; inverse of has temporal coverage."@en .
+
+
+###  http://www.opengis.net/ont/geosparql#hasGeometry
+<http://www.opengis.net/ont/geosparql#hasGeometry> rdf:type owl:ObjectProperty ;
+                                                   rdfs:domain <http://www.opengis.net/ont/geosparql#Feature> ;
+                                                   rdfs:range <http://www.opengis.net/ont/geosparql#Geometry> ;
+                                                   rdfs:isDefinedBy <http://www.opengis.net/ont/geosparql#> ;
+                                                   rdfs:label "has geometry"@en ;
+                                                   <http://www.w3.org/2004/02/skos/core#definition> "A spatial representation for a given Feature."@en ;
+                                                   <http://www.w3.org/2004/02/skos/core#prefLabel> "has geometry"@en .
+
+
+###  http://www.w3.org/2000/01/rdf-schema#member
+rdfs:member rdf:type owl:ObjectProperty .
+
+
+###  http://www.w3.org/2006/time#hasBeginning
+<http://www.w3.org/2006/time#hasBeginning> rdf:type owl:ObjectProperty ;
+                                           rdfs:subPropertyOf <http://www.w3.org/2006/time#hasTime> ;
+                                           rdfs:domain <http://www.w3.org/2006/time#TemporalEntity> ;
+                                           rdfs:range <http://www.w3.org/2006/time#Instant> ;
+                                           rdfs:isDefinedBy <http://www.w3.org/2006/time#> ;
+                                           rdfs:label "has beginning"@en ;
+                                           <http://www.w3.org/2004/02/skos/core#definition> "Beginning of a temporal entity."@en .
+
+
+###  http://www.w3.org/2006/time#hasEnd
+<http://www.w3.org/2006/time#hasEnd> rdf:type owl:ObjectProperty ;
+                                     rdfs:subPropertyOf <http://www.w3.org/2006/time#hasTime> ;
+                                     rdfs:domain <http://www.w3.org/2006/time#TemporalEntity> ;
+                                     rdfs:range <http://www.w3.org/2006/time#Instant> ;
+                                     rdfs:isDefinedBy <http://www.w3.org/2006/time#> ;
+                                     rdfs:label "has end"@en ;
+                                     <http://www.w3.org/2004/02/skos/core#definition> "End of a temporal entity."@en .
+
+
+###  http://www.w3.org/2006/time#hasPart
+<http://www.w3.org/2006/time#hasPart> rdf:type owl:ObjectProperty ;
+                                      rdfs:subPropertyOf <http://purl.org/dc/terms/hasPart> ,
+                                                         rdfs:member ;
+                                      owl:inverseOf <http://www.w3.org/2006/time#isPartOf> ;
+                                      rdfs:domain <http://www.w3.org/2006/time#TemporalAggregate> ;
+                                      rdfs:range <http://www.w3.org/2006/time#TemporalEntity> ;
+                                      rdfs:isDefinedBy <https://raw.githubusercontent.com/w3c/sdw/gh-pages/time-aggregates/rdf/time-agg.ttl> ;
+                                      rdfs:label "has a part" ;
+                                      <http://www.w3.org/2004/02/skos/core#definition> "Relates a temporal aggregate to a constituent temporal entity."@en ;
+                                      <http://www.w3.org/2004/02/skos/core#example> """
+ex:VicSchoolTerms2020
+  a time:TemporalAggregate ;
+  time:hasPart ex:t1 ;
+.
+ex:t1
+  a time:ProperInterval ;
+.
+""" .
+
+
+###  http://www.w3.org/2006/time#hasTime
+<http://www.w3.org/2006/time#hasTime> rdf:type owl:ObjectProperty ;
+                                      rdfs:range <http://www.w3.org/2006/time#TemporalEntity> ;
+                                      rdfs:isDefinedBy <http://www.w3.org/2006/time#> ;
+                                      rdfs:label "has time"@en ;
+                                      <http://www.w3.org/2004/02/skos/core#definition> "Supports the association of a temporal entity (instant or interval) to any thing"@en ;
+                                      <http://www.w3.org/2004/02/skos/core#editorialNote> "Feature at risk - added in 2017 revision, and not yet widely used. "@en .
+
+
+###  http://www.w3.org/2006/time#isPartOf
+<http://www.w3.org/2006/time#isPartOf> rdf:type owl:ObjectProperty ;
+                                       rdfs:domain <http://www.w3.org/2006/time#TemporalEntity> ;
+                                       rdfs:range <http://www.w3.org/2006/time#TemporalAggregate> ;
+                                       rdfs:isDefinedBy <https://raw.githubusercontent.com/w3c/sdw/gh-pages/time-aggregates/rdf/time-agg.ttl> ;
+                                       rdfs:label "is a part of" ;
+                                       <http://www.w3.org/2004/02/skos/core#definition> "Relates a temporal entity to a temporal aggregate of which it is a part."@en ;
+                                       <http://www.w3.org/2004/02/skos/core#example> """
+ex:t1
+  a time:ProperInterval ;
+  time:isPartOf ex:VicSchoolTerms2020 ;
+.
+ex:VicSchoolTerms2020
+  a time:TemporalAggregate ;
+.
+""" .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://purl.org/spatialai/stad/v2/core#AggregationPeriod
+:AggregationPeriod rdf:type owl:Class ;
+                   rdfs:subClassOf <http://www.w3.org/2006/time#TemporalAggregate> ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty <http://www.w3.org/2006/time#hasPart> ;
+                                     owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                     owl:onClass <http://www.w3.org/2006/time#TemporalEntity>
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty :hasExtent ;
+                                     owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                     owl:onClass <http://www.w3.org/2006/time#ProperInterval>
+                                   ] ;
+                   rdfs:isDefinedBy <http://purl.org/spatialai/stad/v2/core#> ;
+                   rdfs:label "aggregation period"@en ;
+                   <http://www.w3.org/2004/02/skos/core#definition> "A temporal aggregate comprising the temporal entities over which base data were selected for an aggregation, together with one minimal convex extent."@en .
+
+
+###  http://purl.org/spatialai/stad/v2/core#AverageCalculationDataTransformation
+:AverageCalculationDataTransformation rdf:type owl:Class ;
+                                      rdfs:subClassOf :CentralTendencyCalculationDataTransformation ;
+                                      rdfs:isDefinedBy <http://purl.org/spatialai/stad/v2/core#> ;
+                                      rdfs:label "average calculation data transformation"@en ;
+                                      <http://www.w3.org/2004/02/skos/core#definition> "A data transformation that calculates an average of input values."@en .
+
+
+###  http://purl.org/spatialai/stad/v2/core#CentralTendencyCalculationDataTransformation
+:CentralTendencyCalculationDataTransformation rdf:type owl:Class ;
+                                              rdfs:subClassOf :DataTransformation ;
+                                              rdfs:isDefinedBy <http://purl.org/spatialai/stad/v2/core#> ;
+                                              rdfs:label "central tendency calculation data transformation"@en ;
+                                              <http://www.w3.org/2004/02/skos/core#definition> "A data transformation that calculates a measure representing the center or typical value of a set of values."@en .
+
+
+###  http://purl.org/spatialai/stad/v2/core#ComputationalDatapoint
+:ComputationalDatapoint rdf:type owl:Class ;
+                        rdfs:subClassOf :Datapoint ,
+                                        [ rdf:type owl:Restriction ;
+                                          owl:onProperty :hasBaseDatapoint ;
+                                          owl:allValuesFrom :Datapoint
+                                        ] ,
+                                        [ rdf:type owl:Restriction ;
+                                          owl:onProperty :hasBaseDataset ;
+                                          owl:allValuesFrom :Dataset
+                                        ] ,
+                                        [ rdf:type owl:Restriction ;
+                                          owl:onProperty :generatedBy ;
+                                          owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                        ] ;
+                        owl:disjointWith :ObservationalDatapoint ;
+                        rdfs:isDefinedBy <http://purl.org/spatialai/stad/v2/core#> ;
+                        rdfs:label "computational datapoint"@en ;
+                        <http://www.w3.org/2004/02/skos/core#definition> "A datapoint generated by one algorithm execution from one or more base datapoints or datasets."@en .
+
+
+###  http://purl.org/spatialai/stad/v2/core#ComputationalPredictedDatapoint
+:ComputationalPredictedDatapoint rdf:type owl:Class ;
+                                 rdfs:subClassOf :ComputationalDatapoint ;
+                                 owl:disjointWith :StatisticalAggregateDatapoint ;
+                                 rdfs:isDefinedBy <http://purl.org/spatialai/stad/v2/core#> ;
+                                 rdfs:label "computational predicted datapoint"@en ;
+                                 <http://www.w3.org/2004/02/skos/core#definition> "A computational datapoint whose value is predicted rather than obtained as a statistical aggregate."@en .
+
+
+###  http://purl.org/spatialai/stad/v2/core#ConvexAggregationPeriod
+:ConvexAggregationPeriod rdf:type owl:Class ;
+                         rdfs:subClassOf :AggregationPeriod ;
+                         owl:disjointWith :NonConvexAggregationPeriod ;
+                         rdfs:isDefinedBy <http://purl.org/spatialai/stad/v2/core#> ;
+                         rdfs:label "convex aggregation period"@en ;
+                         <http://www.w3.org/2004/02/skos/core#definition> "An aggregation period consisting of a single continuous temporal part that matches its overall extent."@en .
+
+
+###  http://purl.org/spatialai/stad/v2/core#CoverageRatioResolution
+:CoverageRatioResolution rdf:type owl:Class ;
+                         rdfs:subClassOf :SpatialResolution ;
+                         rdfs:isDefinedBy <http://purl.org/spatialai/stad/v2/core#> ;
+                         rdfs:label "coverage ratio resolution"@en ;
+                         <http://www.w3.org/2004/02/skos/core#definition> "A spatial resolution expressed as the ratio of the area represented by observations to the total study area."@en ;
+                         <http://www.w3.org/2004/02/skos/core#note> "The method used to determine the area represented by observations should be specified when it is not determined directly by raster cells or explicit sampling units."@en .
+
+
+###  http://purl.org/spatialai/stad/v2/core#Data
+:Data rdf:type owl:Class ;
+      rdfs:isDefinedBy <http://purl.org/spatialai/stad/v2/core#> ;
+      rdfs:label "data"@en ;
+      <http://www.w3.org/2004/02/skos/core#definition> "An entity that represents some data."@en .
+
+
+###  http://purl.org/spatialai/stad/v2/core#DataTransformation
+:DataTransformation rdf:type owl:Class ;
+                    rdfs:isDefinedBy <http://purl.org/spatialai/stad/v2/core#> ;
+                    rdfs:label "data transformation"@en ;
+                    <http://www.w3.org/2004/02/skos/core#definition> "An algorithm that manipulates or converts data from one form into another, including filtering, sorting, aggregation, type conversion, or mathematical operations."@en .
+
+
+###  http://purl.org/spatialai/stad/v2/core#DataValue
+:DataValue rdf:type owl:Class ;
+           rdfs:isDefinedBy <http://purl.org/spatialai/stad/v2/core#> ;
+           rdfs:label "data value"@en ;
+           <http://www.w3.org/2004/02/skos/core#definition> "A value carried by a datapoint."@en .
+
+
+###  http://purl.org/spatialai/stad/v2/core#Datapoint
+:Datapoint rdf:type owl:Class ;
+           rdfs:subClassOf :Data ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :hasDataValue ;
+                             owl:someValuesFrom :DataValue
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :hasQualityKind ;
+                             owl:someValuesFrom :QualityKind
+                           ] ;
+           owl:disjointWith :Dataset ;
+           rdfs:isDefinedBy <http://purl.org/spatialai/stad/v2/core#> ;
+           rdfs:label "datapoint"@en ;
+           <http://www.w3.org/2004/02/skos/core#definition> "An individual data item that has a quality kind and a corresponding data value."@en .
+
+
+###  http://purl.org/spatialai/stad/v2/core#Dataset
+:Dataset rdf:type owl:Class ;
+         rdfs:subClassOf :Data ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :containsDatapoint ;
+                           owl:someValuesFrom :Datapoint
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :hasDatasetDescription ;
+                           owl:someValuesFrom :DatasetDescription
+                         ] ;
+         owl:disjointWith :DatasetDescription ;
+         rdfs:isDefinedBy <http://purl.org/spatialai/stad/v2/core#> ;
+         rdfs:label "dataset"@en ;
+         <http://www.w3.org/2004/02/skos/core#definition> "A collection of datapoints that has an associated dataset description."@en .
+
+
+###  http://purl.org/spatialai/stad/v2/core#DatasetDescription
+:DatasetDescription rdf:type owl:Class ;
+                    rdfs:isDefinedBy <http://purl.org/spatialai/stad/v2/core#> ;
+                    rdfs:label "dataset description"@en ;
+                    <http://www.w3.org/2004/02/skos/core#definition> "A description of dataset-level characteristics, including spatial and temporal resolution."@en .
+
+
+###  http://purl.org/spatialai/stad/v2/core#ExtremumCalculationDataTransformation
+:ExtremumCalculationDataTransformation rdf:type owl:Class ;
+                                       rdfs:subClassOf :DataTransformation ;
+                                       rdfs:isDefinedBy <http://purl.org/spatialai/stad/v2/core#> ;
+                                       rdfs:label "extremum calculation data transformation"@en ;
+                                       <http://www.w3.org/2004/02/skos/core#definition> "A data transformation that calculates an extreme value, such as a minimum or maximum."@en .
+
+
+###  http://purl.org/spatialai/stad/v2/core#NonConvexAggregationPeriod
+:NonConvexAggregationPeriod rdf:type owl:Class ;
+                            rdfs:subClassOf :AggregationPeriod ;
+                            rdfs:isDefinedBy <http://purl.org/spatialai/stad/v2/core#> ;
+                            rdfs:label "non-convex aggregation period"@en ;
+                            <http://www.w3.org/2004/02/skos/core#definition> "An aggregation period composed of multiple disconnected temporal parts."@en .
+
+
+###  http://purl.org/spatialai/stad/v2/core#ObservationalDatapoint
+:ObservationalDatapoint rdf:type owl:Class ;
+                        rdfs:subClassOf :Datapoint ;
+                        rdfs:isDefinedBy <http://purl.org/spatialai/stad/v2/core#> ;
+                        rdfs:label "observational datapoint"@en ;
+                        <http://www.w3.org/2004/02/skos/core#definition> "A datapoint obtained through observation rather than computation."@en .
+
+
+###  http://purl.org/spatialai/stad/v2/core#PixelSizeResolution
+:PixelSizeResolution rdf:type owl:Class ;
+                     rdfs:subClassOf :SpatialResolution ;
+                     rdfs:isDefinedBy <http://purl.org/spatialai/stad/v2/core#> ;
+                     rdfs:label "pixel size resolution"@en ;
+                     <http://www.w3.org/2004/02/skos/core#definition> "A spatial resolution expressed by the ground dimensions of a raster or grid cell."@en .
+
+
+###  http://purl.org/spatialai/stad/v2/core#PointSpacingResolution
+:PointSpacingResolution rdf:type owl:Class ;
+                        rdfs:subClassOf :SpatialResolution ,
+                                        [ rdf:type owl:Restriction ;
+                                          owl:onProperty :hasTransformationKind ;
+                                          owl:cardinality "1"^^xsd:nonNegativeInteger
+                                        ] ;
+                        rdfs:isDefinedBy <http://purl.org/spatialai/stad/v2/core#> ;
+                        rdfs:label "point spacing resolution"@en ;
+                        <http://www.w3.org/2004/02/skos/core#definition> "A spatial resolution expressed by a statistical summary of distances between neighboring sampling locations in non-gridded spatial data."@en ;
+                        <http://www.w3.org/2004/02/skos/core#note> "The method used to identify neighboring datapoints should be specified when it is not evident from the sampling design."@en .
+
+
+###  http://purl.org/spatialai/stad/v2/core#QualitativeDatapoint
+:QualitativeDatapoint rdf:type owl:Class ;
+                      rdfs:subClassOf :Datapoint ,
+                                      [ rdf:type owl:Restriction ;
+                                        owl:onProperty :hasQualitativeValue ;
+                                        owl:someValuesFrom :QualitativeValue
+                                      ] ;
+                      owl:disjointWith :QuantitativeDatapoint ;
+                      rdfs:isDefinedBy <http://purl.org/spatialai/stad/v2/core#> ;
+                      rdfs:label "qualitative datapoint"@en ;
+                      <http://www.w3.org/2004/02/skos/core#definition> "A datapoint whose value is qualitative, such as a category or class."@en .
+
+
+###  http://purl.org/spatialai/stad/v2/core#QualitativeValue
+:QualitativeValue rdf:type owl:Class ;
+                  rdfs:subClassOf :DataValue ;
+                  owl:disjointWith :QuantitativeValue ;
+                  rdfs:isDefinedBy <http://purl.org/spatialai/stad/v2/core#> ;
+                  rdfs:label "qualitative value"@en ;
+                  <http://www.w3.org/2004/02/skos/core#definition> "A non-numerical data value, such as a categorical value."@en .
+
+
+###  http://purl.org/spatialai/stad/v2/core#QualityKind
+:QualityKind rdf:type owl:Class ;
+             rdfs:isDefinedBy <http://purl.org/spatialai/stad/v2/core#> ;
+             rdfs:label "quality kind"@en ;
+             <http://www.w3.org/2004/02/skos/core#definition> "The kind of quality or property represented by a datapoint, distinct from the value of that quality."@en .
+
+
+###  http://purl.org/spatialai/stad/v2/core#QuantitativeDatapoint
+:QuantitativeDatapoint rdf:type owl:Class ;
+                       rdfs:subClassOf :Datapoint ,
+                                       [ rdf:type owl:Restriction ;
+                                         owl:onProperty :hasQuantitativeValue ;
+                                         owl:someValuesFrom :QuantitativeValue
+                                       ] ;
+                       rdfs:isDefinedBy <http://purl.org/spatialai/stad/v2/core#> ;
+                       rdfs:label "quantitative datapoint"@en ;
+                       <http://www.w3.org/2004/02/skos/core#definition> "A datapoint whose value is quantitative."@en .
+
+
+###  http://purl.org/spatialai/stad/v2/core#QuantitativeValue
+:QuantitativeValue rdf:type owl:Class ;
+                   rdfs:subClassOf :DataValue ;
+                   rdfs:isDefinedBy <http://purl.org/spatialai/stad/v2/core#> ;
+                   rdfs:label "quantitative value"@en ;
+                   <http://www.w3.org/2004/02/skos/core#definition> "A numerical data value, typically represented with a numeric value and unit."@en .
+
+
+###  http://purl.org/spatialai/stad/v2/core#RegularTemporalResolution
+:RegularTemporalResolution rdf:type owl:Class ;
+                           rdfs:subClassOf :TemporalResolution ;
+                           rdfs:isDefinedBy <http://purl.org/spatialai/stad/v2/core#> ;
+                           rdfs:label "regular temporal resolution"@en ;
+                           <http://www.w3.org/2004/02/skos/core#definition> "A temporal resolution expressed by the constant or nominal interval between successive observations."@en .
+
+
+###  http://purl.org/spatialai/stad/v2/core#ResolutionDescriptor
+:ResolutionDescriptor rdf:type owl:Class ;
+                      rdfs:subClassOf :QuantitativeDatapoint ,
+                                      [ rdf:type owl:Restriction ;
+                                        owl:onProperty :hasDataValue ;
+                                        owl:cardinality "1"^^xsd:nonNegativeInteger
+                                      ] ;
+                      rdfs:isDefinedBy <http://purl.org/spatialai/stad/v2/core#> ;
+                      rdfs:label "resolution descriptor"@en ;
+                      <http://www.w3.org/2004/02/skos/core#definition> "A description of the spatial or temporal granularity at which data in a dataset are represented or distinguished."@en .
+
+
+###  http://purl.org/spatialai/stad/v2/core#SamplingDensityResolution
+:SamplingDensityResolution rdf:type owl:Class ;
+                           rdfs:subClassOf :SpatialResolution ;
+                           rdfs:isDefinedBy <http://purl.org/spatialai/stad/v2/core#> ;
+                           rdfs:label "sampling density resolution"@en ;
+                           <http://www.w3.org/2004/02/skos/core#definition> "A spatial resolution expressed as the number of datapoints or sampling locations per unit area."@en .
+
+
+###  http://purl.org/spatialai/stad/v2/core#SpatialAggregateDatapoint
+:SpatialAggregateDatapoint rdf:type owl:Class ;
+                           rdfs:subClassOf :StatisticalAggregateDatapoint ,
+                                           [ rdf:type owl:Restriction ;
+                                             owl:onProperty :hasSpatialCoverage ;
+                                             owl:cardinality "1"^^xsd:nonNegativeInteger
+                                           ] ;
+                           rdfs:isDefinedBy <http://purl.org/spatialai/stad/v2/core#> ;
+                           rdfs:label "spatial aggregate datapoint"@en ;
+                           <http://www.w3.org/2004/02/skos/core#definition> "A statistical aggregate datapoint computed over a spatial extent. It has exactly one spatial coverage."@en .
+
+
+###  http://purl.org/spatialai/stad/v2/core#SpatialCoverage
+:SpatialCoverage rdf:type owl:Class ;
+                 rdfs:subClassOf <http://www.opengis.net/ont/geosparql#Feature> ;
+                 rdfs:isDefinedBy <http://purl.org/spatialai/stad/v2/core#> ;
+                 rdfs:label "spatial coverage"@en ;
+                 <http://www.w3.org/2004/02/skos/core#definition> "The spatial extent, typically an area, over which base data are aggregated or a dataset applies."@en .
+
+
+###  http://purl.org/spatialai/stad/v2/core#SpatialResolution
+:SpatialResolution rdf:type owl:Class ;
+                   rdfs:subClassOf :ResolutionDescriptor ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty :hasQualityKind ;
+                                     owl:hasValue :spatialResolutionQualityKind
+                                   ] ;
+                   rdfs:isDefinedBy <http://purl.org/spatialai/stad/v2/core#> ;
+                   rdfs:label "spatial resolution"@en ;
+                   <http://www.w3.org/2004/02/skos/core#definition> "A resolution descriptor characterizing the spatial granularity or spatial sampling of a dataset."@en .
+
+
+###  http://purl.org/spatialai/stad/v2/core#SpatioTemporalAggregateDatapoint
+:SpatioTemporalAggregateDatapoint rdf:type owl:Class ;
+                                  rdfs:subClassOf [ owl:intersectionOf ( :SpatialAggregateDatapoint
+                                                                         :TemporalAggregateDatapoint
+                                                                       ) ;
+                                                    rdf:type owl:Class
+                                                  ] ;
+                                  rdfs:isDefinedBy <http://purl.org/spatialai/stad/v2/core#> ;
+                                  rdfs:label "spatio-temporal aggregate datapoint"@en ;
+                                  <http://www.w3.org/2004/02/skos/core#definition> "A statistical aggregate datapoint aggregated over both space and time."@en .
+
+
+###  http://purl.org/spatialai/stad/v2/core#StatisticalAggregateDatapoint
+:StatisticalAggregateDatapoint rdf:type owl:Class ;
+                               rdfs:subClassOf :ComputationalDatapoint ,
+                                               [ rdf:type owl:Restriction ;
+                                                 owl:onProperty :hasTransformationKind ;
+                                                 owl:cardinality "1"^^xsd:nonNegativeInteger
+                                               ] ,
+                                               [ rdf:type owl:Restriction ;
+                                                 owl:onProperty :hasAggregationPeriod ;
+                                                 owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                               ] ,
+                                               [ rdf:type owl:Restriction ;
+                                                 owl:onProperty :hasSpatialCoverage ;
+                                                 owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                               ] ,
+                                               [ rdf:type owl:Restriction ;
+                                                 owl:onProperty :hasTemporalCoverage ;
+                                                 owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                               ] ;
+                               rdfs:isDefinedBy <http://purl.org/spatialai/stad/v2/core#> ;
+                               rdfs:label "statistical aggregate datapoint"@en ;
+                               <http://www.w3.org/2004/02/skos/core#definition> "A statistical aggregate datapoint is a computational datapoint whose value is a statistical summary of some base data, aggregated using the described data transformation kind. It may have a temporal coverage, an aggregation period, and a spatial coverage."@en .
+
+
+###  http://purl.org/spatialai/stad/v2/core#TemporalAggregateDatapoint
+:TemporalAggregateDatapoint rdf:type owl:Class ;
+                            rdfs:subClassOf :StatisticalAggregateDatapoint ,
+                                            [ rdf:type owl:Restriction ;
+                                              owl:onProperty :hasAggregationPeriod ;
+                                              owl:cardinality "1"^^xsd:nonNegativeInteger
+                                            ] ,
+                                            [ rdf:type owl:Restriction ;
+                                              owl:onProperty :hasTemporalCoverage ;
+                                              owl:cardinality "1"^^xsd:nonNegativeInteger
+                                            ] ;
+                            rdfs:isDefinedBy <http://purl.org/spatialai/stad/v2/core#> ;
+                            rdfs:label "temporal aggregate datapoint"@en ;
+                            <http://www.w3.org/2004/02/skos/core#definition> "A statistical aggregate datapoint aggregated over time and having exactly one temporal coverage and one aggregation period."@en .
+
+
+###  http://purl.org/spatialai/stad/v2/core#TemporalCoverage
+:TemporalCoverage rdf:type owl:Class ;
+                  rdfs:subClassOf <http://www.w3.org/2006/time#ProperInterval> ;
+                  rdfs:isDefinedBy <http://purl.org/spatialai/stad/v2/core#> ;
+                  rdfs:label "temporal coverage"@en ;
+                  <http://www.w3.org/2004/02/skos/core#definition> "The proper interval giving the overall temporal boundaries of a dataset or statistical aggregate datapoint."@en .
+
+
+###  http://purl.org/spatialai/stad/v2/core#TemporalResolution
+:TemporalResolution rdf:type owl:Class ;
+                    rdfs:subClassOf :ResolutionDescriptor ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty :hasQuantitativeValue ;
+                                      owl:allValuesFrom <http://www.w3.org/2006/time#TemporalDuration>
+                                    ] ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty :hasQualityKind ;
+                                      owl:hasValue :temporalResolutionQualityKind
+                                    ] ;
+                    rdfs:isDefinedBy <http://purl.org/spatialai/stad/v2/core#> ;
+                    rdfs:label "temporal resolution"@en ;
+                    <http://www.w3.org/2004/02/skos/core#definition> "A resolution descriptor characterizing the temporal granularity or spacing of observations in a dataset."@en .
+
+
+###  http://purl.org/spatialai/stad/v2/core#TemporalSpacingResolution
+:TemporalSpacingResolution rdf:type owl:Class ;
+                           rdfs:subClassOf :TemporalResolution ,
+                                           [ rdf:type owl:Restriction ;
+                                             owl:onProperty :hasTransformationKind ;
+                                             owl:cardinality "1"^^xsd:nonNegativeInteger
+                                           ] ;
+                           rdfs:isDefinedBy <http://purl.org/spatialai/stad/v2/core#> ;
+                           rdfs:label "temporal spacing resolution"@en ;
+                           <http://www.w3.org/2004/02/skos/core#definition> "A temporal resolution expressed by a statistical summary of intervals between observations."@en .
+
+
+###  http://www.opengis.net/ont/geosparql#Feature
+<http://www.opengis.net/ont/geosparql#Feature> rdf:type owl:Class ;
+                                               rdfs:subClassOf <http://www.opengis.net/ont/geosparql#SpatialObject> ;
+                                               owl:disjointWith <http://www.opengis.net/ont/geosparql#Geometry> ;
+                                               rdfs:isDefinedBy <http://www.opengis.net/ont/geosparql#> ;
+                                               rdfs:label "feature"@en ;
+                                               <http://www.w3.org/2004/02/skos/core#definition> "A discrete spatial phenomenon in a universe of discourse."@en ;
+                                               <http://www.w3.org/2004/02/skos/core#note> "A Feature represents a uniquely identifiable phenomenon, for example a river or an apple. While such phenomena (and therefore the Features used to represent them) are bounded, their boundaries may be crisp (e.g., the declared boundaries of a state), vague (e.g., the delineation of a valley versus its neighboring mountains), and change with time (e.g., a storm front). While discrete in nature, Features may be created from continuous observations, such as an isochrone that determines the region that can be reached by ambulance within 5 minutes."@en ;
+                                               <http://www.w3.org/2004/02/skos/core#prefLabel> "Feature"@en .
+
+
+###  http://www.opengis.net/ont/geosparql#Geometry
+<http://www.opengis.net/ont/geosparql#Geometry> rdf:type owl:Class ;
+                                                rdfs:subClassOf <http://www.opengis.net/ont/geosparql#SpatialObject> ;
+                                                rdfs:isDefinedBy <http://www.opengis.net/ont/geosparql#> ;
+                                                rdfs:label "geometry"@en ;
+                                                <http://www.w3.org/2004/02/skos/core#definition> "A coherent set of direct positions in space. The positions are held within a Spatial Reference System (SRS)."@en ;
+                                                <http://www.w3.org/2004/02/skos/core#note> "Geometry can be used as a representation of the shape, extent or location of a Feature and may exist as a self-contained entity."@en ;
+                                                <http://www.w3.org/2004/02/skos/core#prefLabel> "Geometry"@en .
+
+
+###  http://www.opengis.net/ont/geosparql#SpatialObject
+<http://www.opengis.net/ont/geosparql#SpatialObject> rdf:type owl:Class ;
+                                                     rdfs:isDefinedBy <http://www.opengis.net/ont/geosparql#> ;
+                                                     rdfs:label "spatial object"@en ;
+                                                     <http://www.w3.org/2004/02/skos/core#definition> "Anything spatial (being or having a shape, position or an extent)."@en ;
+                                                     <http://www.w3.org/2004/02/skos/core#note> "Subclasses of this class are expected to be used for instance data."@en ;
+                                                     <http://www.w3.org/2004/02/skos/core#prefLabel> "Spatial Object"@en .
+
+
+###  http://www.w3.org/2006/time#Instant
+<http://www.w3.org/2006/time#Instant> rdf:type owl:Class ;
+                                      rdfs:subClassOf <http://www.w3.org/2006/time#TemporalEntity> ;
+                                      owl:disjointWith <http://www.w3.org/2006/time#ProperInterval> ;
+                                      rdfs:isDefinedBy <http://www.w3.org/2006/time> ;
+                                      rdfs:label "Time instant"@en ;
+                                      <http://www.w3.org/2004/02/skos/core#definition> "A temporal entity with zero extent or duration"@en .
+
+
+###  http://www.w3.org/2006/time#Interval
+<http://www.w3.org/2006/time#Interval> rdf:type owl:Class ;
+                                       rdfs:subClassOf <http://www.w3.org/2006/time#TemporalEntity> ;
+                                       rdfs:isDefinedBy <http://www.w3.org/2006/time> ;
+                                       rdfs:label "Time interval"@en ;
+                                       <http://www.w3.org/2004/02/skos/core#definition> "A temporal entity with an extent or duration"@en .
+
+
+###  http://www.w3.org/2006/time#ProperInterval
+<http://www.w3.org/2006/time#ProperInterval> rdf:type owl:Class ;
+                                             rdfs:subClassOf <http://www.w3.org/2006/time#Interval> ;
+                                             rdfs:isDefinedBy <http://www.w3.org/2006/time> ;
+                                             rdfs:label "Proper interval"@en ;
+                                             <http://www.w3.org/2004/02/skos/core#definition> "A temporal entity with non-zero extent or duration, i.e. for which the value of the beginning and end are different"@en .
+
+
+###  http://www.w3.org/2006/time#TemporalAggregate
+<http://www.w3.org/2006/time#TemporalAggregate> rdf:type owl:Class ;
+                                                rdfs:subClassOf <http://www.w3.org/2006/time#TemporalEntity> ,
+                                                                [ rdf:type owl:Restriction ;
+                                                                  owl:onProperty <http://www.w3.org/2006/time#hasPart> ;
+                                                                  owl:minCardinality "1"^^xsd:nonNegativeInteger
+                                                                ] ;
+                                                rdfs:comment "Note: no ordering relationships are implied amongst the parts. Relationships between temporal entities are supported by explicit properties, such as time:after time:intervalMeets, etc." ;
+                                                rdfs:isDefinedBy <https://raw.githubusercontent.com/w3c/sdw/gh-pages/time-aggregates/rdf/time-agg.ttl> ;
+                                                rdfs:label "Temporal aggregate" ;
+                                                <http://www.w3.org/2004/02/skos/core#definition> "A temporal entity that is an aggregation of one or more temporal entities, without implied ordering among its parts."@en ;
+                                                <http://www.w3.org/2004/02/skos/core#example> """
+ex:VicSchoolTerms2020
+  a time:TemporalAggregate ;
+  rdfs:label \"Public school year - Victoria 2020 \" ;
+  time:hasBeginning ex:t1b ;
+  time:hasEnd ex:t4e ;
+  time:hasPart ex:t1 ;
+  time:hasPart ex:t2 ;
+  time:hasPart ex:t3 ;
+  time:hasPart ex:t4 ;
+.
+""" .
+
+
+###  http://www.w3.org/2006/time#TemporalDuration
+<http://www.w3.org/2006/time#TemporalDuration> rdf:type owl:Class ;
+                                               rdfs:isDefinedBy <http://www.w3.org/2006/time> ;
+                                               rdfs:label "Temporal duration"@en ;
+                                               <http://www.w3.org/2004/02/skos/core#definition> "Time extent; duration of a time interval separate from its particular start position"@en .
+
+
+###  http://www.w3.org/2006/time#TemporalEntity
+<http://www.w3.org/2006/time#TemporalEntity> rdf:type owl:Class ;
+                                             owl:equivalentClass [ rdf:type owl:Class ;
+                                                                   owl:unionOf ( <http://www.w3.org/2006/time#Instant>
+                                                                                 <http://www.w3.org/2006/time#Interval>
+                                                                               )
+                                                                 ] ;
+                                             rdfs:subClassOf owl:Thing ;
+                                             rdfs:isDefinedBy <http://www.w3.org/2006/time> ;
+                                             rdfs:label "Temporal entity"@en ;
+                                             <http://www.w3.org/2004/02/skos/core#definition> "A temporal interval or instant."@en .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://purl.org/spatialai/stad/v2/core#ArithmeticMeanCalculation
+:ArithmeticMeanCalculation rdf:type owl:NamedIndividual ,
+                                    :AverageCalculationDataTransformation ;
+                           rdfs:isDefinedBy <http://purl.org/spatialai/stad/v2/core#> ;
+                           rdfs:label "arithmetic mean calculation"@en ;
+                           <http://www.w3.org/2004/02/skos/core#definition> "A data transformation that calculates the arithmetic mean of input values."@en .
+
+
+###  http://purl.org/spatialai/stad/v2/core#GeometricMeanCalculation
+:GeometricMeanCalculation rdf:type owl:NamedIndividual ,
+                                   :AverageCalculationDataTransformation ;
+                          rdfs:isDefinedBy <http://purl.org/spatialai/stad/v2/core#> ;
+                          rdfs:label "geometric mean calculation"@en ;
+                          <http://www.w3.org/2004/02/skos/core#definition> "A data transformation that calculates the geometric mean of input values."@en .
+
+
+###  http://purl.org/spatialai/stad/v2/core#MaximumCalculation
+:MaximumCalculation rdf:type owl:NamedIndividual ,
+                             :ExtremumCalculationDataTransformation ;
+                    rdfs:isDefinedBy <http://purl.org/spatialai/stad/v2/core#> ;
+                    rdfs:label "maximum calculation"@en ;
+                    <http://www.w3.org/2004/02/skos/core#definition> "A data transformation that returns the maximum input value."@en .
+
+
+###  http://purl.org/spatialai/stad/v2/core#MedianCalculation
+:MedianCalculation rdf:type owl:NamedIndividual ,
+                            :CentralTendencyCalculationDataTransformation ;
+                   rdfs:isDefinedBy <http://purl.org/spatialai/stad/v2/core#> ;
+                   rdfs:label "median calculation"@en ;
+                   <http://www.w3.org/2004/02/skos/core#definition> "A data transformation that calculates the median of a set of values."@en .
+
+
+###  http://purl.org/spatialai/stad/v2/core#MinimumCalculation
+:MinimumCalculation rdf:type owl:NamedIndividual ,
+                             :ExtremumCalculationDataTransformation ;
+                    rdfs:isDefinedBy <http://purl.org/spatialai/stad/v2/core#> ;
+                    rdfs:label "minimum calculation"@en ;
+                    <http://www.w3.org/2004/02/skos/core#definition> "A data transformation that returns the minimum input value."@en .
+
+
+###  http://purl.org/spatialai/stad/v2/core#ModeCalculation
+:ModeCalculation rdf:type owl:NamedIndividual ,
+                          :CentralTendencyCalculationDataTransformation ;
+                 rdfs:isDefinedBy <http://purl.org/spatialai/stad/v2/core#> ;
+                 rdfs:label "mode calculation"@en ;
+                 <http://www.w3.org/2004/02/skos/core#definition> "A data transformation that returns the most frequently occurring input value."@en .
+
+
+###  http://purl.org/spatialai/stad/v2/core#spatialResolutionQualityKind
+:spatialResolutionQualityKind rdf:type owl:NamedIndividual ,
+                                       :QualityKind ;
+                              rdfs:isDefinedBy <http://purl.org/spatialai/stad/v2/core#> ;
+                              rdfs:label "spatial resolution"@en ;
+                              <http://www.w3.org/2004/02/skos/core#definition> "The quality kind describing the spatial granularity or spatial sampling of a dataset."@en .
+
+
+###  http://purl.org/spatialai/stad/v2/core#temporalResolutionQualityKind
+:temporalResolutionQualityKind rdf:type owl:NamedIndividual ,
+                                        :QualityKind ;
+                               rdfs:isDefinedBy <http://purl.org/spatialai/stad/v2/core#> ;
+                               rdfs:label "temporal resolution"@en ;
+                               <http://www.w3.org/2004/02/skos/core#definition> "The quality kind describing the temporal granularity or spacing of observations in a dataset."@en .
+
+
+#################################################################
+#    General axioms
+#################################################################
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :CoverageRatioResolution
+                :PixelSizeResolution
+                :PointSpacingResolution
+                :SamplingDensityResolution
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :Data
+                :DataTransformation
+                :DataValue
+                :QualityKind
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :DataTransformation
+                :Datapoint
+                :Dataset
+                :DatasetDescription
+                :SpatialCoverage
+                :TemporalCoverage
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :ResolutionDescriptor
+                :SpatialCoverage
+                :TemporalCoverage
+              )
+] .
+
+
+###  Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/

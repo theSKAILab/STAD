@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" href="resources/primer.css" media="screen"/>
+<link rel="stylesheet" href="resources/rec.css" media="screen"/>
+<link rel="stylesheet" href="resources/extra.css" media="screen"/>
+<link rel="stylesheet" href="resources/owl.css" media="screen"/>
+<link rel="stylesheet" href="resources/dark.css" media="(prefers-color-scheme: dark)"/>
+<link rel="stylesheet" href="resources/light.css" media="(prefers-color-scheme: light)"/>
+<link rel="stylesheet" href="resources/slider.css" media="screen"/>
+<meta name="color-scheme" content="dark light">
+<script type="module" src="resources/dark-mode-toggle.mjs"></script><div class="darkmode">
+	<dark-mode-toggle class="slider"></dark-mode-toggle>
+</div>
+ <title>Spatial and Temporal Aggregate Data Ontology MLS extension (STAD-MLS)</title>
+
+
+<!-- SCHEMA.ORG METADATA -->
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","url":"http://purl.org/spatialai/stad/v2/mls#","image":"http://vowl.visualdataweb.org/webvowl/#iri=http://purl.org/spatialai/stad/v2/mls#","name":"Spatial and Temporal Aggregate Data Ontology MLS extension (STAD-MLS)", "headline":"Document describing the ontology http://purl.org/spatialai/stad/v2/mls#", "dateReleased":"2025-11-16", "dateModified":"2026-09-09", "version":"1.0", "license":"https://creativecommons.org/licenses/by/4.0/", "author":[{"@type":"Person","name":"Kingsley Wiafe-Kwakye - https://orcid.org/0009-0007-3741-3721"},{"@type":"Person","name":"Torsten Hahmann - http://orcid.org/0000-0002-5331-5052"}]}</script>
+
+<script src="resources/jquery.js"></script> 
+<script src="resources/marked.min.js"></script> 
+    <script> 
+function loadHash() {
+  jQuery(".markdown").each(function(el){jQuery(this).after(marked.parse(jQuery(this).text())).remove()});
+	var hash = location.hash;
+	if($(hash).offset()!=null){
+	  $('html, body').animate({scrollTop: $(hash).offset().top}, 0);
+}
+	loadTOC();
+}
+function loadTOC(){
+	//process toc dynamically
+	  var t='<h2>Table of contents</h2><ul>';i = 1;j=0;
+	  jQuery(".list").each(function(){
+		if(jQuery(this).is('h2')){
+			if(j>0){
+				t+='</ul>';
+				j=0;
+			}
+			t+= '<li>'+i+'. <a href=#'+ jQuery(this).attr('id')+'>'+ jQuery(this).ignore("span").text()+'</a></li>';
+			i++;
+		}
+		if(jQuery(this).is('h3')){
+			if(j==0){
+				t+='<ul>';
+			}
+			j++;
+			t+= '<li>'+(i-1)+'.'+j+'. '+'<a href=#'+ jQuery(this).attr('id')+'>'+ jQuery(this).ignore("span").text()+'</a></li>';
+		}
+	  });
+	  t+='</ul>';
+	  $("#toc").html(t); 
+}
+$(function(){
+    loadHash();
+}); $.fn.ignore = function(sel){
+        return this.clone().find(sel||">*").remove().end();
+ }; 
+   </script> 
+  </head> 
+
+<body>
+<div class="container">
+<div class="head">
+<div style="float:right">language <a href="index-en.html"><b>en</b></a> </div>
+<h1>Spatial and Temporal Aggregate Data Ontology MLS extension (STAD-MLS)</h1>
+<h2>Release: 2025-11-16</h2>
+
+
+<dl>
+<dt>Modified on: 2026-09-09</dt>
+<dt>This version:</dt>
+<dd><a href="http://purl.org/spatialai/stad/v2/mls#">http://purl.org/spatialai/stad/v2/mls#</a></dd>
+<dt>Latest version:</dt>
+<dd><a href="http://purl.org/spatialai/stad/v2/mls#">http://purl.org/spatialai/stad/v2/mls#</a></dd>
+<dt>Revision:</dt>
+<dd>1.0</dd>
+<dt>Issued on:</dt>
+<dd>2026-09-09</dd>
+<dt>Authors:</dt>
+<dd>Kingsley Wiafe-Kwakye - https://orcid.org/0009-0007-3741-3721</dd><dd>Torsten Hahmann - http://orcid.org/0000-0002-5331-5052</dd>
+
+<dt>Publisher:</dt>
+<dd>Spatial Knowledge and Artificial Intelligence (SKAI) Lab, University of Maine</dd>
+<dt>Imported Ontologies:</dt>
+<dd><a href="http://purl.org/spatialai/stad/v2/core#">stad</a></dd>
+<dt>Download serialization:</dt><dd><span><a href="ontology.jsonld" target="_blank"><img src="https://img.shields.io/badge/Format-JSON_LD-blue.svg" alt="JSON-LD" /></a> </span><span><a href="ontology.owl" target="_blank"><img src="https://img.shields.io/badge/Format-RDF/XML-blue.svg" alt="RDF/XML" /></a> </span><span><a href="ontology.nt" target="_blank"><img src="https://img.shields.io/badge/Format-N_Triples-blue.svg" alt="N-Triples" /></a> </span><span><a href="ontology.ttl" target="_blank"><img src="https://img.shields.io/badge/Format-TTL-blue.svg" alt="TTL" /></a> </span></dd><dt>License:</dt><dd><a href="https://creativecommons.org/licenses/by/4.0/" target="_blank"><img src="https://img.shields.io/badge/License-https://creativecommons.org/licenses/by/4.0/-blue.svg" alt="https://creativecommons.org/licenses/by/4.0/" /></a>
+</dd><dt>Visualization:</dt><dd><a href="webvowl/index.html#" target="_blank"><img src="https://img.shields.io/badge/Visualize_with-WebVowl-blue.svg" alt="Visualize with WebVowl" /></a></dd>
+<!-- <dt>Evaluation:</dt><dd><a href="OOPSevaluation/oopsEval.html#" target="_blank"><img src="https://img.shields.io/badge/Evaluate_with-OOPS! (OntOlogy Pitfall Scanner!)-blue.svg" alt="Evaluate with OOPS!" /></a></dd> --><dt>Cite as:</dt>
+<dd>Kingsley Wiafe-Kwakye - https://orcid.org/0009-0007-3741-3721, Torsten Hahmann - http://orcid.org/0000-0002-5331-5052. Spatial and Temporal Aggregate Data Ontology MLS extension (STAD-MLS). Revision: 1.0. Retrieved from: http://purl.org/spatialai/stad/v2/mls#</dd>
+</dl>
+
+<hr/>
+</div>
+<div class="status">
+<div>
+<span>Ontology Specification Draft</span>
+</div>
+</div>     <div id="abstract"><h2>Abstract</h2><span>
+<p>STAD-MLS is a lightweight ontology module for describing the computational processes by which data are generated. It provides concepts for representing algorithms, their implementations and executions, and the parameters and parameter settings associated with them. The module adapts the Algorithm, Implementation, and Execution ontology design pattern and draws on relevant concepts from the Machine Learning Schema (ML-Schema), while omitting terminology specific to machine-learning workflows. STAD-MLS is designed as a reusable module and is used by the <a href="http://purl.org/spatialai/stad/v2/core#">STAD ontology</a> to describe the computational provenance of aggregate datapoints.</p>
+</span>
+</div>
+<div id="toc"></div> 
+
+<!--INTRODUCTION SECTION-->
+    <div id="introduction"><h2 id="intro" class="list">Introduction <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<span>
+<p>Computationally derived data are influenced not only by their input data but also by the algorithms, software implementations, and parameter settings used to generate them. Explicitly representing these aspects supports the interpretation and reuse of computational results and provides provenance about how they were obtained.</p>
+
+<p>STAD-MLS provides a compact ontology for representing this information. It is based on the Algorithm, Implementation, and Execution (AIE) ontology design pattern and adapts a subset of concepts from the Machine Learning Schema (ML-Schema). While ML-Schema provides a more comprehensive model oriented toward machine-learning workflows, STAD-MLS focuses on the more general distinction between an algorithm, its concrete implementation, and a particular execution, together with the parameters and parameter settings involved. Corresponding STAD-MLS concepts are related to their ML-Schema counterparts using skos:related, maintaining an explicit connection to ML-Schema without importing its complete model.</p>
+
+<p>STAD-MLS was developed as a separate module so that these computational provenance concepts can be reused independently of the <a href="http://purl.org/spatialai/stad/v2/core#">core STAD ontology</a>. Within STAD, the STAD-MLS module is used to describe how computational datapoints, including statistical aggregate datapoints, were generated and to distinguish the abstract transformation algorithm from details of its implementation and execution.</p>
+</span>
+<div id="namespacedeclarations">
+<h3 id="ns" class="list">Namespace declarations</h3>
+<div id="ns" align="center">
+<table>
+<caption> <a href="#ns"> Table 1</a>: Namespaces used in the document </caption>
+<tbody>
+<tr><td><b>[Ontology NS Prefix]</b></td><td>&lt;http://purl.org/spatialai/stad/v2/mls#&gt;</td></tr>
+<tr><td><b>dcterms</b></td><td>&lt;http://purl.org/dc/terms/&gt;</td></tr>
+<tr><td><b>mls</b></td><td>&lt;http://www.w3.org/ns/mls#&gt;</td></tr>
+<tr><td><b>owl</b></td><td>&lt;http://www.w3.org/2002/07/owl#&gt;</td></tr>
+<tr><td><b>rdf</b></td><td>&lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;</td></tr>
+<tr><td><b>rdfs</b></td><td>&lt;http://www.w3.org/2000/01/rdf-schema#&gt;</td></tr>
+<tr><td><b>skos</b></td><td>&lt;http://www.w3.org/2004/02/skos/core#&gt;</td></tr>
+<tr><td><b>stad</b></td><td>&lt;http://purl.org/spatialai/stad/v2/core#&gt;</td></tr>
+<tr><td><b>xml</b></td><td>&lt;http://www.w3.org/XML/1998/namespace&gt;</td></tr>
+<tr><td><b>xsd</b></td><td>&lt;http://www.w3.org/2001/XMLSchema#&gt;</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+  
+
+<!--OVERVIEW SECTION-->
+    <div id="overview"><h2 id="overv" class="list">STAD-MLS extension: Overview <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<span>
+<p>STAD-MLS centers on five classes: <a href="#Algorithm" title="http://purl.org/spatialai/stad/v2/mls#Algorithm">Algorithm</a>, <a href="#Implementation" title="http://purl.org/spatialai/stad/v2/mls#Algorithm">Implementation</a>, <a href="#AlgorithmExecution" title="http://purl.org/spatialai/stad/v2/mls#AlgorithmExecution">AlgorithmExecution</a>, <a href="#Parameter" title="http://purl.org/spatialai/stad/v2/mls#Parameter">Parameter</a>, and <a href="#ParameterSetting" title="http://purl.org/spatialai/stad/v2/mls#ParameterSetting">ParameterSetting</a>. An <a href="#Algorithm" title="http://purl.org/spatialai/stad/v2/mls#Algorithm">Algorithm</a> represents a sequence of instructions for solving a problem or achieving a goal independently of a particular implementation or execution. An Implementation represents an executable realization of an algorithm and is related to the algorithm it implements through implements. Implementations may specify the <a href="#Parameter" title="http://purl.org/spatialai/stad/v2/mls#Parameter">Parameter</a>s, they accept through <a href="#hasParameter" title="http://purl.org/spatialai/stad/v2/mls#hasParameter">hasParameter</a>.</p>
+
+<p><a href="#AlgorithmExecution" title="http://purl.org/spatialai/stad/v2/mls#AlgorithmExecution">AlgorithmExecution</a> represents a particular execution of an <a href="#Algorithm" title="http://purl.org/spatialai/stad/v2/mls#Algorithm">Algorithm</a> using specific inputs and parameter settings. The executed algorithm is identified through realizes, while hasInput associates the execution with its parameter settings. A <a href="#ParameterSetting" title="http://purl.org/spatialai/stad/v2/mls#ParameterSetting">ParameterSetting</a> specifies a value for a <a href="#Parameter" title="http://purl.org/spatialai/stad/v2/mls#Parameter">Parameter</a> and is related to that parameter through <a href="#specifiedBy" title="http://purl.org/spatialai/stad/v2/mls#specifiedBy">specifiedBy</a>,. Together, these concepts permit computational provenance to be represented at different levels of detail, ranging from identifying the algorithm responsible for a computational result to documenting a particular execution and its parameterization.</p>
+
+<p>The module is connected to STAD through the representation of computational inputs and outputs. In its use within STAD, an algorithm execution can take a STAD dataset as input, while STAD datapoints can be related to the computational process that generated them. This allows STAD to use the computational provenance model without incorporating these concepts into its core ontology.</p>
+
+<p>This ontology has the following classes and properties.</p></span>
+<h4>Classes</h4>
+<ul xmlns:widoco="https://w3id.org/widoco/vocab#"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    class="hlist">
+   <li>
+      <a href="#Algorithm" title="http://purl.org/spatialai/stad/v2/mls#Algorithm">algorithm</a>
+   </li>
+   <li>
+      <a href="#AlgorithmExecution"
+         title="http://purl.org/spatialai/stad/v2/mls#AlgorithmExecution">algorithm execution</a>
+   </li>
+   <li>
+      <a href="#http://purl.org/spatialai/stad/v2/core#ComputationalDatapoint"
+         title="http://purl.org/spatialai/stad/v2/core#ComputationalDatapoint">computational datapoint</a>
+   </li>
+   <li>
+      <a href="#http://purl.org/spatialai/stad/v2/core#DataTransformation"
+         title="http://purl.org/spatialai/stad/v2/core#DataTransformation">data transformation</a>
+   </li>
+   <li>
+      <a href="#http://purl.org/spatialai/stad/v2/core#Dataset" title="http://purl.org/spatialai/stad/v2/core#Dataset">dataset</a>
+   </li>
+   <li>
+      <a href="#Implementation"
+         title="http://purl.org/spatialai/stad/v2/mls#Implementation">implementation</a>
+   </li>
+   <li>
+      <a href="#Parameter" title="http://purl.org/spatialai/stad/v2/mls#Parameter">parameter</a>
+   </li>
+   <li>
+      <a href="#ParameterSetting"
+         title="http://purl.org/spatialai/stad/v2/mls#ParameterSetting">parameter setting</a>
+   </li>
+</ul><h4>Object Properties</h4><ul xmlns:widoco="https://w3id.org/widoco/vocab#"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    class="hlist">
+   <li>
+      <a href="#executes" title="http://purl.org/spatialai/stad/v2/mls#executes">executes</a>
+   </li>
+   <li>
+      <a href="#http://purl.org/spatialai/stad/v2/core#generatedBy"
+         title="http://purl.org/spatialai/stad/v2/core#generatedBy">generated by</a>
+   </li>
+   <li>
+      <a href="#hasInput" title="http://purl.org/spatialai/stad/v2/mls#hasInput">has input</a>
+   </li>
+   <li>
+      <a href="#hasParameter"
+         title="http://purl.org/spatialai/stad/v2/mls#hasParameter">has parameter</a>
+   </li>
+   <li>
+      <a href="#http://purl.org/spatialai/stad/v2/core#hasTransformationKind"
+         title="http://purl.org/spatialai/stad/v2/core#hasTransformationKind">has transformation kind</a>
+   </li>
+   <li>
+      <a href="#implements" title="http://purl.org/spatialai/stad/v2/mls#implements">implements</a>
+   </li>
+   <li>
+      <a href="#http://purl.org/spatialai/stad/v2/core#outputOf" title="http://purl.org/spatialai/stad/v2/core#outputOf">output of</a>
+   </li>
+   <li>
+      <a href="#realizes" title="http://purl.org/spatialai/stad/v2/mls#realizes">realizes</a>
+   </li>
+   <li>
+      <a href="#specifiedBy"
+         title="http://purl.org/spatialai/stad/v2/mls#specifiedBy">specified by</a>
+   </li>
+</ul><h4>Data Properties</h4><ul xmlns:widoco="https://w3id.org/widoco/vocab#"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    class="hlist">
+   <li>
+      <a href="#hasValue" title="http://purl.org/spatialai/stad/v2/mls#hasValue">has value</a>
+   </li>
+</ul><iframe src="webvowl/index.html"></iframe> 
+</div>
+  
+
+<!--DESCRIPTION SECTION-->
+    <div id="description"><h2 id="desc" class="list">STAD-MLS extension: Description <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+
+<span class="markdown">STAD provides syntax for describing the spatial and temporal characteristics of aggregate quantities. This extension includes concepts for describing the algorithms and implementations used for data transformations. It is based on the Machine Learning Schema (MLS).</span></div>
+   
+
+<!--CROSSREF SECTION-->
+   <div id="crossref"><h2 id="crossreference" class="list">Cross-reference for STAD-MLS extension classes, object properties and data properties <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+This section provides details for each class and property defined by STAD-MLS extension.
+<div xmlns:widoco="https://w3id.org/widoco/vocab#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="classes">
+ <h3 id="classes-headline" class="list">Classes</h3>
+ <ul class="hlist">
+  <li><a href="#Algorithm" title="http://purl.org/spatialai/stad/v2/mls#Algorithm">algorithm</a></li>
+  <li><a href="#AlgorithmExecution" title="http://purl.org/spatialai/stad/v2/mls#AlgorithmExecution">algorithm execution</a></li>
+  <li><a href="#http://purl.org/spatialai/stad/v2/core#ComputationalDatapoint" title="http://purl.org/spatialai/stad/v2/core#ComputationalDatapoint">computational datapoint</a></li>
+  <li><a href="#http://purl.org/spatialai/stad/v2/core#DataTransformation" title="http://purl.org/spatialai/stad/v2/core#DataTransformation">data transformation</a></li>
+  <li><a href="#http://purl.org/spatialai/stad/v2/core#Dataset" title="http://purl.org/spatialai/stad/v2/core#Dataset">dataset</a></li>
+  <li><a href="#Implementation" title="http://purl.org/spatialai/stad/v2/mls#Implementation">implementation</a></li>
+  <li><a href="#Parameter" title="http://purl.org/spatialai/stad/v2/mls#Parameter">parameter</a></li>
+  <li><a href="#ParameterSetting" title="http://purl.org/spatialai/stad/v2/mls#ParameterSetting">parameter setting</a></li>
+ </ul>
+ <div class="entity" id="Algorithm">
+  <h3>algorithm<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/spatialai/stad/v2/mls#Algorithm</p>
+  <div class="comment">
+   <span class="markdown">A sequential set of instructions for solving a problem or achieving a goal, independent of a concrete implementation or execution.</span>
+  </div>
+  <dl class="definedBy">
+   <dt>
+    Is defined by
+   </dt>
+   <dd>
+    <a href="http://purl.org/spatialai/stad/v2/mls#">http://purl.org/spatialai/stad/v2/mls#</a>
+   </dd>
+  </dl>
+  <dl class="description">
+   <dt>
+    has sub-classes
+   </dt>
+   <dd>
+    <a href="#http://purl.org/spatialai/stad/v2/core#DataTransformation" title="http://purl.org/spatialai/stad/v2/core#DataTransformation">data transformation</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#implements" title="http://purl.org/spatialai/stad/v2/mls#implements">implements</a> <sup class="type-op" title="object property">op</sup>, <a href="#realizes" title="http://purl.org/spatialai/stad/v2/mls#realizes">realizes</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is disjoint with
+   </dt>
+   <dd>
+    <a href="#AlgorithmExecution" title="http://purl.org/spatialai/stad/v2/mls#AlgorithmExecution">algorithm execution</a> <sup class="type-c" title="class">c</sup>, <a href="#Implementation" title="http://purl.org/spatialai/stad/v2/mls#Implementation">implementation</a> <sup class="type-c" title="class">c</sup>, <a href="#Parameter" title="http://purl.org/spatialai/stad/v2/mls#Parameter">parameter</a> <sup class="type-c" title="class">c</sup>, <a href="#ParameterSetting" title="http://purl.org/spatialai/stad/v2/mls#ParameterSetting">parameter setting</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="AlgorithmExecution">
+  <h3>algorithm execution<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/spatialai/stad/v2/mls#AlgorithmExecution</p>
+  <div class="comment">
+   <span class="markdown">A specific run of an implementation of an algorithm, using particular inputs and parameter settings.</span>
+  </div>
+  <dl class="definedBy">
+   <dt>
+    Is defined by
+   </dt>
+   <dd>
+    <a href="http://purl.org/spatialai/stad/v2/mls#">http://purl.org/spatialai/stad/v2/mls#</a>
+   </dd>
+  </dl>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd></dd>
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#executes" title="http://purl.org/spatialai/stad/v2/mls#executes">executes</a> <sup class="type-op" title="object property">op</sup>, <a href="#hasInput" title="http://purl.org/spatialai/stad/v2/mls#hasInput">has input</a> <sup class="type-op" title="object property">op</sup>, <a href="#realizes" title="http://purl.org/spatialai/stad/v2/mls#realizes">realizes</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is disjoint with
+   </dt>
+   <dd>
+    <a href="#Algorithm" title="http://purl.org/spatialai/stad/v2/mls#Algorithm">algorithm</a> <sup class="type-c" title="class">c</sup>, <a href="#Implementation" title="http://purl.org/spatialai/stad/v2/mls#Implementation">implementation</a> <sup class="type-c" title="class">c</sup>, <a href="#Parameter" title="http://purl.org/spatialai/stad/v2/mls#Parameter">parameter</a> <sup class="type-c" title="class">c</sup>, <a href="#ParameterSetting" title="http://purl.org/spatialai/stad/v2/mls#ParameterSetting">parameter setting</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://purl.org/spatialai/stad/v2/core#ComputationalDatapoint">
+  <h3>computational datapoint<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/spatialai/stad/v2/core#ComputationalDatapoint</p>
+  <div class="comment">
+   <span class="markdown">A datapoint generated by one algorithm execution from one or more base datapoints or datasets.</span>
+  </div>
+  <dl class="definedBy">
+   <dt>
+    Is defined by
+   </dt>
+   <dd>
+    <a href="http://purl.org/spatialai/stad/v2/core#">http://purl.org/spatialai/stad/v2/core#</a>
+   </dd>
+  </dl>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd></dd>
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#http://purl.org/spatialai/stad/v2/core#generatedBy" title="http://purl.org/spatialai/stad/v2/core#generatedBy">generated by</a> <sup class="type-op" title="object property">op</sup>, <a href="#http://purl.org/spatialai/stad/v2/core#outputOf" title="http://purl.org/spatialai/stad/v2/core#outputOf">output of</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://purl.org/spatialai/stad/v2/core#DataTransformation">
+  <h3>data transformation<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/spatialai/stad/v2/core#DataTransformation</p>
+  <div class="comment">
+   <span class="markdown">An algorithm that manipulates or converts data from one form into another, including filtering, sorting, aggregation, type conversion, or mathematical operations.</span>
+  </div>
+  <dl class="definedBy">
+   <dt>
+    Is defined by
+   </dt>
+   <dd>
+    <a href="http://purl.org/spatialai/stad/v2/core#">http://purl.org/spatialai/stad/v2/core#</a>
+   </dd>
+  </dl>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#Algorithm" title="http://purl.org/spatialai/stad/v2/mls#Algorithm">algorithm</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="http://purl.org/spatialai/stad/v2/core#Dataset">
+  <h3>dataset<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/spatialai/stad/v2/core#Dataset</p>
+  <div class="comment">
+   <span class="markdown">A collection of datapoints that has an associated dataset description.</span>
+  </div>
+  <dl class="definedBy">
+   <dt>
+    Is defined by
+   </dt>
+   <dd>
+    <a href="http://purl.org/spatialai/stad/v2/core#">http://purl.org/spatialai/stad/v2/core#</a>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Implementation">
+  <h3>implementation<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/spatialai/stad/v2/mls#Implementation</p>
+  <div class="comment">
+   <span class="markdown">An executable realization of an algorithm in a particular programming language or software environment.</span>
+  </div>
+  <dl class="definedBy">
+   <dt>
+    Is defined by
+   </dt>
+   <dd>
+    <a href="http://purl.org/spatialai/stad/v2/mls#">http://purl.org/spatialai/stad/v2/mls#</a>
+   </dd>
+  </dl>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd></dd>
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#hasParameter" title="http://purl.org/spatialai/stad/v2/mls#hasParameter">has parameter</a> <sup class="type-op" title="object property">op</sup>, <a href="#implements" title="http://purl.org/spatialai/stad/v2/mls#implements">implements</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#executes" title="http://purl.org/spatialai/stad/v2/mls#executes">executes</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is disjoint with
+   </dt>
+   <dd>
+    <a href="#Algorithm" title="http://purl.org/spatialai/stad/v2/mls#Algorithm">algorithm</a> <sup class="type-c" title="class">c</sup>, <a href="#AlgorithmExecution" title="http://purl.org/spatialai/stad/v2/mls#AlgorithmExecution">algorithm execution</a> <sup class="type-c" title="class">c</sup>, <a href="#Parameter" title="http://purl.org/spatialai/stad/v2/mls#Parameter">parameter</a> <sup class="type-c" title="class">c</sup>, <a href="#ParameterSetting" title="http://purl.org/spatialai/stad/v2/mls#ParameterSetting">parameter setting</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Parameter">
+  <h3>parameter<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/spatialai/stad/v2/mls#Parameter</p>
+  <div class="comment">
+   <span class="markdown">A named input accepted by an implementation and assigned a value in a parameter setting.</span>
+  </div>
+  <dl class="definedBy">
+   <dt>
+    Is defined by
+   </dt>
+   <dd>
+    <a href="http://purl.org/spatialai/stad/v2/mls#">http://purl.org/spatialai/stad/v2/mls#</a>
+   </dd>
+  </dl>
+  <dl class="description">
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#hasParameter" title="http://purl.org/spatialai/stad/v2/mls#hasParameter">has parameter</a> <sup class="type-op" title="object property">op</sup>, <a href="#specifiedBy" title="http://purl.org/spatialai/stad/v2/mls#specifiedBy">specified by</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is disjoint with
+   </dt>
+   <dd>
+    <a href="#Algorithm" title="http://purl.org/spatialai/stad/v2/mls#Algorithm">algorithm</a> <sup class="type-c" title="class">c</sup>, <a href="#AlgorithmExecution" title="http://purl.org/spatialai/stad/v2/mls#AlgorithmExecution">algorithm execution</a> <sup class="type-c" title="class">c</sup>, <a href="#Implementation" title="http://purl.org/spatialai/stad/v2/mls#Implementation">implementation</a> <sup class="type-c" title="class">c</sup>, <a href="#ParameterSetting" title="http://purl.org/spatialai/stad/v2/mls#ParameterSetting">parameter setting</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="ParameterSetting">
+  <h3>parameter setting<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/spatialai/stad/v2/mls#ParameterSetting</p>
+  <div class="comment">
+   <span class="markdown">An assignment of a literal value to a parameter for a particular algorithm execution.</span>
+  </div>
+  <dl class="definedBy">
+   <dt>
+    Is defined by
+   </dt>
+   <dd>
+    <a href="http://purl.org/spatialai/stad/v2/mls#">http://purl.org/spatialai/stad/v2/mls#</a>
+   </dd>
+  </dl>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd></dd>
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#hasValue" title="http://purl.org/spatialai/stad/v2/mls#hasValue">has value</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#specifiedBy" title="http://purl.org/spatialai/stad/v2/mls#specifiedBy">specified by</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is disjoint with
+   </dt>
+   <dd>
+    <a href="#Algorithm" title="http://purl.org/spatialai/stad/v2/mls#Algorithm">algorithm</a> <sup class="type-c" title="class">c</sup>, <a href="#AlgorithmExecution" title="http://purl.org/spatialai/stad/v2/mls#AlgorithmExecution">algorithm execution</a> <sup class="type-c" title="class">c</sup>, <a href="#Implementation" title="http://purl.org/spatialai/stad/v2/mls#Implementation">implementation</a> <sup class="type-c" title="class">c</sup>, <a href="#Parameter" title="http://purl.org/spatialai/stad/v2/mls#Parameter">parameter</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+</div><div xmlns:widoco="https://w3id.org/widoco/vocab#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="objectproperties">
+ <h3 id="properties" class="list">Object Properties</h3>
+ <ul class="hlist">
+  <li><a href="#executes" title="http://purl.org/spatialai/stad/v2/mls#executes">executes</a></li>
+  <li><a href="#http://purl.org/spatialai/stad/v2/core#generatedBy" title="http://purl.org/spatialai/stad/v2/core#generatedBy">generated by</a></li>
+  <li><a href="#hasInput" title="http://purl.org/spatialai/stad/v2/mls#hasInput">has input</a></li>
+  <li><a href="#hasParameter" title="http://purl.org/spatialai/stad/v2/mls#hasParameter">has parameter</a></li>
+  <li><a href="#http://purl.org/spatialai/stad/v2/core#hasTransformationKind" title="http://purl.org/spatialai/stad/v2/core#hasTransformationKind">has transformation kind</a></li>
+  <li><a href="#implements" title="http://purl.org/spatialai/stad/v2/mls#implements">implements</a></li>
+  <li><a href="#http://purl.org/spatialai/stad/v2/core#outputOf" title="http://purl.org/spatialai/stad/v2/core#outputOf">output of</a></li>
+  <li><a href="#realizes" title="http://purl.org/spatialai/stad/v2/mls#realizes">realizes</a></li>
+  <li><a href="#specifiedBy" title="http://purl.org/spatialai/stad/v2/mls#specifiedBy">specified by</a></li>
+ </ul>
+ <div class="entity" id="executes">
+  <h3>executes<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/spatialai/stad/v2/mls#executes</p>
+  <div class="comment">
+   <span class="markdown">Relates an algorithm execution to the concrete implementation executed.</span>
+  </div>
+  <dl class="definedBy">
+   <dt>
+    Is defined by
+   </dt>
+   <dd>
+    <a href="http://purl.org/spatialai/stad/v2/mls#">http://purl.org/spatialai/stad/v2/mls#</a>
+   </dd>
+  </dl>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#AlgorithmExecution" title="http://purl.org/spatialai/stad/v2/mls#AlgorithmExecution">algorithm execution</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#Implementation" title="http://purl.org/spatialai/stad/v2/mls#Implementation">implementation</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="http://purl.org/spatialai/stad/v2/core#generatedBy">
+  <h3>generated by<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/spatialai/stad/v2/core#generatedBy</p>
+  <div class="comment">
+   <span class="markdown">Links anything that is generated by an Algorithm to the specific AlgorithmExecution that was used.</span>
+  </div>
+  <dl class="definedBy">
+   <dt>
+    Is defined by
+   </dt>
+   <dd>
+    <a href="http://purl.org/spatialai/stad/v2/core#">http://purl.org/spatialai/stad/v2/core#</a>
+   </dd>
+  </dl>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#http://purl.org/spatialai/stad/v2/core#ComputationalDatapoint" title="http://purl.org/spatialai/stad/v2/core#ComputationalDatapoint">computational datapoint</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="hasInput">
+  <h3>has input<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/spatialai/stad/v2/mls#hasInput</p>
+  <div class="comment">
+   <span class="markdown">Relates an algorithm execution to some input, either input data or some parameter or parameter setting.</span>
+  </div>
+  <dl class="definedBy">
+   <dt>
+    Is defined by
+   </dt>
+   <dd>
+    <a href="http://purl.org/spatialai/stad/v2/mls#">http://purl.org/spatialai/stad/v2/mls#</a>
+   </dd>
+  </dl>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#AlgorithmExecution" title="http://purl.org/spatialai/stad/v2/mls#AlgorithmExecution">algorithm execution</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="hasParameter">
+  <h3>has parameter<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/spatialai/stad/v2/mls#hasParameter</p>
+  <div class="comment">
+   <span class="markdown">Relates an implementation to a parameter it accepts.</span>
+  </div>
+  <dl class="definedBy">
+   <dt>
+    Is defined by
+   </dt>
+   <dd>
+    <a href="http://purl.org/spatialai/stad/v2/mls#">http://purl.org/spatialai/stad/v2/mls#</a>
+   </dd>
+  </dl>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Implementation" title="http://purl.org/spatialai/stad/v2/mls#Implementation">implementation</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#Parameter" title="http://purl.org/spatialai/stad/v2/mls#Parameter">parameter</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="http://purl.org/spatialai/stad/v2/core#hasTransformationKind">
+  <h3>has transformation kind<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/spatialai/stad/v2/core#hasTransformationKind</p>
+  <div class="comment">
+   <span class="markdown">Relates a statistical aggregate datapoint directly to the kind of data transformation used to produce it.</span>
+  </div>
+  <dl class="definedBy">
+   <dt>
+    Is defined by
+   </dt>
+   <dd>
+    <a href="http://purl.org/spatialai/stad/v2/core#">http://purl.org/spatialai/stad/v2/core#</a>
+   </dd>
+  </dl>
+  <div class="description">
+   <dl>
+    <dt>
+     has sub-property chains
+    </dt>
+    <dd>
+     <a href="#http://purl.org/spatialai/stad/v2/core#generatedBy" title="http://purl.org/spatialai/stad/v2/core#generatedBy">generated by</a> <sup class="type-op" title="object property">op</sup> <span class="logic">o</span> <a href="#realizes" title="http://purl.org/spatialai/stad/v2/mls#realizes">realizes</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="implements">
+  <h3>implements<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/spatialai/stad/v2/mls#implements</p>
+  <div class="comment">
+   <span class="markdown">Relates a concrete implementation to the algorithm it implements.</span>
+  </div>
+  <dl class="definedBy">
+   <dt>
+    Is defined by
+   </dt>
+   <dd>
+    <a href="http://purl.org/spatialai/stad/v2/mls#">http://purl.org/spatialai/stad/v2/mls#</a>
+   </dd>
+  </dl>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#Implementation" title="http://purl.org/spatialai/stad/v2/mls#Implementation">implementation</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#Algorithm" title="http://purl.org/spatialai/stad/v2/mls#Algorithm">algorithm</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="http://purl.org/spatialai/stad/v2/core#outputOf">
+  <h3>output of<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/spatialai/stad/v2/core#outputOf</p>
+  <div class="comment">
+   <span class="markdown">Relates a computational datapoint to the algorithm of which it is an output.</span>
+  </div>
+  <dl class="definedBy">
+   <dt>
+    Is defined by
+   </dt>
+   <dd>
+    <a href="http://purl.org/spatialai/stad/v2/core#">http://purl.org/spatialai/stad/v2/core#</a>
+   </dd>
+  </dl>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#http://purl.org/spatialai/stad/v2/core#ComputationalDatapoint" title="http://purl.org/spatialai/stad/v2/core#ComputationalDatapoint">computational datapoint</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="realizes">
+  <h3>realizes<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/spatialai/stad/v2/mls#realizes</p>
+  <div class="comment">
+   <span class="markdown">Relates an algorithm execution to the algorithm realized by that execution.</span>
+  </div>
+  <dl class="definedBy">
+   <dt>
+    Is defined by
+   </dt>
+   <dd>
+    <a href="http://purl.org/spatialai/stad/v2/mls#">http://purl.org/spatialai/stad/v2/mls#</a>
+   </dd>
+  </dl>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#AlgorithmExecution" title="http://purl.org/spatialai/stad/v2/mls#AlgorithmExecution">algorithm execution</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#Algorithm" title="http://purl.org/spatialai/stad/v2/mls#Algorithm">algorithm</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="specifiedBy">
+  <h3>specified by<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/spatialai/stad/v2/mls#specifiedBy</p>
+  <div class="comment">
+   <span class="markdown">Relates a parameter setting to the parameter whose value it specifies.</span>
+  </div>
+  <dl class="definedBy">
+   <dt>
+    Is defined by
+   </dt>
+   <dd>
+    <a href="http://purl.org/spatialai/stad/v2/mls#">http://purl.org/spatialai/stad/v2/mls#</a>
+   </dd>
+  </dl>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#ParameterSetting" title="http://purl.org/spatialai/stad/v2/mls#ParameterSetting">parameter setting</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#Parameter" title="http://purl.org/spatialai/stad/v2/mls#Parameter">parameter</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+</div><div xmlns:widoco="https://w3id.org/widoco/vocab#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="dataproperties">
+ <h3 id="dataproperties-headline" class="list">Data Properties</h3>
+ <ul class="hlist">
+  <li><a href="#hasValue" title="http://purl.org/spatialai/stad/v2/mls#hasValue">has value</a></li>
+ </ul>
+ <div class="entity" id="hasValue">
+  <h3>has value<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/spatialai/stad/v2/mls#hasValue</p>
+  <div class="comment">
+   <span class="markdown">Relates a parameter setting to its literal value.</span>
+  </div>
+  <dl class="definedBy">
+   <dt>
+    Is defined by
+   </dt>
+   <dd>
+    <a href="http://purl.org/spatialai/stad/v2/mls#">http://purl.org/spatialai/stad/v2/mls#</a>
+   </dd>
+  </dl>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#ParameterSetting" title="http://purl.org/spatialai/stad/v2/mls#ParameterSetting">parameter setting</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+</div><div id="legend">
+<h2>Legend <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<div   class="entity">
+<sup class="type-c" title="Classes">c</sup>: Classes <br/>
+<sup class="type-op" title="Object Properties">op</sup>: Object Properties <br/>
+<sup class="type-dp" title="Data Properties">dp</sup>: Data Properties <br/>
+</div>
+</div>
+</div>
+    
+
+<!--REFERENCES SECTION-->
+  <div id="references">
+<h2 id="ref" class="list">References <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<span class="markdown">
+Add your references here. It is recommended to have them as a list.</span>
+
+</div>
+<div id="acknowledgments">
+<h2 id="ack" class="list">Acknowledgments <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<p>
+The authors would like to thank <a href="http://www.essepuntato.it/">Silvio Peroni</a> for developing <a href="http://www.essepuntato.it/lode">LODE</a>, a Live OWL Documentation Environment, which is used for representing the Cross Referencing Section of this document and <a href="https://w3id.org/people/dgarijo">Daniel Garijo</a> for developing <a href="https://github.com/dgarijo/Widoco">Widoco</a>, the program used to create the template used in this documentation.</p>
+</div>
+
+
+</div>
+</body>
+</html>

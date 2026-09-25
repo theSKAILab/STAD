@@ -9,7 +9,7 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @base <http://purl.org/spatialai/stad/v2/mls#> .
 
-<http://purl.org/spatialai/stad/v2/mls> rdf:type owl:Ontology ;
+<http://purl.org/spatialai/stad/v2/mls#> rdf:type owl:Ontology ;
    owl:versionIRI <http://purl.org/spatialai/stad/v2/mls#> ;
    owl:imports stad: ;
    rdfs:label "STAD-MLS extension"@en  ;
