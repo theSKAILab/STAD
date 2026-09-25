@@ -1,4 +1,4 @@
-# The Spatial and Temporal Aggregate Data (STAD) Ontology Design Pattern
+# The Spatial and Temporal Aggregate Data (STAD) Ontology
 
 The Spatial and Temporal Aggregate Data (STAD) Ontology provides a structured framework to accurately describe the spatial and temporal attributes of aggregate quantities, enhancing the integration and utilization of diverse environmental data.
 
