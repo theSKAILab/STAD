@@ -72,9 +72,9 @@ $(function(){
 <dl>
 <dt>Modified on: 2026-09-21</dt>
 <dt>This version:</dt>
-<dd><a href="http://purl.org/spatialai/stad/v2/core#">http://purl.org/spatialai/stad/v2/core#</a></dd>
+<dd><a href="http://purl.org/spatialai/stad/v2/core/">http://purl.org/spatialai/stad/v2/core#</a></dd>
 <dt>Latest version:</dt>
-<dd><a href="http://purl.org/spatialai/stad/v2/core#">http://purl.org/spatialai/stad/v2/core#</a></dd>
+<dd><a href="http://purl.org/spatialai/stad/v2/core/">http://purl.org/spatialai/stad/v2/core#</a></dd>
 <dt>Revision:</dt>
 <dd>2.0</dd>
 <dt>Issued on:</dt>
@@ -121,7 +121,7 @@ The Spatial Temporal Aggregate Data (STAD) ontology addresses this problem by ma
 <!--OVERVIEW SECTION-->
     <div id="overview"><h2 id="overv" class="list">Spatial and Temporal Aggregate Data (STAD) Ontology: Overview <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
 <span>
-<p>STAD consists of a core ontology and a complementary computational provenance module called STAD-MLS. The core ontology uses the namespace <a href="http://purl.org/spatialai/stad/v2/core#">http://purl.org/spatialai/stad/v2/core#</a>, while STAD-MLS uses <a href="http://purl.org/spatialai/stad/v2/mls#">http://purl.org/spatialai/stad/v2/mls#</a>. The ontologies are formalized in OWL 2 RL and are designed for direct reuse in RDF knowledge graphs.</p>
+<p>STAD consists of a core ontology and a complementary computational provenance module called STAD-MLS. The core ontology uses the namespace <a href="http://purl.org/spatialai/stad/v2/core/">http://purl.org/spatialai/stad/v2/core#</a>, while STAD-MLS uses <a href="http://purl.org/spatialai/stad/v2/mls/">http://purl.org/spatialai/stad/v2/mls#</a>. The ontologies are formalized in OWL 2 RL and are designed for direct reuse in RDF knowledge graphs.</p>
 
 <p>The general data model centers on the class <a href="#Data" title="http://purl.org/spatialai/stad/v2/core#Data">Data</a>, with <a href="#Datapoint" title="http://purl.org/spatialai/stad/v2/core#Datapoint">Datapoint</a> and <a href="#Dataset" title="http://purl.org/spatialai/stad/v2/core#Dataset">Dataset</a> as its principal subclasses. A Datapoint represents an atomic unit of data and is associated with a <a href="#QualityKind">QualityKind</a> describing what it represents and a <a href="#DataValue" title="http://purl.org/spatialai/stad/v2/core#DataValue">DataValue</a> recording its value. Datapoints may be quantitative or qualitative and may result from observation or computation. A Dataset groups datapoints and may be associated with a DatasetDescription containing metadata about the dataset, including its spatial and temporal resolution.</p>
 
@@ -140,7 +140,7 @@ The Spatial Temporal Aggregate Data (STAD) ontology addresses this problem by ma
 
 <p>Spatial and temporal resolution are modeled separately from spatial and temporal support. Both <a href="#ResolutionDescriptor">ResolutionDescriptors</a> characterizes the granularity or sampling structure of a base dataset and is therefore recorded in its <a href="#DatasetDescription">DatasetDescription</a>. <a href="#SpatialResolution">SpatialResolution</a> can describe characteristics such as raster-cell size, spacing between observation locations, sampling density, or coverage ratio. <a href="#TemporalResolution">TemporalResolution</a> can describe a regular sampling interval or a statistical summary of irregular temporal spacing.</p>
 
-<p>The optional <a href="http://purl.org/spatialai/stad/v2/mls#">STAD-MLS</a> extension supports more detailed descriptions of computational provenance. It distinguishes an algorithm from its implementation and from a particular execution of that implementation. An execution can be linked to its inputs, outputs, and parameter settings, enabling aggregates to be documented at the level needed for reproducibility. When such detail is unavailable or unnecessary, an aggregate may instead be linked directly to a more general transformation kind.</p>
+<p>The optional <a href="http://purl.org/spatialai/stad/v2/mls/">STAD-MLS</a> extension supports more detailed descriptions of computational provenance. It distinguishes an algorithm from its implementation and from a particular execution of that implementation. An execution can be linked to its inputs, outputs, and parameter settings, enabling aggregates to be documented at the level needed for reproducibility. When such detail is unavailable or unnecessary, an aggregate may instead be linked directly to a more general transformation kind.</p>
 
 <p>STAD reuses and aligns with established semantic standards. It uses OWL-Time to describe temporal entities and temporal aggregates and selected GeoSPARQL terms to describe spatial features and geometries. Quantitative values may be represented using QUDT, OM, or another suitable quantities-and-units ontology. This modular design allows STAD to express aggregation semantics at different levels of detail and to complement the domain ontologies already used by a dataset or knowledge graph.<p>
 
