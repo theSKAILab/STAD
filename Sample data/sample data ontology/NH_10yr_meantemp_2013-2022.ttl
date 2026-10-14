@@ -1,0 +1,72 @@
+@prefix ex: <http://stad.spatialai.org/example/> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix stad: <http://purl.org/spatialai/stad/v2/core#> .
+@prefix stad-mls: <http://purl.org/spatialai/stad/v2/mls#> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ex:NH_MeanTemp2013-2022 a stad:QuantitativeDatapoint,
+        stad:SpatioTemporalAggregateDatapoint ;
+    stad:generatedBy ex:ArithmeticMeanExecution_NH_2013-2022 ;
+    stad:hasAggregationPeriod ex:NH_MeanTemp2013-2022_AggregationPeriod ;
+    stad:hasBaseDataset ex:Dataset_2013-2022 ;
+    stad:hasQualityKind ex:AnnualMeanTemperature ;
+    stad:hasQuantitativeValue [ a stad:QuantitativeValue,
+                qudt:QuantityValue ;
+            qudt:numericValue "4.06"^^xsd:float ;
+            qudt:unit unit:DEG_C ] ;
+    stad:hasSpatialCoverage ex:NewHampshire ;
+    stad:hasTemporalCoverage ex:TimeInterval_2013-2022 ;
+    stad:hasTransformationKind stad:ArithmeticMeanCalculation .
+
+ex:AnnualSiteMeans_DatasetDescription a stad:DatasetDescription ;
+    stad:hasTemporalResolution [ a stad:TemporalResolution ;
+            stad:hasQualityKind stad:temporalResolutionQualityKind ;
+            stad:hasQuantitativeValue [ a stad:QuantitativeValue,
+                        time:Duration ;
+                    time:numericDuration 1.0 ;
+                    time:unitType time:unitYear ] ] .
+
+ex:ArithmeticMeanExecution_NH_2013-2022 a stad-mls:AlgorithmExecution,
+        ex:PandasArithmeticMeanExecution ;
+    stad-mls:executes ex:ArithmeticMeanImplementationInPandas ;
+    stad-mls:hasInput ex:AxisParameterSetting,
+        ex:Dataset_2013-2022,
+        ex:NumericOnlyParameterSetting,
+        ex:SkipNaParameterSetting ;
+    stad-mls:realizes stad:ArithmeticMeanCalculation .
+
+ex:NH_MeanTemp2013-2022_AggregationPeriod a stad:ConvexAggregationPeriod ;
+    stad:hasExtent ex:NH_MeanTemp2013-2022_AggregationPeriodExtent ;
+    time:hasPart ex:NH_MeanTemp2013-2022_AggregationPeriodExtent .
+
+ex:Dataset_2013-2022 a stad:Dataset ;
+    stad:containsDatapoint ex:AnnualMeanTemp_2043_2013,
+        ex:AnnualMeanTemp_2043_2014,
+        ex:AnnualMeanTemp_2043_2015,
+        ex:AnnualMeanTemp_2043_2016,
+        ex:AnnualMeanTemp_2043_2017,
+        ex:AnnualMeanTemp_2043_2018,
+        ex:AnnualMeanTemp_2043_2019,
+        ex:AnnualMeanTemp_2043_2020,
+        ex:AnnualMeanTemp_2043_2021,
+        ex:AnnualMeanTemp_2043_2022,
+        ex:AnnualMeanTemp_2069_2013,
+        ex:AnnualMeanTemp_2069_2014,
+        ex:AnnualMeanTemp_2069_2015,
+        ex:AnnualMeanTemp_2069_2016,
+        ex:AnnualMeanTemp_2069_2017,
+        ex:AnnualMeanTemp_2069_2018,
+        ex:AnnualMeanTemp_2069_2019,
+        ex:AnnualMeanTemp_2069_2020,
+        ex:AnnualMeanTemp_2069_2021,
+        ex:AnnualMeanTemp_2069_2022 ;
+    stad:hasDatasetDescription ex:AnnualSiteMeans_DatasetDescription .
+
+ex:NH_MeanTemp2013-2022_AggregationPeriodExtent a time:ProperInterval ;
+    time:hasBeginning [ a time:Instant ;
+            time:inXSDDateTimeStamp "2013-01-01T00:00:00-05:00"^^xsd:dateTimeStamp ] ;
+    time:hasEnd [ a time:Instant ;
+            time:inXSDDateTimeStamp "2022-12-31T23:00:00-05:00"^^xsd:dateTimeStamp ] .
+

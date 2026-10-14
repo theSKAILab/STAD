@@ -13,6 +13,11 @@ Because of the overall size and complexity of the Digital Forest KG, we use a sm
 
 Using these data, we demonstrate how the seven competency questions defined in Section 1.2 (Q1-Q7) can be expressed as SPARQL queries and answered using a STAD-based knowledge graph.
 
+## Data Transformation
+
+This path contains a notebook which computes hourly, daily, annual, and seasonal temperature aggregates from the sample CSV files and creates RDF graphs using RDFLib. The generated graphs follow the STAD and STAD-MLS ontologies and include quantitative values, temporal and spatial coverage, aggregation periods, and computation provenance. Configure the input paths, install pandas and rdflib, and run the notebook cells in order
+
+
 ## Evaluation Approach
 
 The evaluation consists of the following steps:

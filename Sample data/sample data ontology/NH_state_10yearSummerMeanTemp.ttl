@@ -1,0 +1,52 @@
+@prefix ex: <http://stad.spatialai.org/example/> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix stad: <http://purl.org/spatialai/stad/v2/core#> .
+@prefix stad-mls: <http://purl.org/spatialai/stad/v2/mls#> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ex:NH_SummerMeanTemp2013-2022 a stad:QuantitativeDatapoint,
+        stad:SpatioTemporalAggregateDatapoint ;
+    stad:generatedBy ex:ArithmeticMeanExecutionSummer_2013-2022 ;
+    stad:hasAggregationPeriod ex:SummerAggregate2013-2022 ;
+    stad:hasBaseDataset ex:DatasetSummer_NH_2013-2022 ;
+    stad:hasQualityKind ex:SummerMeanTemperature ;
+    stad:hasQuantitativeValue [ a stad:QuantitativeValue,
+                qudt:QuantityValue ;
+            qudt:numericValue "16.68"^^xsd:float ;
+            qudt:unit unit:DEG_C ] ;
+    stad:hasSpatialCoverage ex:NewHampshire ;
+    stad:hasTemporalCoverage ex:TimeInterval_2013-2022 ;
+    stad:hasTransformationKind stad:ArithmeticMeanCalculation .
+
+ex:AnnualSummerMeans_DatasetDescription a stad:DatasetDescription ;
+    stad:hasTemporalResolution [ a stad:TemporalResolution ;
+            stad:hasQualityKind stad:temporalResolutionQualityKind ;
+            stad:hasQuantitativeValue [ a stad:QuantitativeValue,
+                        time:Duration ;
+                    time:numericDuration 1.0 ;
+                    time:unitType time:unitYear ] ] .
+
+ex:ArithmeticMeanExecutionSummer_2013-2022 a stad-mls:AlgorithmExecution,
+        ex:PandasArithmeticMeanExecution ;
+    stad-mls:executes ex:ArithmeticMeanImplementationInPandas ;
+    stad-mls:hasInput ex:AxisParameterSetting,
+        ex:DatasetSummer_NH_2013-2022,
+        ex:NumericOnlyParameterSetting,
+        ex:SkipNaParameterSetting ;
+    stad-mls:realizes stad:ArithmeticMeanCalculation .
+
+ex:DatasetSummer_NH_2013-2022 a stad:Dataset ;
+    stad:containsDatapoint ex:NH_SummerMeanTemp2013,
+        ex:NH_SummerMeanTemp2014,
+        ex:NH_SummerMeanTemp2015,
+        ex:NH_SummerMeanTemp2016,
+        ex:NH_SummerMeanTemp2017,
+        ex:NH_SummerMeanTemp2018,
+        ex:NH_SummerMeanTemp2019,
+        ex:NH_SummerMeanTemp2020,
+        ex:NH_SummerMeanTemp2021,
+        ex:NH_SummerMeanTemp2022 ;
+    stad:hasDatasetDescription ex:AnnualSummerMeans_DatasetDescription .
+
