@@ -100,7 +100,22 @@ ex:SCAN_DailyMeanTemperature_NH_20210301_MM a stad:QuantitativeDatapoint,
 ex:Dataset_NH_20210301_MinMax a stad:Dataset ;
     stad:containsDatapoint ex:DailyMaxTemperature_NH_20210301,
         ex:DailyMinTemperature_NH_20210301 ;
-    stad:hasDatasetDescription ex:SCAN_BaseDataDescription .
+    stad:hasDatasetDescription ex:BaseDataDescription_MinMax .
+	
+ex:BaseDataDescription_MinMax a stad:DatasetDescription ;
+    stad:hasSpatialResolution [ a stad:PointSpacingResolution ;
+            stad:hasQualityKind stad:spatialResolutionQualityKind ;
+            stad:hasQuantitativeValue [ a stad:QuantitativeValue,
+                        qudt:QuantityValue ;
+                    qudt:numericValue 30.0 ;
+                    qudt:unit unit:KiloM ] ;
+            stad:hasTransformationKind stad:ArithmeticMeanCalculation ] ;
+    stad:hasTemporalResolution [ a stad:TemporalResolution ;
+            stad:hasQualityKind stad:temporalResolutionQualityKind ;
+            stad:hasQuantitativeValue [ a stad:QuantitativeValue,
+                        time:Duration ;
+                    time:numericDuration 1.0 ;
+                    time:unitType time:unitDay ] ] .
 
 ex:ArithmeticMeanExecutionDMT_NH_20210301_MM a stad-mls:AlgorithmExecution,
         ex:PandasArithmeticMeanExecution ;
