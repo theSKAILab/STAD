@@ -72,6 +72,19 @@ ex:SCAN_BaseDataDescription a stad:DatasetDescription ;
                         time:Duration ;
                     time:numericDuration 1.0 ;
                     time:unitType time:unitHour ] ] .
+					
+ex:HourlySiteTemperatureDatasetDescription
+    a stad:DatasetDescription ;
+    stad:hasTemporalResolution ex:HourlyTemporalResolution .
+
+ex:HourlyTemporalResolution
+    a stad:TemporalResolution ;
+    stad:hasQualityKind stad:temporalResolutionQualityKind ;
+    stad:hasQuantitativeValue [
+        a time:Duration, stad:QuantitativeValue ;
+        time:numericDuration "1.0"^^xsd:decimal ;
+        time:unitType time:unitHour
+    ] .
 
 ex:SummerMeanTemperature a stad:QualityKind,
         ex:TemperatureQualityKind ;
@@ -93,14 +106,6 @@ ex:WinterMeanTemperature a stad:QualityKind,
 ex:hasStationID a owl:DatatypeProperty ;
     rdfs:domain geo:Feature ;
     rdfs:range xsd:nonNegativeInteger .
-
-ex:measuredAt a owl:ObjectProperty ;
-    rdfs:domain stad:Datapoint ;
-    rdfs:range geo:Feature .
-
-ex:observedDate a owl:DatatypeProperty ;
-    rdfs:domain stad:ObservationalDatapoint ;
-    rdfs:range xsd:dateTime .
 
 ex:ArithmeticMaximumImplementationInPandas a stad-mls:Implementation ;
     stad-mls:hasParameter ex:AxisParameter,

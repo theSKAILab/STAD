@@ -121,6 +121,14 @@ xsd:date rdf:type rdfs:Datatype .
 #    Object Properties
 #################################################################
 
+stad:measuredAt a owl:ObjectProperty ;
+    rdfs:domain stad:Datapoint ;
+    rdfs:range geo:Feature .
+
+stad:observedDate a owl:DatatypeProperty ;
+    rdfs:domain stad:ObservationalDatapoint ;
+    rdfs:range xsd:dateTime .
+
 ###  http://purl.org/dc/terms/hasPart
 dcterms:hasPart rdf:type owl:ObjectProperty ;
 	rdfs:label "has part"@en ;

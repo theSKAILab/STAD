@@ -18,7 +18,7 @@ ex:AnnualMeanTemp_2043_2012 a stad:QuantitativeDatapoint,
             qudt:unit unit:DEG_C ] ;
     stad:hasTemporalCoverage ex:TimeInterval_2012 ;
     stad:hasTransformationKind stad:ArithmeticMeanCalculation ;
-    ex:measuredAt ex:MascomaRiverWeatherStation .
+    stad:measuredAt ex:MascomaRiverWeatherStation .
 
 ex:AnnualMeanTemp_2043_2013 a stad:QuantitativeDatapoint,
         stad:TemporalAggregateDatapoint ;
@@ -32,7 +32,7 @@ ex:AnnualMeanTemp_2043_2013 a stad:QuantitativeDatapoint,
             qudt:unit unit:DEG_C ] ;
     stad:hasTemporalCoverage ex:TimeInterval_2013 ;
     stad:hasTransformationKind stad:ArithmeticMeanCalculation ;
-    ex:measuredAt ex:MascomaRiverWeatherStation .
+    stad:measuredAt ex:MascomaRiverWeatherStation .
 
 ex:AnnualMeanTemp_2043_2014 a stad:QuantitativeDatapoint,
         stad:TemporalAggregateDatapoint ;
@@ -46,7 +46,7 @@ ex:AnnualMeanTemp_2043_2014 a stad:QuantitativeDatapoint,
             qudt:unit unit:DEG_C ] ;
     stad:hasTemporalCoverage ex:TimeInterval_2014 ;
     stad:hasTransformationKind stad:ArithmeticMeanCalculation ;
-    ex:measuredAt ex:MascomaRiverWeatherStation .
+    stad:measuredAt ex:MascomaRiverWeatherStation .
 
 ex:AnnualMeanTemp_2043_2015 a stad:QuantitativeDatapoint,
         stad:TemporalAggregateDatapoint ;
@@ -60,7 +60,7 @@ ex:AnnualMeanTemp_2043_2015 a stad:QuantitativeDatapoint,
             qudt:unit unit:DEG_C ] ;
     stad:hasTemporalCoverage ex:TimeInterval_2015 ;
     stad:hasTransformationKind stad:ArithmeticMeanCalculation ;
-    ex:measuredAt ex:MascomaRiverWeatherStation .
+    stad:measuredAt ex:MascomaRiverWeatherStation .
 
 ex:AnnualMeanTemp_2043_2016 a stad:QuantitativeDatapoint,
         stad:TemporalAggregateDatapoint ;
@@ -74,7 +74,7 @@ ex:AnnualMeanTemp_2043_2016 a stad:QuantitativeDatapoint,
             qudt:unit unit:DEG_C ] ;
     stad:hasTemporalCoverage ex:TimeInterval_2016 ;
     stad:hasTransformationKind stad:ArithmeticMeanCalculation ;
-    ex:measuredAt ex:MascomaRiverWeatherStation .
+    stad:measuredAt ex:MascomaRiverWeatherStation .
 
 ex:AnnualMeanTemp_2043_2017 a stad:QuantitativeDatapoint,
         stad:TemporalAggregateDatapoint ;
@@ -88,7 +88,7 @@ ex:AnnualMeanTemp_2043_2017 a stad:QuantitativeDatapoint,
             qudt:unit unit:DEG_C ] ;
     stad:hasTemporalCoverage ex:TimeInterval_2017 ;
     stad:hasTransformationKind stad:ArithmeticMeanCalculation ;
-    ex:measuredAt ex:MascomaRiverWeatherStation .
+    stad:measuredAt ex:MascomaRiverWeatherStation .
 
 ex:AnnualMeanTemp_2043_2018 a stad:QuantitativeDatapoint,
         stad:TemporalAggregateDatapoint ;
@@ -102,7 +102,7 @@ ex:AnnualMeanTemp_2043_2018 a stad:QuantitativeDatapoint,
             qudt:unit unit:DEG_C ] ;
     stad:hasTemporalCoverage ex:TimeInterval_2018 ;
     stad:hasTransformationKind stad:ArithmeticMeanCalculation ;
-    ex:measuredAt ex:MascomaRiverWeatherStation .
+    stad:measuredAt ex:MascomaRiverWeatherStation .
 
 ex:AnnualMeanTemp_2043_2019 a stad:QuantitativeDatapoint,
         stad:TemporalAggregateDatapoint ;
@@ -116,7 +116,7 @@ ex:AnnualMeanTemp_2043_2019 a stad:QuantitativeDatapoint,
             qudt:unit unit:DEG_C ] ;
     stad:hasTemporalCoverage ex:TimeInterval_2019 ;
     stad:hasTransformationKind stad:ArithmeticMeanCalculation ;
-    ex:measuredAt ex:MascomaRiverWeatherStation .
+    stad:measuredAt ex:MascomaRiverWeatherStation .
 
 ex:AnnualMeanTemp_2043_2020 a stad:QuantitativeDatapoint,
         stad:TemporalAggregateDatapoint ;
@@ -130,7 +130,7 @@ ex:AnnualMeanTemp_2043_2020 a stad:QuantitativeDatapoint,
             qudt:unit unit:DEG_C ] ;
     stad:hasTemporalCoverage ex:TimeInterval_2020 ;
     stad:hasTransformationKind stad:ArithmeticMeanCalculation ;
-    ex:measuredAt ex:MascomaRiverWeatherStation .
+    stad:measuredAt ex:MascomaRiverWeatherStation .
 
 ex:AnnualMeanTemp_2043_2021 a stad:QuantitativeDatapoint,
         stad:TemporalAggregateDatapoint ;
@@ -144,7 +144,7 @@ ex:AnnualMeanTemp_2043_2021 a stad:QuantitativeDatapoint,
             qudt:unit unit:DEG_C ] ;
     stad:hasTemporalCoverage ex:TimeInterval_2021 ;
     stad:hasTransformationKind stad:ArithmeticMeanCalculation ;
-    ex:measuredAt ex:MascomaRiverWeatherStation .
+    stad:measuredAt ex:MascomaRiverWeatherStation .
 
 ex:AnnualMeanTemp_2043_2022 a stad:QuantitativeDatapoint,
         stad:TemporalAggregateDatapoint ;
@@ -158,7 +158,7 @@ ex:AnnualMeanTemp_2043_2022 a stad:QuantitativeDatapoint,
             qudt:unit unit:DEG_C ] ;
     stad:hasTemporalCoverage ex:TimeInterval_2022 ;
     stad:hasTransformationKind stad:ArithmeticMeanCalculation ;
-    ex:measuredAt ex:MascomaRiverWeatherStation .
+    stad:measuredAt ex:MascomaRiverWeatherStation .
 
 ex:AnnualMeanTemp_2069_2012 a stad:QuantitativeDatapoint,
         stad:TemporalAggregateDatapoint ;
@@ -172,7 +172,7 @@ ex:AnnualMeanTemp_2069_2012 a stad:QuantitativeDatapoint,
             qudt:unit unit:DEG_C ] ;
     stad:hasTemporalCoverage ex:TimeInterval_2012 ;
     stad:hasTransformationKind stad:ArithmeticMeanCalculation ;
-    ex:measuredAt ex:HubbardBrookWeatherStation .
+    stad:measuredAt ex:HubbardBrookWeatherStation .
 
 ex:AnnualMeanTemp_2069_2013 a stad:QuantitativeDatapoint,
         stad:TemporalAggregateDatapoint ;
@@ -186,7 +186,7 @@ ex:AnnualMeanTemp_2069_2013 a stad:QuantitativeDatapoint,
             qudt:unit unit:DEG_C ] ;
     stad:hasTemporalCoverage ex:TimeInterval_2013 ;
     stad:hasTransformationKind stad:ArithmeticMeanCalculation ;
-    ex:measuredAt ex:HubbardBrookWeatherStation .
+    stad:measuredAt ex:HubbardBrookWeatherStation .
 
 ex:AnnualMeanTemp_2069_2014 a stad:QuantitativeDatapoint,
         stad:TemporalAggregateDatapoint ;
@@ -200,7 +200,7 @@ ex:AnnualMeanTemp_2069_2014 a stad:QuantitativeDatapoint,
             qudt:unit unit:DEG_C ] ;
     stad:hasTemporalCoverage ex:TimeInterval_2014 ;
     stad:hasTransformationKind stad:ArithmeticMeanCalculation ;
-    ex:measuredAt ex:HubbardBrookWeatherStation .
+    stad:measuredAt ex:HubbardBrookWeatherStation .
 
 ex:AnnualMeanTemp_2069_2015 a stad:QuantitativeDatapoint,
         stad:TemporalAggregateDatapoint ;
@@ -214,7 +214,7 @@ ex:AnnualMeanTemp_2069_2015 a stad:QuantitativeDatapoint,
             qudt:unit unit:DEG_C ] ;
     stad:hasTemporalCoverage ex:TimeInterval_2015 ;
     stad:hasTransformationKind stad:ArithmeticMeanCalculation ;
-    ex:measuredAt ex:HubbardBrookWeatherStation .
+    stad:measuredAt ex:HubbardBrookWeatherStation .
 
 ex:AnnualMeanTemp_2069_2016 a stad:QuantitativeDatapoint,
         stad:TemporalAggregateDatapoint ;
@@ -228,7 +228,7 @@ ex:AnnualMeanTemp_2069_2016 a stad:QuantitativeDatapoint,
             qudt:unit unit:DEG_C ] ;
     stad:hasTemporalCoverage ex:TimeInterval_2016 ;
     stad:hasTransformationKind stad:ArithmeticMeanCalculation ;
-    ex:measuredAt ex:HubbardBrookWeatherStation .
+    stad:measuredAt ex:HubbardBrookWeatherStation .
 
 ex:AnnualMeanTemp_2069_2017 a stad:QuantitativeDatapoint,
         stad:TemporalAggregateDatapoint ;
@@ -242,7 +242,7 @@ ex:AnnualMeanTemp_2069_2017 a stad:QuantitativeDatapoint,
             qudt:unit unit:DEG_C ] ;
     stad:hasTemporalCoverage ex:TimeInterval_2017 ;
     stad:hasTransformationKind stad:ArithmeticMeanCalculation ;
-    ex:measuredAt ex:HubbardBrookWeatherStation .
+    stad:measuredAt ex:HubbardBrookWeatherStation .
 
 ex:AnnualMeanTemp_2069_2018 a stad:QuantitativeDatapoint,
         stad:TemporalAggregateDatapoint ;
@@ -256,7 +256,7 @@ ex:AnnualMeanTemp_2069_2018 a stad:QuantitativeDatapoint,
             qudt:unit unit:DEG_C ] ;
     stad:hasTemporalCoverage ex:TimeInterval_2018 ;
     stad:hasTransformationKind stad:ArithmeticMeanCalculation ;
-    ex:measuredAt ex:HubbardBrookWeatherStation .
+    stad:measuredAt ex:HubbardBrookWeatherStation .
 
 ex:AnnualMeanTemp_2069_2019 a stad:QuantitativeDatapoint,
         stad:TemporalAggregateDatapoint ;
@@ -270,7 +270,7 @@ ex:AnnualMeanTemp_2069_2019 a stad:QuantitativeDatapoint,
             qudt:unit unit:DEG_C ] ;
     stad:hasTemporalCoverage ex:TimeInterval_2019 ;
     stad:hasTransformationKind stad:ArithmeticMeanCalculation ;
-    ex:measuredAt ex:HubbardBrookWeatherStation .
+    stad:measuredAt ex:HubbardBrookWeatherStation .
 
 ex:AnnualMeanTemp_2069_2020 a stad:QuantitativeDatapoint,
         stad:TemporalAggregateDatapoint ;
@@ -284,7 +284,7 @@ ex:AnnualMeanTemp_2069_2020 a stad:QuantitativeDatapoint,
             qudt:unit unit:DEG_C ] ;
     stad:hasTemporalCoverage ex:TimeInterval_2020 ;
     stad:hasTransformationKind stad:ArithmeticMeanCalculation ;
-    ex:measuredAt ex:HubbardBrookWeatherStation .
+    stad:measuredAt ex:HubbardBrookWeatherStation .
 
 ex:AnnualMeanTemp_2069_2021 a stad:QuantitativeDatapoint,
         stad:TemporalAggregateDatapoint ;
@@ -298,7 +298,7 @@ ex:AnnualMeanTemp_2069_2021 a stad:QuantitativeDatapoint,
             qudt:unit unit:DEG_C ] ;
     stad:hasTemporalCoverage ex:TimeInterval_2021 ;
     stad:hasTransformationKind stad:ArithmeticMeanCalculation ;
-    ex:measuredAt ex:HubbardBrookWeatherStation .
+    stad:measuredAt ex:HubbardBrookWeatherStation .
 
 ex:AnnualMeanTemp_2069_2022 a stad:QuantitativeDatapoint,
         stad:TemporalAggregateDatapoint ;
@@ -312,271 +312,95 @@ ex:AnnualMeanTemp_2069_2022 a stad:QuantitativeDatapoint,
             qudt:unit unit:DEG_C ] ;
     stad:hasTemporalCoverage ex:TimeInterval_2022 ;
     stad:hasTransformationKind stad:ArithmeticMeanCalculation ;
-    ex:measuredAt ex:HubbardBrookWeatherStation .
+    stad:measuredAt ex:HubbardBrookWeatherStation .
 
 ex:2043_2012_AggregationPeriod a stad:ConvexAggregationPeriod ;
     stad:hasExtent ex:2043_2012_AggregationPeriodExtent ;
     time:hasPart ex:2043_2012_AggregationPeriodExtent .
 
-ex:2043_2012_DatasetDescription a stad:DatasetDescription ;
-    stad:hasTemporalResolution [ a stad:TemporalResolution ;
-            stad:hasQualityKind stad:temporalResolutionQualityKind ;
-            stad:hasQuantitativeValue [ a stad:QuantitativeValue,
-                        time:Duration ;
-                    time:numericDuration 1.0 ;
-                    time:unitType time:unitHour ] ] .
-
 ex:2043_2013_AggregationPeriod a stad:ConvexAggregationPeriod ;
     stad:hasExtent ex:2043_2013_AggregationPeriodExtent ;
     time:hasPart ex:2043_2013_AggregationPeriodExtent .
-
-ex:2043_2013_DatasetDescription a stad:DatasetDescription ;
-    stad:hasTemporalResolution [ a stad:TemporalResolution ;
-            stad:hasQualityKind stad:temporalResolutionQualityKind ;
-            stad:hasQuantitativeValue [ a stad:QuantitativeValue,
-                        time:Duration ;
-                    time:numericDuration 1.0 ;
-                    time:unitType time:unitHour ] ] .
 
 ex:2043_2014_AggregationPeriod a stad:ConvexAggregationPeriod ;
     stad:hasExtent ex:2043_2014_AggregationPeriodExtent ;
     time:hasPart ex:2043_2014_AggregationPeriodExtent .
 
-ex:2043_2014_DatasetDescription a stad:DatasetDescription ;
-    stad:hasTemporalResolution [ a stad:TemporalResolution ;
-            stad:hasQualityKind stad:temporalResolutionQualityKind ;
-            stad:hasQuantitativeValue [ a stad:QuantitativeValue,
-                        time:Duration ;
-                    time:numericDuration 1.0 ;
-                    time:unitType time:unitHour ] ] .
-
 ex:2043_2015_AggregationPeriod a stad:ConvexAggregationPeriod ;
     stad:hasExtent ex:2043_2015_AggregationPeriodExtent ;
     time:hasPart ex:2043_2015_AggregationPeriodExtent .
-
-ex:2043_2015_DatasetDescription a stad:DatasetDescription ;
-    stad:hasTemporalResolution [ a stad:TemporalResolution ;
-            stad:hasQualityKind stad:temporalResolutionQualityKind ;
-            stad:hasQuantitativeValue [ a stad:QuantitativeValue,
-                        time:Duration ;
-                    time:numericDuration 1.0 ;
-                    time:unitType time:unitHour ] ] .
 
 ex:2043_2016_AggregationPeriod a stad:ConvexAggregationPeriod ;
     stad:hasExtent ex:2043_2016_AggregationPeriodExtent ;
     time:hasPart ex:2043_2016_AggregationPeriodExtent .
 
-ex:2043_2016_DatasetDescription a stad:DatasetDescription ;
-    stad:hasTemporalResolution [ a stad:TemporalResolution ;
-            stad:hasQualityKind stad:temporalResolutionQualityKind ;
-            stad:hasQuantitativeValue [ a stad:QuantitativeValue,
-                        time:Duration ;
-                    time:numericDuration 1.0 ;
-                    time:unitType time:unitHour ] ] .
-
 ex:2043_2017_AggregationPeriod a stad:ConvexAggregationPeriod ;
     stad:hasExtent ex:2043_2017_AggregationPeriodExtent ;
     time:hasPart ex:2043_2017_AggregationPeriodExtent .
-
-ex:2043_2017_DatasetDescription a stad:DatasetDescription ;
-    stad:hasTemporalResolution [ a stad:TemporalResolution ;
-            stad:hasQualityKind stad:temporalResolutionQualityKind ;
-            stad:hasQuantitativeValue [ a stad:QuantitativeValue,
-                        time:Duration ;
-                    time:numericDuration 1.0 ;
-                    time:unitType time:unitHour ] ] .
 
 ex:2043_2018_AggregationPeriod a stad:ConvexAggregationPeriod ;
     stad:hasExtent ex:2043_2018_AggregationPeriodExtent ;
     time:hasPart ex:2043_2018_AggregationPeriodExtent .
 
-ex:2043_2018_DatasetDescription a stad:DatasetDescription ;
-    stad:hasTemporalResolution [ a stad:TemporalResolution ;
-            stad:hasQualityKind stad:temporalResolutionQualityKind ;
-            stad:hasQuantitativeValue [ a stad:QuantitativeValue,
-                        time:Duration ;
-                    time:numericDuration 1.0 ;
-                    time:unitType time:unitHour ] ] .
-
 ex:2043_2019_AggregationPeriod a stad:ConvexAggregationPeriod ;
     stad:hasExtent ex:2043_2019_AggregationPeriodExtent ;
     time:hasPart ex:2043_2019_AggregationPeriodExtent .
-
-ex:2043_2019_DatasetDescription a stad:DatasetDescription ;
-    stad:hasTemporalResolution [ a stad:TemporalResolution ;
-            stad:hasQualityKind stad:temporalResolutionQualityKind ;
-            stad:hasQuantitativeValue [ a stad:QuantitativeValue,
-                        time:Duration ;
-                    time:numericDuration 1.0 ;
-                    time:unitType time:unitHour ] ] .
 
 ex:2043_2020_AggregationPeriod a stad:ConvexAggregationPeriod ;
     stad:hasExtent ex:2043_2020_AggregationPeriodExtent ;
     time:hasPart ex:2043_2020_AggregationPeriodExtent .
 
-ex:2043_2020_DatasetDescription a stad:DatasetDescription ;
-    stad:hasTemporalResolution [ a stad:TemporalResolution ;
-            stad:hasQualityKind stad:temporalResolutionQualityKind ;
-            stad:hasQuantitativeValue [ a stad:QuantitativeValue,
-                        time:Duration ;
-                    time:numericDuration 1.0 ;
-                    time:unitType time:unitHour ] ] .
-
 ex:2043_2021_AggregationPeriod a stad:ConvexAggregationPeriod ;
     stad:hasExtent ex:2043_2021_AggregationPeriodExtent ;
     time:hasPart ex:2043_2021_AggregationPeriodExtent .
-
-ex:2043_2021_DatasetDescription a stad:DatasetDescription ;
-    stad:hasTemporalResolution [ a stad:TemporalResolution ;
-            stad:hasQualityKind stad:temporalResolutionQualityKind ;
-            stad:hasQuantitativeValue [ a stad:QuantitativeValue,
-                        time:Duration ;
-                    time:numericDuration 1.0 ;
-                    time:unitType time:unitHour ] ] .
 
 ex:2043_2022_AggregationPeriod a stad:ConvexAggregationPeriod ;
     stad:hasExtent ex:2043_2022_AggregationPeriodExtent ;
     time:hasPart ex:2043_2022_AggregationPeriodExtent .
 
-ex:2043_2022_DatasetDescription a stad:DatasetDescription ;
-    stad:hasTemporalResolution [ a stad:TemporalResolution ;
-            stad:hasQualityKind stad:temporalResolutionQualityKind ;
-            stad:hasQuantitativeValue [ a stad:QuantitativeValue,
-                        time:Duration ;
-                    time:numericDuration 1.0 ;
-                    time:unitType time:unitHour ] ] .
-
 ex:2069_2012_AggregationPeriod a stad:ConvexAggregationPeriod ;
     stad:hasExtent ex:2069_2012_AggregationPeriodExtent ;
     time:hasPart ex:2069_2012_AggregationPeriodExtent .
-
-ex:2069_2012_DatasetDescription a stad:DatasetDescription ;
-    stad:hasTemporalResolution [ a stad:TemporalResolution ;
-            stad:hasQualityKind stad:temporalResolutionQualityKind ;
-            stad:hasQuantitativeValue [ a stad:QuantitativeValue,
-                        time:Duration ;
-                    time:numericDuration 1.0 ;
-                    time:unitType time:unitHour ] ] .
 
 ex:2069_2013_AggregationPeriod a stad:ConvexAggregationPeriod ;
     stad:hasExtent ex:2069_2013_AggregationPeriodExtent ;
     time:hasPart ex:2069_2013_AggregationPeriodExtent .
 
-ex:2069_2013_DatasetDescription a stad:DatasetDescription ;
-    stad:hasTemporalResolution [ a stad:TemporalResolution ;
-            stad:hasQualityKind stad:temporalResolutionQualityKind ;
-            stad:hasQuantitativeValue [ a stad:QuantitativeValue,
-                        time:Duration ;
-                    time:numericDuration 1.0 ;
-                    time:unitType time:unitHour ] ] .
-
 ex:2069_2014_AggregationPeriod a stad:ConvexAggregationPeriod ;
     stad:hasExtent ex:2069_2014_AggregationPeriodExtent ;
     time:hasPart ex:2069_2014_AggregationPeriodExtent .
-
-ex:2069_2014_DatasetDescription a stad:DatasetDescription ;
-    stad:hasTemporalResolution [ a stad:TemporalResolution ;
-            stad:hasQualityKind stad:temporalResolutionQualityKind ;
-            stad:hasQuantitativeValue [ a stad:QuantitativeValue,
-                        time:Duration ;
-                    time:numericDuration 1.0 ;
-                    time:unitType time:unitHour ] ] .
 
 ex:2069_2015_AggregationPeriod a stad:ConvexAggregationPeriod ;
     stad:hasExtent ex:2069_2015_AggregationPeriodExtent ;
     time:hasPart ex:2069_2015_AggregationPeriodExtent .
 
-ex:2069_2015_DatasetDescription a stad:DatasetDescription ;
-    stad:hasTemporalResolution [ a stad:TemporalResolution ;
-            stad:hasQualityKind stad:temporalResolutionQualityKind ;
-            stad:hasQuantitativeValue [ a stad:QuantitativeValue,
-                        time:Duration ;
-                    time:numericDuration 1.0 ;
-                    time:unitType time:unitHour ] ] .
-
 ex:2069_2016_AggregationPeriod a stad:ConvexAggregationPeriod ;
     stad:hasExtent ex:2069_2016_AggregationPeriodExtent ;
     time:hasPart ex:2069_2016_AggregationPeriodExtent .
-
-ex:2069_2016_DatasetDescription a stad:DatasetDescription ;
-    stad:hasTemporalResolution [ a stad:TemporalResolution ;
-            stad:hasQualityKind stad:temporalResolutionQualityKind ;
-            stad:hasQuantitativeValue [ a stad:QuantitativeValue,
-                        time:Duration ;
-                    time:numericDuration 1.0 ;
-                    time:unitType time:unitHour ] ] .
 
 ex:2069_2017_AggregationPeriod a stad:ConvexAggregationPeriod ;
     stad:hasExtent ex:2069_2017_AggregationPeriodExtent ;
     time:hasPart ex:2069_2017_AggregationPeriodExtent .
 
-ex:2069_2017_DatasetDescription a stad:DatasetDescription ;
-    stad:hasTemporalResolution [ a stad:TemporalResolution ;
-            stad:hasQualityKind stad:temporalResolutionQualityKind ;
-            stad:hasQuantitativeValue [ a stad:QuantitativeValue,
-                        time:Duration ;
-                    time:numericDuration 1.0 ;
-                    time:unitType time:unitHour ] ] .
-
 ex:2069_2018_AggregationPeriod a stad:ConvexAggregationPeriod ;
     stad:hasExtent ex:2069_2018_AggregationPeriodExtent ;
     time:hasPart ex:2069_2018_AggregationPeriodExtent .
-
-ex:2069_2018_DatasetDescription a stad:DatasetDescription ;
-    stad:hasTemporalResolution [ a stad:TemporalResolution ;
-            stad:hasQualityKind stad:temporalResolutionQualityKind ;
-            stad:hasQuantitativeValue [ a stad:QuantitativeValue,
-                        time:Duration ;
-                    time:numericDuration 1.0 ;
-                    time:unitType time:unitHour ] ] .
 
 ex:2069_2019_AggregationPeriod a stad:ConvexAggregationPeriod ;
     stad:hasExtent ex:2069_2019_AggregationPeriodExtent ;
     time:hasPart ex:2069_2019_AggregationPeriodExtent .
 
-ex:2069_2019_DatasetDescription a stad:DatasetDescription ;
-    stad:hasTemporalResolution [ a stad:TemporalResolution ;
-            stad:hasQualityKind stad:temporalResolutionQualityKind ;
-            stad:hasQuantitativeValue [ a stad:QuantitativeValue,
-                        time:Duration ;
-                    time:numericDuration 1.0 ;
-                    time:unitType time:unitHour ] ] .
-
 ex:2069_2020_AggregationPeriod a stad:ConvexAggregationPeriod ;
     stad:hasExtent ex:2069_2020_AggregationPeriodExtent ;
     time:hasPart ex:2069_2020_AggregationPeriodExtent .
-
-ex:2069_2020_DatasetDescription a stad:DatasetDescription ;
-    stad:hasTemporalResolution [ a stad:TemporalResolution ;
-            stad:hasQualityKind stad:temporalResolutionQualityKind ;
-            stad:hasQuantitativeValue [ a stad:QuantitativeValue,
-                        time:Duration ;
-                    time:numericDuration 1.0 ;
-                    time:unitType time:unitHour ] ] .
 
 ex:2069_2021_AggregationPeriod a stad:ConvexAggregationPeriod ;
     stad:hasExtent ex:2069_2021_AggregationPeriodExtent ;
     time:hasPart ex:2069_2021_AggregationPeriodExtent .
 
-ex:2069_2021_DatasetDescription a stad:DatasetDescription ;
-    stad:hasTemporalResolution [ a stad:TemporalResolution ;
-            stad:hasQualityKind stad:temporalResolutionQualityKind ;
-            stad:hasQuantitativeValue [ a stad:QuantitativeValue,
-                        time:Duration ;
-                    time:numericDuration 1.0 ;
-                    time:unitType time:unitHour ] ] .
-
 ex:2069_2022_AggregationPeriod a stad:ConvexAggregationPeriod ;
     stad:hasExtent ex:2069_2022_AggregationPeriodExtent ;
     time:hasPart ex:2069_2022_AggregationPeriodExtent .
-
-ex:2069_2022_DatasetDescription a stad:DatasetDescription ;
-    stad:hasTemporalResolution [ a stad:TemporalResolution ;
-            stad:hasQualityKind stad:temporalResolutionQualityKind ;
-            stad:hasQuantitativeValue [ a stad:QuantitativeValue,
-                        time:Duration ;
-                    time:numericDuration 1.0 ;
-                    time:unitType time:unitHour ] ] .
 
 ex:ArithmeticMeanExecutionAnnualMean_2043_2012 a stad-mls:AlgorithmExecution,
         ex:PandasArithmeticMeanExecution ;
@@ -9672,7 +9496,7 @@ ex:Dataset_2043_2012 a stad:Dataset ;
         ex:2043_20121231_21,
         ex:2043_20121231_22,
         ex:2043_20121231_23 ;
-    stad:hasDatasetDescription ex:2043_2012_DatasetDescription .
+    stad:hasDatasetDescription ex:HourlySiteTemperatureDatasetDescrption .
 
 ex:Dataset_2043_2013 a stad:Dataset ;
     stad:containsDatapoint ex:2043_20130101_00,
@@ -18379,7 +18203,7 @@ ex:Dataset_2043_2013 a stad:Dataset ;
         ex:2043_20131231_21,
         ex:2043_20131231_22,
         ex:2043_20131231_23 ;
-    stad:hasDatasetDescription ex:2043_2013_DatasetDescription .
+    stad:hasDatasetDescription ex:HourlySiteTemperatureDatasetDescrption .
 
 ex:Dataset_2043_2014 a stad:Dataset ;
     stad:containsDatapoint ex:2043_20140101_00,
@@ -27119,7 +26943,7 @@ ex:Dataset_2043_2014 a stad:Dataset ;
         ex:2043_20141231_21,
         ex:2043_20141231_22,
         ex:2043_20141231_23 ;
-    stad:hasDatasetDescription ex:2043_2014_DatasetDescription .
+    stad:hasDatasetDescription ex:HourlySiteTemperatureDatasetDescrption .
 
 ex:Dataset_2043_2015 a stad:Dataset ;
     stad:containsDatapoint ex:2043_20150101_00,
@@ -35816,7 +35640,7 @@ ex:Dataset_2043_2015 a stad:Dataset ;
         ex:2043_20151231_21,
         ex:2043_20151231_22,
         ex:2043_20151231_23 ;
-    stad:hasDatasetDescription ex:2043_2015_DatasetDescription .
+    stad:hasDatasetDescription ex:HourlySiteTemperatureDatasetDescrption .
 
 ex:Dataset_2043_2016 a stad:Dataset ;
     stad:containsDatapoint ex:2043_20160101_00,
@@ -44405,7 +44229,7 @@ ex:Dataset_2043_2016 a stad:Dataset ;
         ex:2043_20161231_21,
         ex:2043_20161231_22,
         ex:2043_20161231_23 ;
-    stad:hasDatasetDescription ex:2043_2016_DatasetDescription .
+    stad:hasDatasetDescription ex:HourlySiteTemperatureDatasetDescrption .
 
 ex:Dataset_2043_2017 a stad:Dataset ;
     stad:containsDatapoint ex:2043_20170101_00,
@@ -53150,7 +52974,7 @@ ex:Dataset_2043_2017 a stad:Dataset ;
         ex:2043_20171231_21,
         ex:2043_20171231_22,
         ex:2043_20171231_23 ;
-    stad:hasDatasetDescription ex:2043_2017_DatasetDescription .
+    stad:hasDatasetDescription ex:HourlySiteTemperatureDatasetDescrption .
 
 ex:Dataset_2043_2018 a stad:Dataset ;
     stad:containsDatapoint ex:2043_20180101_00,
@@ -61902,7 +61726,7 @@ ex:Dataset_2043_2018 a stad:Dataset ;
         ex:2043_20181231_21,
         ex:2043_20181231_22,
         ex:2043_20181231_23 ;
-    stad:hasDatasetDescription ex:2043_2018_DatasetDescription .
+    stad:hasDatasetDescription ex:HourlySiteTemperatureDatasetDescrption .
 
 ex:Dataset_2043_2019 a stad:Dataset ;
     stad:containsDatapoint ex:2043_20190101_00,
@@ -70642,7 +70466,7 @@ ex:Dataset_2043_2019 a stad:Dataset ;
         ex:2043_20191231_21,
         ex:2043_20191231_22,
         ex:2043_20191231_23 ;
-    stad:hasDatasetDescription ex:2043_2019_DatasetDescription .
+    stad:hasDatasetDescription ex:HourlySiteTemperatureDatasetDescrption .
 
 ex:Dataset_2043_2020 a stad:Dataset ;
     stad:containsDatapoint ex:2043_20200101_00,
@@ -79369,7 +79193,7 @@ ex:Dataset_2043_2020 a stad:Dataset ;
         ex:2043_20201231_21,
         ex:2043_20201231_22,
         ex:2043_20201231_23 ;
-    stad:hasDatasetDescription ex:2043_2020_DatasetDescription .
+    stad:hasDatasetDescription ex:HourlySiteTemperatureDatasetDescrption .
 
 ex:Dataset_2043_2021 a stad:Dataset ;
     stad:containsDatapoint ex:2043_20210101_00,
@@ -88058,7 +87882,7 @@ ex:Dataset_2043_2021 a stad:Dataset ;
         ex:2043_20211231_21,
         ex:2043_20211231_22,
         ex:2043_20211231_23 ;
-    stad:hasDatasetDescription ex:2043_2021_DatasetDescription .
+    stad:hasDatasetDescription ex:HourlySiteTemperatureDatasetDescrption .
 
 ex:Dataset_2043_2022 a stad:Dataset ;
     stad:containsDatapoint ex:2043_20220101_00,
@@ -96761,7 +96585,7 @@ ex:Dataset_2043_2022 a stad:Dataset ;
         ex:2043_20221231_21,
         ex:2043_20221231_22,
         ex:2043_20221231_23 ;
-    stad:hasDatasetDescription ex:2043_2022_DatasetDescription .
+    stad:hasDatasetDescription ex:HourlySiteTemperatureDatasetDescrption .
 
 ex:Dataset_2069_2012 a stad:Dataset ;
     stad:containsDatapoint ex:2069_20120101_00,
@@ -105544,7 +105368,7 @@ ex:Dataset_2069_2012 a stad:Dataset ;
         ex:2069_20121231_21,
         ex:2069_20121231_22,
         ex:2069_20121231_23 ;
-    stad:hasDatasetDescription ex:2069_2012_DatasetDescription .
+    stad:hasDatasetDescription ex:HourlySiteTemperatureDatasetDescrption .
 
 ex:Dataset_2069_2013 a stad:Dataset ;
     stad:containsDatapoint ex:2069_20130101_00,
@@ -114221,7 +114045,7 @@ ex:Dataset_2069_2013 a stad:Dataset ;
         ex:2069_20131231_21,
         ex:2069_20131231_22,
         ex:2069_20131231_23 ;
-    stad:hasDatasetDescription ex:2069_2013_DatasetDescription .
+    stad:hasDatasetDescription ex:HourlySiteTemperatureDatasetDescrption .
 
 ex:Dataset_2069_2014 a stad:Dataset ;
     stad:containsDatapoint ex:2069_20140101_00,
@@ -120863,7 +120687,7 @@ ex:Dataset_2069_2014 a stad:Dataset ;
         ex:2069_20141231_21,
         ex:2069_20141231_22,
         ex:2069_20141231_23 ;
-    stad:hasDatasetDescription ex:2069_2014_DatasetDescription .
+    stad:hasDatasetDescription ex:HourlySiteTemperatureDatasetDescrption .
 
 ex:Dataset_2069_2015 a stad:Dataset ;
     stad:containsDatapoint ex:2069_20150101_00,
@@ -129614,7 +129438,7 @@ ex:Dataset_2069_2015 a stad:Dataset ;
         ex:2069_20151231_21,
         ex:2069_20151231_22,
         ex:2069_20151231_23 ;
-    stad:hasDatasetDescription ex:2069_2015_DatasetDescription .
+    stad:hasDatasetDescription ex:HourlySiteTemperatureDatasetDescrption .
 
 ex:Dataset_2069_2016 a stad:Dataset ;
     stad:containsDatapoint ex:2069_20160101_00,
@@ -137967,7 +137791,7 @@ ex:Dataset_2069_2016 a stad:Dataset ;
         ex:2069_20161231_21,
         ex:2069_20161231_22,
         ex:2069_20161231_23 ;
-    stad:hasDatasetDescription ex:2069_2016_DatasetDescription .
+    stad:hasDatasetDescription ex:HourlySiteTemperatureDatasetDescrption .
 
 ex:Dataset_2069_2017 a stad:Dataset ;
     stad:containsDatapoint ex:2069_20170101_01,
@@ -146728,7 +146552,7 @@ ex:Dataset_2069_2017 a stad:Dataset ;
         ex:2069_20171231_21,
         ex:2069_20171231_22,
         ex:2069_20171231_23 ;
-    stad:hasDatasetDescription ex:2069_2017_DatasetDescription .
+    stad:hasDatasetDescription ex:HourlySiteTemperatureDatasetDescrption .
 
 ex:Dataset_2069_2018 a stad:Dataset ;
     stad:containsDatapoint ex:2069_20180101_00,
@@ -155490,7 +155314,7 @@ ex:Dataset_2069_2018 a stad:Dataset ;
         ex:2069_20181231_21,
         ex:2069_20181231_22,
         ex:2069_20181231_23 ;
-    stad:hasDatasetDescription ex:2069_2018_DatasetDescription .
+    stad:hasDatasetDescription ex:HourlySiteTemperatureDatasetDescrption .
 
 ex:Dataset_2069_2019 a stad:Dataset ;
     stad:containsDatapoint ex:2069_20190101_00,
@@ -164253,7 +164077,7 @@ ex:Dataset_2069_2019 a stad:Dataset ;
         ex:2069_20191231_21,
         ex:2069_20191231_22,
         ex:2069_20191231_23 ;
-    stad:hasDatasetDescription ex:2069_2019_DatasetDescription .
+    stad:hasDatasetDescription ex:HourlySiteTemperatureDatasetDescrption .
 
 ex:Dataset_2069_2020 a stad:Dataset ;
     stad:containsDatapoint ex:2069_20200101_00,
@@ -173040,7 +172864,7 @@ ex:Dataset_2069_2020 a stad:Dataset ;
         ex:2069_20201231_21,
         ex:2069_20201231_22,
         ex:2069_20201231_23 ;
-    stad:hasDatasetDescription ex:2069_2020_DatasetDescription .
+    stad:hasDatasetDescription ex:HourlySiteTemperatureDatasetDescrption .
 
 ex:Dataset_2069_2021 a stad:Dataset ;
     stad:containsDatapoint ex:2069_20210101_00,
@@ -181800,7 +181624,7 @@ ex:Dataset_2069_2021 a stad:Dataset ;
         ex:2069_20211231_21,
         ex:2069_20211231_22,
         ex:2069_20211231_23 ;
-    stad:hasDatasetDescription ex:2069_2021_DatasetDescription .
+    stad:hasDatasetDescription ex:HourlySiteTemperatureDatasetDescrption .
 
 ex:Dataset_2069_2022 a stad:Dataset ;
     stad:containsDatapoint ex:2069_20220101_00,
@@ -190563,7 +190387,7 @@ ex:Dataset_2069_2022 a stad:Dataset ;
         ex:2069_20221231_21,
         ex:2069_20221231_22,
         ex:2069_20221231_23 ;
-    stad:hasDatasetDescription ex:2069_2022_DatasetDescription .
+    stad:hasDatasetDescription ex:HourlySiteTemperatureDatasetDescrption .
 
 ex:TimeInterval_2012 a stad:TemporalCoverage,
         time:ProperInterval ;
@@ -190641,4 +190465,12 @@ ex:TimeInterval_2022 a stad:TemporalCoverage,
             time:inXSDDateTimeStamp "2022-01-01T00:00:00-05:00"^^xsd:dateTimeStamp ] ;
     time:hasEnd [ a time:Instant ;
             time:inXSDDateTimeStamp "2022-12-31T23:00:00-05:00"^^xsd:dateTimeStamp ] .
+
+ex:HourlySiteTemperatureDatasetDescrption a stad:DatasetDescription ;
+    stad:hasTemporalResolution [ a stad:TemporalResolution ;
+            stad:hasQualityKind stad:temporalResolutionQualityKind ;
+            stad:hasQuantitativeValue [ a stad:QuantitativeValue,
+                        time:Duration ;
+                    time:numericDuration 1.0 ;
+                    time:unitType time:unitHour ] ] .
 
