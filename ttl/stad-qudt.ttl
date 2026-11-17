@@ -1,0 +1,38 @@
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix stad: <http://purl.org/spatialai/stad/v2/core#> .
+@prefix stad-mls: <http://purl.org/spatialai/stad/v2/mls#> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+qudt:Quantity
+  a owl:Class ;
+  dcterms:description "Quantity is the measurement of an observable property of a particular object, event, or physical system." ;
+  rdfs:label "Quantity" ;
+  rdfs:isDefinedBy qudt: .
+
+qudt:QuantityKind   a owl:Class ;
+  dcterms:description "Quantity Kind is any observable property that can be  measured and quantified numerically." ;
+  rdfs:label "Quantity kind" ;
+  rdfs:isDefinedBy qudt: .
+
+qudt:QuantityValue rdf:type owl:Class ;
+  dcterms:description "Quantity Value" ;
+  rdfs:label "Quantity value" ;
+  rdfs:isDefinedBy qudt: .
+
+qudt:NumericUnion rdf:type owl:Class ;
+  dcterms:description "Numeric union is a composite datatype defined as the union of standard XML Schema (XSD) numeric datatypes." ;
+  rdfs:label "Numeric union" ;
+  rdfs:isDefinedBy qudt: .
+
+qudt:Unit rdf:type owl:Class ;
+  dcterms:description "A unit of measure, or unit, is a particular quantity value that has been chosen as a scale for measuring other quantities the same kind (more generally of equivalent dimension)." ;
+  rdfs:label "Unit" ;
+  rdfs:isDefinedBy qudt: .
+
+qudt:Quantity rdfs:subClassOf stad:QuantitativeDatapoint.
+
+qudt:QuantityKind rdfs:subClassOf stad:QualityValue.
+
+qudt:QuantityValue rdfs:subClassOf stad:QuantitativeValue.
