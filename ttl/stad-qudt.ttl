@@ -1,25 +1,51 @@
 @prefix qudt: <http://qudt.org/schema/qudt/> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix stad: <http://purl.org/spatialai/stad/v2/core#> .
-@prefix stad-mls: <http://purl.org/spatialai/stad/v2/mls#> .
-@prefix unit: <http://qudt.org/vocab/unit/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@base <http://purl.org/spatialai/stad/v2/core#> .
+
+<http://purl.org/spatialai/stad/v2/stad-qudt#> rdf:type owl:Ontology ;
+                                           owl:versionIRI <http://purl.org/spatialai/stad/v2/stad-qudt#> ;
+                                           owl:imports :stad, :qudt ;
+										   rdfs:label "STAD-QUDT Alignment"@en  ;
+                                           dcterms:created "2026-11-17"^^xsd:date ;
+                                           dcterms:creator "Kingsley Wiafe-Kwakye - https://orcid.org/0009-0007-3741-3721"@en ,
+                                                           "Torsten Hahmann - http://orcid.org/0000-0002-5331-5052"@en ;
+                                           dcterms:description "Aligns central concepts from QUDT with the Spatial and Temporal Aggregate Data (STAD) Ontology by treating QUDT classes as subclasses of STAD classes."@en ;
+                                           dcterms:identifier "http://purl.org/spatialai/stad/v2/stad-qudt>"@en ;
+                                           dcterms:issued "2026-11-17"^^xsd:date ;
+                                           dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
+                                           dcterms:modified "2026-11-17"^^xsd:date ;
+                                           dcterms:publisher "Spatial Knowledge and Artificial Intelligence (SKAI) Lab, University of Maine"@en ;
+                                           dcterms:subject "Aggregate data" ,
+                                                           "Spatial aggregate data" ,
+                                                           "Temporal aggregate data" ;
+                                           dcterms:title "Spatial and Temporal Aggregate Data (STAD) Ontology"@en ;
+										   rdfs:seeAlso stad: , qudt: ;
+                                           owl:versionInfo "2.0"@en .
 
 qudt:Quantity
   a owl:Class ;
   dcterms:description "Quantity is the measurement of an observable property of a particular object, event, or physical system." ;
   rdfs:label "Quantity" ;
-  rdfs:isDefinedBy qudt: .
+  rdfs:isDefinedBy qudt: ;
+  rdfs:subClassOf stad:QuantitativeDatapoint.
 
 qudt:QuantityKind   a owl:Class ;
   dcterms:description "Quantity Kind is any observable property that can be  measured and quantified numerically." ;
   rdfs:label "Quantity kind" ;
-  rdfs:isDefinedBy qudt: .
+  rdfs:isDefinedBy qudt: ;
+  rdfs:subClassOf stad:QualityKind.
 
 qudt:QuantityValue rdf:type owl:Class ;
   dcterms:description "Quantity Value" ;
   rdfs:label "Quantity value" ;
-  rdfs:isDefinedBy qudt: .
+  rdfs:isDefinedBy qudt: ;
+  rdfs:subClassOf stad:QuantitativeValue.
 
 qudt:NumericUnion rdf:type owl:Class ;
   dcterms:description "Numeric union is a composite datatype defined as the union of standard XML Schema (XSD) numeric datatypes." ;
@@ -31,8 +57,21 @@ qudt:Unit rdf:type owl:Class ;
   rdfs:label "Unit" ;
   rdfs:isDefinedBy qudt: .
 
-qudt:Quantity rdfs:subClassOf stad:QuantitativeDatapoint.
 
-qudt:QuantityKind rdfs:subClassOf stad:QualityValue.
-
-qudt:QuantityValue rdfs:subClassOf stad:QuantitativeValue.
+###  http://purl.org/spatialai/stad/v2/core#QualityKind
+stad:QualityKind rdf:type owl:Class ;
+                 rdfs:isDefinedBy stad: ;
+                 rdfs:label "quality kind"@en ;
+                 dcterms:description "The kind of quality or property represented by a datapoint, distinct from the value of that quality."@en .
+				 
+###  http://purl.org/spatialai/stad/v2/core#QuantitativeDatapoint
+stad:QuantitativeDatapoint rdf:type owl:Class ;
+                           rdfs:isDefinedBy stad: ;
+                           rdfs:label "quantitative datapoint"@en ;
+                           dcterms:description "A datapoint whose value is quantitative."@en .
+				 
+###  http://purl.org/spatialai/stad/v2/core#QuantitativeValue
+stad:QuantitativeValue rdf:type owl:Class ;
+                       rdfs:isDefinedBy stad: ;
+                       rdfs:label "quantitative value"@en ;
+                       dcterms:description "A numerical data value, typically represented with a numeric value and unit."@en .
